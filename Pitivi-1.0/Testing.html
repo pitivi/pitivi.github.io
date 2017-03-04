@@ -98,9 +98,9 @@ by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
 you want to test more thoroughly.</p>
 <h2 id="unit-tests">Unit tests</h2>
 <p>You can run the unit tests with:</p>
-<p><code>make check</code></p>
+<p><code>ninja -C mesonbuild/ test</code></p>
 <p>If you want to run only one particular unit test, use:</p>
-<p><code>nose2 tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat</code></p>
+<p><code>nose2 tests test_project.TestProjectManager.testLoadProjectFailedUnknownFormat</code></p>
 <h3 id="writing-unit-tests">Writing unit tests</h3>
 <p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
 as it's now integrated into
@@ -128,7 +128,7 @@ have additional checks.</p>
 automatically</a>
 each time Pitivi is used.</p>
 <p>You can run the integration tests with:</p>
-<p><code>make validate</code></p>
+<p><code>tests/validate-tests/runtests</code></p>
 <p>See also:</p>
 <ul>
 <li><a href="Test_suite_wishlist.html">Test suite wishlist</a></li>
