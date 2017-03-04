@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Test suite</title>
+<title>Testing</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
@@ -63,7 +63,7 @@
 </nav>
 
 <main class="page-row page-row-expanded">
-<div data-extension="core" data-hotdoc-ref="Test_suite.html" class="page_container" id="page-wrapper">
+<div data-extension="core" data-hotdoc-ref="Testing.html" class="page_container" id="page-wrapper">
 	<div class="row">
 		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
 	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
@@ -84,11 +84,14 @@
 <div class="col-sm-12 col-md-9 col-xl-8">
 	<div id="main">
 				
-<div id="page-description" data-hotdoc-source="Test_suite.md">
-<h1 id="test-suite">Test suite</h1>
-<p>We have two sets of
-<a href="http://git.gnome.org/browse/pitivi/tree/tests">tests</a>: the normal unit
-tests (make check) and the integration tests using GstValidate.</p>
+<div id="page-description" data-hotdoc-source="Testing.md">
+<h1 id="testing">Testing</h1>
+<p>We have tree sets of tests:</p>
+<ul>
+<li>the normal unit tests (ninja test)</li>
+<li>integration tests using GstValidate.</li>
+<li><a href="QA_Scenarios.html">manual tests</a></li>
+</ul>
 <p>Since version <a href="releases/0.91.html">0.91</a>, our backend test suite is much
 smaller and simpler; since most of the core functionality is now handled
 by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
