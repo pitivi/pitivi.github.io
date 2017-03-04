@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>0.15 Release “Ich bin ein berliner”</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="Main_Page.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/favicon.png" alt="Home" id="home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="releases/0.15.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="0.15.md">
+<h1 id="015-release-ich-bin-ein-berliner">0.15 Release “Ich bin ein berliner”</h1>
+<p>The PiTiVi team is proud to announce the 0.15 release.</p>
+<p>This will be the last release using the “traditional” core/engine of
+PiTiVi. The next releases will be based on GStreamer Editing Services
+(GES) and should thus depart significantly from this release in terms of
+performance, features and stability.</p>
+<p>For the best user experience, the PiTiVi team strongly recommends that
+users have all the latest official GStreamer libraries and plugins
+installed.</p>
+<h2 id="features-of-this-release">Features of this release</h2>
+<ul>
+<li>A new transformation feature allows resizing, panning and cropping
+clips directly in the previewer</li>
+<li>Automatic clip alignment by analyzing soundtracks to sync
+multicamera footage</li>
+<li>Ability to have presets for rendering</li>
+<li>Default set of project settings and rendering presets</li>
+<li>Cleaner preferences dialog</li>
+<li>Integrated offline user manual</li>
+<li>Cleaner advanced codec settings dialog</li>
+<li>Improved video thumbnailing performance</li>
+<li>“Soft depedencies” manager to warn the user of features requiring
+additional packages</li>
+<li>Port to gtkbuilder</li>
+<li>Respect GNOME's button icons setting</li>
+<li>Improved startup time</li>
+<li>Code cleanups and remove dead code</li>
+<li>Properly show property descriptions (blurbs) for advanced codec
+settings</li>
+</ul>
+<h2 id="hard-requirements">Hard requirements</h2>
+<ul>
+<li>gstreamer &amp;gt;= 0.10.28</li>
+<li>gst-python &amp;gt;= 0.10.19</li>
+<li>gnonlin &amp;gt;= 0.10.16</li>
+<li>pygtk &amp;gt;= 2.18.0</li>
+<li>gtk &amp;gt;= 2.24.0</li>
+<li>Python &amp;gt;= 2.5</li>
+<li>zope.interface (http://www.zope.org/Products/ZopeInterface)</li>
+<li>setuptools (http://peak.telecommunity.com/DevCenter/setuptools)</li>
+<li>pygoocanvas (http://live.gnome.org/GooCanvas)</li>
+<li>pyxdg (http://www.freedesktop.org/wiki/Software/pyxdg)</li>
+</ul>
+<h2 id="soft-requirements">Soft requirements</h2>
+<ul>
+<li>frei0r for the transformation feature</li>
+<li>Numpy for the auto aligner feature</li>
+</ul>
+<p>The PiTiVi team recommends satisfying those dependencies as much as
+possible for an optimal user experience.</p>
+<h2 id="known-issues">Known Issues</h2>
+<ul>
+<li>Everything listed in
+<a href="https://bugzilla.gnome.org/buglist.cgi?query_format=advanced;bug_status=NEW;bug_status=ASSIGNED;bug_status=REOPENED;version=0.15;product=pitivi">here</a></li>
+<li>See also <a href="Performance_problems_in_0.13.4.md">Performance problems in
+0.13.4</a>.</li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<p>Ranked by commits:</p>
+<p><code>   108 Alex Băluț</code><br>
+<code>   88  Jean-François Fortin Tam</code><br>
+<code>   52  Thibault Saunier</code><br>
+<code>   25  Feroze Naina</code><br>
+<code>   10  Lubosz Sarnecki</code><br>
+<code>   10  Daniel Mustieles</code><br>
+<code>   10  Mario Blättermann</code><br>
+<code>   8   Marek Černocký</code><br>
+<code>   7   Benjamin M. Schwartz</code><br>
+<code>   7   Andrej Žnidaršič</code><br>
+<code>   6   Stéphane Maniaci</code><br>
+<code>   4   Hicham HAOUARI</code><br>
+<code>   4   Kjartan Maraas</code><br>
+<code>   3   Daniel Korostil</code><br>
+<code>   3   ipraveen</code><br>
+<code>   2   António Lima</code><br>
+<code>   2   Brandon Lewis</code><br>
+<code>   2   Bruno Brouard</code><br>
+<code>   2   Gianvito Cavasoli</code><br>
+<code>   2   Daniel Nylander</code><br>
+<code>   2   Matej Urbančič</code><br>
+<code>   2   Мирослав Николић</code><br>
+<code>   1   Edward Hervey</code><br>
+<code>   1   Gabriel Speckhahn</code><br>
+<code>   1   Gil Forcada</code><br>
+<code>   1   James Putt</code><br>
+<code>   1   Jorge González</code><br>
+<code>   1   Luis de Bethencourt</code><br>
+<code>   1   Martin Srebotnjak</code><br>
+<code>   1   Peter Mráz</code><br>
+<code>   1   Peteris Krisjanis</code><br>
+<code>   1   Piotr Drąg</code><br>
+<code>   1   Yuri Myasoedov</code></p>
+<h2 id="download">Download</h2>
+<p>PiTiVi source tarballs are available on gnome FTP:
+<a href="http://ftp.gnome.org/pub/GNOME/sources/pitivi/0.15/">http://ftp.gnome.org/pub/GNOME/sources/pitivi/0.15/</a></p>
+<p>See <a href="http://www.pitivi.org">the website</a> for distribution-specific
+packages.</p>
+<h2 id="information-and-feedback">Information and Feedback</h2>
+<ul>
+<li>Information for users and developers can be found on the PiTiVi
+website : <a href="http://www.pitivi.org">http://www.pitivi.org</a></li>
+<li>Comments and feedback are welcome.
+<ul>
+<li>Mailing-list : pitivi-pitivi@lists.sourceforge.net</li>
+<li>PiTiVi bug-tracker :
+<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="bugs-fixed">Bugs Fixed</h2>
+<p>See the
+[<a href="http://bugzilla.gnome.org/buglist.cgi?product=pitivi;target_milestone=0.14.1;target_milestone=0.14.2;target_milestone=0.15">http://bugzilla.gnome.org/buglist.cgi?product=pitivi;target_milestone=0.14.1;target_milestone=0.14.2;target_milestone=0.15</a>
+list of bugs fixed in 0.15 on Bugzilla</p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Roadmap</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="Main_Page.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/favicon.png" alt="Home" id="home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="Roadmap.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="Roadmap.md">
+<h1 id="roadmap">Roadmap</h1>
+<p>This is intended to be a <strong>general overview</strong> of the very
+important or big features/improvements we are working on, or planning.
+For a list of smaller features see <a href="https://phabricator.freedesktop.org/project/view/111/">fun tasks for
+newcomers</a>.</p>
+<p>What keeps us busy in general?</p>
+<ul>
+<li><strong>Fixing bugs</strong>. Improving reliability and ease of use is never
+“done”. We have
+<a href="https://phabricator.freedesktop.org/tag/pitivi/">tons</a> of work.
+<a href="http://www.Pitivi.org/?go=contributing">Help</a> is very welcome!</li>
+<li><strong>Improving GStreamer</strong>. This benefits not only Pitivi, but other
+multimedia applications as well.</li>
+<li><strong>Working on features</strong>: Until we reach <a href="releases/1.0.md">1.0</a>, only
+if they improve stability.</li>
+</ul>
+<h1 id="highlevel-roadmap">High-level roadmap</h1>
+<p>Any time estimates here are mostly wild guesses. Do not treat them as
+hard deadlines. This aims mostly at giving an idea of how milestones
+follow each other.</p>
+<ul>
+<li>2016 Q2: release <a href="releases/0.96.html">0.96</a> with a focus on
+stabilization and accuracy through proxy files</li>
+<li>2016 Q4 or 2017 Q2: release <a href="releases/1.0.md">1.0</a> with ponies and
+rainbows</li>
+</ul>
+<p>See <a href="Current_events.html">Current events</a> for past items.</p>
+<h1 id="major-features">Major features</h1>
+<h2 id="plugin-system">Plugin system</h2>
+<ul>
+<li>Status: planning.</li>
+<li><strong>This is very important</strong>. A plugin would have access to the entire
+app. Being in Python, it will be extremely easy to quickly write
+useful plugins without having to compile anything. Pitivi plugins
+will allow manipulating the timeline clips and clip effects
+automatically, thus allowing great flexibility for custom solutions.
+See the <a href="https://phabricator.freedesktop.org/T3193">tasks blocked by
+T3193</a> for a few examples
+where this will be useful.</li>
+</ul>
+<h2 id="motion-rampingtime-stretching">Motion ramping/time stretching</h2>
+<ul>
+<li>Status: started</li>
+<li>See <a href="https://phabricator.freedesktop.org/T2344">T2344</a></li>
+</ul>
+<h2 id="effects">Effects</h2>
+<ul>
+<li>We need to create custom (“hand-made”) interfaces for some effects
+so that they can be easier to use. See
+<a href="https://phabricator.freedesktop.org/T3263">T3263</a></li>
+</ul>
+<h2 id="advanced-layer-management">Advanced layer management</h2>
+<ul>
+<li>See <a href="https://phabricator.freedesktop.org/T2642#85395">T2642</a></li>
+</ul>
+<h2 id="a-better-title-editor">A better title editor</h2>
+<ul>
+<li>The current title editor UI is very simple. Please join us to make
+it work up to your expectations! See the existing
+[<a href="https://phabricator.freedesktop.org/maniphest/?statuses=open">https://phabricator.freedesktop.org/maniphest/?statuses=open</a>()&amp;projects=PHID-PROJ-ext-TITLEEDITOR#R
+title editor tasks].</li>
+</ul>
+<h2 id="mamdam">MAM/DAM</h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Digital_asset_management">Digital asset
+management</a>
+is the ability to manage huge amounts of media (video clips, sounds,
+images, etc.). This feature is very much needed for professional
+editing; it allows handling multiple simultaneous camera angles,
+multiple takes of the same scene, multiple sound sources, etc.</li>
+<li>Potentially being addressed by the Novacut team with
+<a href="https://launchpad.net/dmedia">dmedia</a></li>
+</ul>
+<h2 id="hardwareaccelerated-decoding-and-encoding">Hardware-accelerated decoding and encoding</h2>
+<ul>
+<li>Since GStreamer 1.2, the basic infrastructure allowing us to cleanly
+take advantage of the video decoding capabilities of modern graphic
+cards is there. We need to ensure that our planned usecases are
+properly supported with the most common graphic drivers (through
+VA-API) and to make the integration work in Pitivi.</li>
+</ul>
+<h2 id="proxy-editing">Proxy editing</h2>
+<ul>
+<li>See <a href="Proxy_editing_requirements.md">proxy editing
+requirements</a> for the “spec”
+of how this feature should behave</li>
+<li>See <a href="https://phabricator.freedesktop.org/T2455">T2455</a></li>
+</ul>
+<h1 id="proxy-editing-requirements">Proxy editing requirements</h1>
+<p>See <a href="https://phabricator.freedesktop.org/T2455">T2455</a> to learn about
+proxy editing and why we want this in <a href="GES.html">GES</a> and Pitivi.
+This page is meant to brainstorm:</p>
+<ul>
+<li>User interface/user experience (UX) possibilities and requirements</li>
+<li>GES API requirements deriving from that. This also touches on media
+assets management in general.</li>
+</ul>
+<p>Prior art if you don't know what proxy editing “feels” like:</p>
+<ul>
+<li><a href="http://www.youtube.com/watch?v=SyUvp0YqLpc">In Edius</a>. This is an
+interesting example of a badly designed UI: pretty much all the
+options/preferences presented there are useless, the application
+should be smart enough to make those choices!</li>
+<li><a href="http://www.youtube.com/watch?v=MnZx3JxoR-A">In FCP X</a> (alternative
+<a href="http://www.youtube.com/watch?v=aL7gE-my4_c">longer version</a>)</li>
+<li><a href="http://www.youtube.com/watch?v=4PE6tDjgDEY">In Sony Vegas</a></li>
+<li>Others we should be looking at in particular? Some particularly
+great (short and to the point) video tutorials of other apps we
+ought to see? Let us know.</li>
+</ul>
+<h1 id="user-experience">User experience</h1>
+<p>As <a href="https://phabricator.freedesktop.org/T2455">T2455</a> indicates, we can
+envision two types of user experience: a semi-automatic and a
+fully-automated one. Since Pitivi is not the only application (now and
+in the future) using GES, we need to design the GES API to be flexible
+enough to accomodate the design needs of both kinds of applications.</p>
+<p>In both cases, the experience must be:</p>
+<ul>
+<li>Intuitive: it should be a very easily discoverable feature</li>
+<li>With good visual indications of the process and progress. We should
+probably have some sort of “yellow/green light” (red for errors)
+icons somewhere near each clip in the media library to indicate the
+status of individual proxies. Remains to be seen how we can do this
+with iconview mode and listview mode without going insane.</li>
+<li>Fluid, with no negative performance impacts from the act of
+generating the clip “proxies”</li>
+</ul>
+<h2 id="icons-representation">Icons representation</h2>
+<p>Since the Media Library's iconview is meant to be compact and
+minimalistic (and has a fair amount of technical limitations), we could
+use the following icon metaphor system to indicate the states of proxies
+for assets:</p>
+<p>Status icon   Icon's opacity   Thumbnail's opacity   Meaning</p>
+<hr>
+<p>None          N/A              100%                  Proxies are disabled for this asset
+Gears/sync?   100%             50%                   A proxy is currently being generated for this asset
+Checkmark     70%?             100%                  Proxies are present and ready for this asset
+⚠ (warning)   100%             100%                  The proxy could not be generated for this asset
+⚠ or X        100%             50%                   A proxy file is present, but the original file is absent</p>
+<h2 id="manualsemiautomated-ux">Manual/semi-automated UX</h2>
+<p>In this mode, users would manually select which assets/clips use
+proxies, and when the proxies are generated. There would be no
+“automated” background processing. This is probably not what we want in
+Pitivi in terms of the default user experience, however the GES API
+should support that scenario. We could still provide this feature in
+pitivi by:</p>
+<ol>
+<li>Having an option in the preferences, under the “Performance”
+section: “Automatically create proxies for clips in the media
+library”</li>
+<li>If that option is disabled, show a toolbar button in the media
+library that, when clicked, generates the proxies for selected
+clips.</li>
+</ol>
+<p>However this also means temporarily providing a “Cancel” button while
+those clips' proxies are being generated. Additionally to the “status
+lights” icons mentioned earlier, we could perhaps show a progressbar
+(with a “Stop” button on its right) below the media library (similar to
+when we're importing clips).</p>
+<p>Jakub commented:</p>
+<blockquote>
+<p>“Semi-automatic - I don't grok this experience. Why would I want to
+explicitly hold the burden of being a transcoding manager? I like the
+validity checking and ability to explicitly re-render a proxy though.
+Ran into issues in both kdenlive and FCPX where I spent ages looking
+for a faulty proxy.”</p>
+</blockquote>
+<p>To balance things, Bassam commented:</p>
+<blockquote>
+<p>"manual vs. automatic: however the ui is chosen, this should be a per
+project setting, not a choice of a different application. both
+workflows are valid, and the same person might opt for one or another
+depending on the specifics of the project. [...]</p>
+</blockquote>
+<h2 id="fullyautomated-ux">Fully-automated UX</h2>
+<p>Otherwise, the default behavior would be to transparently (and
+intelligently) create proxies for everything, in the background. When a
+proxy file does not exist for an asset (clip), create it and use it as
+soon as it has been created.</p>
+<p>Performance requirements in the automated scenario are even more
+important than in the semi-automated scenario; while users can expect
+some delay (as long as there is a visual progress indication) when they
+manually trigger an action, they must absolutely <em>not</em> feel
+delays/sluggishness when such actions are triggered automatically. The
+generation of proxy clips in the background should not negatively impact
+system performance.</p>
+<p>Jakub has a different opinion than Jeff's or Bassam's, suggesting (?)
+that we make proxy generation a modal (blocking, in terms of UI)
+operation:</p>
+<blockquote>
+<p>"You mention the problem of indicating the transcoding process as if
+you could continue working with original assets and have that not stop
+you from editing work with original media. In case of offline editing
+(either having assets on external drive, or networked/cloud storage),
+the indication can be summed up to “tell me when my assets are safe to
+disconnect and I'm able to proceed editing offline”. For low
+performing systems, the background transcoding is just an illusion,
+you cannot really edit until your assets are transcoded. So I think
+both cases are best addressed by providing an aggregate progressbar
+telling me when all assets referenced from the project are transcoded,
+rather than colorcoding individual clips, or worrying about preview
+overlays. [...] For offline editing I would agree not choking the
+system competely with transcoding might be a good thing, but for the
+low performing system case you want the transcoding process to take
+the foreground so that the assets are ready sooner. You really can't
+do any 4k editing on a laptop and expect to also transcode proxies in
+the background."</p>
+</blockquote>
+<h1 id="ges-api-requirements">GES API requirements</h1>
+<h2 id="control">Control</h2>
+<ul>
+<li>Proxies generation/processing needs to be pause-able
+<ul>
+<li>When pitivi starts playback (or render) and needs the system's
+resources</li>
+<li>When the user pauses proxy generation (in the case of the
+semi-automated UX)</li>
+</ul>
+</li>
+<li>Proxies generation needs to be cancel-able
+<ul>
+<li>When the user asks to stop generating proxies for selected clips
+(in the case of the semi-automated UX)</li>
+</ul>
+</li>
+<li>The ability to “force” regenerating the proxies for a given asset
+(for whatever reason)</li>
+<li>Delete a proxy (or all proxies) for a given asset</li>
+<li>Relocate/move proxies for a given asset or for all assets</li>
+<li>Ability to manually replace an offline asset.</li>
+</ul>
+<h2 id="data-integrity-checking">Data integrity checking</h2>
+<ul>
+<li>Need a way to detect incomplete or invalid proxies, to handle
+various scenarios:
+<ul>
+<li>The user has quit the application before it was done processing</li>
+<li>The application crashed</li>
+<li>The source file has changed (use a md5 on the first few bytes of
+the file like in pitivi/previewers.py and store that hash in the
+GES Asset?)</li>
+</ul>
+</li>
+</ul>
+<h2 id="signallingnotifying">Signalling/notifying</h2>
+<ul>
+<li>For each asset, report the proxies' encoding progress, so the
+application UI can show progressbars or some other form of visual
+indications</li>
+<li>Provide a way to signal to the application that an asset has its
+original offline, or its proxy offline, or whatever situation we can
+imagine, so the UI can let the user know about it.</li>
+<li>Tolerate and signal errors/failures.</li>
+</ul>
+<h2 id="fault-tolerance-and-sandboxing">Fault tolerance and sandboxing</h2>
+<ul>
+<li>Tolerate and signal errors/failures.</li>
+<li>Processing should probably happen in a separate/sandboxed process,
+to ensure that GES/applications can't crash because of something
+going wrong during the processing of a proxy</li>
+<li>GES needs to handle the notion that an asset and/or any of its
+proxies can go offline/online. For example, if the original clip is
+not available but the proxy version is present, consider the
+original “offline” and use the proxy version.
+<ul>
+<li>The way we handle “missing” media needs to change: currently
+Pitivi just refuses to handle “partial” projects, but in theory
+it should “deal with it”. Even if all the assets of a clip
+(including proxies) are offline.</li>
+<li>If an asset or its proxies were moved/renamed externally, allow
+specifying the new location (already mostly implemented in GES
+assets?), but don't force it. Proxies/assets for which the user
+has not provided replacements are to be marked as temporarily
+“offline” (we should also save info about the last time it was
+seen, its metadata/attributes, etc.).</li>
+</ul>
+</li>
+</ul>
+<h2 id="additional-api-flexibility">Additional API flexibility</h2>
+<ul>
+<li>Multiple ways to handle offline assets for rendering and export:
+<ul>
+<li>“Draft render” mode (low quality render using only the proxies
+instead of the original clips), as some applications might like
+to offer that feature.</li>
+<li>Rendering to a multimedia output file requires original assets
+to be “online”. Otherwise, if only proxies are available, we
+can:
+<ul>
+<li>Warn the user about reduced quality. If some assets have no
+originals and no proxies, show a serious warning.</li>
+<li>Export only an EDL (edit decision list), but that's <a href="https://bugzilla.gnome.org/show_bug.cgi?id=674605">another
+story</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Provide a way to specify which containers, codecs and settings (ex:
+video resolution, bitrate/quality) to use for proxies. This will
+probably use a technology similar to what we see in Pitivi's render
+dialogs.</li>
+<li>Allow multiple proxies per asset (for multiple resolutions, for
+example). The application should be able to request a proxy to match
+a particular context (ex: a maximum resolution or something); for
+example, multicam editing could use very small versions if there is
+a big number (ex: 16) of camera angles to be displayed
+simultaneously. Or the media library could automatically show a
+playing thumbnail-sized video preview when putting the mouse over a
+clip.</li>
+<li>Ability to save, in a project formatter's data, the following
+per-project overrides of the global app settings:
+<ul>
+<li>A custom folder path for the proxies for that project (see also
+the “where to store the proxies?” item in the “outstanding
+questions” section on this page).</li>
+<li>Whether this project prefers fully-automated (or manual)
+handling of proxies (Bassam said: “However the ui is chosen,
+this should be a per project setting, not a choice of a
+different application. Both workflows are valid, and the same
+person might opt for one or another depending on the specifics
+of the project.”)</li>
+</ul>
+</li>
+</ul>
+<h1 id="outstanding-questions">Outstanding questions</h1>
+<ul>
+<li>Where to store the proxies? (beyond the obvious question of disk
+space and tidiness, there's the question of people working across
+networks that raises interesting questions)
+<ul>
+<li>In pitivi we could default to the XDG user cache dir (which in
+this case would turn out to be ~/.cache/pitivi/proxies/)</li>
+<li>...but Bassam insists that this can be overridden on a
+per-project basis. So in the project settings UI, we could have
+a checkbox to “Use a custom directory to store proxies” that
+enables a gtk folder chooser button right besides it. Unchecking
+the checkbox would clear the project's custom directory.</li>
+</ul>
+</li>
+<li>Filenames of the actual proxy files depending on their location
+(global cache folder vs project folder?). For example, if a clip is
+called “foo.MOV”, should the proxies be called foo-360p.gesproxy, or
+foo--proxy-360p.webm, or C462NTH353.webm in the hidden cache folder,
+or...?</li>
+<li>Codecs? So far we're hesitating between MJPEG and VP8. MJPEG is
+handsdown the fastest codec to seek and to encode, since it is so
+simple and every frame is a keyframe - however, the filesize is
+rather big. VP8 is more configurable and can be made to approximate
+MJPEG's seeking performance, but it is significantly more expensive
+to encode.</li>
+<li>Resolutions, and how to handle aspect ratios. That is, how do you
+determine the appropriate resolution depending on the aspect ratio
+and resolution of the source material?
+<ul>
+<li>Going with a hardcoded percentage (ex: 50% of the original's
+resolution) can be bound to fail in scenarios where the original
+has a huge native resolution (such as 4K).</li>
+<li>Alternatively, one can imagine a hardcoded (or configurable)
+“max resolution”, where clips bigger than that resolution will
+have proxies created to “fit the box” (in terms of width and
+height, whichever comes first). Hardcoding the box resolution
+might be problematic as computers become more powerful and
+screen resolutions increase.</li>
+<li>Ideally, we need a clever algorithm to figure out all of this
+automatically. Any rough ideas of the logic here? Let us know.
+Solutions where the software can be smart enough to figure the
+optimal resolution to use, instead of having the user deal with
+it, are preferred.</li>
+</ul>
+</li>
+<li>Handling “tarball export” in Pitivi</li>
+</ul>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

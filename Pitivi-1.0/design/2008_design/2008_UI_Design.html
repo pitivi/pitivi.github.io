@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>2008 UI Design</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="Main_Page.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/favicon.png" alt="Home" id="home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="design/2008_design/2008_UI_Design.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="2008_UI_Design.md">
+<h1 id="2008-ui-design">2008 UI Design</h1>
+<p><a href="image:mockup.png.md">500px</a></p>
+<h1 id="to-be-done">To Be Done</h1>
+<ul>
+<li>Project Render interface description</li>
+<li>Capture Interface description</li>
+<li>Markers (critical points) and their uses
+<ul>
+<li>multi-point split example</li>
+</ul>
+</li>
+<li>Export Audio EDL</li>
+<li>Object add mock-up</li>
+<li>Select mock-up</li>
+<li>Property Editor mock-up</li>
+<li>Timeline Effects mock-up</li>
+<li>Compositing mock-up</li>
+<li>Grouping
+<ul>
+<li>use cases and illustrations</li>
+</ul>
+</li>
+<li>Linking
+<ul>
+<li>use cases and illustrations</li>
+</ul>
+</li>
+<li>Tweaks
+<ul>
+<li>put track disable control on all mock-ups</li>
+<li>put new toolbar commands on all mock-ups
+<ul>
+<li>select before, after, above, below, entire layer, entire
+track, all, none</li>
+<li>enable/disable object</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Decide which items go in the Preferences dialog or not</li>
+</ul>
+<h2 id="editing">Editing</h2>
+<p>GIMP file(s) used for creating mockups</p>
+<p><a href="media:base.xcf">media:base.xcf</a></p>
+<h1 id="design-principles">Design Principles</h1>
+<ol>
+<li>Use direct manipulation for most common operations.</li>
+<li>Use noun-verb pattern for most other operations (see below)</li>
+<li>Minimize the number of modes. Modes are evil.</li>
+<li>Use quasi-modes instead of modes</li>
+<li>Provide feedback. Change cursor styles, provide real time updates.</li>
+</ol>
+<h2 id="nounverb-interaction">Noun-Verb Interaction</h2>
+<p>Select what you want, then issue a command to manipulate it.</p>
+<ul>
+<li>commands are “verbs” which operate on current selection. These
+commands are only sensitive when valid on the current selection.
+<ul>
+<li>provide an easy way to add new commands of this type</li>
+</ul>
+</li>
+<li>Only conventional “tool” is the split tool. You activate it first,
+then click where you want to cut.
+<ul>
+<li>and we provide a non-modal variant of this that operates on the
+current selection.</li>
+<li>don't provide an easy way to create other modal tools</li>
+</ul>
+</li>
+</ul>
+<h1 id="representative-tasks">Representative Tasks</h1>
+<p>Frequent Tasks</p>
+<ul>
+<li>finding a specific time in the timeline</li>
+<li>shifting a clip's start position</li>
+<li>triming a clip's in or out position</li>
+<li>spliting a clip into multiple pieces</li>
+<li>previewing the project</li>
+<li>adjusting audio volume or video alpha</li>
+<li>moving sources between layers</li>
+<li>adding sources to the timeline</li>
+<li>deleting sources from the timeline</li>
+<li>adjusting individual object properties</li>
+<li>applying an effect to a portion of the timeline</li>
+</ul>
+<p>Occasional Tasks</p>
+<ul>
+<li>moving sources between tracks</li>
+<li>editing multiple objects simultaneously</li>
+<li>re-using the same sequence of video repeatedly
+<ul>
+<li>possibly with slight-variations</li>
+</ul>
+</li>
+<li>linking two arbitrary objects so they stay in sync</li>
+<li>unlinking linked objects</li>
+<li>color correcting a source with poor white-balance</li>
+<li>filtering noise from audio</li>
+<li>marking significant points in a timeline, such as sound bites from
+an interview or instants at which sound effects should play</li>
+<li>cutting a source in multiple places</li>
+</ul>
+<p>Special Tasks</p>
+<ul>
+<li>transcoding from original to editing-friendly codecs</li>
+<li>re-conforming a project
+<ul>
+<li>i.e. from work-print quality to full-quality</li>
+</ul>
+</li>
+<li>exporting from native to external project formats</li>
+<li>importing external projects to native pitivi projects</li>
+</ul>
+<h1 id="overview">Overview</h1>
+<p><a href="image:mockup-annotated.png.md">500px</a></p>
+<p>There are several primary components:</p>
+<ul>
+<li>viewer</li>
+<li>timeline</li>
+<li>clip library (also referred to as sources browser)</li>
+<li>property editor</li>
+<li>effect library</li>
+<li>main toolbar</li>
+<li>timeline toolbar</li>
+</ul>
+<p>These components all share a single window by default. The Viewer,
+Timeline, Clip Library, and Clip Editor, and Effect Library can be
+detached from the main window by clicking a special “detach” button.
+These windows appear as normal top-level windows. When the user closes
+one of these windows, the component returns to its default location. In
+addition, the clip editor and viwer can be “expanded” so that they
+completely fill their parent windows.</p>
+<h2 id="keyboard">Keyboard</h2>
+<ul>
+<li>shift, ctrl, alt, and ctrl+alt act as quasi-mode modifiers: they
+must be held down to activate special modes.</li>
+<li>use alphanumeric keys for more esoteric operations: users are used
+to shift, alt, ctrl acting as modifiers.</li>
+<li>provide Ctr+<key> shortcuts for menu items</key></li>
+<li>arrow keys used for seeking</li>
+</ul>
+<h2 id="selections">Selections</h2>
+<p>&lt;images/gselect2.png&gt;</p>
+<p>When the mouse moves over a selectable item, it becomes highlighted to
+indicate its focus.</p>
+<p>&lt;images/gselect3.png&gt;</p>
+<p>Single-clicking on items sets the selection to that item. Selection is
+indicated by more prominent highlighting.</p>
+<ul>
+<li><strong>shift-click</strong> always adds the object to a selection</li>
+<li><strong>ctrl-click</strong> toggles whether the item is selected or not</li>
+<li><strong>alt-click</strong> always removes the object from the selection</li>
+</ul>
+<p>Whatever the method used, selection is an undoable action.</p>
+<p>&lt;images/gselect4.png&gt; <a href="image:select5.png">image:select5.png</a></p>
+<p>Click and drag on blank canvas activates selection marquee. While
+dragging the selection marquee, objects that will be selected when the
+mouse-button is released indicate focus. It is clear which objects
+touched by the marquee will be selected.</p>
+<ul>
+<li><strong>shift</strong> extends the selection over a <strong>range</strong></li>
+<li><strong>ctrl</strong> sets the selection to the <strong>intersection</strong> of the current
+selection and the objects under the marquee</li>
+<li><strong>alt</strong> removes the objects under the marquee from the selection</li>
+<li>selecting an empty area clears the selection. This means clicking on
+blank canvas also clears the selection.</li>
+</ul>
+<p>&lt;images/gselect_basic.png&gt;</p>
+<p>Some tool-bar commands to modify selection. These are track-wise
+operations. The operation will be performed for each track which
+contains a selected clip. These operations to not apply to selections of
+key-frame points within clips, but they do apply to timeline and
+track-level markers.</p>
+<p>&lt;images/gselect_before.png&gt;</p>
+<p>“Select before” -- select everything between the start of the project
+and the current selection</p>
+<p>&lt;images/gselect_after.png&gt;</p>
+<p>“Select After” -- select everything between the end of the project and
+the current selection</p>
+<p>&lt;images/gselect_above.png&gt;</p>
+<p>“Select Above” -- select everything between the top-most layer and the
+current selection</p>
+<p>&lt;images/gselect_below.png&gt;</p>
+<p>“Select Below”</p>
+<p>&lt;images/gselect_layer.png&gt;</p>
+<p>“Select Entire Layer” -- selects everything else in the layer(s) of the
+currently selected source(s)</p>
+<p>&lt;images/gselect_track.png&gt;</p>
+<p>“Select Entire Track” -- selects everything else in the track(s) of the
+currently selected source(s)</p>
+<p>&lt;images/gselect_none.png&gt;</p>
+<p>“Select None” -- remove all items from the current selection</p>
+<p>&lt;images/gselect_all.png&gt;</p>
+<p>“Select All” -- select the entire project</p>
+<h1 id="viewer">Viewer</h1>
+<p>Used for playing back video from a variety of sources, primarily the
+timeline. Provides basic playback controls, as well as single-frame
+forward / rewind.</p>
+<h2 id="functions-of-the-viewer">Functions of the Viewer</h2>
+<ul>
+<li>displays output of timeline at current position of playhead</li>
+<li>temporary playback of sources from the browser.</li>
+<li>temporary feedback of editing operations</li>
+</ul>
+<h2 id="automatic-preview">Automatic Preview</h2>
+<p>During certain edit operations, the it would be useful if the viewer
+could show visual feedback of the edit in progress. After operation
+ends, viewer returns to previous state.</p>
+<ul>
+<li>during a roll edit between two sources A, B, viewer should split
+between out point of source A and in point of source B</li>
+<li>during a drag operation, viewer should show the instant just
+before/after the new source will cut in/out. Based on overlap. If no
+overlap, no preview. If overlap of one source, show that source. If
+overlapping one source at each end, split viewer between them.</li>
+</ul>
+<h2 id="continuous-loop">Continuous Loop</h2>
+<p>The user can lock the viewer into a continuous loop over a portion of
+the timeline. In this case, all other seeking behavior is disabled. The
+user can make continuous adjustments while the loop plays.</p>
+<ul>
+<li>need some mechanism to define the area over which to loop.
+<ul>
+<li>one thought is to place markers. User can select two markers to
+define an an area and then press the loop command.</li>
+</ul>
+</li>
+</ul>
+<h1 id="timeline">Timeline</h1>
+<p>&lt;images/gtimeline_detail.png&gt;</p>
+<p>The primary component of the UI. This is where the user directly
+manipulates sources and effects which will appear in the final output.
+It is a time-proportional representation of the edit decision list.
+Clips appear as horizontal rectangles, their with proportional to their
+duration, and their position along the x axis proportional to the time
+at which they start. The metaphor is of virtual strips of film. The user
+can “cut” (meaning split), move, resize, and group (splice?) these
+strips.</p>
+<h2 id="seeking-and-navigation-controls">Seeking and Navigation Controls</h2>
+<ul>
+<li>scrubbing directly on the timeline ruler will seek to that place in
+the timeline</li>
+<li>left and right arrow keys seek forward/back single frames at the
+current project framerate.</li>
+<li>Holding down keys causes repeated seeking.</li>
+<li>Shift + arrow key seeks over 1/2 second interval</li>
+<li>Alt + arrow key seeks over 30 interval</li>
+<li>Ctrl multiplies current seek interval by factor of 10</li>
+<li>Whenever play-head moves out of view, the Timeline widget should
+scroll to center the play-head in view.</li>
+</ul>
+<h2 id="tracks">Tracks</h2>
+<p>&lt;images/gMulti_track_editing.png&gt;</p>
+<p>The timeline is subdivided into <strong>tracks</strong>. Tracks represent separate
+output channels with a single media type. Within a track, all objects
+have the same media type, and there is at least one track in the
+timeline for every type of media that the timeline contains. The user
+does not add or remove tracks directly: the user adds objects to the
+timeline, and tracks are created as appropriate. Most projects will only
+have one audio and one video track.</p>
+<p>Tracks can be expanded or contracted. Expanded tracks stack their clips
+vertically, according to the clips' layer position (priority). When a
+track is collapsed, all sources appear at the same vertical position, as
+if contained within a single layer. This single layer can then be
+further collapsed.</p>
+<h3 id="layers">Layers</h3>
+<p>Tracks are themselves subdivided into layers. Layers are priority levels
+within a track. For audio, all layers within a track are mixed together
+into a single stream. For video, all sources within a track are
+composited together in a single stream. The layer position determines
+the order in which videos are composited, with the visually topmost
+layer appearing as the top-most source in the stream.</p>
+<p>&lt;images/glayer_addition.png&gt; The user can add layers to a given track by
+dragging the track's separator bar downward. Similarly, the user can
+remove tracks by dragging the layer's separator bar upward; however,
+removal of the bottom layer will only be permitted if the layer is
+empty. Objects within layers can be stacked arbitrarily. This is
+particularly useful for effects, which operate lower-priority objects
+within the timeline.</p>
+<h3 id="managing-vertical-complexity">Managing Vertical Complexity</h3>
+<p><a href="image:expanded_layer.png.md">expanded layer|Expanded Layer</a></p>
+<p>Ordinarily, layers take up a fair amount of space. This is to make room
+for thumbnails, waveforms, and keyframes.</p>
+<p><a href="image:contracted_layer.png.md">collapsed layer|Collapsed Layer</a></p>
+<p>Layers and tracks can be contracted to save space. The user can contract
+a layer by clicking their expander widgets on the far left side of the
+timeline.</p>
+<p>&lt;images/gcontracted_track.png&gt;</p>
+<p>This can also be done for entire tracks</p>
+<h3 id="sources-and-effects">Sources and Effects</h3>
+<p>&lt;images/gtimelineobject_detail.png&gt;</p>
+<p>Sources and effects (within a track) are content streams of a single
+media type. Sources are clips which provide data. Effects are filters
+which consume lower priority clips as input and produce filtered output.</p>
+<p>Both Source and effect objects have properties. All properties can be
+manipulated via the property browser, but some of properties, like audio
+volume or video alpha, will be so commonly used that they are embedded
+directly onto the widget. These “embedded” interpolation curves are
+manipulated in exactly the same way as interpolation curves in the
+property editor (see the Default Property Editor section) for more info.</p>
+<h3 id="moving-timeline-objects">Moving Timeline Objects</h3>
+<p>Objects in the timeline can move in both horizontal and vertical axis.
+The semantics, however, change depending on the type of object. For all
+objects, the horizontal (x) axis is interpreted as the time axis. For
+sources an effects, the vertical (y) axis the source's layer position
+within a track (tracks are shown visually stacked, but moving a source
+between tracks is accomplished through a different mechanism).</p>
+<h3 id="moving-horizontally">Moving Horizontally</h3>
+<ul>
+<li>All objects in the current selection move simultaneously.</li>
+<li>Edge snapping when moving multiple items needs to be carefully
+designed so that it is not destructive. A conservative approach
+would be to snap only the beginning and end of the entire selection.</li>
+</ul>
+<h3 id="edge-frame-snapping">Edge / Frame Snapping</h3>
+<p>All objects have edge snapping enabled during horizontal motion. At this
+point, we believe this is the most common use case. This edge snapping
+effect is intended to be subtle, with a deaband of only a few pixels.</p>
+<ul>
+<li>Active by default, disabled while holding shift.</li>
+<li>Exact behavior defined in core. Basic idea is that certain
+timestamps in the timeline act as “magnetic” points which objects
+will tend to “stick” to when they get close enough.
+<ul>
+<li>this is already implemented. Just needs to be refined a bit.</li>
+</ul>
+</li>
+</ul>
+<h3 id="temporary-deactivation">Temporary Deactivation</h3>
+<p>&lt;images/gdeactivated_objects&gt;</p>
+<p>Objects in the timeline can be temporarily deactivated. The deactivate
+command is in found in the timeline toolbar, and will deactivate
+whatever objects are in the current selection. The reactivate command
+undoes this operation.</p>
+<p>An entire track can also be suppressed. To do this, click the disable
+toggle near the track's name on the left side of the timeline.</p>
+<h2 id="adding-objects">Adding Objects</h2>
+<h3 id="adding-a-clip">Adding a Clip</h3>
+<p>&lt;images/gadd_clip1.png&gt; The user chooses the clip from the clip browser by
+clicking and dragging.</p>
+<p>&lt;images/gadd_clip2.png&gt; When the object enters the timeline, the timeline
+responds by showing how the timeline will change. In this case the clip
+has both audio and video streams, so objects appear in both audio and
+video tracks.</p>
+<p>&lt;images/gadd_clip3.png&gt; The user can move objects to desired layers and
+time offsets.</p>
+<p>&lt;images/gadd_clip4.png&gt; By holding the appropriate modifier key, the user
+can push existing objects out of the way...</p>
+<p>&lt;images/gadd_clip5.png&gt; ...or add a source into a new layer.</p>
+<h3 id="adding-an-effect">Adding an Effect</h3>
+<p>Effects can be dropped into the timeline in almost exactly the same way
+as clips. The main difference is that effects come from the effects
+library.</p>
+<p>&lt;images/gadd_effect1.png&gt; User selects the effects library from the tab.</p>
+<p>&lt;images/gadd_effect2.png&gt; When adding effects into a new layer, the layer
+is initially collapsed.</p>
+<h2 id="fine-tuning-trimming-objects">Fine Tuning: Trimming Objects</h2>
+<p>Trimming a clip is always possible by clicking/dragging on source
+trimming handles. By default, the in or out point of a clip should be
+edge-snapped (so that it is easy to put the clip back the way it was).
+The UI should constrain the the settingof in/out point so that sources
+can't be stretched beyond maximum native duration. <strong>clicking and
+dragging a trimming handle should not change the current selection</strong></p>
+<p>&lt;images/gtrim1.png&gt;</p>
+<p>First, the user moves the mouse over the desired clip's trimming handle</p>
+<p>&lt;images/gtrim2.png&gt;</p>
+<p>The cursor changes to a left- or right-edge trimming cursor.</p>
+<p>&lt;images/gtrim3.png&gt;</p>
+<p>Click-and drag sets the in or out point of the clip as appropriate.</p>
+<h3 id="roll-edits">Roll Edits</h3>
+<p>A variant of trimming, which works when two clips are adjacent in the
+same layer. Sets the in-point of the left clip an the out-point of the
+right clip, keeping the total duration of both sources the constant.
+Roll edits are activated by holding the appropriate modifier key while
+dragging a trimming handle. Note that this is only expected to work when
+it is possible to set the in/out points of both sources to the same
+point in time.</p>
+<p>&lt;images/groll1.png&gt;</p>
+<p>First the user places the mouse over the appropriate trimming handle.</p>
+<p>&lt;images/groll2.png&gt;</p>
+<p>The user holds down the appropriate modifier key. Cursor changes from
+trimming to roll-edit cursor.</p>
+<p>&lt;images/groll3.png&gt;</p>
+<p>When the user drags the mouse, the edit points are set as appropriate.</p>
+<p>&lt;images/gtrim3.png&gt;</p>
+<p>However, if the user releases the roll-edit modifier key, the edit
+reverts to the default trimming operation.</p>
+<h3 id="ripple-edits">Ripple Edits</h3>
+<p>This is another variant on basic trimming. The source who's trimming
+handle is being manipulated is trimmed as usual, however the adjacent
+source(s) are rightward in the appropriate direction, so that the
+trimming does not create a gap between the sources. This shifting
+carries down the entire length of the track, keeping sources in the same
+relative position.</p>
+<p>&lt;images/gripple1.png&gt;</p>
+<p>User places cursor over the desired source's trimming handle.</p>
+<p>&lt;images/gripple2.png&gt;</p>
+<p>User holds the appropriate modifier key. Cursor changes to ripple cursor</p>
+<p>&lt;images/gripple3.png&gt;</p>
+<p>User drags the the mouse. Adjacent sources are shifted.</p>
+<p>&lt;images/gripple4.png&gt;</p>
+<p>The user can also hold an additional modifier key to make the ripple
+edit work across multiple layers.</p>
+<p>If the user releases the ripple-edit modifier key, the edit reverts to
+the default trimming operation.</p>
+<h3 id="time-stretch">Time Stretch</h3>
+<p>Another variant on basic trimming. The source's in/out points are not
+set as normal, but rather the source keeps the same in/out points and
+the source is sped up or slowed down to accommodate the new duration.
+Timestretch only applies to sources of finite length, such as files.</p>
+<h2 id="linking">Linking</h2>
+<p>There are two methods of combining timeline objects together: linking
+and grouping. Linking allows the user to keep distinct timeline objects
+synchronized. Moving one object causes all of its linked “sibling”
+objects to move. The relative offset between siblings is preserved.</p>
+<p>&lt;images/glink1.png&gt; <a href="image:link2.png">image:link2.png</a></p>
+<p>Some clips will be linked by default (for example, audio and video from
+the same file).</p>
+<p>&lt;images/glink1.png&gt; <a href="image:link3.png">image:link3.png</a></p>
+<p>But the user can link arbitrary objects together as well.</p>
+<p>To link objects:</p>
+<ul>
+<li>set the selection to the objects you wish to link</li>
+<li>click the “link” command from the timeline toolbar</li>
+<li>the objects will now remain synchronized</li>
+</ul>
+<p>To unlink objects:</p>
+<ul>
+<li>select one or more objects</li>
+<li>choose the “unlink” command</li>
+<li>each object will be unlinked from its siblings separately (the rest
+of the siblings remain linked).</li>
+</ul>
+<h2 id="grouping">Grouping</h2>
+<p>Grouping is similar to linking in that multiple objects are combined,
+but different in that the resulting group is treated as a single object.
+The user can make multiple “clones” of a single “master”, and changes to
+the master will ripple out to each of the clones. Unlike linking,
+grouping creates a new “clip” in the Clip Library. Effects applied to
+the group apply to the output of the group as a whole, rather than the
+topmost object in the group.</p>
+<p>&lt;images/ggrouping1.png&gt;<a href="image:grouping2.png">image:grouping2.png</a></p>
+<p>To group objects:</p>
+<ul>
+<li>select one or more objects</li>
+<li>choose the “group” command</li>
+<li>the original objects are removed from timeline, and the resulting
+group object is substituted.</li>
+</ul>
+<p>To ungroup objects:</p>
+<ul>
+<li>select one or more groups</li>
+<li>choose the “ungroup” command</li>
+</ul>
+<p>TODO: how will we edit the groups? Two approaches: recursive editing, or
+“expanding” in place. What are the pros and cons of each? Other issues:
+full, partial, or no synchronization of clones.</p>
+<h1 id="clip-library-formerly-source-browser">Clip Library (formerly Source Browser)</h1>
+<p>&lt;images/gclip_library.png&gt;</p>
+<p>Contains a list of all the clips in the project. The user can drag
+external files onto this component to add them to the project (an import
+tool bar command also works. The user adds clips to the Timeline by
+dragging them them from the Clip Library and dropping them onto the
+Timeline.</p>
+<p>The Clip Library also provides commands to manipulate the clips in the
+project:</p>
+<ul>
+<li>remove clips from the library</li>
+<li>set default edit (in/out) points of a clip</li>
+<li>convert clips from one media type to another:
+<ul>
+<li>e.g. convert audio stream to video stream with a visualization
+filter</li>
+<li>e.g. convert midi stream to audio stream with synthesizer plugin</li>
+</ul>
+</li>
+<li>re-conform or transcode clips
+<ul>
+<li>e.g. re-capture material from a tape at a different resolution</li>
+<li>e.g. convert a file “in-place” from MPEG to MJPEG
+<ul>
+<li>doesn't replace original file on disk, just in project</li>
+<li>and you can revert to the original at any time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>pre-process and filter clips
+<ul>
+<li>e.g. video color correction</li>
+<li>e.g. audio noise filtering</li>
+</ul>
+</li>
+</ul>
+<h1 id="property-editor">Property Editor</h1>
+<p>Sharing the same tab view as the source browser is the property editor.
+While the timeline is meant to provide a film-strip metaphor, the
+property interface allows the user to change the more abstract
+properties of the currently selected timeline object(s) (for example,
+audio balance, or image color correction). The type of controls
+presented are determined by the current selection:</p>
+<ul>
+<li>accessable at all times by clicking on its tab</li>
+<li>default interface which simply presents a control for every
+available property should work in the majority of cases
+<ul>
+<li>time-varying properties are presented on an interpolation graph</li>
+</ul>
+</li>
+<li>but we also need custom editors for specific media types:
+<ul>
+<li>still images require a custom interface</li>
+<li>animations (image collections) require still another</li>
+<li>advanced compositing tools</li>
+<li>many effect plug-ins will want to define their own UI</li>
+</ul>
+</li>
+<li>In addition, the property editor is displayed whenever the current
+selection changes (unless the change has cleared the selection, in
+which case you see the source library instead).</li>
+</ul>
+<h2 id="default-property-editor">Default Property Editor</h2>
+<p><img src="images/gdefault_property_editor.png" alt=""></p>
+<p><strong>Goals</strong></p>
+<ul>
+<li>auto-generated for arbitrary objects</li>
+<li>useful in the majority of cases</li>
+<li>better than nothing when no specific UI exists</li>
+<li>useful when multiple objects of different types are selected -- the
+common properties can be presented and edited simultaneously.</li>
+</ul>
+<p><strong>Features</strong> The default editor lets you set all of the otherwise hidden
+properties of an object. It's will be most usable when the mapping
+between an object's properties and their effect on the output is
+straightforward. For example, audio volume, our video alpha. The current
+implementation of the videobox element is a good example of what won't
+work well with this module (a more dedicated UI focused on
+cropping/panning would needed).</p>
+<p>A few object properties will be static (i.e. they are time invariant).
+These will be displayed as standard GTK+ Widgets. Other properties are
+“controllable” (i.e. time-varying). The user can directly manipulate the
+interpolation curves for these properties through curve control points
+objects, which we refer to as “key-frames.” A <a href="Keyframe_Editing.md">partial
+prototype</a> of this design is available.</p>
+<ul>
+<li>all curves will be plotted on a single graph</li>
+<li>key-frames points define critical points of an interpolation curve
+<ul>
+<li>moving a key-frame horizontally changes its time-stamp</li>
+<li>the curve is always plotted between keyframes in sorted order
+(see the key-frame demo)</li>
+<li>moving a key-frame vertically sets its value</li>
+</ul>
+</li>
+<li>graph supports exactly the same selection idioms as the timeline</li>
+<li>curves have different colors so they can be visually separated</li>
+<li>a legend maps colors to curves (labels also appear alongside each
+curve)
+<ul>
+<li>click-and-drag on a curve moves all its points vertically by the
+same delta</li>
+</ul>
+</li>
+</ul>
+<p>&lt;images/gproperties_curve.png&gt;</p>
+<p>The user can add key-frames in two different ways ways:</p>
+<ul>
+<li>double-clicking the curve</li>
+<li>selecting two key-frames on the same curve and clicking the
+“add-point” command in the tool-bar. this adds a point half-way
+between the two selected points.</li>
+</ul>
+<p>The user can delete key-frame points in two different ways:</p>
+<ul>
+<li>double-clicking a point</li>
+<li>selecting one or more points and pressing the delete-point button in
+the tool-bar</li>
+</ul>
+<p>GStreamer supports different interpolation modes, but only for the
+entire curve. Changing the interpolation mode for a single point isn't
+possible (we'll have to write our own interpolation code). On the other
+hand, it makes sense to treat interpolation mode as a per-point option.
+For now setting the interpolation mode on a point will simply set the
+interpolation mode on its parent curve.</p>
+<ul>
+<li>select the desired curve, or a single keyframe of a curve</li>
+<li>set the desired mode by choosing from the interpolation mode pop-up
+menu in the timeline toolbar.</li>
+<li>this should also work if multiple curves / key-frames from multiple
+curves are selected.</li>
+</ul>
+<h2 id="image-property-editor">Image Property Editor</h2>
+<p>The user can add still images to the timeline. By default the image is
+letterboxed to the current project resolution, but these defaults can be
+changed to suit the users's needs.</p>
+<p>&lt;images/gimage_source1.png&gt; First the user selects the image in the
+timeline</p>
+<p>&lt;images/gimage_source2.png&gt; The image property editor appears in the
+property browser.</p>
+<p>&lt;images/gimgage_source3.png&gt; The user can crop the image to an arbitrary
+region.</p>
+<p>&lt;images/gimage_source4.png&gt;</p>
+<p>&lt;images/gimage_source5.png&gt; The user can scale the image as appropriate.</p>
+<p>&lt;images/gimage_source6.png&gt; The user can also set the orientation of the
+image.</p>
+<h2 id="animation-property-editor">Animation Property Editor</h2>
+<p>NEEDS WORK</p>
+<p>Specify sets of pictures which will be displayed in sequence:</p>
+<ul>
+<li>set duration or framerate</li>
+<li>set cropping, rotation, scaling</li>
+<li>transitions between frames? (Ray Harryhausen famously used
+cross-fading between frames for smoother motion)</li>
+</ul>
+<p>Other Ideas:</p>
+<ul>
+<li>backround / cell paradigm -- user chooses a back drop, and can
+composite multiple layers of translucent/transparent cells</li>
+</ul>
+<h2 id="motion-transform-editor">Motion Transform Editor</h2>
+<p>NEEDS WORK</p>
+<p>For the “motion transform” effect object (yet to be implemented)</p>
+<p>Needs to support the following properties over time</p>
+<ul>
+<li>cropping</li>
+<li>scaling</li>
+<li>rotation</li>
+</ul>
+<p>Also need to be able to set the color and/or alpha of the “background”.</p>
+<p>Ideas...parametric curves on a 2-d plane? Looping previews?</p>
+<h2 id="advanced-compositing-editor">Advanced Compositing Editor</h2>
+<p>NEEDS WORK</p>
+<p>Chroma key</p>
+<ul>
+<li>set thresholds, choos key color (eye-dropper?)</li>
+</ul>
+<p>Blue/Green/Red screen</p>
+<ul>
+<li>set thesholds</li>
+</ul>
+<p>Should thresholds and key-color be time varying? Definitely need at
+least a local preview. Using the viewer would be better.</p>
+<h2 id="title-card-editor">Title Card Editor</h2>
+<p><a href="image:title_card_editor.md">image:title card editor</a> The title
+card editor might look something like this.</p>
+<h1 id="effect-library">Effect Library</h1>
+<p>The effect library lists all of the available effects, whether delivered
+through plug-ins or internal to PiTiVi. The user can drag-and-drop
+effects into the timeline in the same way they can with clips.</p>
+<h1 id="toolbars">Toolbars</h1>
+<h2 id="main-toolbar">Main Toolbar</h2>
+<p>Provides application-level commands:</p>
+<ul>
+<li>new project</li>
+<li>open project</li>
+<li>save project</li>
+<li>render project</li>
+<li>full-screen/window mode</li>
+<li>import clips to project</li>
+</ul>
+<h2 id="timeline-toolbar">Timeline Toolbar</h2>
+<p>Flush with the edge of the screen in full-screen mode, for easy access
+to commands.</p>
+<p>Finally, there is one modal tool -- the split tool -- which splits a
+clip or effect object into two segments.</p>
+<p>Zooming Controls:</p>
+<ul>
+<li>zoom in</li>
+<li>zoom out</li>
+<li>??</li>
+</ul>
+<p>Provides a list of commands which operate on the current selection.</p>
+<ul>
+<li>delete</li>
+<li>link</li>
+<li>unlink</li>
+<li>group</li>
+<li>ungroup</li>
+<li>collapse</li>
+<li>select right of</li>
+<li>select left of</li>
+</ul>
+<p>In addition, other commands will appear or become sensitive depending on
+context - i.e. the current selection.</p>
+<p>When one or more curves is in the selection:</p>
+<ul>
+<li>interpolation mode combo box</li>
+<li>add and delete point commands</li>
+</ul>
+<h3 id="zooming-and-scrolling">Zooming and Scrolling</h3>
+<ul>
+<li>Center on scroll position</li>
+<li>Provide “center on playhead” command</li>
+<li>Zoom control should provide meaningful zoom levels: 1, 5, 10 frames,
+1, 5, 10, seconds, 1, 5, 10 minutes.
+<ul>
+<li>or would we rather have continuous zoom?. After Effects / vegas
+seem to have a very slick continuous zoom.</li>
+</ul>
+</li>
+</ul>
+<h1 id="preferences-dialog">Preferences Dialog</h1>
+<p>This is a list of every imaginable setting that could possibly go in
+there. It is intended to be reviewed mercilessly, so that we decide to
+accept/deny their inclusion.</p>
+<ul>
+<li>thumbnail height, expanded/collapsed</li>
+<li>whether thumbnails are visible</li>
+<li>whether waveforms are visible</li>
+<li>previewing options
+<ul>
+<li>to be elaborated. May just be part of the menus so that it can
+be accessed in real-time?</li>
+</ul>
+</li>
+<li>location of scratch disks</li>
+<li>default project format (for new projects)</li>
+<li>hotkey configuration</li>
+<li>direct manipulation</li>
+<li>autosave</li>
+<li>default location to use when optening a file or importing clips
+(last forlder, arbitrary location)</li>
+<li>color values for the timeline ruler and the backround of clips</li>
+<li>whether edge snapping is enabled by default</li>
+<li>the size of deadband to use for edge snapping</li>
+</ul>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

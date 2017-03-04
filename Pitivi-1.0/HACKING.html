@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hacking on Pitivi</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="Main_Page.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/favicon.png" alt="Home" id="home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="HACKING.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="HACKING.md">
+<h1 id="hacking-on-pitivi">Hacking on Pitivi</h1>
+<h2 id="the-pitivi-development-environment">The Pitivi development environment</h2>
+<h3 id="setup-pitivi">Setup Pitivi</h3>
+<p>The official way of getting your environment up and running is by using
+<a href="http://flatpak.org/">flatpak</a>.</p>
+<p>You first need to <a href="http://flatpak.org/getting.html">get flatpak</a>
+making sure you also install flatpak-builder, which might be provided by an
+additional package on some distributions (please tell us if it is the case
+for yours so we can make a list here).</p>
+<p>Create a development environment folder and get the <a href="https://git.gnome.org/browse/pitivi/tree/">Pitivi source code</a> into it:</p>
+<pre><code>$ mkdir pitivi-dev &amp;&amp; cd pitivi-dev
+$ git clone https://git.gnome.org/browse/pitivi
+$ cd pitivi/
+</code></pre>
+<p>Finally to enter the dev env you just need to run:</p>
+<pre><code>$ source bin/pitivi-env
+</code></pre>
+<p>Run <code>pitivi</code> while inside the environment to launch Pitivi. Next you should run the unittests.</p>
+<pre><code>(ptv-flatpak) $ pitivi
+(ptv-flatpak) $ make check
+</code></pre>
+<p>After you hack the source code simply run <code>pitivi</code> again to see how your changes work.</p>
+<h3 id="development-workflow">Development Workflow</h3>
+<p>We use <a href="https://phabricator.freedesktop.org/tag/pitivi/">Phabricator tasks</a> to track all bugs and feature requests; feel free to open a task if you have found a bug or
+wish to see a feature implemented if it doesn't exist already.
+You can even subscribe to tasks on Phabricator to keep yourself updated with their progress.
+If you're a newcomer wanting to contribute, you can start with tasks tagged <a href="https://phabricator.freedesktop.org/tag/pitivi_tasks_for_newcomers/">Pitivi tasks for newcomers</a> to get involved.</p>
+<p>To fix a task, it's best to get in touch with us on our IRC channel <code>#pitivi</code> on Freenode, to see if it's still meaningful, then if all is well:</p>
+<ol>
+<li>
+<p>Assign the task to yourself in Phabricator.</p>
+</li>
+<li>
+<p>Create a new branch with a meaningful name. Make sure to set its <a href="https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches/">remote-tracking branch</a>, as it determines the default commit range to attach.
+For example, if you're going to work on task <a href="https://phabricator.freedesktop.org/T7674/">T7674</a>, the branch could be called T7674-import-img or
+T7674-fix-import, i.e. <code>git checkout -b T7674-import-img origin/master</code>.</p>
+</li>
+<li>
+<p>Once you have made your changes, you need to create a commit. Follow the <a href="https://wiki.gnome.org/Newcomers/CodeContributionWorkflow#Commit_guidelines">GNOME guidelines</a>
+for creating commits.</p>
+<p>Be aware that when you create a commit, <code>pre-commit</code> is executed to perform checks on the changes and in some cases it does
+some automatic fixes. When this happens, make sure those are included in the commit you want to create.</p>
+</li>
+<li>
+<p>Now you're all set to push your first diff!</p>
+<pre><code>$ git-phab attach --task TXXXX
+</code></pre>
+</li>
+</ol>
+<p>Optionally, you can set git-phab to automatically push your WIP branches to a personal remote repository:</p>
+<ol>
+<li>
+<p>Add your cloned remote Pitivi repository as a remote to your local repository:</p>
+<pre><code>$ git remote add github https://github.com/NICK/pitivi.git
+$ git remote set-url github https://github.com/NICK/pitivi.git
+$ git remote set-url --push github git@github.com:NICK/pitivi.git
+$ git remote show github | grep URL
+  Fetch URL: https://github.com/NICK/pitivi.git
+  Push  URL: git@github.com:NICK/pitivi.git
+</code></pre>
+</li>
+<li>
+<p>Set git-phab remote to your cloned remote Pitivi repository:</p>
+<pre><code>$ git config phab.remote github
+</code></pre>
+</li>
+</ol>
+<h3 id="update-the-environment">Update the environment</h3>
+<p>To update the dependencies installed in the dev env run:</p>
+<pre><code>(ptv-flatpak) $ ptvenv --update
+</code></pre>
+<p>That will actually clean the prefix, update all dependencies from their
+git repos and tarballs as defined in the <a href="https://git.gnome.org/browse/pitivi/tree/build/flatpak/pitivi.template.json">flatpak manifest</a> (located
+at build/flatpak/pitivi.template.json)</p>
+<h3 id="work-on-some-pitivi-dependencies-in-the-development-environment">Work on some Pitivi dependencies in the development environment</h3>
+<p>If you have to work on say, <a href="https://gstreamer.freedesktop.org/modules/gst-editing-services.html">GStreamer Editing Services</a>
+you can clone it into your <code>pitivi-dev</code> folder:</p>
+<pre><code>(ptv-flatpak) $ git clone git://anongit.freedesktop.org/gstreamer/gst-editing-services
+</code></pre>
+<p>Install it in the sandbox by running in the dev env:</p>
+<pre><code>(ptv-flatpak) $ autogen
+(ptv-flatpak) $ make install
+</code></pre>
+<p><code>autogen</code> is an alias which runs <code>./autogen.sh</code> with the right arguments
+for the flatpak sandbox.
+<code>make</code> is also an alias which runs the real <code>make</code> inside the sandbox,
+thus <code>make install</code> will install your changes in the sandbox.</p>
+<p>NOTE: When updating the environment, it will use your
+local dependencies repositories instead of remote
+repositories, which means you have to update them yourself.
+Also beware that it will not take into account not committed
+changes.</p>
+<h2 id="coding-style-guide">Coding Style Guide</h2>
+<p>We rely on the <a href="https://www.python.org/dev/peps/pep-0008/">Python Style Guide PEP-8</a></p>
+<p>The only exception to it is regarding the "80 columns" rule.
+Since Python is a very concise/compact language, we can afford to be
+a little bit more flexible on the line length than languages such as C.</p>
+<p>When deciding whether or not you should split your line when it exceeds
+79 characters, ask yourself: "Does it truly improve legibility?"</p>
+<p>What this translates to is:</p>
+<ul>
+<li>
+<p>Avoid having very long lines.</p>
+</li>
+<li>
+<p>When the contents only slightly exceeds the 80 chars limit,
+consider keeping it on one line. Otherwise it just hurts legibility and
+gives a weird "shape" to the code.</p>
+</li>
+</ul>
+<h3 id="names">Names</h3>
+<p>The function names, method names and other class attributes should be
+small_caps_with_underscore. For example:</p>
+<pre><code class="language-python">def some_function():
+    return ""
+
+class MyClass:
+
+    def a_really_important_method(self):
+        self.do_something()
+
+    @property
+    def water_level(self):
+        """The level of the water in meters."""
+        return self.__water_level
+</code></pre>
+<p>To illustrate how private a method or other class field is, prepend
+one or two underscores:</p>
+<pre><code class="language-python">  class MyClass:
+
+     def public_method(self):
+         ...
+
+     def _protected_method(self):
+         ...
+
+     def __private_method(self):
+         ...
+</code></pre>
+<p>Unused arguments in methods should be prefixed with <code>unused_</code>.
+The most common place where this would happen is in callbacks from
+gobject signals. For example, below we don't use the second argument,
+but we do use <code>pad</code>.</p>
+<pre><code class="language-python">     def __pad_added_cb(self, unused_element, pad):
+        self.do_something_with(pad)
+</code></pre>
+<p>The name of a callback method should:</p>
+<ul>
+<li>be prepended with two underscores since it's private</li>
+<li>be appended with <code>cb</code></li>
+</ul>
+<pre><code class="language-python">  class MyClass:
+
+     def some_method(self):
+         self.someobject.connect('event', self.__some_object_event_cb)
+
+     def __some_object_event_cb(self, object, arg):
+         print "our callback was called"
+</code></pre>
+<h3 id="imports-order">Imports order</h3>
+<p>You can guess the order of the imported modules by looking at some py files.
+The pre-commit hook has authority in this case as it will reorder the imports
+if the order is not good.</p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Bug reporting</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="Main_Page.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/favicon.png" alt="Home" id="home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="Bug_reporting.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="Bug_reporting.md">
+<h1 id="bug-reporting">Bug reporting</h1>
+<p>Welcome, testers!</p>
+<p>To report a bug/problem in the software, or request a new
+feature/enhancement, <a href="https://phabricator.freedesktop.org/maniphest/task/edit/form/1/?projects=pitivi">create a
+task</a>
+and set Projects: Pitivi.</p>
+<p>Bug reporting and feature requests are managed with Freedesktop's
+<a href="https://phabricator.freedesktop.org">Phabricator</a>. You need to create
+an account to file tasks and comment on them. Take a look at the
+<a href="https://phabricator.freedesktop.org/tag/pitivi/">existing list of bugs/feature
+requests</a> to see if
+your problem has already been reported <em>(hint: use control+F in your
+browser to search!)</em>.</p>
+<p>Example queries:</p>
+<ul>
+<li><a href="https://phabricator.freedesktop.org/tag/pitivi/">Everything</a> - All
+the tasks (bug reports and feature requests).</li>
+<li><a href="https://phabricator.freedesktop.org/differential/query/8RA8XgY0ogT3/">Patches</a>
+— All the patches (diffs) attached to tasks that have not yet been
+merged.</li>
+<li><a href="https://phabricator.freedesktop.org/project/view/111/">Pitivi tasks for
+newcomers</a> —
+feature requests and some small bugs that are considered easier for
+new contributors to tackle.</li>
+</ul>
+<h1 id="providing-debugging-information">Providing debugging information</h1>
+<h2 id="sharing-sample-files-projects-and-scenarios">Sharing sample files, projects, and “scenarios”</h2>
+<p>In some cases we might ask you to share <strong>sample media files</strong> with us
+to debug a particular issue. If you don't have your own hosting space,
+we have a FTP account with unlimited space available for this purpose,
+provided by <a href="http://idmark.ca">idmark.ca</a>.</p>
+<ol>
+<li>Using a FTP client (such as FileZilla, available on most Linux
+distributions), connect to “idmark.ca” using the username
+“pitivisamples@idmark.ca” (@idmark.ca is part of the username). Ask
+<a href="The_people.html">us</a> for the password on IRC.</li>
+<li>Please follow our simple naming convention and put your files in a
+folder called with the ID of the bug report (eg. T3553) so we can
+find it easily.</li>
+<li>Your uploaded files will be in a private staging folder (only
+visible through FTP); once reviewed, we may move your uploaded files
+to <a href="http://pitivi.ecchi.ca/user-contributed-samples/">http://pitivi.ecchi.ca/user-contributed-samples/</a> for ease of
+access.</li>
+</ol>
+<p>You can also share in a similar way a <strong>project archive</strong> containing the
+project and all the media is uses:</p>
+<ol>
+<li>Use the “Select unused clips” feature to easily remove unused media
+from your project, this will help you save space (and upload time).</li>
+<li>Click the menu button top-right and choose the “Export project as
+tarball...” menu item. Save the .xges_tar file somewhere. It will
+contain your project file and its associated media.</li>
+<li>Upload it as described above.</li>
+</ol>
+<p>In addition to the project archive, it is extremely helpful to provide
+<strong>“scenario” files</strong>. These are automatically generated each time you
+use a project and contain the operations you made. Combined with the
+project archive, these allow us to perform exactly the actions that have
+occurred to trigger the bug. This makes reproducing the issue on our
+machines a very easy and reliable process, which saves you a ton of
+time! Here's <strong>how to provide scenario files to facilitate the
+process:</strong></p>
+<ol>
+<li>Save your project, right before triggering the bug.</li>
+<li>Trigger the bug (make Pitivi crash or freeze).</li>
+<li>Get the last/newest scenario file from <code>~/.cache/pitivi/scenarios/</code>
+or <code>~/.var/app/org.pitivi.Pitivi/cache/pitivi/scenarios/</code></li>
+<li>Upload it as described above, so we can reproduce your issue and
+integrate it into our test suite so that it does not happen again in
+the future!</li>
+</ol>
+<h2 id="stack-traces-for-crashes">Stack traces for crashes</h2>
+<p>When reporting a <strong>crash</strong> or when the application freezed <strong>deadlock</strong>,
+it would be good to provide a <strong>stack trace</strong>.</p>
+<h3 id="when-running-with-flatpak">When running with Flatpak</h3>
+<p>Make sure you have the GNOME Sdk and Debug symbols installed:</p>
+<p><code> GNOME_REPO=$(flatpak remote-list --user -d | grep </code>“<a href="http://sdk.gnome.org/repo/"><code>http://sdk.gnome.org/repo/</code></a>”<code> | awk '{ print $1 }')</code><br>
+<code> flatpak install --user $GNOME_REPO org.gnome.Sdk 3.20</code><br>
+<code> flatpak install --user $GNOME_REPO org.gnome.Sdk.Debug 3.20</code><br>
+<code> flatpak install --user $GNOME_REPO org.gnome.Sdk 3.22</code><br>
+<code> flatpak install --user $GNOME_REPO org.gnome.Sdk.Debug 3.22</code></p>
+<p>Start a shell in the Pitivi bundle environment</p>
+<p><code> flatpak run -d --command=bash org.pitivi.Pitivi</code></p>
+<p>Start Pitivi inside gdb</p>
+<p><code> gdb python3 -ex </code>“<code>run`` ``/app/bin/pitivi</code>”</p>
+<p>When Pitivi crashes, run <code>bt full</code> to get the backtrace. When Pitivi
+freezes, press Ctrl+Z and run <code>thread apply all bt</code> to get the
+backtraces for all the threads.</p>
+<h3 id="when-running-from-the-packages-of-your-linux-distro">When running from the packages of your Linux distro</h3>
+<p>See GNOME's <a href="https://wiki.gnome.org/Community/GettingInTouch/Bugzilla/GettingTraces">Getting
+Traces</a>
+instructions for some comprehensive documentation and tips on the
+subject.</p>
+<p>For those of you who already know how to install the relevant debug
+packages etc, we provide you with some simple reminders below of
+commands that can be particularly useful in Pitivi's context.</p>
+<p>When you want to “attach” to an existing Python process (useful for
+deadlocks, where the application will be hung instead of crashed):</p>
+<p><code>gdb python3 THE_PITIVI_PROCESS_NUMBER</code></p>
+<p>When you want to run Pitivi entirely in gdb from the start:</p>
+<p><code>gdb python3</code><br>
+<code>set pagination 0  # avoids the need to press Enter to </code>“<code>scroll</code>”</p>
+<p><code>run /usr/bin/pitivi  # the version installed system-wide.</code></p>
+<p>When Pitivi crashes, run <code>bt full</code> to get the backtrace. When Pitivi
+freezes, press Ctrl+Z and run <code>thread apply all bt</code> to get the
+backtraces for all the threads.</p>
+<h2 id="debug-logs">Debug logs</h2>
+<p>When you need to know what’s going on inside pitivi, you can launch it
+with a debug level. In
+<a href="https://git.gnome.org/browse/pitivi/tree/pitivi/utils/loggable.py#n50">loggable.py</a>,
+there are five levels: ( <span style="color:red;">ERROR</span>,
+<span style="color:yellow; background-color:gray;">WARN</span>,
+<span style="color:magenta;">FIXME</span>,
+<span style="color:green;">INFO</span>,
+<span style="color:blue;">DEBUG</span>,
+<span style="color:cyan;">LOG</span> ) = range(1, 7). As such, if you
+want to see errors and warnings only, you launch</p>
+<p><code>PITIVI_DEBUG=2 bin/pitivi</code></p>
+<p>...and if you want to see everything you do</p>
+<p><code>PITIVI_DEBUG=6 bin/pitivi</code></p>
+<p>If that's “too much” and you want to focus on particular parts of the
+code, you can do so. For example, you can get output from the <code>Timeline</code>
+and <code>MediaLibraryWidget</code> classes only:</p>
+<p><code>PITIVI_DEBUG=</code><strong><code>timeline</code></strong><code>:6,</code><strong><code>medialibrarywidget</code></strong><code>:6 bin/pitivi</code></p>
+<p>Here are various examples of commands you can use to generate detailed
+debug logs that include not only Pitivi's debug output, but also
+GStreamer's:</p>
+<p>A basic log can be obtained by running:</p>
+<p><code>PITIVI_DEBUG=*:5 GST_DEBUG=2 bin/pitivi &gt; debug.log 2&gt;&amp;1</code></p>
+<p>To get debugging information from Non-Linear Engine, you could use:</p>
+<p><code>PITIVI_DEBUG=5 GST_DEBUG=3,nle*:5,python:5 bin/pitivi &gt; debug.log 2&gt;&amp;1</code></p>
+<p>The information most likely to be useful would probably be the debug
+info from <a href="GES.html">GES</a> in addition to Pitivi's:</p>
+<p><code>PITIVI_DEBUG=5 GST_DEBUG=ges:5 bin/pitivi &gt; debug.log 2&gt;&amp;1;</code></p>
+<p>Some additional tips:</p>
+<ul>
+<li>When using GST_DEBUG, the resulting logs will most likely be too
+big to be attached to a bug report directly. Instead, compress them
+(in gzip, bzip2 or lzma format) before attaching them to a bug
+report.</li>
+</ul>
+<h1 id="python-performance-profiling">Python performance profiling</h1>
+<p>In the rare cases where a performance problem is caused by our UI code,
+you can profile Pitivi itself, with this command (and yes,
+“JUMP_THROUGH_HOOPS” is needed for this case, it is an environment
+variable of
+<a href="https://git.gnome.org/browse/pitivi/tree/bin/pitivi.in">bin/pitivi</a>:</p>
+<p><code>JUMP_THROUGH_HOOPS=1 python3 -m cProfile -s time -o pitivi_performance.profile bin/pitivi</code></p>
+<p>The resulting “pitivi_performance.profile” file can then be processed
+to create a visual representation of where the most time was spent and
+which functions were called the most often in the code. See also <a href="http://jeff.ecchi.ca/blog/tag/profiling/">Jeff's
+blog posts on profiling</a>.</p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>
