@@ -49,9 +49,11 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="Main_Page.html" class="hotdoc-navbar-brand">
-				<img src="assets/images/favicon.png" alt="Home" id="home">
-			</a>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
@@ -165,9 +167,9 @@ it would be good to provide a <strong>stack trace</strong>.</p>
 <code> flatpak install --user $GNOME_REPO org.gnome.Sdk 3.22</code><br>
 <code> flatpak install --user $GNOME_REPO org.gnome.Sdk.Debug 3.22</code></p>
 <p>Start a shell in the Pitivi bundle environment</p>
-<p><code> flatpak run -d --command=bash org.pitivi.Pitivi</code></p>
+<p><code>flatpak run -d --command=bash org.pitivi.Pitivi</code></p>
 <p>Start Pitivi inside gdb</p>
-<p><code> gdb python3 -ex </code>“<code>run`` ``/app/bin/pitivi</code>”</p>
+<p><code>gdb python3 -ex 'run /app/bin/pitivi</code>'</p>
 <p>When Pitivi crashes, run <code>bt full</code> to get the backtrace. When Pitivi
 freezes, press Ctrl+Z and run <code>thread apply all bt</code> to get the
 backtraces for all the threads.</p>
