@@ -88,7 +88,7 @@ hd_navigation.panel_template = [
 	'{{{panel_unfold}}}',
 	'</h4></div>',
 	'<div id="{{name}}-children" class="panel-collapse collapse"',
-	'data-nav-ref="{{extension}}-{{{node_url}}}">',
+	'data-nav-ref="{{extension}}-{{{node_project}}}-{{{node_url}}}">',
 	'{{#subpages}}',
 	'{{{.}}}',
 	'{{/subpages}}',
@@ -104,7 +104,7 @@ hd_navigation.panel_unfold_template = [
 ].join('\n');
 
 hd_navigation.url_for_node = (function(node) {
-	var url = utils.hd_context.hd_root;
+	var url = utils.hd_context.hd_root + node.project_name + '/';
 
 	if (node.extension == 'gi-extension') {
 		if (utils.hd_context.gi_language === undefined) {
@@ -116,6 +116,7 @@ hd_navigation.url_for_node = (function(node) {
 	}
 
 	url += node.url;
+	console.log("url is", url);
 	return url;
 });
 
@@ -149,8 +150,10 @@ function sitemap_downloaded_cb(sitemap_json) {
 		else
 			var panel_unfold = '';
 
-		if (node.url == utils.hd_context.hd_basename)
+		if (node.url == utils.hd_context.hd_basename && node.project_name == utils.hd_context.project_name) {
+			console.log("Hurray !");
 			subpages = node.subpages;
+		}
 
 		parent_name = name;
 		level += 1;
@@ -169,6 +172,7 @@ function sitemap_downloaded_cb(sitemap_json) {
 					'title': node.title,
 					'panel_unfold': panel_unfold,
 					'name': name,
+					'node_project': node.project_name,
 					'node_url': node.url,
 					'subpages': rendered_subpages,
 				});
@@ -182,7 +186,7 @@ function sitemap_downloaded_cb(sitemap_json) {
 
 	$("#site-navigation").html(sidenav);
 
-	unfold_current_page(utils.hd_context.extension + "-" + utils.hd_context.hd_basename);
+	unfold_current_page(utils.hd_context.extension + "-" + utils.hd_context.project_name + "-" + utils.hd_context.hd_basename);
 
 	$("#home-link").attr("href", home_url);
 

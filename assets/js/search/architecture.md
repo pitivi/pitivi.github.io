@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "architecture.md", "urls": ["Pitivi-1.0/Google_Summer_of_Code.html#page-description", "Pitivi-1.0/releases/0.91.html#page-description"]});
+urls_downloaded_cb({"token": "architecture.md", "urls": ["Pitivi-1.0/releases/0.91.html#page-description"]});

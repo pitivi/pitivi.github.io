@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "github.com", "urls": ["Pitivi-1.0/Troubleshooting.html#page-description", "Pitivi-1.0/Git.html#page-description", "Pitivi-1.0/Feroze_gsoc.html#page-description"]});
+urls_downloaded_cb({"token": "github.com", "urls": ["Pitivi-1.0/Feroze_gsoc.html#page-description", "Pitivi-1.0/Troubleshooting.html#page-description", "Pitivi-1.0/Git.html#page-description"]});
