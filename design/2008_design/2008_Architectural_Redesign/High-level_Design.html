@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>2008 Architectural Redesign/High-level Design</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="design/2008_design/2008_Architectural_Redesign/High-level_Design.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="High-level_Design.md">
+<h1 id="2008-architectural-redesignhighlevel-design">2008 Architectural Redesign/High-level Design</h1>
+<p><strong>High Level overview</strong></p>
+<h1 id="overall">Overall</h1>
+<p><img src="Top-level-uicore.png" alt="Top-level organisation" title="Top-level organisation" id="toplevel-organisation"></p>
+<p>PiTiVi is comprised of two main parts:</p>
+<ul>
+<li>The <strong>Core</strong>, containing all the project- and timeline-related
+components, a plugin-system and various tools.</li>
+<li>The <strong>User Interface</strong>, optional, offering a graphical interface to
+use Core</li>
+</ul>
+<h1 id="core">Core</h1>
+<p><img src="Top-level-core-only.png" alt="Contents of Core" title="Contents of Core" id="contents-of-core">{width="300"}</p>
+<p>Core contains several essential components, of which the most important
+are:</p>
+<ul>
+<li>The <strong>Application</strong>, which organizes the projects and pipelines, as
+well as general application settings.</li>
+<li>The <strong>Projects</strong>, centralizing information on editing projects,
+including timeline, sources used, settings, ...</li>
+<li>The <a href="New_Design_2008/Pipeline.md"><strong>Pipelines</strong></a>, allowing
+combining some Actions (View, Record, Stream,...) with Producers
+(Timeline, File, Camera, VCR, ...) and Consumers (Loudspeakers,
+Screen, File, Network stream,...)</li>
+<li>A <strong>Plugin System</strong>, allowing adding/modifying/extending features in
+various parts of PiTiVi.</li>
+<li>Some <strong>Tools</strong>, amongst which Browsers (To search/organize/discover
+content) and Formatters (To handle various editing projects file
+formats).</li>
+<li>Some <strong>utilities</strong>, use by various components of core, like a
+Discoverer (to discover the multimedia properties of contents) and
+Thumbnailer (To generically produce thumbnails of contents)</li>
+</ul>
+<h2 id="application">Application</h2>
+<p>This object represents a running instance of PiTiVi.</p>
+<p>It contains:</p>
+<ul>
+<li>The <strong>Settings</strong> of the application, user-interface and plugins</li>
+<li>One or more <strong>Project</strong>(s), corresponding to the various
+<a href="New_Design_2008/Timeline.md">Timelines</a> currently opened.</li>
+<li>One or more <a href="New_Design_2008/Pipeline.md"><strong>Pipeline</strong>(s)</a>,
+corresponding to the various processing pipelines currently used.</li>
+</ul>
+<p>If a User Interface is used, the Application object is its core
+counterpart.</p>
+<p><img src="Top-level-project-pipeline.png" alt="Project/Pipeline relationship and contents" title="Project/Pipeline relationship and contents" id="projectpipeline-relationship-and-contents">{width="300"}</p>
+<h3 id="project">Project</h3>
+<p>Represents an editing project, corresponding to ONE
+<a href="New_Design_2008/Timeline.md">Timeline</a>.</p>
+<p>It contains:</p>
+<ul>
+<li>The <strong>Settings</strong> of the project and timeline</li>
+<li>The <strong>History</strong> of all events that happened on the Project and the
+Timeline.</li>
+<li>The <strong>SourceBin</strong> which are a list of the SourceFactory being used
+in this project. All sources used in the Timeline are present in
+that list, but it can also contains sources not (yet) used in the
+Timeline.</li>
+<li>The <a href="New_Design_2008/Timeline.md"><strong>Timeline</strong></a>. All the
+timeline editing is done through this object.</li>
+</ul>
+<h3 id="pipeline">Pipeline</h3>
+<p>Pipelines are where the media processing takes place. It is the grouping
+of three things:</p>
+<ul>
+<li><strong>Producer</strong>(s) which are generally the contents we're using (Ex:
+Timeline, File, Network Stream, WebCam, DV VCR, ...)</li>
+<li><strong>Consumer</strong>(s) which convert/process/display streams from the
+Producers (Ex: Encoding to File, Ouputting to Screen/Speakers,
+Streaming, recording to DV VCR, ...)</li>
+<li><strong>Action</strong>(s) which represent meaningful usage of the various
+producers and consumers (Ex: Record from Webcam, (Pre)View timeline,
+Render Timeline, Capture from DV VCR, ...)</li>
+</ul>
+<h2 id="plugin-system">Plugin System</h2>
+<p><strong>TO BE DEFINED</strong></p>
+<h2 id="tools">Tools</h2>
+<h3 id="browser">Browser</h3>
+<p><img src="Browser-functional.png" alt="Browser" title="Browser" id="browser1"></p>
+<p>Browser are a unified way of searching/browsing for contents and
+devices, or more generally speaking <em>Media Assets</em>.</p>
+<p>This includes, but is not limited to:</p>
+<ul>
+<li>Local File Browser</li>
+<li>Hardware Device Browser</li>
+<li>Effect/Operations Browser</li>
+<li>Media Asset Management Browser</li>
+<li>Online Service Browser (ex: youtube, flickr, archive.org, ...)</li>
+</ul>
+<p>See <a href="New_Design_2008/Browser.md">New_Design_2008/Browser</a> for
+more details.</p>
+<h3 id="formatter">Formatter</h3>
+<p><img src="Formatter-functional.png" alt="Formatter" title="Formatter" id="formatter1"></p>
+<p>Formatter are responsible for loading/storing Projects from/to various
+file formats.</p>
+<p>Formatters can also provide subclasses of existing core objects in order
+to store/provide format-specific information.</p>
+<p>See <a href="New_Design_2008/Formatter.md">New_Design_2008/Formatter</a>
+for more details.</p>
+<h2 id="utilities">Utilities</h2>
+<h3 id="discoverer">Discoverer</h3>
+<h3 id="thumbnailer">Thumbnailer</h3>
+<h1 id="issues-still-not-clear">Issues still not clear</h1>
+<h2 id="ui-bundles">UI bundles</h2>
+<p>We need to provide some kind of mapping for which UI widget should be
+used for which core component, including subclasses.</p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

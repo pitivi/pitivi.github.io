@@ -32,7 +32,7 @@ function ellipsize_fragment (fragment, term, size_goal) {
 
 	for (var i = 0; i < sentences.length; i++) {
 		var sentence = sentences[i];
-		var words = sentence.match(/\S+/g);
+		var words = sentence.match(/\S+/g) || [];
 		for (var j = 0; j < words.length; j++) {
 			var word = words[j];
 			var is_match = word.toLowerCase().indexOf(term) != -1;

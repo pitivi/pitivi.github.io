@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>2008 7 28 interview notes</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="design/2008_design/2008_7_28_interview_notes.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="2008_7_28_interview_notes.md">
+<h1 id="2008-7-28-interview-notes">2008 7 28 interview notes</h1>
+<p>I'll call my friend M. M. Is a 3D animator working for a gaming company,
+so his editing needs are somewhat different than the average
+videographer or editor. His duties include producing high-quality stills
+and shorts for promotional purposes, as well as in-game cinematics
+(ICG). Most of his sequences are pre-rendered, and brought in as
+sequenced images. In general, the sequences are rendered to their
+finished length and only occasionally are the sequences trimmed down.</p>
+<p>After lunch with M, he showed me how he performed simple editing tasks
+in Adobe Premiere. He discussed how Premiere differed from its
+alternatives. For comparison he also performed similar tasks in After
+Effects. He commented that Premiere doesn't focus on individual frames.
+After Effects is much more focused on frame-accurate editing and
+keyframing. M. said that he actually preferred using After Effects for
+most editing tasks. He also showed me how Maya handles animation through
+two separate interfaces: the dope sheet, and the graph. The dope sheet
+hearkens back to traditional 2D animation as a means of timing lip
+movements to speech sounds. The property graph directly displays the
+mathematics of a property as they change over time.</p>
+<h1 id="ms-comments">M.s Comments</h1>
+<ul>
+<li>When moving one source affects all the sources after it, this is
+called a “ripple edit”.</li>
+<li>The project's framerate and resolution are completely determined by
+the output media. Usually, the editor [person] knows in advance
+what their output format is. Changing these settings is not usually
+done, and when it is, a loss in quality is expected.</li>
+<li>FCP tries to provide direct manipulation of more abstract editing
+concepts, and high degree of immediate feedback, which is what
+people like about it. It gets the job done, but things don't seem to
+feel as tactile or immediate.(*)</li>
+<li>M. claims to have an intuitive feel for “numbers”, meaning numeric
+property values. When he sets a key-frame value on a cross-fade, for
+example, he has a fairly good idea of what 35% means.</li>
+<li>It's rare that an editor would first move the play-head position to
+a point in the timeline that they wanted to see, and then make a cut
+or an edit.</li>
+</ul>
+<h1 id="my-observations">My Observations</h1>
+<ul>
+<li>Premiere didn't render effects or transitions in real time even on a
+powerful machine.</li>
+<li>Premiere doesn't allow sources to overlap each other in the
+timeline. Dropping one source onto another causes the new source to
+be spliced into the existing one. There's no easy way to rejoin the
+source, though you can always stretch the existing source back to
+its original length.</li>
+<li>Applying a time stretch in premiere was somewhat difficult. In after
+effects, the time remapping feature made complicated frame-rate
+manipulations a fairly straightforward keyframing process.</li>
+</ul>
+<h1 id="ms-suggestions-for-pitivi">M's Suggestions for PiTiVi</h1>
+<ul>
+<li>When moving a source, the viewer should show the frame before the
+source cuts in, rather than the play-head position</li>
+<li>When trimming a source, the viewer window should show the start
+point in that source, rather than where the play-head position.</li>
+<li>Put as much functionality directly in the timeline as possible, as
+it's often easier to manipulate.*</li>
+</ul>
+<p>(*) Statements marked with an asterisk are speculations about other
+user's preferences, and should be taken with a grain of salt.</p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

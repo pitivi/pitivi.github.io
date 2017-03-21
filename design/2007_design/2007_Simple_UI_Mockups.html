@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>2007 Simple UI Mockups</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="design/2007_design/2007_Simple_UI_Mockups.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="2007_Simple_UI_Mockups.md">
+<h1 id="2007-simple-ui-mockups">2007 Simple UI Mockups</h1>
+<p>Here are a collection of UI Mockups for various actions possible with
+the Simple UI. Also, you might be interested to see
+<a href="Advanced_UI_Mockups.md">Advanced_UI_Mockups</a>.</p>
+<h2 id="add-media">Add Media</h2>
+<h3 id="add-medias">Add medias</h3>
+<p>Medias can be added to the source list by several means:</p>
+<ul>
+<li>clicking on the 'Add Media' button (shown in mockup below)</li>
+<li>Dragging from desktop, nautilus, or anything supporting the uri-list
+DND protocol</li>
+</ul>
+<p><img src="Deroule-addmedia1.png" alt="" title="Deroule-addmedia1.png"></p>
+<h3 id="medias-added">Medias added</h3>
+<p>The medias are all shown with an icon and some details in the source
+list</p>
+<p><img src="Deroule-addmedia2.png" alt="" title="Deroule-addmedia2.png"></p>
+<h2 id="add-scene">Add Scene</h2>
+<h3 id="select-scene">Select scene</h3>
+<p>The user selects the desired scene from the source list and drags it
+onto the timeline</p>
+<p><img src="Deroule-addscene1.png" alt="" title="Deroule-addscene1.png"></p>
+<h3 id="scene-added">Scene added</h3>
+<p>The dropped scene appears on the timeline.</p>
+<p>All scenes are colour-coded (random colours) so that you can easily see
+in the timeline slider where you sources are. Here, the scene is
+coloured in green, and it takes up the whole timeline.</p>
+<p>Also notice that the new scene is automatically selected, this is
+visible here because it is highlighted in red both in the timeline
+slider and in the simple timeline.</p>
+<p><img src="Deroule-addscene2.png" alt="" title="Deroule-addscene2.png"></p>
+<h3 id="select-another-scene">Select another scene</h3>
+<p><img src="Deroule-addscene3.png" alt="" title="Deroule-addscene3.png"></p>
+<h3 id="other-scene-added">Other scene added</h3>
+<p>Just like for the first scene, the new scene is added, with a colour
+code, and you can see in the timeline slider that it takes up more room
+than the first one since it is longer.</p>
+<p>A transition is automatically added between new scenes and existing
+ones. This is a sensible default choice, since hard-transitions are
+really ugly to look at. The default choice is a fade transition that
+takes 1 second.</p>
+<p><img src="Deroule-addscene4.png" alt="" title="Deroule-addscene4.png"></p>
+<h2 id="remove-scene">Remove Scene</h2>
+<p>To remove a scene, just press on the cross/delete button at the top
+right of the scene.</p>
+<p><img src="Deroule-removescene1.png" alt="" title="Deroule-removescene1.png"></p>
+<h2 id="editing-video">Editing Video</h2>
+<p>These are the various steps for editing a scene, that is : modify the
+start/stop duration of a scene.</p>
+<h3 id="switching-to-editing-mode">Switching to editing mode</h3>
+<p>To edit a scene, you need to activate the editing mode for that video.
+You can do so by clicking on the <strong>Edit</strong> button (highlighted in red in
+the mockup below).</p>
+<p><img src="Deroule-editingvideo1.png" alt="" title="Deroule-editingvideo1.png"></p>
+<h3 id="editing-mode-layout">Editing mode layout</h3>
+<p>Once in editing mode, the scene takes all the width of the timeline, and
+the timeline slider shows which source is selected by highlighting it in
+red.</p>
+<p>The two viewers at the left and right of the editing view represent the
+start and stop position of the scene. The three buttons below each
+viewers are:</p>
+<ul>
+<li>-/+ to move the stop/start position forward or backward by one frame</li>
+<li>a button to set the current position in the editing slider to the
+start/stop position.</li>
+</ul>
+<p>The editing slider represents the whole scene, with the position of the
+start/stop points.</p>
+<p><img src="Deroule-editingvideo2.png" alt="" title="Deroule-editingvideo2.png"></p>
+<h3 id="moving-through-the-scene">Moving through the scene</h3>
+<p>Using the editing slider, it is possible to seek through the scene to
+find the adequate start/stop points. Notice that the position is
+synchronous with the position in the timeline slider.</p>
+<p><img src="Deroule-editingvideo3.png" alt="" title="Deroule-editingvideo3.png"></p>
+<h3 id="setting-the-start-position">Setting the start position</h3>
+<p>Once the user has chosen where the scene should start, you can click on
+the 'set start point' button. The editing slider will represent the
+start point by graying out everything before that point.</p>
+<p>The width of the scene also changes in the timeline slider (FIXME : this
+should be visible here, and not in the following mockup).</p>
+<p><img src="Deroule-editingvideo4.png" alt="" title="Deroule-editingvideo4.png"></p>
+<h3 id="choosing-the-stop-position">Choosing the stop position</h3>
+<p>In the same way we did previously, we can seek through the editing
+slider to find an adequate stop position.</p>
+<p><img src="Deroule-editingvideo5.png" alt="" title="Deroule-editingvideo5.png"></p>
+<h3 id="setting-the-stop-position">Setting the stop position</h3>
+<p>Pressing the 'set stop position' (highlighted in red below) will mark
+the stop position on the editing slider by graying out everything after
+that position.</p>
+<p>The duration in the timeline slider will also be changed to show the
+modification (FIXME: It is in fact only visible on the following mockup)</p>
+<p><img src="Deroule-editingvideo6.png" alt="" title="Deroule-editingvideo6.png"></p>
+<h3 id="leaving-the-editing-mode">Leaving the editing mode</h3>
+<p>To leave the editing mode, simply press the <strong>Done</strong> button (highlited
+in red below).</p>
+<p><img src="Deroule-editingvideo7.png" alt="" title="Deroule-editingvideo7.png"></p>
+<h3 id="back-to-timeline-view">Back to timeline view</h3>
+<p>The scene has shrinked back to the normal size.</p>
+<p><img src="Deroule-editingvideo8.png" alt="" title="Deroule-editingvideo8.png"></p>
+<h2 id="add-effect">Add Effect</h2>
+<p>To apply an effect on a scene, select one from the effect list and drag
+it onto a scene.</p>
+<p><img src="Deroule-addeffect1.png" alt="" title="Deroule-addeffect1.png"></p>
+<p>Once added, the effect will appear in the scene's effect slot.</p>
+<p><img src="Deroule-addeffect2.png" alt="" title="Deroule-addeffect2.png"></p>
+<h2 id="remove-effect">Remove Effect</h2>
+<p>To remove an effect, click on the remove button in the effect slot
+(shown in red below).</p>
+<p><img src="Deroule-removeeffect1.png" alt="" title="Deroule-removeeffect1.png"></p>
+<h2 id="add-transition">Add Transition</h2>
+<p>To add a transition between two scenes, select one from the transitions
+list and drag it between two scenes.</p>
+<p><img src="Deroule-addtransition1.png" alt="" title="Deroule-addtransition1.png"></p>
+<p>Once added, it will appear between the two scenes in the timeline.</p>
+<p><img src="Deroule-addtransition2.png" alt="" title="Deroule-addtransition2.png"></p>
+<h2 id="change-transition">Change Transition</h2>
+<p>To modify a transition, select one from the transitions list and drop it
+onto an existing transition...</p>
+<p><img src="Deroule-changetransition1.png" alt="" title="Deroule-changetransition1.png"></p>
+<p>... and voila</p>
+<p><img src="Deroule-changetransition2.png" alt="" title="Deroule-changetransition2.png"></p>
+<h2 id="remove-transition">Remove Transition</h2>
+<p>To remove an existing transition, click on the cross/delete button at
+the top-right of the transition (hightlighted in red).</p>
+<p><img src="Deroule-removetransition1.png" alt="" title="Deroule-removetransition1.png"></p>
+<p><img src="Deroule-removetransition2.png" alt="" title="Deroule-removetransition2.png"></p>
+<h2 id="add-starting">Add Starting</h2>
+<p><img src="Deroule-addstarting1.png" alt="" title="fig:Deroule-addstarting1.png">
+<img src="Deroule-addstarting2.png" alt="" title="fig:Deroule-addstarting2.png">
+<img src="Deroule-addstarting3.png" alt="" title="fig:Deroule-addstarting3.png"></p>
+<h2 id="add-ending">Add Ending</h2>
+<p><img src="Deroule-addending1.png" alt="" title="fig:Deroule-addending1.png">
+<img src="Deroule-addending2.png" alt="" title="fig:Deroule-addending2.png">
+<img src="Deroule-addending3.png" alt="" title="fig:Deroule-addending3.png"></p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

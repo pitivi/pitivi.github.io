@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>XGES Examples</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="design/XGES_Examples.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="XGES_Examples.md">
+<h1 id="xges-examples">XGES Examples</h1>
+<p>This is a list of XGES Examples. For a description of the file format
+see <a href="The_XGES_File_Format.md">The XGES File Format</a>.</p>
+<h3 id="effect">Effect</h3>
+<pre><code class="language-xml">&lt;ges version='0.1'&gt;\
+   &lt;project properties='properties;' metadatas='metadatas;'&gt;\
+     &lt;ressources&gt;\
+       &lt;asset
+        id='file:///video.mp4'
+        extractable-type-name='GESUriClip' /&gt;\
+     &lt;/ressources&gt;\
+     &lt;timeline&gt;\
+       &lt;track
+        caps='video/x-raw'
+        track-type='4'
+        track-id='0' /&gt;\
+       &lt;layer priority='0' &gt;\
+         &lt;clip id='0'
+          asset-id='file:///video.mp4'
+          type-name='GESUriClip'
+          layer-priority='0'
+          track-types='6'
+          start='0'
+          duration='23901027520'
+          inpoint='0' &gt;\
+           &lt;effect
+            asset-id='revtv'
+            clip-id='0'
+            type-name='GESEffect'
+            track-type='4'
+            track-id='0'
+            properties='properties, priority=(uint)0, active=(boolean)false, track-type=(int)4;'
+            metadatas='metadatas;'
+            children-properties='properties, gain=(int)100, line-space=(int)100;'&gt;\
+             &lt;binding
+              type='direct'
+              source_type='interpolation'
+              property='line-space'
+              mode='1'
+              track_id='-1'
+              values =' 0:1  23901027520:100 '/&gt;\
+           &lt;/effect&gt;\
+         &lt;/clip&gt;\
+       &lt;/layer&gt;\
+     &lt;/timeline&gt;\
+ &lt;/project&gt;\
+ &lt;/ges&gt;
+</code></pre>
+<h3 id="audio-volume-and-alpha-keyframes">Audio Volume and Alpha Keyframes</h3>
+<pre><code class="language-xml"> &lt;ges version='0.1'&gt;\
+   &lt;project&gt;\
+     &lt;ressources&gt;\
+       &lt;asset id='file:///video.mp4' extractable-type-name='GESUriClip' /&gt;\
+     &lt;/ressources&gt;\
+     &lt;timeline&gt;\
+       &lt;track caps='video/x-raw' track-type='4' track-id='0' /&gt;\
+       &lt;track caps='audio/x-raw' track-type='2' track-id='1' /&gt;\
+       &lt;layer priority='0' &gt;\
+         &lt;clip id='0' asset-id='file:///video.mp4' type-name='GESUriClip' layer-priority='0' track-types='6' start='0' duration='10000000000' inpoint='0' &gt;\
+             &lt;binding type='direct' source_type='interpolation' property='volume' mode='1' track_id='1' values =' 0:0.0  10000000000:1.0 '/&gt;\
+             &lt;binding type='direct' source_type='interpolation' property='alpha' mode='1' track_id='0' values =' 0:0  10000000000:1 '/&gt;\
+         &lt;/clip&gt;\
+       &lt;/layer&gt;\
+     &lt;/timeline&gt;\
+ &lt;/project&gt;\
+ &lt;/ges&gt;
+</code></pre>
+<h3 id="clip-position-and-size">Clip Position and Size</h3>
+<pre><code class="language-xml"> &lt;ges version='0.1'&gt;\
+   &lt;project properties='properties;'&gt;\
+     &lt;ressources&gt;\
+       &lt;asset
+          id='file:///video.mp4'
+          extractable-type-name='GESUriClip' /&gt;\
+     &lt;/ressources&gt;\
+     &lt;timeline&gt;\
+       &lt;track caps='video/x-raw' track-type='4' track-id='0' /&gt;\
+       &lt;layer priority='0'&gt;\
+         &lt;clip
+            id='0'
+            asset-id='file:///video.mp4'
+            type-name='GESUriClip'
+            layer-priority='0'
+            track-types='6'
+            start='0' duration='2000000000' inpoint='3000000000'
+            rate='0'&gt;\
+           
+
+
+
+         &lt;/clip&gt;\
+       &lt;/layer&gt;\
+     &lt;/timeline&gt;\
+   &lt;/project&gt;\
+ &lt;/ges&gt;
+</code></pre>
+<h3 id="transition-with-restriction-caps">Transition with Restriction Caps</h3>
+<pre><code class="language-xml"> &lt;ges version='0.1'&gt;\
+   &lt;project&gt;\
+     &lt;ressources&gt;\
+       &lt;asset id='file:///video1.mp4'
+          extractable-type-name='GESUriClip' /&gt;\
+       &lt;asset id='file:///video2.ogg'
+          extractable-type-name='GESUriClip'/&gt;\
+     &lt;/ressources&gt;\
+     &lt;timeline&gt;\
+       &lt;track caps='video/x-raw' track-type='4' track-id='0' properties='properties, caps=(string)video/x-raw, restriction-caps=(string)&amp;quot;video/x-raw\,\ width\=\(int\)720\,\ height\=\(int\)576\,\ framerate\=\(fraction\)25/1&amp;quot;;'/&gt;\
+       &lt;track caps='audio/x-raw' track-type='2' track-id='1' /&gt;\
+       &lt;layer priority='0' properties='properties, auto-transition=(boolean)true;' &gt;\
+         &lt;clip id='0'
+            asset-id='file:///video1.mp4'
+            type-name='GESUriClip' layer-priority='0' track-types='6'
+            start='0' duration='10000000000' inpoint='0' &gt;\
+         &lt;/clip&gt;\
+         &lt;clip id='3'
+            asset-id='file:///video2.ogg'
+            type-name='GESUriClip' layer-priority='0' track-types='6'
+            start='7000000000' duration='10000000000' inpoint='5000000000' &gt;\
+         &lt;/clip&gt;\
+       &lt;/layer&gt;\
+     &lt;/timeline&gt;\
+ &lt;/project&gt;\
+ &lt;/ges&gt;
+</code></pre>
+<h3 id="constant-layer-volume">Constant Layer Volume</h3>
+<pre><code class="language-xml"> &lt;ges version='0.1'&gt;\
+   &lt;project&gt;\
+     &lt;ressources&gt;\
+       &lt;asset
+        id='file:///music.flac'
+        extractable-type-name='GESUriClip'
+        properties='properties, supported-formats=(int)2;' /&gt;\
+     &lt;/ressources&gt;\
+     &lt;timeline&gt;\
+       &lt;track caps='audio/x-raw' track-type='2' track-id='0' /&gt;\
+       &lt;layer priority='0' metadatas='metadatas, volume=(float)2.0;'&gt;\
+         &lt;clip id='0'
+          asset-id='file:///music.flac'
+          type-name='GESUriClip'
+          layer-priority='0'
+          track-types='2'
+          start='0' duration='1000000000' inpoint='0'
+          rate='0' &gt;\
+         &lt;/clip&gt;\
+       &lt;/layer&gt;\
+       &lt;layer priority='1' metadatas='metadatas, volume=(float)0.5;'&gt;\
+         &lt;clip id='1'
+          asset-id='file:///music.flac'
+          type-name='GESUriClip'
+          layer-priority='1'
+          track-types='2'
+          start='1000000000' duration='1000000000' inpoint='1000000000'
+          rate='0' &gt;\
+         &lt;/clip&gt;\
+       &lt;/layer&gt;\
+     &lt;/timeline&gt;\
+ &lt;/project&gt;\
+ &lt;/ges&gt;
+</code></pre>
+<h3 id="encoding-profiles-for-mp4-webm-and-ogv">Encoding Profiles for MP4, WebM and OGV</h3>
+<pre><code class="language-xml"> &lt;ges version='0.1'&gt;\
+   &lt;project&gt;\
+     &lt;encoding-profiles&gt;\
+       &lt;encoding-profile
+          name='ogg'
+          description=''
+          type='container'
+          preset-name='oggmux'
+          format='application/ogg' &gt;\
+         &lt;stream-profile
+            parent='ogg'
+            id='0' type='video' presence='0'
+            format='video/x-theora'
+            preset-name='theoraenc'
+            restriction='video/x-raw, width=(int)720, height=(int)576, framerate=(fraction)25/1, pixel-aspect-ratio=(fraction)1/1'
+            pass='0' variableframerate='0' /&gt;\
+         &lt;stream-profile
+            parent='ogg' id='1' type='audio' presence='0'
+            format='audio/x-vorbis'
+            preset-name='vorbisenc'
+            restriction='audio/x-raw, channels=(int)2, rate=(int)44100' /&gt;\
+       &lt;/encoding-profile&gt;
+
+       &lt;encoding-profile
+          name="mp4"
+          description=""
+          type="container"
+          preset-name="qtmux"
+          format="video/quicktime,variant=iso"&gt;\
+         &lt;stream-profile
+            parent="mp4"
+            id="0"
+            presence="0"
+            type="video"
+            preset-name="x264enc"
+            format="video/x-h264"
+            restriction="video/x-raw, format=I420, width=(int)1280, height=(int)720, framerate=(fraction)25/1" /&gt;\
+         &lt;stream-profile
+            parent="mp4"
+            id="1"
+            presence="0"
+            type="audio"
+            preset-name="lamemp3enc"
+            format="audio/mpeg,mpegversion=1,layer=3"
+            restriction="audio/x-raw, channels=(int)2, rate=(int)44100" /&gt;\
+       &lt;/encoding-profile&gt;
+
+       &lt;encoding-profile
+          name="webm"
+          description=""
+          type="container"
+          preset-name="webmmux"
+          format="video/webm"&gt;\
+         &lt;stream-profile
+            parent="webm"
+            id="0"
+            presence="0"
+            type="video"
+            preset-name="vp8enc"
+            format="video/x-vp8"
+            restriction="video/x-raw, width=(int)1280, height=(int)720, framerate=(fraction)25/1" /&gt;\
+         &lt;stream-profile
+            parent="webm"
+            id="1"
+            presence="0"
+            type="audio"
+            preset-name="vorbisenc"
+            format="audio/x-vorbis"
+            restriction="audio/x-raw, channels=(int)2, rate=(int)44100" /&gt;\
+       &lt;/encoding-profile&gt;\
+     &lt;/encoding-profiles&gt;\
+     &lt;ressources&gt;\
+       &lt;asset
+          id='file:///C:/Users/bmonkey/workspace/ges/data/sd/Mandelbox.mp4'
+          extractable-type-name='GESUriClip' /&gt;\
+     &lt;/ressources&gt;\
+     &lt;timeline&gt;\
+       &lt;track caps='video/x-raw' track-type='4' track-id='0' /&gt;\
+       &lt;layer priority='0'&gt;\
+         &lt;clip
+            id='1'
+            asset-id='file:///C:/Users/bmonkey/workspace/ges/data/sd/Mandelbox.mp4'
+            type-name='GESUriClip'
+            layer-priority='0'
+            track-types='6'
+            start='0' duration='2000000000' inpoint='0'&gt;\
+         &lt;/clip&gt;\
+       &lt;/layer&gt;\
+     &lt;/timeline&gt;\
+   &lt;/project&gt;\
+ &lt;/ges&gt;
+</code></pre>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

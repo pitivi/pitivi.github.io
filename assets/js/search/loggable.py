@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "loggable.py", "urls": ["Pitivi-1.0/Bug_reporting.html#page-description"]});
+urls_downloaded_cb({"token": "loggable.py", "urls": ["Bug_reporting.html#page-description", "Pitivi-1.0/Bug_reporting.html#page-description"]});

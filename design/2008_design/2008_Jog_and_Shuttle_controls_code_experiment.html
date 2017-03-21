@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Introduction</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-ref="design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="2008_Jog_and_Shuttle_controls_code_experiment.md">
+<h2 id="introduction">Introduction</h2>
+<p><img src="Gst-demo_wx_player-warning.png" alt="wxPython prototype seeker with warning about inaccurate codec and some (green) markers." title="wxPython prototype seeker with warning about inaccurate codec and some (green) markers." id="wxpython-prototype-seeker-with-warning-about-inaccurate-codec-and-some-green-markers"></p>
+<p><img src="Gst-demo_wx_player-interval.png" alt="wxPython prototype seeker with selected interval between in &amp; out point and visual mouseover effect on jog." title="wxPython prototype seeker with selected interval between in &amp; out point and visual mouseover effect on jog." id="wxpython-prototype-seeker-with-selected-interval-between-in-out-point-and-visual-mouseover-effect-on-jog"></p>
+<p><img src="Schermafdruk-gst-seeker-gtk.png" alt="pygtk prototype seeker with hscale for time ruler, shuttle and jog." title="pygtk prototype seeker with hscale for time ruler, shuttle and jog." id="pygtk-prototype-seeker-with-hscale-for-time-ruler-shuttle-and-jog"></p>
+<p><img src="Schermafdruk-gst-seeker-gtk-1.png" alt="pygtk prototype seeker with mouseover effect on blend entry and warning with information. There is 12% difference between seek and query time in this video." title="pygtk prototype seeker with mouseover effect on blend entry and warning with information. There is 12% difference between seek and query time in this video." id="pygtk-prototype-seeker-with-mouseover-effect-on-blend-entry-and-warning-with-information-there-is-12-difference-between-seek-and-query-time-in-this-video"></p>
+<h3 id="about">About</h3>
+<p>I have been developing pystreamer, a MVC framework for python and
+gstreamer. It provides amongst other things a prototype for better frame
+seeking with gstreamer, which can be a starting point for pitivi. (It is
+not the purpose to put the whole library in pitivi, I will rewrite it
+customized for pitivi so it can be applied as a patch.) The prototype is
+an attempt to deliver the control that serious video editors want. As it
+has just been developed, it might contain some rough edges still. I will
+discuss it following its MVC structure:</p>
+<p>Model (gstreamer) &amp;lt;-&amp;gt; Controller (pure python) &amp;lt;-&amp;gt; View
+(pygtk/wxpython)</p>
+<h3 id="source-code">Source Code</h3>
+<p>You can grab the sources with bazaar:</p>
+<pre><code>bzr branch lp:pystreamer
+</code></pre>
+<p>You need both wxpython (sudo apt-get install python-wxgtk) as pygtk to
+explore the demos at the full potential. You can start the demos by:</p>
+<pre><code>./gst-player-gtk uri
+./gst-player-wx uri
+./gst-seeker-wx uri
+./gst-seeker-gtk uri
+</code></pre>
+<p>uri is for example '<a href="file:///home/user/some">file:///home/user/some</a> movie.ogg'</p>
+<p>== Model = Player (gstreamer) ==</p>
+<p>There are two important aspects of frame seeking:</p>
+<ul>
+<li>stability: if you seek to a certain position, it should always
+return the same frame</li>
+<li>precision: if the framerate is n frames as second, seeking should be
+possible to each of the n frames</li>
+</ul>
+<p>With the right codecs, gstreamer performs well, but with inaccurate
+codecs gstreamer (playbin) will fail on these two issues.</p>
+<h3 id="frame-stability">Frame Stability</h3>
+<h4 id="the-problem">The Problem</h4>
+<p>With inaccurate codecs gstreamer behave badly:</p>
+<ol>
+<li>seek to position x with gst.SEEK_FLAG_ACCURATE</li>
+<li>wait until gstreamer has finished seeking</li>
+<li>query the position which is returned as y</li>
+</ol>
+<p>You would expect that x is equal to y, but gstreamer provides different
+values. This makes video editing impossible. (You can see this effect in
+Totem by seeking to the end of the movie with an inaccurate codec. You
+won't go to the end of the movie, but playback resumes much earlier.)
+The most simple solution is to disable frame seeking for inaccurate
+codecs or to transcode it to a better codec.</p>
+<p>A better solution would be to find a solution which can guarantee
+stability for any video codec. After doing some experiments and tests I
+found out that:</p>
+<ul>
+<li>gstreamer always returns the same y for the same x. So it should be
+possible to find a method so that y = f(x).</li>
+<li>x is always bigger than y, so in order to go the last frame we have
+to seek past the duration of the movie. So the seek timeline is
+longer than the query timeline.</li>
+</ul>
+<p>Based on these two observations, we need an algorithm which does the
+following:</p>
+<ol>
+<li>x is corrected to a later position c</li>
+<li>c is seeked</li>
+<li>when seeking is finished, query the position which returns the same
+x</li>
+</ol>
+<h4 id="the-solution">The Solution</h4>
+<p>So how can we correct x into z? We need to find the reverse method of f,
+let's call it i. This means that x=f(z) and z=i(x). I first thought it
+might be just a linear function, but that was not the case. So I
+developed a frame correction algorithm which uses linear interpolation
+between known values of (x,f(x)) to predict (x,i(x)) or (x, z). You can
+find the source code of this in the
+pystreamer/player/frameMixin/Mixin.seek method. I've tested it with a
+couple of videos with really bad codecs and it always seems to succeed.
+As pitivi will be used by all kinds of end users, it is nice that they
+don't have to worry about codecs or transcode it first in another codec.</p>
+<p>The algorithm knows after two seeks if the codec is accurate or not. If
+it is accurate, it will show a succes icon and the correction algorithm
+disables itself. If it is incorrect, it will calculate and show a
+warning sign. By clicking on the warning icon, you can optionally show
+the incorrectness. The incorrectness is the average difference between
+seeked and queried positions in percent.</p>
+<p>Of course it makes seeking a bit more slow for inaccurate codecs, but
+the speed remains acceptable. Moreover for video editing, frame
+stability/precision is more important than speed. (I guess because
+gstreamer is mainly used in media players not editors, speed was
+prioritized rather than precision.)</p>
+<h3 id="frame-precision">Frame Precision</h3>
+<p>Unfortunately AFAIK there is nothing to do about this. The only option
+is here transcode the video to a better codec. However I found out that
+even with bad codecs it is possible to extract some frames out of a
+second instead of all of them. Probably if you work with bad codecs,
+that should be ok.</p>
+<h2 id="controller">Controller</h2>
+<p>The controller mimics the gobject signal system. Both the Player and the
+View are based on pystreamer/controller/controller_object.base which
+allows them to emit signals, which are processed by the controller to
+link the two. The controller is 100% python and does not depend on gst,
+gobject, wxpython, pygtk, ...</p>
+<h2 id="view">View</h2>
+<h3 id="features">Features</h3>
+<p>The view supports many features, which might be interesting for pitivi:</p>
+<ul>
+<li>set in &amp; out point</li>
+<li>markers</li>
+<li>shuttle seeking</li>
+<li>jog seeking</li>
+<li>buttons for frame navigation (go to or play between in/out point, go
+to previous/next frame, go to previous/next marker)</li>
+<li>support for light and dark themes</li>
+<li>special button icons for video editing (svg sources are included)</li>
+</ul>
+<h3 id="base">Base</h3>
+<p>The view code which is independent of the toolkit is in pystreamer/view.
+It uses some ui_* methods which are overriden by specific toolkit
+methods. The events are buffered with timer threads so that the UI stays
+as responsive as possible. The timer thread will not send seek events
+for every user event, but rather keep track and only request a next seek
+when the previous one was finished.</p>
+<h3 id="wxpython">wxPython</h3>
+<p>The wxPython prototype is quite complete. It provides three custom
+controls. The screenshots are working code, not just mock-ups.</p>
+<h4 id="blended-text">Blended Text</h4>
+<ul>
+<li>pystreamer/view/uiWx/lib/BlendedTextCtrl.py</li>
+<li>this is rather semi-custom as it is a native control which has been
+extendend</li>
+<li>it looks like a StaticTextCtrl (label) but with a mouse over it
+looks like a TextCtrl (entry)</li>
+<li>this is to avoid clutter and to make the view widget more quiet</li>
+<li>it is used for the current time, the in and out point.</li>
+</ul>
+<h4 id="timeline-ruler">Timeline Ruler</h4>
+<ul>
+<li>pystreamer/view/uiWx/TimeRulerCtrl.py</li>
+<li>custom control</li>
+<li>this provides a timeline which shows the duration of the clip</li>
+<li>it uses native icons for the cursor and for the markers</li>
+<li>it shows visual feedback of selected interval between in &amp; out point</li>
+<li>intelligent algorithm for showing time labels</li>
+</ul>
+<h4 id="jog-control">Jog Control</h4>
+<ul>
+<li>pystreamer/view/uiWx/lib/JogCtrl.py</li>
+<li>custom control</li>
+<li>supports disabled look</li>
+<li>suppors native colour highlight on mouseover</li>
+<li>very polished look</li>
+<li>support for dragging and mousewheel scrolling</li>
+<li>one pixel = one frame (So dragging the mouse 25 pixels, will seek to
+25 frames away.)</li>
+<li>different methods for dragging and scrolling to give the best user
+experience</li>
+</ul>
+<h3 id="pygtk">pyGtk</h3>
+<p>The pygtk prototype is less complete in custom controls, but is equally
+functional.</p>
+<h4 id="screenshots">Screenshots</h4>
+<h4 id="blended-text1">Blended Text</h4>
+<ul>
+<li>pystreamer/view/uiGtk/lib/BlendEntry.py</li>
+<li>this is rather semi-custom as it is a native control which has been
+extendend</li>
+<li>it looks like a gtk.Label but with a mouse over it looks like a
+gtk.Entry, what it really is</li>
+<li>see also blended text of wxpython</li>
+</ul>
+<h4 id="timeline-ruler1">Timeline Ruler</h4>
+<ul>
+<li>pystreamer/view/uiGtk/HScaleRuler.py</li>
+<li>just a gtk.HScale, so less accurate</li>
+<li>no in &amp; outpoint interval feedback</li>
+<li>no markers</li>
+<li>todo: write a custom control for this</li>
+</ul>
+<h4 id="jog-control1">Jog Control</h4>
+<ul>
+<li>pystreamer/view/uiGtk/HScaleJog.py</li>
+<li>just a gtk.HScale</li>
+<li>modified behaviour to make the hscale behave as a jog (eg remains
+sensitive outside its area)</li>
+<li>see also jog control of wxpython</li>
+<li>todo: write a custom control for this</li>
+</ul>
+<h2 id="known-issues">Known issues</h2>
+<ul>
+<li>with inaccurate codecs: sometimes after a difficult seek, the player
+doesn't start again. A solution could be that seeking pauses the
+video, but it would be nice if it doesn't have to.</li>
+<li>pygtk: I am wondering how I can determine if a dark or normal theme
+is used. I am only able to retrieve the right background color after
+the window has been realized with window.get_style().bg But how can
+I know this before?</li>
+<li>pygtk: How to hide optionally some widgets such as the warning
+information?</li>
+<li>keyboard bindings need to be added</li>
+</ul>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>
