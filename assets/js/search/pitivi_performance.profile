@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pitivi_performance.profile", "urls": ["Bug_reporting.html#page-description"]});
+urls_downloaded_cb({"token": "pitivi_performance.profile", "urls": ["Bug_reporting.html#page-description", "Pitivi-1.0/Bug_reporting.html#page-description"]});

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Introduction</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="design/2008_design/2008_Jog_and_Shuttle_controls_design.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="2008_Jog_and_Shuttle_controls_design.md">
+<h2 id="introduction">Introduction</h2>
+<p>This is just a proposal for bringing frame seeking to the user interface
+in advanced mode. If you want to follow the development progress read
+<a href="2008_Jog_and_Shuttle_controls_code_experiment.md">2008 Jog and Shuttle controls code
+experiment</a></p>
+<h2 id="screen-mockups">Screen Mockups</h2>
+<h3 id="with-standard-gtk-controls">With standard gtk controls</h3>
+<p><img src="Frame_player.png" alt="" title="Frame_player.png"></p>
+<h3 id="with-a-custom-jog-control">With a custom jog control</h3>
+<p><img src="Frame_player_jog.png" alt="" title="Frame_player_jog.png"></p>
+<p>Glade source file is available upon request.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="controls">Controls</h3>
+<ul>
+<li>current: a linkbutton control with which a random position can be
+manually entered</li>
+<li>zoom: this is of lower priority which allows to set the zooming
+level of the image (either fit or a percentage)</li>
+<li>total: total time of the clip</li>
+<li>jog: with the left mouse down you can jump to previous frames by
+moving left or to next frames by moving right</li>
+<li>shuttle: with the left mouse down you can rewind or forward with
+variable speeds</li>
+</ul>
+<p>The current and total controls should be able to display in units of
+frames or time.</p>
+<h3 id="steps">Steps</h3>
+<ol>
+<li>current &amp; total</li>
+<li>jog (not custom control)</li>
+<li>shuttle</li>
+<li>refactor so that it can work as a widget independently of pitivi
+with plain pipelines</li>
+<li>zoom</li>
+<li>jog (as custom control)</li>
+</ol>
+<h2 id="about-myself">About myself</h2>
+<p>I am willing to work on this but will need mentoring. My background:</p>
+<ul>
+<li>graduated as architect and visual/video artist (I care about
+aesthetics and UI design)</li>
+<li>experience of python (no C or C++)</li>
+<li>plenty of gui experience with wxpython</li>
+<li>author of SPE (Python IDE - <a href="http://pythonide.stani.be">http://pythonide.stani.be</a>), Phatch
+(Photo Batch Processor - <a href="http://photobatch.stani.be">http://photobatch.stani.be</a>) &amp; sdxf.</li>
+<li>new to pygtk and gstreamer -&amp;gt; mentoring needed</li>
+<li>I don't have a lot of time so I prefer to focus on something I need
+myself and I can finish</li>
+<li>working on ubuntu</li>
+</ul>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

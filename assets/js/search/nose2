@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "nose2", "urls": ["Testing.html#page-description"]});
+urls_downloaded_cb({"token": "nose2", "urls": ["Testing.html#page-description", "Pitivi-1.0/Testing.html#page-description"]});

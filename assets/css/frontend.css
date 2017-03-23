@@ -546,7 +546,8 @@ a:focus {
 }
 .base_symbol_container,
 .symbol_section,
-#page-description {
+#page-description,
+#subpages {
   width: 100%;
   padding-left: 16px;
   padding-right: 16px;
@@ -722,6 +723,22 @@ a[aria-expanded=false] .glyphicon-chevron-down {
 #sidenav-wrapper > .panel-title {
   font-size: 14px;
 }
+.parameter_container table,
+.member_container table,
+.multi_return_value_container table {
+  border: none !important;
+}
+.parameter_container table thead tr,
+.member_container table thead tr,
+.multi_return_value_container table thead tr,
+.parameter_container table tbody tr,
+.member_container table tbody tr,
+.multi_return_value_container table tbody tr,
+.parameter_container table tfoot tr,
+.member_container table tfoot tr,
+.multi_return_value_container table tfoot tr {
+  border: none;
+}
 .parameter_container table thead tr td:nth-child(3),
 .member_container table thead tr td:nth-child(3),
 .multi_return_value_container table thead tr td:nth-child(3),
@@ -731,6 +748,7 @@ a[aria-expanded=false] .glyphicon-chevron-down {
 .parameter_container table tfoot tr td:nth-child(3),
 .member_container table tfoot tr td:nth-child(3),
 .multi_return_value_container table tfoot tr td:nth-child(3) {
+  border: none;
   text-align: right;
 }
 .parameter_container table thead tr td:nth-child(4),
@@ -742,77 +760,108 @@ a[aria-expanded=false] .glyphicon-chevron-down {
 .parameter_container table tfoot tr td:nth-child(4),
 .member_container table tfoot tr td:nth-child(4),
 .multi_return_value_container table tfoot tr td:nth-child(4) {
+  border: none;
   text-align: right;
+}
+.parameter_container table thead td,
+.member_container table thead td,
+.multi_return_value_container table thead td,
+.parameter_container table tbody td,
+.member_container table tbody td,
+.multi_return_value_container table tbody td,
+.parameter_container table tfoot td,
+.member_container table tfoot td,
+.multi_return_value_container table tfoot td {
+  border: none;
 }
 .base_symbol_container table,
 #page-description table,
 .csp-previewer table,
+#subpages table,
 .base_symbol_container .authors-description table,
 #page-description .authors-description table,
-.csp-previewer .authors-description table {
+.csp-previewer .authors-description table,
+#subpages .authors-description table {
   overflow: auto;
   margin-bottom: 16px;
   word-break: keep-all;
   width: 100%;
-  display: block;
 }
 .base_symbol_container table thead tr,
 #page-description table thead tr,
 .csp-previewer table thead tr,
+#subpages table thead tr,
 .base_symbol_container .authors-description table thead tr,
 #page-description .authors-description table thead tr,
 .csp-previewer .authors-description table thead tr,
+#subpages .authors-description table thead tr,
 .base_symbol_container table tbody tr,
 #page-description table tbody tr,
 .csp-previewer table tbody tr,
+#subpages table tbody tr,
 .base_symbol_container .authors-description table tbody tr,
 #page-description .authors-description table tbody tr,
 .csp-previewer .authors-description table tbody tr,
+#subpages .authors-description table tbody tr,
 .base_symbol_container table tfoot tr,
 #page-description table tfoot tr,
 .csp-previewer table tfoot tr,
+#subpages table tfoot tr,
 .base_symbol_container .authors-description table tfoot tr,
 #page-description .authors-description table tfoot tr,
-.csp-previewer .authors-description table tfoot tr {
+.csp-previewer .authors-description table tfoot tr,
+#subpages .authors-description table tfoot tr {
   background-color: #fff;
   border-top: 1px solid #CCC;
 }
 .base_symbol_container table thead tr th,
 #page-description table thead tr th,
 .csp-previewer table thead tr th,
+#subpages table thead tr th,
 .base_symbol_container .authors-description table thead tr th,
 #page-description .authors-description table thead tr th,
 .csp-previewer .authors-description table thead tr th,
+#subpages .authors-description table thead tr th,
 .base_symbol_container table tbody tr th,
 #page-description table tbody tr th,
 .csp-previewer table tbody tr th,
+#subpages table tbody tr th,
 .base_symbol_container .authors-description table tbody tr th,
 #page-description .authors-description table tbody tr th,
 .csp-previewer .authors-description table tbody tr th,
+#subpages .authors-description table tbody tr th,
 .base_symbol_container table tfoot tr th,
 #page-description table tfoot tr th,
 .csp-previewer table tfoot tr th,
+#subpages table tfoot tr th,
 .base_symbol_container .authors-description table tfoot tr th,
 #page-description .authors-description table tfoot tr th,
 .csp-previewer .authors-description table tfoot tr th,
+#subpages .authors-description table tfoot tr th,
 .base_symbol_container table thead tr td,
 #page-description table thead tr td,
 .csp-previewer table thead tr td,
+#subpages table thead tr td,
 .base_symbol_container .authors-description table thead tr td,
 #page-description .authors-description table thead tr td,
 .csp-previewer .authors-description table thead tr td,
+#subpages .authors-description table thead tr td,
 .base_symbol_container table tbody tr td,
 #page-description table tbody tr td,
 .csp-previewer table tbody tr td,
+#subpages table tbody tr td,
 .base_symbol_container .authors-description table tbody tr td,
 #page-description .authors-description table tbody tr td,
 .csp-previewer .authors-description table tbody tr td,
+#subpages .authors-description table tbody tr td,
 .base_symbol_container table tfoot tr td,
 #page-description table tfoot tr td,
 .csp-previewer table tfoot tr td,
+#subpages table tfoot tr td,
 .base_symbol_container .authors-description table tfoot tr td,
 #page-description .authors-description table tfoot tr td,
-.csp-previewer .authors-description table tfoot tr td {
+.csp-previewer .authors-description table tfoot tr td,
+#subpages .authors-description table tfoot tr td {
   padding: 6px 13px;
   border: 1px solid #DDD;
 }

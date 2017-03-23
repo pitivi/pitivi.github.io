@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Rendering Profiles Implementation</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="design/Rendering_Profiles_Implementation.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="Rendering_Profiles_Implementation.md">
+<h1 id="rendering-profiles-implementation">Rendering Profiles Implementation</h1>
+<p>This is a page to track all the <strong>issues related to the general
+redesign/refactoring of project “profiles”</strong> (a.k.a. presets or
+templates) and all the related user interfaces (Project settings dialog,
+Rendering dialog, Startup wizard). There are <strong>dozens of bug reports and
+mockups</strong> scattered in the bug tracker. This page is an attempt to bring
+those into a <strong>cohesive whole</strong>.</p>
+<p>See <strong><a href="https://bugzilla.gnome.org/show_bug.cgi?id=630751">tracker bug
+630751</a></strong> for the
+meta-bug that tracks all the other bugs related to this.</p>
+<h1 id="current-overall-status">Current overall status</h1>
+<ul>
+<li>emdash's rework of project settings and rendering has been merged as
+of december 2010:
+<a href="http://jeff.ecchi.ca/blog/2010/12/10/new-project-settings-and-rendering-ui/">http://jeff.ecchi.ca/blog/2010/12/10/new-project-settings-and-rendering-ui/</a></li>
+<li>the “startup wizard” has also been implemented:
+<a href="http://jeff.ecchi.ca/blog/2010/11/23/startup-assistant/">http://jeff.ecchi.ca/blog/2010/11/23/startup-assistant/</a></li>
+<li>Two-pass rendering is currently <a href="https://bugzilla.gnome.org/show_bug.cgi?id=603070">not
+easy</a></li>
+</ul>
+<p>As such, this page is mostly obsolete.</p>
+<h1 id="project-profiles-emdashs-branch">Project profiles (emdash's branch)</h1>
+<p>The goal is to allow <a href="Rendering_Profiles.md">Rendering
+Profiles</a>, and allow the user to save
+custom profiles.</p>
+<p>Waiting for emdash to finish the job :)</p>
+<h2 id="project-settings-dialog">Project settings dialog</h2>
+<ul>
+<li>“Save as default” button (<a href="https://bugzilla.gnome.org/show_bug.cgi?id=622079">bug
+622079</a>):
+obsolete/useless, we should implement a “Last used settings” profile
+instead, selected by default.</li>
+</ul>
+<p>Should allow/calculate any framerates <a href="https://bugzilla.gnome.org/show_bug.cgi?id=584048">bug
+584048</a></p>
+<ul>
+<li>also affects render dialog</li>
+<li>already implemented in emdash's branch?</li>
+</ul>
+<p>Do not block settings when applying a template <a href="https://bugzilla.gnome.org/show_bug.cgi?id=580167">bug
+580167</a></p>
+<ul>
+<li>already obsoleted in emdash's branch?</li>
+</ul>
+<h3 id="mockups">Mockups</h3>
+<p>by Andreas Nilsson (in bug
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=615337">615337</a></p>
+<p><img src="Project-settings-mockup-andreas.png" alt="" title="Project-settings-mockup-andreas.png"></p>
+<p>by nekohayo:</p>
+<p><img src="Project-settings-mockup-nekohayo-2010-04.png" alt="" title="Project-settings-mockup-nekohayo-2010-04.png"></p>
+<p>Note: the selected preset must default to “Last settings”, except if the
+last settings were == one of the presets.</p>
+<h3 id="current-implementation">Current implementation</h3>
+<p>Old and needs work:</p>
+<p><img src="Project-settings-emdash-2010-04.png" alt="" title="Project-settings-emdash-2010-04.png"></p>
+<h2 id="rendering-dialog">Rendering dialog</h2>
+<p>Should basically be a clone of the project settings dialog with a couple
+of additional options.</p>
+<h3 id="current-implementation1">Current implementation</h3>
+<p>Needs work:
+<img src="Render-project-emdash-2010-04.png" alt="" title="fig:Render-project-emdash-2010-04.png"></p>
+<h1 id="startup-wizard">Startup wizard</h1>
+<p><img src="Startup_wizard.png" alt="" title="Startup_wizard.png"></p>
+<ul>
+<li>Implement the first part (the start wizard itself; see the
+screenshot above and <a href="https://bugzilla.gnome.org/show_bug.cgi?id=615570">bug
+615570</a>)</li>
+<li>When clicking “Create new project...”, simply call the <strong>new</strong>
+“Project settings” window (see mockup above). That dialog defaults
+its preset to the “Last used settings” project preset/profile, this
+way the user doesn't have to do more than 2 clicks.
+<ul>
+<li>If the user cancels out that window, come back to the startup
+wizard,</li>
+<li>If the user OKs that window, then we're done.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

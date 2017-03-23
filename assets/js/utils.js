@@ -85,20 +85,30 @@ utils.uri_is_in_this_page = (function(uri) {
 
 utils.HDContext = (class {
 	constructor(href) {
+		var project_url_path;
+
 		this.parsedUri = utils.parseUri(href);
 		this.extension = $('#page-wrapper').attr('data-extension');
 		this.hd_basename = $('#page-wrapper').attr('data-hotdoc-ref');
+		this.project_name = $('#page-wrapper').attr('data-hotdoc-project');
+		this.in_toplevel = $('#page-wrapper').attr('data-hotdoc-in-toplevel');
 		if (this.parsedUri.file == '') {
 			this.parsedUri.file = 'index.html';
 			this.parsedUri.path += 'index.html';
 		}
 		this.hd_root = this.parsedUri['scheme'] + '://' + this.parsedUri['authority'] + this.parsedUri['path'];
-		this.hd_root = this.hd_root.replace(new RegExp(this.hd_basename + "$"),'');
 
+		if (this.in_toplevel == "True")
+			project_url_path = ''
+		else
+			project_url_path = this.project_name + '/';
 		if (this.extension == 'gi-extension') {
 			this.gi_language = $('#page-wrapper').attr('data-hotdoc-meta-gi-language');
 			this.gi_languages = $('#page-wrapper').attr('data-hotdoc-meta-gi-languages').split(',');
-			this.hd_root = this.hd_root.replace(new RegExp(this.gi_language + '/$'), '');
+			this.hd_root = this.hd_root.replace(new RegExp(project_url_path +
+				this.gi_language + '/' + this.hd_basename + "$"),'');
+		} else {
+			this.hd_root = this.hd_root.replace(new RegExp(project_url_path + this.hd_basename + "$"),'');
 		}
 	}
 });

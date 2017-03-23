@@ -63,7 +63,7 @@
 </nav>
 
 <main class="page-row page-row-expanded">
-<div data-extension="core" data-hotdoc-ref="Bug_reporting.html" class="page_container" id="page-wrapper">
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Bug_reporting.html" class="page_container" id="page-wrapper">
 	<div class="row">
 		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
 	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
@@ -168,9 +168,11 @@ flatpak install --user $GNOME_REPO org.gnome.Sdk 3.22; \
 flatpak install --user $GNOME_REPO org.gnome.Sdk.Debug 3.22
 </code></pre>
 <p>Start a shell in the Pitivi bundle environment</p>
-<p><code>flatpak run -d --command=bash org.pitivi.Pitivi</code></p>
+<pre><code>flatpak run -d --command=bash org.pitivi.Pitivi
+</code></pre>
 <p>Start Pitivi inside gdb</p>
-<p><code>gdb python3 -ex 'run /app/bin/pitivi</code>'</p>
+<pre><code>gdb python3 -ex 'run /app/bin/pitivi
+</code></pre>
 <p>When Pitivi crashes, run <code>bt full</code> to get the backtrace. When Pitivi
 freezes, press Ctrl+Z and run <code>thread apply all bt</code> to get the
 backtraces for all the threads.</p>
@@ -184,11 +186,13 @@ packages etc, we provide you with some simple reminders below of
 commands that can be particularly useful in Pitivi's context.</p>
 <p>When you want to “attach” to an existing Python process (useful for
 deadlocks, where the application will be hung instead of crashed):</p>
-<p><code>gdb python3 THE_PITIVI_PROCESS_NUMBER</code></p>
+<pre><code>gdb python3 THE_PITIVI_PROCESS_NUMBER
+</code></pre>
 <p>When you want to run Pitivi entirely in gdb from the start:</p>
-<p><code>gdb python3</code><br>
-<code>set pagination 0 # avoids the need to press Enter to “scroll”</code></p>
-<p><code>run /usr/bin/pitivi # the version installed system-wide</code></p>
+<pre><code>gdb python3 $(which pitivi)
+set pagination 0  # avoids the need to press Enter to “scroll”
+run
+</code></pre>
 <p>When Pitivi crashes, run <code>bt full</code> to get the backtrace. When Pitivi
 freezes, press Ctrl+Z and run <code>thread apply all bt</code> to get the
 backtraces for all the threads.</p>
@@ -203,23 +207,29 @@ there are five levels: ( <span style="color:red;">ERROR</span>,
 <span style="color:blue;">DEBUG</span>,
 <span style="color:cyan;">LOG</span> ) = range(1, 7). As such, if you
 want to see errors and warnings only, you launch</p>
-<p><code>PITIVI_DEBUG=2 bin/pitivi</code></p>
+<pre><code>PITIVI_DEBUG=2 bin/pitivi
+</code></pre>
 <p>...and if you want to see everything you do</p>
-<p><code>PITIVI_DEBUG=6 bin/pitivi</code></p>
+<pre><code>PITIVI_DEBUG=6 bin/pitivi
+</code></pre>
 <p>If that's “too much” and you want to focus on particular parts of the
 code, you can do so. For example, you can get output from the <code>Timeline</code>
 and <code>MediaLibraryWidget</code> classes only:</p>
-<p><code>PITIVI_DEBUG=</code><strong><code>timeline</code></strong><code>:6,</code><strong><code>medialibrarywidget</code></strong><code>:6 bin/pitivi</code></p>
+<pre><code>PITIVI_DEBUG=timeline:6,medialibrarywidget:6 bin/pitivi
+</code></pre>
 <p>Here are various examples of commands you can use to generate detailed
 debug logs that include not only Pitivi's debug output, but also
 GStreamer's:</p>
 <p>A basic log can be obtained by running:</p>
-<p><code>PITIVI_DEBUG=*:5 GST_DEBUG=2 bin/pitivi &gt; debug.log 2&gt;&amp;1</code></p>
+<pre><code>PITIVI_DEBUG=*:5 GST_DEBUG=2 bin/pitivi &gt; debug.log 2&gt;&amp;1
+</code></pre>
 <p>To get debugging information from Non-Linear Engine, you could use:</p>
-<p><code>PITIVI_DEBUG=5 GST_DEBUG=3,nle*:5,python:5 bin/pitivi &gt; debug.log 2&gt;&amp;1</code></p>
+<pre><code>PITIVI_DEBUG=5 GST_DEBUG=3,nle*:5,python:5 bin/pitivi &gt; debug.log 2&gt;&amp;1
+</code></pre>
 <p>The information most likely to be useful would probably be the debug
 info from <a href="GES.html">GES</a> in addition to Pitivi's:</p>
-<p><code>PITIVI_DEBUG=5 GST_DEBUG=ges:5 bin/pitivi &gt; debug.log 2&gt;&amp;1;</code></p>
+<pre><code>PITIVI_DEBUG=5 GST_DEBUG=ges:5 bin/pitivi &gt; debug.log 2&gt;&amp;1;
+</code></pre>
 <p>Some additional tips:</p>
 <ul>
 <li>When using GST_DEBUG, the resulting logs will most likely be too
@@ -233,7 +243,8 @@ you can profile Pitivi itself, with this command (and yes,
 <code>JUMP_THROUGH_HOOPS</code> is needed for this case, it is an environment
 variable of
 <a href="https://git.gnome.org/browse/pitivi/tree/bin/pitivi.in">bin/pitivi</a>:</p>
-<p><code>JUMP_THROUGH_HOOPS=1 python3 -m cProfile -s time -o pitivi_performance.profile bin/pitivi</code></p>
+<pre><code>JUMP_THROUGH_HOOPS=1 python3 -m cProfile -s time -o pitivi_performance.profile bin/pitivi
+</code></pre>
 <p>The resulting <code>pitivi_performance.profile</code> file can then be processed
 to create a visual representation of where the most time was spent and
 which functions were called the most often in the code. See also <a href="http://jeff.ecchi.ca/blog/tag/profiling/">Jeff's
@@ -242,6 +253,7 @@ blog posts on profiling</a>.</p>
 </div>
 
 
+        <div id="subpages"></div>
 	</div>
 	<div id="search_results">
 		<p>The results of the search are</p>
@@ -252,6 +264,7 @@ blog posts on profiling</a>.</p>
 	</div>
 </div>
 </main>
+
 
 <footer class="page-row">
 	<div class="container-fluid">

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Overall</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="design/2008_design/2008_Architectural_Redesign/Timeline.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="Timeline.md">
+<h1 id="overall">Overall</h1>
+<p>The <strong>Timeline</strong> object:</p>
+<p>Those TimelineObjects can control one or many TrackObjects from one or
+many Tracks of the Timeline.</p>
+<p>The goal of the <strong>Timeline</strong> is to offer an API suited for fast UI
+coding. The UI can then decide whether to listen to events/modifications
+taking place on the overall Timeline, or on the individual Tracks.</p>
+<blockquote>
+<p>This allows both creating simple and complex UI while offering the
+same interfaces</p>
+</blockquote>
+<p>.</p>
+<p><strong>All of the following editing actions must be done on the <code>Timeline</code>,
+<code>TimelineObject</code>(s) or <code>TimelineSelection</code>s</strong> and not on the <code>Track</code>(s)
+or <code>TrackObject(s)</code>:</p>
+<ul>
+<li>Adding objects to the Timeline</li>
+<li>Removing objects from the Timeline</li>
+<li>Linking and Unlinking objects</li>
+<li>Grouping and Ungrouping objects</li>
+<li>Moving objects</li>
+<li>Changing objects priority</li>
+<li>Trimming, Sliding, Rolling, and all other actions modifying any of
+<code>start duration in-point out-point priority</code>.</li>
+</ul>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>One or many <strong>Track</strong>s corresponding to the <strong>Project Settings</strong>.
+There is one <strong>Track</strong> per output <strong>Stream</strong>s (Most projects will
+therefore have 2 Tracks, one for the Audio stream and one for the
+Video stream).</li>
+<li>An ordered collection of <strong>TimelineObjects</strong>. Those objects can be
+Sources (producing content) or Operations (modifying content).</li>
+<li>A list of <strong>Selections</strong>, grouping several existing TimelineObject.
+<ul>
+<li>This is a convenience for modifying several distinct
+TimelineObjects at the same time.</li>
+<li>A <strong>TimelineObject</strong> can belong to several <strong>TimelineSelection</strong></li>
+<li>A <strong>TimelineSelection</strong> can control one or many properties to
+keep the modifications of those properties in sync
+(start-position, priority, in-point, out-point, ...)</li>
+</ul>
+</li>
+<li>The <strong>TimelineFactory</strong>, used in the
+<a href="Pipeline.html">Pipelines</a> (for viewing,
+rendering, ...).</li>
+</ul>
+<h2 id="timeline-properties">Timeline properties</h2>
+<p><code>tracks</code> : Ordered list of <code>Tracks</code> controlled by the <code>Timeline</code><br>
+<code>selections</code> : List of <code>TimelineSelection</code> in use.<br>
+<code>objects</code> : Ordered list of <code>TimelineObject</code> controlled by the <code>Timeline</code>. First ordered by <code>start</code> property, and then by <code>priority</code>.<br>
+<code>factory</code> : The <code>TimelineFactory</code> to use in <code>Pipeline</code>s.</p>
+<h2 id="track-properties">Track properties</h2>
+<p><code>objects</code> : Ordered list of <code>TrackObject</code>s controlled by the Track.<br>
+<code>stream</code> : The <code>Stream</code> of the Track.</p>
+<h2 id="timelineobject-properties">TimelineObject properties</h2>
+<p><a href="image:anatomy_of_timeline_object.png.md">thumb</a></p>
+<p><code>factory</code> : The ObjectFactory this TimelineObject corresponds to.
+:   None is an accepted value</p>
+<p><code>start</code> : The position of the TimelineObject.<br>
+<code>duration</code> : The duration of the TimelineObject.<br>
+<code>in-point</code> : The in-point of the contents of the TimelineObject.<br>
+<code>out-point</code> : The out-point of the contents of the TimelineObject.<br>
+<code>priority</code> : The priority of the TimelineObject.<br>
+<code>min-start</code> : The earliest time to which we can set the start property of the TimelineObject with the trimStart method<br>
+<code>max-duration</code> : The maximum value we can set the duration property of the TimelienObject to</p>
+<!-- -->
+<p>; <code>track-objects</code> :: The TrackObject(s) it the TimelineObject controls.<br>
+; <code>track</code> : the track to which the object belongs<br>
+; <code>object</code> : The actual TrackObject<br>
+; <code>time-offset</code> : The offset between the TimelineObject <code>start</code> position and the TrackObject <code>start</code> position. ALWAYS POSITIVE.<br>
+; <code>priority-offset</code> : The offset between the TimelineObject <code>priority</code> and the TrackObject <code>priority</code>. ALWAYS POSITIVE.</p>
+<h2 id="timelineselection-properties">TimelineSelection properties</h2>
+<p><code>objects</code> : The list of TimelineObject controlled by the <code>TimelineSelection</code></p>
+<h2 id="trackobject-properties">TrackObject properties</h2>
+<p><a href="image:Anatomy_of_trackobject.png.md">thumb</a></p>
+<p><code>parent</code> : The <code>TimelineObject</code> controlling this <code>TrackObject</code>. All the properties below <strong>MUST NOT BE MODIFIED DIRECTLY</strong> but through the <code>parent</code> TimelineObject.<br>
+<code>start</code> : The position of the TrackObject.<br>
+<code>duration</code> : The duration of the TrackObject.<br>
+<code>in-point</code> : The in-point of the contents of the TrackObject.<br>
+<code>out-point</code> : The out-point of the contents of the TrackObject.<br>
+<code>priority</code> : The priority of the TrackObject.</p>
+<h1 id="relationships">Relationships</h1>
+<h2 id="between-timeline-and-tracks">Between Timeline and Track(s)</h2>
+<p>The diagram below shows the relationship between Timeline, Tracks,
+TimelineObject and TrackObjects.</p>
+<p>Each TimelineObject controls at least one TrackObject in any of the
+Timeline's Tracks.</p>
+<blockquote>
+<p>We can see here that the two first TimelineObject control one
+TrackObject per Track. But the last TimelineObject only controls a
+TrackObject in the first Track.</p>
+</blockquote>
+<p>Each TrackObject of a given TimelineObject can have a relative offset</p>
+<blockquote>
+<p>This can be seen with the 2nd TimelineObject where the TrackObject it
+controls in the second track doesn't start at the same position.</p>
+</blockquote>
+<p><img src="Timeline-track-relationship.png" alt="Relationship between Timeline and Track" title="Relationship between Timeline and Track" id="relationship-between-timeline-and-track"></p>
+<h2 id="between-containers-timelineobject-and-objectfactory">Between containers, TimelineObject and ObjectFactory</h2>
+<p>The following diagram shows the relationship between:</p>
+<ul>
+<li>Containers
+<ul>
+<li>Timeline</li>
+<li>Track</li>
+</ul>
+</li>
+<li>Objects
+<ul>
+<li>At the Timeline level : TimelineObject</li>
+<li>At the Track level : TrackObject</li>
+</ul>
+</li>
+<li>ObjectFactory
+<ul>
+<li>At the Timeline level : ObjectFactory</li>
+<li>At the Track level : Streams(s) of an ObjectFactory</li>
+</ul>
+</li>
+</ul>
+<p><img src="Timeline-track-objectfactory-relationship.png" alt="Relationship between TimelineObject, Containers and ObjectFactory" title="Relationship between TimelineObject, Containers and ObjectFactory" id="relationship-between-timelineobject-containers-and-objectfactory"></p>
+<p>With the diagram above, the use-case of adding a source file to a
+Timeline becomes trivial:</p>
+<ul>
+<li>Pick the ObjectFactory corresponding to your source file</li>
+<li>Add it to the Timeline
+<ul>
+<li>
+<p>The Timeline creates a TimelineObject compatible with the given
+ObjectFactory type</p>
+<blockquote>
+<p>Timelines can therefore reject incompatible ObjectFactory like
+Live devices</p>
+</blockquote>
+</li>
+<li>
+<p>The timeline looks for what Streams the ObjectFactory can
+consume/provide</p>
+</li>
+<li>
+<p>For each of the Streams that the ObjectFactory handles:</p>
+<ul>
+<li>
+<p>Find a Track with a compatible Stream</p>
+<blockquote>
+<p>The user can of course choose his own Stream&amp;lt;=&amp;gt;Track
+mapping</p>
+</blockquote>
+</li>
+<li>
+<p>Create a TrackObject for that ObjectFactory Stream</p>
+</li>
+<li>
+<p>Add the TrackObject to the Track</p>
+</li>
+<li>
+<p>Link the TrackObject to the newly created TimelineObject</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="between-trackobject-and-gstreamer">Between TrackObject and GStreamer</h2>
+<p>The following diagram shows:</p>
+<ul>
+<li>On the left, the class hierarchy for TrackObject</li>
+<li>On the right, the class hierarchy for the various GNonLin GStreamer
+elements.</li>
+</ul>
+<p>The links between TrackObject(s) and GnlObject(s) show their
+relationship. <img src="Trackobject-gnonlin-relationship.png" alt="Relationship between TrackObject(s) and the GStreamer element they control" title="fig:Relationship between TrackObject(s) and the GStreamer element they control" id="relationship-between-trackobjects-and-the-gstreamer-element-they-control"></p>
+<h1 id="use-cases">Use cases</h1>
+<h2 id="unlinking-two-trackobjects">Unlinking two TrackObjects</h2>
+<p><img src="Timeline-object-unlinking.png" alt="Unlinking two TrackObjects coming from the same ObjectFactory" title="Unlinking two TrackObjects coming from the same ObjectFactory" id="unlinking-two-trackobjects-coming-from-the-same-objectfactory"></p>
+<p>We have a TimelineObject 'X' controling two TrackObject 'A' and 'B'
+coming from a common ObjectFactory 'O'. This is the most common case
+when adding a Audio+Video File to the Timeline.</p>
+<p>We want to handle the TrackObject(s) separately. Maybe to offset them,
+maybe to remove one of the TrackObject, ...</p>
+<ul>
+<li>We ask to unlink a certain TrackObject (B) from its controlling
+TimelineObject (X).</li>
+<li>The TimelineObject (X) looks for the ObjectFactory (O) from which
+the TrackObject (B) was created. In this case there's only one
+ObjectFactory, but there could be several in the case of
+LinkedSources.</li>
+<li>It creates a new empty TimelineObject (Y) for the selected
+ObjectFactory (O). That new TimelineObject is a complete clone
+of (X) except for the list of TrackObject(s) it controls.</li>
+<li>It removes the TrackObject (B) from the list of objects it's
+tracking. This means that:
+<ul>
+<li>(B) temporarily has no controlling TimelineObject.</li>
+<li>The TrackObject (B) has NOT been removed from the Track to which
+it belonged.</li>
+</ul>
+</li>
+<li>It adds the TrackObject (B) to the list of objects controlled by the
+new TimelineObject (Y).</li>
+</ul>
+<h2 id="linking-two-trackobjects">Linking Two TrackObjects</h2>
+<h3 id="that-come-from-the-same-objectfactory">That come from the same ObjectFactory</h3>
+<p><img src="Timeline-object-linking-simple.png" alt="Linking two TrackObjects coming from the same ObjectFactory" title="Linking two TrackObjects coming from the same ObjectFactory" id="linking-two-trackobjects-coming-from-the-same-objectfactory"></p>
+<p>This is the case when we had two TrackObjects originally belonging to
+the same TimelineObject, but which we unlinked.</p>
+<ul>
+<li>We ask to link a TrackObject (B) to a TimelineObject (X).</li>
+<li>The TimelineObject (X) compares the originating ObjectFactory of the
+TrackObject (B) and sees they are the same.</li>
+<li>The TimelineObject (X) unsets the TrackObject (B) from its current
+parent TimelineObject (Y)
+<ul>
+<li>If (Y) is no longer controlling any TrackObjects, we remove it
+from the Timeline.</li>
+</ul>
+</li>
+<li>The TimelineObject (X) adds the TrackObject (B) to its list of
+controlled TrackObject.</li>
+</ul>
+<h3 id="that-come-from-different-objectfactory">That come from different ObjectFactory</h3>
+<p><img src="Timeline-object-linking-advanced.png" alt="Linking two TrackObjects coming from different ObjectFactory" title="Linking two TrackObjects coming from different ObjectFactory" id="linking-two-trackobjects-coming-from-different-objectfactory"></p>
+<p>This is for the more generic case of linking two TrackObjects. A common
+example is when we recorded Audio and Video on separate devices/files.</p>
+<ul>
+<li>We ask to link TrackkObject (B) to TrackObject (A)</li>
+<li>We see they belong to originated from completely different
+ObjectFactory, requiring a new TimelineObject to control the two.</li>
+<li>Since we don't want to lose the original relationships between
+TrackObject and ObjectFactory, we create a LinkedtimelineObject
+(XY), wrapping the two previously existing TimelineObject (X and Y).
+<ul>
+<li><strong>Possibility</strong> : Since all TimelineObject have a counterpart
+ObjectFactory, we could automatically create a
+LinkedObjectFactory for the LinkedTimelineObject (XY) we just
+created
+<ul>
+<li>This allows infinit reuse of objects created in the
+Timeline.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="remaining-issues">Remaining issues</h1>
+<ul>
+<li>Does core need to provide some help for the UI's marker/keyframe
+handling ?</li>
+<li>How do we 'properly' handle the different kinds of linkage in
+LinkedTimelineObject
+<ul>
+<li>Some people might just want to have synchronized 'start'
+positions, but independent priorities for the TrackObjects.</li>
+<li>Some people might want to have the priorities synchronized, but
+freely move the positions of the TrackObjects.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

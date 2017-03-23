@@ -53,13 +53,13 @@ function unfold_current_page(base_name) {
 
 function list_subpages(subpages) {
 	var table;
-	var page_description;
+	var subpages_section;
 
 	if (subpages.length == 0)
 		return;
 
-	page_description = $("#page-description");
-	page_description.append('<h3>Subpages</h3>');
+	subpages_section = $("#subpages");
+	subpages_section.append('<h3>Subpages</h3>');
 
 	table = '<table><tbody>';
 	for (var i = 0; i < subpages.length; i++) {
@@ -75,7 +75,7 @@ function list_subpages(subpages) {
 	}
 	table += '</tbody></table>';
 
-	page_description.append(table);
+	subpages_section.append(table);
 }
 
 hd_navigation.panel_template = [
@@ -88,7 +88,7 @@ hd_navigation.panel_template = [
 	'{{{panel_unfold}}}',
 	'</h4></div>',
 	'<div id="{{name}}-children" class="panel-collapse collapse"',
-	'data-nav-ref="{{extension}}-{{{node_url}}}">',
+	'data-nav-ref="{{extension}}-{{{node_project}}}-{{{node_url}}}">',
 	'{{#subpages}}',
 	'{{{.}}}',
 	'{{/subpages}}',
@@ -106,6 +106,9 @@ hd_navigation.panel_unfold_template = [
 hd_navigation.url_for_node = (function(node) {
 	var url = utils.hd_context.hd_root;
 
+    if (node.in_toplevel == false)
+        url += node.project_name + '/';
+
 	if (node.extension == 'gi-extension') {
 		if (utils.hd_context.gi_language === undefined) {
 			url += 'c';
@@ -116,6 +119,7 @@ hd_navigation.url_for_node = (function(node) {
 	}
 
 	url += node.url;
+	console.log("url is", url);
 	return url;
 });
 
@@ -149,8 +153,11 @@ function sitemap_downloaded_cb(sitemap_json) {
 		else
 			var panel_unfold = '';
 
-		if (node.url == utils.hd_context.hd_basename)
-			subpages = node.subpages;
+		if (node.url == utils.hd_context.hd_basename && node.project_name == utils.hd_context.project_name) {
+			console.log("Hurray !");
+			if (node.render_subpages)
+				subpages = node.subpages;
+		}
 
 		parent_name = name;
 		level += 1;
@@ -169,6 +176,7 @@ function sitemap_downloaded_cb(sitemap_json) {
 					'title': node.title,
 					'panel_unfold': panel_unfold,
 					'name': name,
+					'node_project': node.project_name,
 					'node_url': node.url,
 					'subpages': rendered_subpages,
 				});
@@ -182,7 +190,7 @@ function sitemap_downloaded_cb(sitemap_json) {
 
 	$("#site-navigation").html(sidenav);
 
-	unfold_current_page(utils.hd_context.extension + "-" + utils.hd_context.hd_basename);
+	unfold_current_page(utils.hd_context.extension + "-" + utils.hd_context.project_name + "-" + utils.hd_context.hd_basename);
 
 	$("#home-link").attr("href", home_url);
 

@@ -1,4 +1,4 @@
-@require(page, assets_path, scripts, stylesheets)
+@require(page, assets_path, scripts, stylesheets, in_toplevel)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@
 @include("navbar.html")
 
 <main class="page-row page-row-expanded">
-<div data-extension="@str(page.extension_name)" data-hotdoc-ref="@str(page.link.ref)" class="page_container" id="page-wrapper"
+<div data-extension="@str(page.extension_name)" data-hotdoc-in-toplevel="@str(in_toplevel)" data-hotdoc-project="@str(page.project_name)" data-hotdoc-ref="@str(page.link.ref)" class="page_container" id="page-wrapper"
 @for key, value in page.meta.get('extra', {}).items():
 data-hotdoc-meta-@key="@str(value)"\
 @end
@@ -55,6 +55,7 @@ data-hotdoc-meta-@key="@str(value)"\
 	</div>
 </div>
 </main>
+
 
 <footer class="page-row">
 	@include("footer.html")

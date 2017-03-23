@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Grouping and nesting</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="design/Grouping_and_nesting.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="Grouping_and_nesting.md">
+<h1 id="grouping-and-nesting">Grouping and nesting</h1>
+<p>This page is intended to discuss the following concepts:</p>
+<ul>
+<li>Infinite clip grouping (vs the old “grouping vs linking” approach)</li>
+<li>“Compound” clips (a more visual form of grouping)</li>
+<li>Nested timelines/projects</li>
+</ul>
+<p>For the following objects:</p>
+<ul>
+<li>Management of clips on the timeline canvas</li>
+<li>Project management in general</li>
+</ul>
+<h1 id="proposal-recursive-pitivi">Proposal: Recursive Pitivi</h1>
+<p>When managing video projects of more than trivial complexity, it is
+often crucial to be able to treat a group of objects on the timeline as
+a unified object, from a user interface perspective. We are interested
+in finding methods of grouping that provide maximum user productivity at
+minimum development cost.</p>
+<h2 id="recursion-via-gstreamer">Recursion via GStreamer</h2>
+<p>At one extreme, the minimum development cost approach is one that
+requires exactly no code within Pitivi (or GES). Instead, we may create
+a new gstreamer decoder element (e.g. pitividec) that takes as its input
+the contents of a Pitivi project file. This decoder would reuse the GES
+core to expose an interface equivalent to decodebin.</p>
+<p>Once such an element is appropriately registered, decodebin,
+uridecodebin, and playbin will be able to play Pitivi project files as
+if they were video clips. This means that Pitivi project files would,
+with no additional code, become playable in gstreamer-based players such
+as Totem (subject to CPU limitations, of course). Naturally, it also
+means that they are importable as clips into Pitivi itself, for use in
+higher-level timelines.</p>
+<p>In effect, this approach is equivalent to rendering out the project to
+an intermediate clip that is then imported into another project, except
+that it avoids the cost in disk space and compression loss. A
+sufficiently advanced implementation might also negotiate output
+parameters such as resolution to avoid unnecessary scaling.</p>
+<h3 id="limitations">Limitations</h3>
+<p>The disadvantage of this approach is that it does not provide the full
+flexibility of traditional grouping mechanisms. There is no way to
+“ungroup” (i.e. to flatten a part of the group hierarchy). There is no
+way to edit a group within the context of the larger project. This
+functionality may be worth implementing but it is not sufficient on its
+own to satisfy all our group management needs.</p>
+<h2 id="internal-recursion">Internal Recursion</h2>
+<p>To provide more advanced functionality, we will require recursion that
+is not opaque to the Pitivi user interface. In Pitivi, source clips are
+immutable, and this invariant seems worth preserving for the sake of
+predictable behavior. Therefore, if groups are to be editable (and
+distinct from ordinary clips), they should not be implemented via the
+standard clip mechanism as described above.</p>
+<p>To allow the user interface to behave differently for groups than for
+individual clips, while still preserving a simple recursive structure,
+one solution is to have entire Pitivi sub-projects defined within a
+single project file, and inserted into the timeline as a
+timeline-object. Then the “group” action generates a subproject
+equivalent to the selected items, deletes those items from the timeline,
+and adds the subproject-object to the timeline in their place. “Ungroup”
+does the reverse.</p>
+<h3 id="possible-implementation-in-ges">Possible implementation in GES</h3>
+<p>We should have a GESTimelineTimelineObject class (better name to be
+found?), This class is a subclass of GESTimelineSource thus it is a
+wrapper around GnlSource (which is a GstBin itself), this bin would
+contain a GESTimeline. Then the TrackObject of this TimelineObject
+contain GESTrack themselves. We should have 3 ways of creating a
+GESTimelineTimelineObject:</p>
+<p><code>   ges_timeline_timeline_object_new()</code><br>
+<code>   ges_timeline_timeline_object_new_from_objects (GList *timeline_object) /*So we can group them easyly */</code><br>
+<code>   ges_timeline_timeline_object_new_from_project (const gchar *project_file_uri)</code></p>
+<p>The timeline contained in a GESTimelineTimelineObject can obviously also
+contain themselves a GESTimelineTimelineObject so we can infinitely
+recurse.</p>
+<h4 id="new-classes">New Classes</h4>
+<p><code>   GESTimelineSource</code><br>
+<code>       +---- GESTimelineTimelineObject</code></p>
+<p><code>   GESTrackSource</code><br>
+<code>       +---- GESTrackTrackObject</code></p>
+<h3 id="ui-niceties">UI Niceties</h3>
+<p>Because the UI can easily determine that a timeline-object is in fact a
+group, that object may be treated specially for UI purposes. In addition
+to exposing an Ungroup action, the object may also present an “Edit
+Group” option. This would open a new timeline (perhaps a new Pitivi
+window) showing the contents of the group, allowing the user to make
+alterations without the clutter of the entire super-project.</p>
+<h3 id="open-questions">Open Questions</h3>
+<p>Should it be possible to cut, stretch, or apply effects to a group?
+Doing so potentially makes it impossible to “ungroup” (if, for example,
+effects are applied on top of transitions), and certainly makes
+ungrouping require a certain amount of tricky logic to propagate global
+actions (like chopping out a chunk in time) down to the source clips. (I
+think that it should be possible to apply such effects and arbitrary
+operations to a group, and that Ungroup should simply be disabled until
+all modifications to the group are removed.)</p>
+<p>Should groups be displayed in the superproject with “holes” in time
+where there is an empty time in the subproject timeline, or should they
+simply be continuous? Should there be a mode where even more of the
+internal structure is visible? (I think that, for a first
+implementation, leaving them as continuous in the superproject UI is
+entirely sufficient and dramatically simpler to implement than the
+alternatives.)</p>
+<p>Is the duration of a group fixed or variable? If it is fixed, then we
+will need some UI to indicate a timeline of fixed duration (in the
+subproject editor). If it is variable, then what happens when the user
+uses the subproject editor to make the contents of the group longer?
+Should it expand in the super-project, or should excess time be ignored.
+(I think excess time should be ignored, with duration controlled
+exclusively from the super-project. Ideally, it should be possible to
+modify duration (and start-point) non-destructively from the
+super-project, and the subproject editor UI should indicate which
+portions of its timeline are actually in use in the super-project.)</p>
+<p>Should it be possible to copy a group by reference or only by value?
+i.e. can there exist multiple objects in a timeline that refer to the
+same subproject? (I think copy-by-reference is too valuable to give up,
+but careful UI design will be required to avoid creating massive
+confusion. A unique name for each subproject, displayed in every
+superproject timeline-object that references it, might help.)</p>
+<h3 id="limitations1">Limitations</h3>
+<p>If a group is representable as a single object, then it cannot span
+non-contiguous layers in the timeline. Specifically, in current video
+editors it is possible to create a group that contains (partially
+transparent) content at Layer 1 and Layer 3 but none at Layer 2, so that
+a timeline object that is not part of the group may be blended between
+two objects that are part of the group. (In my view, this behavior is
+not really desirable, and the simplicity of “a group is a timeline
+object” is worth the loss of functionality.)</p>
+<h1 id="infinite-clip-grouping">Infinite clip grouping</h1>
+<p>The notion of grouping/linking as it was in <a href="../releases/0.15.html">0.15</a> and
+earlier is nonsensical from a user's point of view. More details in <a href="https://bugzilla.gnome.org/show_bug.cgi?id=583266">bug
+583266</a>.</p>
+<p>As a user, I want infinite grouping (like in Inkscape), not have to make
+a theoretical distinction between linking and grouping.</p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>
