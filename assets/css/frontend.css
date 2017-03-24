@@ -607,13 +607,12 @@ body {
   min-height: 27px;
   min-width: 27px;
 }
-#sidenav-search {
-  width: 100%;
-  text-align: center;
-  padding: 25px;
-  background-color: #fff;
+#sidenav-lookup-field,
+.twitter-typeahead input.form-control {
+  width: 150px;
 }
-#sidenav-lookup-field {
+#sidenav-lookup-field:focus,
+.twitter-typeahead input.form-control {
   width: 100%;
 }
 #search_results {
