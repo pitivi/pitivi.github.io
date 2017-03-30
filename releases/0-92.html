@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>0.92 Release “Baby Steps”</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a id="home-link" class="hotdoc-navbar-brand">
+				<img src="images/favicon.png" alt="Home" id="home"> Pitivi
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+			<form action="" class="navbar-form navbar-right">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+                                       <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                               </div>
+                       </form>
+
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0-92.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="0.92.md">
+<h1 id="092-release-baby-steps">0.92 Release “Baby Steps”</h1>
+<p>The Pitivi team is proud to announce the second alpha release of the new
+version of Pitivi based on <a href="../GES.html">GES</a>, the GStreamer Editing
+Services library. This is a incremental bugfixing release, so please
+make sure to see the <a href="0-91.html">0.91</a> release notes to get the
+full picture.</p>
+<p><span style="background:#FF0000"><strong>WARNING</strong></span>: Please keep in mind
+that this is still an <em>alpha</em> release, so there may be some bugs we
+haven't found yet. We appreciate your feedback, so try it out, let us
+know how well it works for you and report detailed bugs for issues you
+may encounter. Again, this is <span style="color:#FF0000">not yet
+considered production-ready software</span>.</p>
+<p>That said, one month after <a href="0-91.html">0.91</a>, with the feedback we
+have received so far, we are pretty confident that the new release
+series is of much higher quality than the <a href="0-15.html">0.15</a> series
+and older.</p>
+<h2 id="changes-and-fixed-bugs">Changes and fixed bugs</h2>
+<p>Executive summary:</p>
+<ul>
+<li>Fix a bug where transitions would stop working</li>
+<li>Fix the handling of rendering parameters</li>
+<li>Fixes for the keyframes UI in the timeline</li>
+<li>Usability improvements for the welcome dialog</li>
+<li>Update the preview immediately when adding an effect</li>
+<li>Fixes for AppData XML spec compliance</li>
+<li>Various build and packaging fixes</li>
+<li>Drop the PyXDG dependency</li>
+<li>Translations have been updated</li>
+</ul>
+<p>See the list of <a href="https://bugzilla.gnome.org/buglist.cgi?product=pitivi;target_milestone=0.92">reported bugs that have been fixed in
+0.92</a>.</p>
+<p>General fixes:</p>
+<p><code>   e33598c ui/startupwizard: Force ButtonBox items to have a homogeneous/uniform width</code><br>
+<code>   b9f62d7 Keep the welcome dialog shown when clicking </code>“<code>Missing`` ``dependencies...</code>”<br>
+<code>   4dcbf5c elements: Set clip inpoints to prevent keyframes from breaking on split/trim</code><br>
+<code>   1de8d96 previewers: stop waveforms and thumbnails generation when removing clips</code><br>
+<code>   2cb9298 mainwindow: Make it possible to save project when an asset moved</code><br>
+<code>   bfe4154 project: Avoid to work with read only caps</code><br>
+<code>   79fb9ab render: Take into account video size scaling value when rendering</code><br>
+<code>   e43c54d project: Always set auto-transition to true on newly created timelines</code><br>
+<code>   dcb9b68 effects: Commit the timeline when adding an effect.</code><br>
+<code>   4936135 keyframes: If the length of the line is inferior to one pixel, don't draw it.</code></p>
+<p>Build/packaging fixes:</p>
+<p><code>   c316cc1 Apply minor changes to make AppData XML file friendlier to distributions</code><br>
+<code>   8159d23 Drop dependency on PyXDG, use GLib instead</code><br>
+<code>   5c94a24 build: Don't attempt locale-uninstalled bits if DESTDIR is set</code><br>
+<code>   6490a95 bin: Fix GI_TYPELIB_PATH mistakes</code><br>
+<code>   308f18c bin: Build gst-devtools only if in developer mode</code><br>
+<code>   078b71b bin: Better handling of gst version and add default scenario path</code><br>
+<code>   306e880 bin: Do not build GI and PyGobject if not necessary</code></p>
+<h2 id="requirements">Requirements</h2>
+<p>Dependencies/requirements have changed significantly since the 0.15
+series, but have stayed mostly the same since <a href="0-91.html">0.91</a>
+(pyxdg was dropped as a dependency).</p>
+<p>Generally speaking, you can refer to Pitivi's check.py for the
+dependencies' versions specific to a given release. See also
+<a href="../attic/Dependencies.html">dependencies</a> for additional tips.</p>
+<h2 id="known-issues">Known issues</h2>
+<p>Please see the <a href="0-91.html">0.91</a> release notes.</p>
+<p>See the list of <a href="https://bugzilla.gnome.org/buglist.cgi?query_format=advanced;bug_severity=blocker;bug_severity=critical;bug_severity=major;bug_severity=normal;bug_severity=minor;bug_severity=trivial;bug_status=NEW;bug_status=ASSIGNED;bug_status=REOPENED;product=pitivi">currently known
+issues</a>,
+the <a href="https://bugzilla.gnome.org/buglist.cgi?query_format=advanced&amp;version=0.91&amp;version=0.92&amp;resolution=---&amp;product=pitivi">0.91 and 0.92-specific
+issues</a>
+and the list of <a href="https://bugzilla.gnome.org/buglist.cgi?query_format=advanced;bug_status=NEEDINFO;target_milestone=0.91;target_milestone=0.92;product=pitivi">bugs that need re-testing with 0.91 and
+0.92</a>
+(you can help!)</p>
+<h1 id="contributors-for-this-release">Contributors for this release</h1>
+<p>In Pitivi:</p>
+<p><code>    9  Thibault Saunier</code><br>
+<code>    6  Jean-François Fortin Tam</code><br>
+<code>    6  Mathieu Duponchelle</code><br>
+<code>    3  Colin Walters</code><br>
+<code>    2  Fran Diéguez</code><br>
+<code>    1  Cheng-Chia Tseng</code><br>
+<code>    1  Claude Paroz</code><br>
+<code>    1  Daniel Mustieles</code><br>
+<code>    1  Marek Černocký</code><br>
+<code>    1  Martin Srebotnjak</code><br>
+<code>    1  Rafael Ferreira</code><br>
+<code>    1  Rūdolfs Mazurs</code><br>
+<code>    1  Timo Jyrinki</code><br>
+<code>    1  Мирослав Николић</code></p>
+<p>In GES:</p>
+<p><code>    5  Thibault Saunier</code><br>
+<code>    2  Kishore Arepalli</code><br>
+<code>    2  Mathieu Duponchelle</code></p>
+<h1 id="download-additional-information-and-feedback">Download, additional information and feedback</h1>
+<p>A tarball is available on
+<a href="http://ftp.gnome.org/pub/GNOME/sources/pitivi/0.92/">http://ftp.gnome.org/pub/GNOME/sources/pitivi/0.92/</a></p>
+<p>See <a href="http://www.pitivi.org">the Pitivi website</a> and [building with
+GES](building_with_ges.md for download and installation
+instructions.</p>
+<p>Feedback is welcome. See <a href="../Bug_reporting.html">bug reporting</a> for
+tips and tricks.</p>
+
+</div>
+
+
+        <div id="subpages"></div>
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

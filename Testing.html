@@ -34,11 +34,11 @@
 <script src="assets/js/prism_autoloader_path_override.js"></script>
 <script src="assets/js/trie.js"></script>
 
+<link rel="shortcut icon" href="images/favicon.png">
 
 </head>
 
 <body data-spy="scroll" data-target=".scrollspy" data-offset="70">
-
 
 <nav class="navbar navbar-fixed-top navbar-default">
 	<div class="container-fluid">
@@ -49,19 +49,20 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="https://gstreamer.freedesktop.org/" class="hotdoc-navbar-brand">
-				<img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+			<a id="home-link" class="hotdoc-navbar-brand">
+				<img src="images/favicon.png" alt="Home" id="home"> Pitivi
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
 			<form action="" class="navbar-form navbar-right">
-				<div class="form-group has-feedback">
-					<input type="text" class="form-control" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-					<span class="glyphicon glyphicon-search form-control-feedback"></span>
-				</div>
-			</form>
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+                                       <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                               </div>
+                       </form>
+
 		</div>
 	</div>
 </nav>
@@ -91,7 +92,7 @@
 <li>integration tests using GstValidate.</li>
 <li><a href="QA_Scenarios.html">manual tests</a></li>
 </ul>
-<p>Since version <a href="releases/0.91.html">0.91</a>, our backend test suite is much
+<p>Since version <a href="releases/0-91.html">0.91</a>, our backend test suite is much
 smaller and simpler; since most of the core functionality is now handled
 by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
 you want to test more thoroughly.</p>
@@ -104,7 +105,7 @@ you want to test more thoroughly.</p>
 <p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
 as it's now integrated into
 <a href="http://docs.python.org/dev/library/unittest.mock">Python3</a> which we use
-as of <a href="releases/0.94.html">0.94</a>.</p>
+as of <a href="releases/0-94.html">0.94</a>.</p>
 <p>If you're curious about our unit tests, the best way to get to know them
 is to write a few Pitivi unit tests and have us review them. Check out
 <a href="https://github.com/pitivi/pitivi/blob/master/docs/HACKING.md">how to set up your dev

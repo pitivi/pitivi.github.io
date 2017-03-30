@@ -10,13 +10,10 @@ function createTagsDropdown(tags_hashtable) {
 		if (title == 'deprecated') {
 			var menu = $("#menu");
 			var widget = '';
-			widget += '<li class="navbar-btn">';
-			widget += '<div class="checkbox">'
-			widget += '<label>';
-			widget += '<input type="checkbox" id="show-deprecated">';
-			widget += 'Deprecated symbols';
-			widget += '</label>';
-			widget += '</div>';
+			widget += '<li>';
+			widget += '<button type="button" id="show-deprecated" class="btn navbar-btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off">'
+			widget += 'Show deprecated symbols';
+			widget += '</button>';
 			widget += '</li>';
 			menu.append(widget);
 		} else {
@@ -158,9 +155,10 @@ function setupFilters() {
 	for (var key in tags_hashtable) {
 		currentFilters[key] = undefined;
 		if (key == 'deprecated') {
-			currentFilters[key] = $('#show-deprecated').prop('checked');
-			$('#show-deprecated').change(function() {
-				currentFilters["deprecated"] = $(this).prop('checked');
+			currentFilters[key] = $(this).hasClass('active');
+			$('#show-deprecated').click(function() {
+				currentFilters["deprecated"] = !$(this).hasClass('active');
+				console.log("I've changed", currentFilters["deprecated"]);
 				tocEl.isotope({filter: isotopeFilter});
 				mainEl.isotope({filter: isotopeFilter});
 			})

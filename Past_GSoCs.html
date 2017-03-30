@@ -34,11 +34,11 @@
 <script src="assets/js/prism_autoloader_path_override.js"></script>
 <script src="assets/js/trie.js"></script>
 
+<link rel="shortcut icon" href="images/favicon.png">
 
 </head>
 
 <body data-spy="scroll" data-target=".scrollspy" data-offset="70">
-
 
 <nav class="navbar navbar-fixed-top navbar-default">
 	<div class="container-fluid">
@@ -49,19 +49,20 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="https://gstreamer.freedesktop.org/" class="hotdoc-navbar-brand">
-				<img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+			<a id="home-link" class="hotdoc-navbar-brand">
+				<img src="images/favicon.png" alt="Home" id="home"> Pitivi
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
 			<form action="" class="navbar-form navbar-right">
-				<div class="form-group has-feedback">
-					<input type="text" class="form-control" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-					<span class="glyphicon glyphicon-search form-control-feedback"></span>
-				</div>
-			</form>
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+                                       <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                               </div>
+                       </form>
+
 		</div>
 	</div>
 </nav>
@@ -108,7 +109,7 @@ implementation of proxies in <a href="GES.html">GES</a> (see <a href="proxy_edit
 editing requirements</a>).</li>
 <li>Mathieu Duponchelle worked on heavy
 bugfixing all across the Pitivi, <a href="GES.html">GES</a> and GStreamer
-stack, allowing us to release <a href="releases/0.91.html">0.91</a> at the end of
+stack, allowing us to release <a href="releases/0-91.html">0.91</a> at the end of
 the summer.</li>
 <li>Joris Valette started work on
 slow/fast-motion in GStreamer.</li>
@@ -126,7 +127,7 @@ controls user interface for the timeline.</li>
 designing the GES “Materials” (now known as Assets) API.</li>
 </ul>
 <p>All the work above has been merged and is expected to be available in
-the <a href="releases/0.91.html">0.91</a> release.</p>
+the <a href="releases/0-91.html">0.91</a> release.</p>
 <p>In addition, we also co-mentored Peteris Krisjanis who worked on an
 audio waveform generation and display library for GStreamer (see his
 <a href="http://pecisk.blogspot.ca/2012/11/state-of-libwaveform-after-gsoc.html">post-summer
@@ -143,8 +144,8 @@ user interface for <a href="https://lubosz.wordpress.com/2016/09/26/making-viewe
 viewer</a>.</li>
 </ul>
 <p>Feroze and Lubosz's work has been merged and made available in the
-<a href="releases/0.15.html">0.15</a> release. Mathieu's work has also been merged, to
-be part of the <a href="releases/0.91.html">0.91</a> release.</p>
+<a href="releases/0-15.html">0.15</a> release. Mathieu's work has also been merged, to
+be part of the <a href="releases/0-91.html">0.91</a> release.</p>
 <h2 id="2010">2010</h2>
 <ul>
 <li>Thibault Saunier implemented with the

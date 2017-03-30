@@ -34,11 +34,11 @@
 <script src="assets/js/prism_autoloader_path_override.js"></script>
 <script src="assets/js/trie.js"></script>
 
+<link rel="shortcut icon" href="images/favicon.png">
 
 </head>
 
 <body data-spy="scroll" data-target=".scrollspy" data-offset="70">
-
 
 <nav class="navbar navbar-fixed-top navbar-default">
 	<div class="container-fluid">
@@ -49,19 +49,20 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="https://gstreamer.freedesktop.org/" class="hotdoc-navbar-brand">
-				<img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+			<a id="home-link" class="hotdoc-navbar-brand">
+				<img src="images/favicon.png" alt="Home" id="home"> Pitivi
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
 			<form action="" class="navbar-form navbar-right">
-				<div class="form-group has-feedback">
-					<input type="text" class="form-control" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-					<span class="glyphicon glyphicon-search form-control-feedback"></span>
-				</div>
-			</form>
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+                                       <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                               </div>
+                       </form>
+
 		</div>
 	</div>
 </nav>
@@ -94,9 +95,9 @@ editor (but not only that).</p>
 <p>Traditionally, Pitivi was a user interface and a homemade video editing
 “core” (or “backend”) that interacted directly with
 <a href="attic/GNonLin.html">GNonLin</a>. Starting in version
-<a href="releases/0.91.html">0.91</a>, Pitivi's core has been replaced by GES. This
+<a href="releases/0-91.html">0.91</a>, Pitivi's core has been replaced by GES. This
 means that Pitivi is mostly only a user interface on top of GES.
-Starting in version <a href="releases/0.95.html">0.95</a>, GNonLin has been replaced
+Starting in version <a href="releases/0-95.html">0.95</a>, GNonLin has been replaced
 by Non-Linear Engine to improve stability.</p>
 <p>GES does not aim at serving the needs of Pitivi only: we are building
 the platform of the future and breaking the cycle of failed projects.
