@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/attic/Dependencies.html#pygst", "fragment": "PyGST \ngrab gst python from git cd to it autogen.sh This is going to FAIL. after that do this \nPYGOBJECT_LIBS ENV include pygobject PYGOBJECT_CFLAGS I ENV include pygobject configure prefix ENV make make install \n"});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/Install_with_flatpak.html#installing-pitivi", "fragment": "Installing Pitivi \nTo install the latest stable Pitivi release run as a normal user no root nor sudo \nflatpak install user http flatpak.pitivi.org pitivi.flatpakref \n"});

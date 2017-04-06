@@ -188,9 +188,70 @@ body {
     width: 16.66%;
   }
 }
+#toc-column {
+  position: fixed;
+  top: 70px;
+  bottom: 0px;
+  right: 0px;
+  width: 16.66%;
+}
+#toc-wrapper {
+  overflow-y: auto;
+  height: 100%;
+}
 #sitenav-wrapper {
   overflow-y: auto;
   height: 100%;
+}
+nav[data-toggle='toc'] .nav > li > a {
+  display: block;
+  padding: 4px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3E3F3A;
+}
+nav[data-toggle='toc'] .nav > li > a:hover {
+  padding-left: 19px;
+  color: #93C54B;
+  text-decoration: none;
+  background-color: transparent;
+  border-left: 1px solid #93C54B;
+}
+nav[data-toggle='toc'] .nav > .active > a,
+nav[data-toggle='toc'] .nav > .active:hover > a {
+  padding-left: 18px;
+  font-weight: bold;
+  color: #93C54B;
+  background-color: transparent;
+  border-left: 2px solid #93C54B;
+}
+/* Nav: second level (shown on .active) */
+nav[data-toggle='toc'] .nav .nav {
+  display: none;
+  /* Hide by default, but at >768px, show it */
+  padding-bottom: 10px;
+}
+nav[data-toggle='toc'] .nav .nav > li > a {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 30px;
+  font-size: 12px;
+  font-weight: normal;
+}
+nav[data-toggle='toc'] .nav .nav > li > a:hover {
+  padding-left: 29px;
+}
+nav[data-toggle='toc'] .nav .nav > .active > a,
+nav[data-toggle='toc'] .nav .nav > .active:hover > a {
+  padding-left: 28px;
+  font-weight: 500;
+}
+nav[data-toggle='toc'] .nav > li > a:focus {
+  background-color: transparent;
+}
+/* from https://github.com/twbs/bootstrap/blob/e38f066d8c203c3e032da0ff23cd2d6098ee2dd6/docs/assets/css/src/docs.css#L631-L634 */
+nav[data-toggle='toc'] .nav > .active > ul {
+  display: block;
 }
 .sidenav-panel-body,
 .sidenav-main-panel-body {
@@ -211,43 +272,6 @@ a[aria-expanded=true] .glyphicon-chevron-right {
 }
 a[aria-expanded=false] .glyphicon-chevron-down {
   display: none;
-}
-.scrollspy {
-  padding-left: 5px;
-}
-#sidenav-wrapper {
-  position: relative;
-}
-#sidenav-wrapper > .nav li {
-  width: 100%;
-}
-#sidenav-wrapper > .nav a {
-  font-style: italic;
-  color: #8E8C84;
-}
-#sidenav-wrapper > .nav li a:hover,
-#sidenav-wrapper > .nav li a:focus {
-  background-color: #191a18;
-}
-#sidenav-wrapper > .nav .active {
-  font-weight: bold;
-  border-left: 5px solid black;
-  background-color: #191a18;
-}
-#sidenav-wrapper > .nav .nav {
-  display: none;
-}
-#sidenav-wrapper > .nav .active .nav {
-  display: block;
-}
-#sidenav-wrapper > .nav > li > .nav-h2 {
-  padding-left: 15px;
-}
-#sidenav-wrapper > .nav > li > .nav-h3 {
-  padding-left: 35px;
-}
-#sidenav-wrapper > .panel-title {
-  font-size: 14px;
 }
 .parameter_container > table,
 .member_container > table,
@@ -378,4 +402,13 @@ a[aria-expanded=false] .glyphicon-chevron-down {
 #subpages .authors-description tfoot tr td {
   padding: 6px 13px;
   border: 1px solid #DDD;
+}
+#search-mgn-glass {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+#navbar-search-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

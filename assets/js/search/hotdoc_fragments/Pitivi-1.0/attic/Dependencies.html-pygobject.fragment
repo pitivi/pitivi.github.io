@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/attic/Dependencies.html#pygobject", "fragment": "PyGObject \nDownload pygobject from the appropriate place extract it cd into it then \nPYCAIRO_LIBS ENV include pycairo PYCAIRO_CFLAGS I ENV pycairo CFLAGS I usr include cairo configure prefix ENV make make install \n"});

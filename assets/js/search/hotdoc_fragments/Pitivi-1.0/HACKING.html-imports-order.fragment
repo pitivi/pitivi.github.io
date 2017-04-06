@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/HACKING.html#imports-order", "fragment": "Imports order \nYou can guess the order of the imported modules by looking at some py files. The pre commit hook has authority in this case as it will reorder the imports if the order is not good. \n"});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "qa", "urls": ["QA_Scenarios.html#page-description", "Pitivi-1.0/QA_Scenarios.html#page-description"]});
+urls_downloaded_cb({"token": "qa", "urls": ["Pitivi-1.0/QA_Scenarios.html#standard-qa-scenarios", "QA_Scenarios.html#standard-qa-scenarios", "QA_Scenarios.html#site-navigation", "QA_Scenarios.html#user-provided-scenarios", "Pitivi-1.0/QA_Scenarios.html#site-navigation", "Pitivi-1.0/QA_Scenarios.html#user-provided-scenarios"]});

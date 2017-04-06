@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "design/2008_design/2008_Architectural_Redesign/High-level_Design.html#application", "fragment": "Application \nThis object represents a running instance of PiTiVi. \nIt contains \nIf a User Interface is used the Application object is its core counterpart. \nwidth \n"});

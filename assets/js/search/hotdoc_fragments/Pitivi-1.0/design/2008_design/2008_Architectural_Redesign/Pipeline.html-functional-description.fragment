@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/design/2008_design/2008_Architectural_Redesign/Pipeline.html#functional-description", "fragment": "Functional Description \nA Pipeline is where all the media processing takes place in PiTiVi. \nIn order to hide the complexity of the underlying GStreamer pipeline we only have to work with concepts \n"});

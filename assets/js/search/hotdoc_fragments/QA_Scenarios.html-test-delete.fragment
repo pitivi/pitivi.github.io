@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "QA_Scenarios.html#test-delete", "fragment": "Test Delete \nStart with an empty timeline \nAdd at least clips to the timeline \nSelect one clip \nPress Delete \nSelect at lest two more clips and press delete \n"});

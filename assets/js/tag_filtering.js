@@ -143,12 +143,14 @@ function doCompareDeprecated(all_values, filter_value, item_value) {
 
 function setupFilters() {
 	var mainEl = $('#main');
-	var tocEl = $("#table-of-contents");
 	var transitionDuration = 800;
 	var currentFilters = {};
 	var customCompareFunctions = {'since': doCompareVersions,
 		'stability': doCompareStability,
 		'deprecated': doCompareDeprecated};
+
+	var navSelector = '#toc';
+	var $myNav = $(navSelector);
 
 	var tags_hashtable = createTagsHashtable();
 	createTagsDropdown(tags_hashtable);
@@ -158,8 +160,6 @@ function setupFilters() {
 			currentFilters[key] = $(this).hasClass('active');
 			$('#show-deprecated').click(function() {
 				currentFilters["deprecated"] = !$(this).hasClass('active');
-				console.log("I've changed", currentFilters["deprecated"]);
-				tocEl.isotope({filter: isotopeFilter});
 				mainEl.isotope({filter: isotopeFilter});
 			})
 		} else {
@@ -170,7 +170,6 @@ function setupFilters() {
 				else
 					currentFilters[key] = $(this).text();
 
-				tocEl.isotope({filter: isotopeFilter});
 				mainEl.isotope({filter: isotopeFilter});
 			});
 		}
@@ -231,16 +230,7 @@ function setupFilters() {
 		return shouldBeVisible ($(this));
 	}
 
-	tocEl.isotope({
-		layoutMode: 'vertical',
-		animationEngine: 'best-available',
-		filter: isotopeFilter,
-		animationOptions: {
-			duration: transitionDuration
-		},
-	});
-
-	mainEl.isotope({
+	var $grid = mainEl.isotope({
 		layoutMode: 'vertical',
 		animationEngine: 'best-available',
 		containerStyle: "margin-left: 15px;",
@@ -250,15 +240,23 @@ function setupFilters() {
 		},
 	});
 
+	Toc.init($myNav);
+
 	function layoutTimer(){
 
 		setTimeout(function(){
 			mainEl.isotope('layout');
-			tocEl.isotope('layout');
 		}, transitionDuration);
 	}
 
 	layoutTimer();
+
+	$grid.on( 'arrangeComplete', function( event, filteredItems ) {
+		$("h1:not(.always-hide-toc),h2:not(.always-hide-toc),h3:not(.always-hide-toc),h4:not(.always-hide-toc),h5:not(.always-hide-toc),h6:not(.always-hide-toc)").removeAttr("data-toc-skip");
+		$("h1:hidden,h2:hidden,h3:hidden,h4:hidden,h5:hidden,h6:hidden").attr("data-toc-skip", "true");
+		$myNav.empty();
+		Toc.init($myNav);
+	})
 
 	// Isotope messes with our anchors positions
 	var hash_index = window.location.href.indexOf("#");

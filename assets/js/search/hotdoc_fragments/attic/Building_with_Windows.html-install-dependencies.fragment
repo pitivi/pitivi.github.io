@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "attic/Building_with_Windows.html#install-dependencies", "fragment": "Install dependencies \nNow we need to get some extra dependencies from mingw get to start the bootstrap. \nmingw get.exe install msys perl msys patch msys bison msys flex msys coreutils \n"});

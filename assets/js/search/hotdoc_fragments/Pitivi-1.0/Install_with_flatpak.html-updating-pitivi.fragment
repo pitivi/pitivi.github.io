@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/Install_with_flatpak.html#updating-pitivi", "fragment": "Updating Pitivi \nTo update Pitivi to the latest version you can just run again the installer the same way as before. \nAlternatively update by using directly flatpak \nflatpak user update org.pitivi.Pitivi \nIf a new version is fetched it will be made current. \n"});

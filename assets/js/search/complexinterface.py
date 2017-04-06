@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "complexinterface.py", "urls": ["design/2007_design/2007_Advanced_UI_implementation.html#page-description", "Pitivi-1.0/design/2007_design/2007_Advanced_UI_implementation.html#page-description"]});
+urls_downloaded_cb({"token": "complexinterface.py", "urls": ["design/2007_design/2007_Advanced_UI_implementation.html#interfaces1", "Pitivi-1.0/design/2007_design/2007_Advanced_UI_implementation.html#interfaces1"]});

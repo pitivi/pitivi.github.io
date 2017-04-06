@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Called", "urls": ["QA_Scenarios.html#page-description", "Plugins.html#page-description", "Pitivi-1.0/QA_Scenarios.html#page-description", "Pitivi-1.0/Plugins.html#page-description"]});
+urls_downloaded_cb({"token": "Called", "urls": ["QA_Scenarios.html#user-provided-scenarios", "Plugins.html#the-trac-way", "Pitivi-1.0/QA_Scenarios.html#user-provided-scenarios", "Pitivi-1.0/Plugins.html#the-trac-way"]});

@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "design/2008_design/2008_Architectural_Redesign/High-level_Design.html#ui-bundles", "fragment": "UI bundles \nWe need to provide some kind of mapping for which UI widget should be used for which core component including subclasses. \n"});

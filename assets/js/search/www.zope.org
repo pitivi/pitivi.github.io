@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "www.zope.org", "urls": ["Plugins.html#page-description", "releases/0.13.4.html#page-description", "releases/0-13-4.html#page-description", "Pitivi-1.0/Plugins.html#page-description", "Pitivi-1.0/releases/0.13.4.html#page-description"]});
+urls_downloaded_cb({"token": "www.zope.org", "urls": ["Plugins.html#the-zope-way", "releases/0.13.4.html#requirements", "releases/0-13-4.html#requirements", "Pitivi-1.0/Plugins.html#the-zope-way", "Pitivi-1.0/releases/0.13.4.html#requirements"]});

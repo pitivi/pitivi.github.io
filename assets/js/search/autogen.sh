@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "autogen.sh", "urls": ["HACKING.html#page-description", "Pitivi-1.0/HACKING.html#page-description", "Pitivi-1.0/attic/Dependencies.html#page-description", "attic/Dependencies.html#page-description"]});
+urls_downloaded_cb({"token": "autogen.sh", "urls": ["HACKING.html#page-description", "Pitivi-1.0/HACKING.html#page-description", "Pitivi-1.0/attic/Dependencies.html#pygst", "attic/Dependencies.html#pygst"]});
