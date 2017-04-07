@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "e.g", "urls": ["design/Grouping_and_nesting.html#recursion-via-gstreamer", "Pitivi-1.0/design/Grouping_and_nesting.html#recursion-via-gstreamer", "Pitivi-1.0/attic/Dependencies.html#in-a-virtual-env", "attic/Dependencies.html#in-a-virtual-env"]});
+urls_downloaded_cb({"token": "e.g", "urls": ["attic/Dependencies.html#in-a-virtual-env", "design/Grouping_and_nesting.html#recursion-via-gstreamer"]});

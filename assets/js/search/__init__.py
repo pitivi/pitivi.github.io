@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "__init__.py", "urls": ["Plugins.html#the-deluge-way", "Pitivi-1.0/Plugins.html#the-deluge-way"]});
+urls_downloaded_cb({"token": "__init__.py", "urls": ["Plugins.html#the-deluge-way"]});

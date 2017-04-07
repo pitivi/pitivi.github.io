@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "M.s", "urls": ["Pitivi-1.0/design/2008_design/2008_7_28_interview_notes.html#ms-comments", "design/2008_design/2008_7_28_interview_notes.html#ms-comments"]});
+urls_downloaded_cb({"token": "M.s", "urls": ["design/2008_design/2008_7_28_interview_notes.html#ms-comments"]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Phabricator", "urls": ["QA_Scenarios.html#site-navigation", "Bug_reporting.html#bug-reporting", "HACKING.html#development-workflow", "Pitivi-1.0/QA_Scenarios.html#site-navigation", "Pitivi-1.0/Bug_reporting.html#bug-reporting", "Pitivi-1.0/HACKING.html#development-workflow"]});
+urls_downloaded_cb({"token": "Phabricator", "urls": ["Bug_reporting.html#bug-reporting", "QA_Scenarios.html#site-navigation", "HACKING.html#development-workflow"]});

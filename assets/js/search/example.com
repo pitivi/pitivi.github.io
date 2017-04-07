@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "example.com", "urls": ["Pitivi-1.0/attic/Building_with_Windows.html#setting-up-git-config", "attic/Building_with_Windows.html#setting-up-git-config"]});
+urls_downloaded_cb({"token": "example.com", "urls": ["attic/Building_with_Windows.html#setting-up-git-config"]});

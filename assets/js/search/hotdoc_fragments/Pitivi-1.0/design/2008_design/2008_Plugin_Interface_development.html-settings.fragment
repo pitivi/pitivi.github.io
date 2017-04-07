@@ -1,1 +1,0 @@
-fragment_downloaded_cb({"url": "Pitivi-1.0/design/2008_design/2008_Plugin_Interface_development.html#settings", "fragment": "Settings \nThe current api simply requires that plugin.settings exists and un pickles that data to save load settings there is a problem there with human readabity and maybe even security also its not that kind to version upgrades. \n"});

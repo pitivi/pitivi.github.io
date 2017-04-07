@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "validate.py", "urls": ["Testing.html#integration-tests", "Pitivi-1.0/Testing.html#integration-tests"]});
+urls_downloaded_cb({"token": "validate.py", "urls": ["Testing.html#integration-tests"]});

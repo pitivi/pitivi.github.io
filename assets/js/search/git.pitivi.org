@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "git.pitivi.org", "urls": ["Git_repositories.html#old-pitiviorg-repository", "Pitivi-1.0/Git_repositories.html#old-pitiviorg-repository"]});
+urls_downloaded_cb({"token": "git.pitivi.org", "urls": ["Git_repositories.html#old-pitiviorg-repository"]});

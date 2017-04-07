@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "ninja", "urls": ["Testing.html#unit-tests", "Pitivi-1.0/Testing.html#unit-tests", "Pitivi-1.0/attic/Dependencies.html#on-fedora", "Pitivi-1.0/attic/Dependencies.html#gstreamers-dependencies", "attic/Dependencies.html#on-fedora", "attic/Dependencies.html#gstreamers-dependencies"]});
+urls_downloaded_cb({"token": "ninja", "urls": ["Testing.html#unit-tests", "attic/Dependencies.html#on-fedora", "attic/Dependencies.html#gstreamers-dependencies"]});

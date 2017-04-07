@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pitivi.wordpress.com", "urls": ["releases/0-96.html#096-release-cogito-ergo-proxy", "releases/0.96.html#096-release-cogito-ergo-proxy", "Pitivi-1.0/releases/0.96.html#096-release-cogito-ergo-proxy"]});
+urls_downloaded_cb({"token": "pitivi.wordpress.com", "urls": ["releases/0-96.html#096-release-cogito-ergo-proxy"]});

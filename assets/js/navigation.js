@@ -3,7 +3,7 @@ var hd_navigation = hd_navigation || {};
 hd_navigation.panel_template = [
 	'<div class="sidenav-panel-body {{panel_class}}">',
 	'<div class="panel-heading">',
-	'<h4 class="panel-title always-hide-toc" data-toc-skip>',
+	'<h4 class="panel-title" data-toc-skip>',
 	'<a class="sidenav-ref" href="{{{url}}}"',
 	' data-extension="{{extension}}">',
 	'{{title}}</a>',
@@ -163,11 +163,6 @@ function sitemap_downloaded_cb(sitemap_json) {
 	unfold_current_page(utils.hd_context.extension + "-" + utils.hd_context.project_name + "-" + utils.hd_context.hd_basename);
 
 	$("#home-link").attr("href", home_url);
-	$("a[data-hotdoc-relative-link=true]").attr('href',
-		function(index, val) {
-			console.log("=> " + home_url + '/../' + val);
-			return home_url + '/../' + val;
-		});
 
 	list_subpages(subpages);
 

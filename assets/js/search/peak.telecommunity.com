@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "peak.telecommunity.com", "urls": ["Plugins.html#plugin-deployment", "releases/0.13.4.html#requirements", "releases/0-13-4.html#requirements", "Pitivi-1.0/Plugins.html#plugin-deployment", "Pitivi-1.0/releases/0.13.4.html#requirements"]});
+urls_downloaded_cb({"token": "peak.telecommunity.com", "urls": ["Plugins.html#plugin-deployment", "releases/0-13-4.html#requirements"]});

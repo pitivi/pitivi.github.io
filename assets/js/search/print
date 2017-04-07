@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "print", "urls": ["Plugins.html#the-trac-way", "Command_line_tools.html#gstdiscoverer", "Pitivi-1.0/Plugins.html#the-trac-way", "Pitivi-1.0/Command_line_tools.html#gstdiscoverer", "Pitivi-1.0/attic/Dependencies.html#gstreamers-dependencies", "attic/Dependencies.html#gstreamers-dependencies"]});
+urls_downloaded_cb({"token": "print", "urls": ["Command_line_tools.html#gstdiscoverer", "Plugins.html#the-trac-way", "attic/Dependencies.html#gstreamers-dependencies"]});

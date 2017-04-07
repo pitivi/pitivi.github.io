@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Start", "urls": ["QA_Scenarios.html#test-delete", "Plugins.html#recording-devices", "Bug_reporting.html#when-running-with-flatpak", "Pitivi-1.0/QA_Scenarios.html#test-delete", "Pitivi-1.0/Plugins.html#recording-devices", "Pitivi-1.0/Bug_reporting.html#when-running-with-flatpak"]});
+urls_downloaded_cb({"token": "Start", "urls": ["Bug_reporting.html#when-running-with-flatpak", "Plugins.html#recording-devices", "QA_Scenarios.html#test-delete"]});
