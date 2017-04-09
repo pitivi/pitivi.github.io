@@ -252,7 +252,7 @@ function setupFilters() {
 	layoutTimer();
 
 	$grid.on( 'arrangeComplete', function( event, filteredItems ) {
-		$("h1,h2,h3,h4,h5,h6").removeAttr("data-toc-skip");
+		$("h1:not(.always-hide-toc),h2:not(.always-hide-toc),h3:not(.always-hide-toc),h4:not(.always-hide-toc),h5:not(.always-hide-toc),h6:not(.always-hide-toc)").removeAttr("data-toc-skip");
 		$("h1:hidden,h2:hidden,h3:hidden,h4:hidden,h5:hidden,h6:hidden").attr("data-toc-skip", "true");
 		$myNav.empty();
 		Toc.init($myNav);
@@ -267,4 +267,10 @@ function setupFilters() {
 
 	// From navbar_offset_scroller.js
 	scroll_if_anchor(window.location.hash);
+
+	$("#content-column").attrchange(function(attrName) {
+		if (attrName=='class') {
+			layoutTimer();
+		}
+	});
 }
