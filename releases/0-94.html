@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>0.94 Release “Tricks or Tracebacks?”</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,63 +41,70 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0-94.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="0.94.md">
+				    <div id="page-description" data-hotdoc-source="0.94.md" data-hotdoc-role="main">
         <h1 id="094-release-tricks-or-tracebacks">0.94 Release “Tricks or Tracebacks?”</h1>
 <p>The Pitivi team is proud to announce the fourth release of the new
-version of Pitivi based on <a href="../GES.html">GES</a>, the GStreamer Editing
+version of Pitivi based on <a href="GES.html">GES</a>, the GStreamer Editing
 Services library. This is mostly a incremental bugfixing release, so
-make sure to see the <a href="0-91.html">0.91</a>, <a href="0-92.html">0.92</a>
-and <a href="0-93.html">0.93</a> release notes to get the full picture.</p>
+make sure to see the <a href="releases/0-91.html">0.91</a>, <a href="releases/0-92.html">0.92</a>
+and <a href="releases/0-93.html">0.93</a> release notes to get the full picture.</p>
 <p>This is considered a <strong>beta</strong> release. As per the feedback we've
 received since 0.91 and the many fixes we've made since then, we are
 confident that the new release series is of much higher quality than the
@@ -195,7 +204,7 @@ a summary of some noteworthy commits:</p>
 </ul>
 <p>Generally speaking, you can refer to Pitivi's check.py for the
 dependencies' versions specific to a given release. See also
-<a href="../attic/Dependencies.html">dependencies</a> for additional tips.</p>
+<a href="attic/Dependencies.html">dependencies</a> for additional tips.</p>
 <h2 id="known-issues">Known issues</h2>
 <ul>
 <li>Layer management interface is missing features.</li>
@@ -211,7 +220,8 @@ bug 686181</a>.</li>
 <li>The automatic clip aligner feature does not work. We need someone to
 <a href="https://bugzilla.gnome.org/show_bug.cgi?id=708401">port it to use our new audio waveforms processing
 module</a>.</li>
-<li><a href="https://bugzilla.gnome.org/show_bug.cgi?id=686182">No dialog to install missing codecs after discovering
+<li>
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=686182">No dialog to install missing codecs after discovering
 clips</a>, and no
 error gets raised in that case. This means that the clip will
 “appear” to have imported correctly, but if you try inserting it
@@ -276,7 +286,7 @@ and the list of <a href="https://bugzilla.gnome.org/buglist.cgi?query_format=adv
 <p>See <a href="http://www.pitivi.org">the Pitivi website</a> and [building with
 GES](building_with_ges.md for download and installation
 instructions.</p>
-<p>Feedback is welcome. See <a href="../Bug_reporting.html">bug reporting</a> for
+<p>Feedback is welcome. See <a href="Bug_reporting.html">bug reporting</a> for
 tips and tricks.</p>
 
     </div>
@@ -285,45 +295,29 @@ tips and tricks.</p>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

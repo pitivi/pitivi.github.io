@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>0.13.4 Release : Cabernet d'Anjou</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,57 +41,64 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0-13-4.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="0.13.4.md">
+				    <div id="page-description" data-hotdoc-source="0.13.4.md" data-hotdoc-role="main">
         <h1 id="0134-release-cabernet-danjou">0.13.4 Release : Cabernet d'Anjou</h1>
 <p>The PiTiVi team is proud to announce the third release in the 0.13
 PiTiVi series.</p>
@@ -167,140 +176,200 @@ packages.</p>
 <h2 id="information-and-feedback">Information and Feedback</h2>
 <ul>
 <li>Information for users and developers can be found on the PiTiVi
-website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a></li>
+website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a>
+</li>
 <li>Comments and feedback are welcome.
 <ul>
 <li>Mailing-list : pitivi-pitivi@lists.sourceforge.net</li>
 <li>PiTiVi bug-tracker :
-<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a></li>
+<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="bugs-fixed">Bugs Fixed</h2>
 <ul>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589814">589814</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=589814">589814</a> :
 keyframe should have percentage labels</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=610072">610072</a> : crash
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=610072">610072</a> : crash
 when crossing trimming handles</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=354647">354647</a> : Use
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=354647">354647</a> : Use
 gtk.IconView for sources</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=432647">432647</a> : Viewer
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=432647">432647</a> : Viewer
 slider should be clickable</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=558019">558019</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=558019">558019</a> :
 Import/Open is a bit confusing</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=604699">604699</a> : broken
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=604699">604699</a> : broken
 link to Brandon's wiki in the gnonlin docs</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=337967">337967</a> : avoid
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=337967">337967</a> : avoid
 black frames as video thumbnails in the source list</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575356">575356</a> : timeout
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575356">575356</a> : timeout
 on importing large clip</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575983">575983</a> : pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575983">575983</a> : pitivi
 doesn't find Python 2.6 well</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576289">576289</a> : tagging
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=576289">576289</a> : tagging
 PiTiVi's audio streams for pulseaudio</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579544">579544</a> : cannot
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579544">579544</a> : cannot
 add layers above existing ones</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584135">584135</a> : " No
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=584135">584135</a> : " No
 audio " gets changed to some audio improperly; handle properly
 timelines without audio or without video</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=585735">585735</a> : patch
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=585735">585735</a> : patch
 Use different colors for video and audio clips</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=585738">585738</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=585738">585738</a> :
 Difference between mounted videos / different layers</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=586025">586025</a> : use a
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=586025">586025</a> : use a
 slider instead of 2 zoom buttons</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589691">589691</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=589691">589691</a> :
 keyframes outside trimmed regions cannot be adjusted</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=590569">590569</a> : lack of
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=590569">590569</a> : lack of
 consistency : icon for razor is a pair of scissor</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=590632">590632</a> : hide
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=590632">590632</a> : hide
 the previewer's slider widget when not previewing something directly
 in the source list</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=590784">590784</a> : shift +
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=590784">590784</a> : shift +
 click should select a horizontal range of clips</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=593663">593663</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=593663">593663</a> :
 Preference window initial size is too small</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=593962">593962</a> : Bad
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=593962">593962</a> : Bad
 string concatenation in gettext call (mainwindow.py)</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=593977">593977</a> : loading
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=593977">593977</a> : loading
 projects is slow</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=594389">594389</a> : move
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=594389">594389</a> : move
 playhead on click - better splitting metaphor</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=594826">594826</a> : alpha
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=594826">594826</a> : alpha
 channel for PNG images</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=595362">595362</a> : default
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=595362">595362</a> : default
 empty timeline length is way too long</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=595402">595402</a> : delete
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=595402">595402</a> : delete
 key on a clip in the source list should remove it.</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=595960">595960</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=595960">595960</a> :
 thumbnails are slow to generate when zooming</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=596134">596134</a> : render
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=596134">596134</a> : render
 sound is desynched</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=596267">596267</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=596267">596267</a> :
 division by zero when trying to load a timeline that starts with a
 still image</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=596948">596948</a> : Can't
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=596948">596948</a> : Can't
 grab waveform extremities</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=597243">597243</a> : delete
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=597243">597243</a> : delete
 key on a clip in the source list should remove it only if the
 timeline is not focused</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=597703">597703</a> : Trim
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=597703">597703</a> : Trim
 handles can get glued together</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=597704">597704</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=597704">597704</a> :
 Traceback when undoing 'split' operation</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=597711">597711</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=597711">597711</a> :
 Traceback when undoing 'ungroup' operation</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=597790">597790</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=597790">597790</a> :
 Traceback while previewing audio stream</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=598342">598342</a> : OGG
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=598342">598342</a> : OGG
 Theora ignores rendering resolution</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=602892">602892</a> : clips
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=602892">602892</a> : clips
 deleted in the source list are not restored in the timeline when
 undoing deletion</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603045">603045</a> : viewer
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603045">603045</a> : viewer
 no longer displays after dropping files</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603102">603102</a> : cannot
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603102">603102</a> : cannot
 render until the timeline has been seeked, and traceback if trying
 to seek after trying to render directly</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603107">603107</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603107">603107</a> :
 keyframes are hard to manipulate near trimming handles/clips edges</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603148">603148</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603148">603148</a> :
 unlinking clips resets the playhead position</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603149">603149</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603149">603149</a> :
 splitting resets the playhead position</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603202">603202</a> : PiTiVi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603202">603202</a> : PiTiVi
 can't load its own project format/file</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603203">603203</a> : More
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603203">603203</a> : More
 frame rate support</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603424">603424</a> : first
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603424">603424</a> : first
 seek doesn't work until you used the ruler to seek</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=603425">603425</a> : video
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=603425">603425</a> : video
 curves' hitbox eats kittens</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=604381">604381</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=604381">604381</a> :
 tracebacks when trying to open an old project (0.13.1 release
 screencast)</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=607408">607408</a> : Pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=607408">607408</a> : Pitivi
 does not respect theme settings</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=607614">607614</a> : downmix
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=607614">607614</a> : downmix
 channels for drawing audio waveforms on the timeline</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=608949">608949</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=608949">608949</a> :
 keyboard shortcuts for scrubbing/frame seeking broke</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=609426">609426</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=609426">609426</a> :
 traceback when importing an MPEG2-TS file (.mts, .m2ts)</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=611761">611761</a> : some
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=611761">611761</a> : some
 mpeg files get detected as sound-only</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=611915">611915</a> : Timeout
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=611915">611915</a> : Timeout
 not configurable</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=611946">611946</a> : some
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=611946">611946</a> : some
 clips randomly cause pitivi to segfault on import since changes in
 thumbnailing</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=611996">611996</a> : Files
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=611996">611996</a> : Files
 with % and # in the file name can't be imported by drag and drop</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=581816">581816</a> : render
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=581816">581816</a> : render
 output filename not in unicode</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=593465">593465</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=593465">593465</a> :
 changing project settings does not mark the project as changed</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=594312">594312</a> : convert
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=594312">594312</a> : convert
 entities in filenames in the render dialog</li>
 </ul>
 <p>...and more. See the <a href="http://bugzilla.gnome.org/buglist.cgi?product=pitivi&amp;target_milestone=0.13.4">list of bugs fixed on
@@ -312,45 +381,29 @@ Bugzilla</a></p>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

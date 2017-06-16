@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>0.13.3 Release : ... we shall never (sur)render</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,57 +41,64 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0-13-3.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="0.13.3.md">
+				    <div id="page-description" data-hotdoc-source="0.13.3.md" data-hotdoc-role="main">
         <h1 id="0133-release-we-shall-never-surrender">0.13.3 Release : ... we shall never (sur)render</h1>
 <p>The PiTiVi team is proud to announce the second release in the unstable
 0.13 PiTiVi series.</p>
@@ -140,56 +149,77 @@ repository</a>.</p>
 <h2 id="information-and-feedback">Information and Feedback</h2>
 <ul>
 <li>Information for users and developers can be found on the PiTiVi
-website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a></li>
+website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a>
+</li>
 <li>Comments and feedback are welcome.
 <ul>
 <li>Mailing-list : pitivi-pitivi@lists.sourceforge.net</li>
 <li>PiTiVi bug-tracker :
-<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a></li>
+<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="bugs-fixed">Bugs Fixed</h2>
 <ul>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=520653">520653</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=520653">520653</a> :
 pitivi.desktop fixes and more</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575311">575311</a> : clips
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575311">575311</a> : clips
 appear to be duplicated at high zoom levels when the timeline cursor
 is near the edge</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576576">576576</a> : not
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=576576">576576</a> : not
 possible to add clip at end of timeline</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584170">584170</a> : Video
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=584170">584170</a> : Video
 Playback Fails, Without Program Crash</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589809">589809</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=589809">589809</a> :
 [performance] zooming (even without thumbnails/waveforms) is slow</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=590114">590114</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=590114">590114</a> :
 rendering never finishes</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=590153">590153</a> : Zoom to
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=590153">590153</a> : Zoom to
 optimum level when loading projects</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=590203">590203</a> : image
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=590203">590203</a> : image
 hang during playback (auriga)</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=590440">590440</a> : Strings
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=590440">590440</a> : Strings
 not marked for translation in check.py</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=591571">591571</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=591571">591571</a> :
 Removing a keyframe is not easy</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=591616">591616</a> : crashes
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=591616">591616</a> : crashes
 when creating a new project after loading a project</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=591617">591617</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=591617">591617</a> :
 regression: centering on playhead when zooming broke</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=593736">593736</a> : play
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=593736">593736</a> : play
 button is empty</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=594114">594114</a> : Sound
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=594114">594114</a> : Sound
 curves not taken into account when rendering</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=594311">594311</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=594311">594311</a> :
 Clicking the timeline leads to a TypeError</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575975">575975</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575975">575975</a> :
 project-centric window title</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=582363">582363</a> : huge
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=582363">582363</a> : huge
 tabs the size of a hallway</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=594181">594181</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=594181">594181</a> :
 playhead/seeking broken by latest changes to factory cache in
 singledecodebin</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=594396">594396</a> : " save
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=594396">594396</a> : " save
 as " confuses pitivi; subsequent saves are on the original project
 file</li>
 </ul>
@@ -202,45 +232,29 @@ Bugzilla</a></p>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>0.13.1 Release : L'Aquila Immota Manet : The eagle remains unmoved</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,57 +41,64 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0-13-1.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="0.13.1.md">
+				    <div id="page-description" data-hotdoc-source="0.13.1.md" data-hotdoc-role="main">
         <h1 id="0131-release-laquila-immota-manet-the-eagle-remains-unmoved">0.13.1 Release : L'Aquila Immota Manet : The eagle remains unmoved</h1>
 <p>The PiTiVi team is proud to announce the first release in the unstable
 0.13 PiTiVi series.</p>
@@ -149,210 +158,309 @@ repository</a>.</p>
 <h2 id="information-and-feedback">Information and Feedback</h2>
 <ul>
 <li>Information for users and developers can be found on the PiTiVi
-website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a></li>
+website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a>
+</li>
 <li>Comments and feedback are welcome.
 <ul>
 <li>Mailing-list : pitivi-pitivi@lists.sourceforge.net</li>
 <li>PiTiVi bug-tracker :
-<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a></li>
+<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="bugs-fixed">Bugs Fixed</h2>
 <ul>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=572099">572099</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=572099">572099</a> :
 [Viewer] Doesn't take project settings into account</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=430694">430694</a> : Cannot
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=430694">430694</a> : Cannot
 play a timeline with only audio or only video</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=434614">434614</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=434614">434614</a> :
 [Timeline] don't display scrollbar if timeline is empty</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=456147">456147</a> : Image
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=456147">456147</a> : Image
 support</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=541038">541038</a> : Add
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=541038">541038</a> : Add
 missing-plugins support</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=569732">569732</a> : QOS is
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=569732">569732</a> : QOS is
 deactivated in video sinks, causing slow playback</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573772">573772</a> : MP3
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573772">573772</a> : MP3
 file import fails</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573884">573884</a> : Seeking
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573884">573884</a> : Seeking
 is different from Viewer or Ruler</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573887">573887</a> : Source
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573887">573887</a> : Source
 list: Re-enable playback from the sourcelist</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573890">573890</a> : Viewer:
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573890">573890</a> : Viewer:
 Don't forget to reset the limits</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573892">573892</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573892">573892</a> :
 Timeline: Don't forget to reset the scroll limits</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573894">573894</a> : Viewer:
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573894">573894</a> : Viewer:
 Ugly when nothing is displayed</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573897">573897</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573897">573897</a> :
 Single-stream encoding doesn't work</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573898">573898</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573898">573898</a> :
 EncodingDialog: Closing the dialog box doesn't properly s...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573899">573899</a> : Can't
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573899">573899</a> : Can't
 use the timeline/pipeline after rendering</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=574595">574595</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=574595">574595</a> :
 sourcelist: Exception raised in beautify_stream</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=574655">574655</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=574655">574655</a> :
 command_line branch</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575022">575022</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575022">575022</a> :
 problems with audio-only files</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575123">575123</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575123">575123</a> :
 Problems pausing timeline</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576568">576568</a> : more
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=576568">576568</a> : more
 varied list of default project presets</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576577">576577</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=576577">576577</a> :
 removing clips does not work with multiple tracks</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=577106">577106</a> : DV file
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=577106">577106</a> : DV file
 causes hang when seeked</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=578665">578665</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=578665">578665</a> :
 [LGM2009] ability to mass-unlink</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580191">580191</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580191">580191</a> :
 [usability] mouse cursor not reset when exiting clip hand...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580192">580192</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580192">580192</a> :
 removing a clip from the project doesn't work</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580657">580657</a> : stream
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580657">580657</a> : stream
 not linked error on project load in a jaunty virtu...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580915">580915</a> : PiTiVi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580915">580915</a> : PiTiVi
 segfaults on 64-bit ubuntu 9.04</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=581042">581042</a> : speex
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=581042">581042</a> : speex
 files cannot be imported</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583432">583432</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583432">583432</a> :
 importer hangs when importing a clip with subtitles</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=335547">335547</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=335547">335547</a> :
 [configuration] Use XDG (freedesktop) locations</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=336348">336348</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=336348">336348</a> :
 [Advanced Timeline] Zoom should be possible with scroll w...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=503842">503842</a> : Audio
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=503842">503842</a> : Audio
 waveform display when in complex timeline</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=557575">557575</a> : Doesn't
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=557575">557575</a> : Doesn't
 load relative filenames</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=563351">563351</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=563351">563351</a> :
 translation issues</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=563443">563443</a> : Render
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=563443">563443</a> : Render
 dialog action button should say 'Render', not 'Rec...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=569896">569896</a> : special
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=569896">569896</a> : special
 entities in file paths are not converted</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=569941">569941</a> : padding
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=569941">569941</a> : padding
 around thumbnail items</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=569975">569975</a> : the "
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=569975">569975</a> : the "
 thumbnailing in progress " icon is not pretty</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=569981">569981</a> : kill
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=569981">569981</a> : kill
 fuzzy icons</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=569988">569988</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=569988">569988</a> :
 [ui/gstwidget] Can't modify element properties.</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=570116">570116</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=570116">570116</a> :
 dragging a clip onto the timeline should take into accoun...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=572098">572098</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=572098">572098</a> :
 [LGM2009] dragging a clip should move all selected clips</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=572328">572328</a> : do not
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=572328">572328</a> : do not
 pre-emptively generate thumbnails and waveforms wh...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=396804">396804</a> : Write
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=396804">396804</a> : Write
 unit tests</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=403880">403880</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=403880">403880</a> :
 Importing high resolution content is slow</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=458943">458943</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=458943">458943</a> :
 Rendering a project twice don't work</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=554603">554603</a> : not
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=554603">554603</a> : not
 exposing video-widget while in paused state</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=559463">559463</a> : Video
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=559463">559463</a> : Video
 freeze on inter-clip border</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=560148">560148</a> : Handle
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=560148">560148</a> : Handle
 audio-only or video-only files</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=563458">563458</a> : Pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=563458">563458</a> : Pitivi
 a bit buggy in playing back</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=569974">569974</a> : audio
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=569974">569974</a> : audio
 and video tracks order is reversed</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573775">573775</a> : FLAC
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573775">573775</a> : FLAC
 files cannot be seeked</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573997">573997</a> : no svg
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573997">573997</a> : no svg
 sources for the icons</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575970">575970</a> : first
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575970">575970</a> : first
 zoom level stepping is too drastic</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575982">575982</a> : pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575982">575982</a> : pitivi
 has syntax errors when using Python 2.6</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576212">576212</a> : full
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=576212">576212</a> : full
 screen checkbox isn't signaled when using F11 for to...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=577759">577759</a> : UI
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=577759">577759</a> : UI
 support for file load and save (formatter)</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=578676">578676</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=578676">578676</a> :
 [LGM2009] render codec settings are ignored</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579288">579288</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579288">579288</a> :
 dragging audio clips fails</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579321">579321</a> : saving
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579321">579321</a> : saving
 again does not work</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579324">579324</a> : loading
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579324">579324</a> : loading
 a saved project does not allow manipulating the t...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579534">579534</a> : source
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579534">579534</a> : source
 list sorting is messed up on project load</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579537">579537</a> : cannot
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579537">579537</a> : cannot
 insert new clips in the timeline after loading a s...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580172">580172</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580172">580172</a> :
 dragging a clip's in/end point should snap to other clips</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580671">580671</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580671">580671</a> :
 [LGM2009] subtle gradients for clips</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580673">580673</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580673">580673</a> :
 [LGM2009] ability to disable/enable thumbnailing and wave...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580884">580884</a> : clips
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580884">580884</a> : clips
 do not snap by the ends</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=581112">581112</a> : cannot
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=581112">581112</a> : cannot
 separate audio from video (broken unlink)</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583041">583041</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583041">583041</a> :
 GStreamer error pops-up</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583147">583147</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583147">583147</a> :
 unmatched encoder settings prevent rendering</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583310">583310</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583310">583310</a> :
 Forward/Rewind buttons not implemented</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583472">583472</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583472">583472</a> :
 1024x768 is XGA, not WXGA</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583487">583487</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583487">583487</a> :
 automatic missing codec search</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575955">575955</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575955">575955</a> :
 human-readable duration times in the media library</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575957">575957</a> : some
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=575957">575957</a> : some
 clips have reverse metadata ordering in the media li...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576872">576872</a> : crash
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=576872">576872</a> : crash
 when importing a clip with an esoteric file name</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579410">579410</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579410">579410</a> :
 formatter doesn't like unicode</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579541">579541</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579541">579541</a> :
 [LGM2009] seeking images doesn't work</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580646">580646</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580646">580646</a> :
 trimming endpoint edge snapping overlaps the next clip</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580962">580962</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580962">580962</a> :
 restarting playback requires 2 activations after scrubbing</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580972">580972</a> : refuses
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580972">580972</a> : refuses
 to load a project file with unicode path</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=558823">558823</a> : " save
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=558823">558823</a> : " save
 as " button is useless</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=569834">569834</a> : render
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=569834">569834</a> : render
 settings are constantly reset</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=572327">572327</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=572327">572327</a> :
 dragging multiple clips to the timeline should be possible</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=572346">572346</a> : clips
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=572346">572346</a> : clips
 can be duplicated in the media library</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=573531">573531</a> : pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=573531">573531</a> : pitivi
 does not start</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576326">576326</a> : better
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=576326">576326</a> : better
 timeline mouse scroll wheel usage</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579238">579238</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579238">579238</a> :
 [LGM2009] slow / laggy dragging : do not update the previ...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579319">579319</a> : global
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579319">579319</a> : global
 keyboard shortcuts should apply only when the time...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579638">579638</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579638">579638</a> :
 remember the last used folder for rendering</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579666">579666</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=579666">579666</a> :
 [LGM2009] saved timeline renders incorrectly</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580654">580654</a> : don't
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=580654">580654</a> : don't
 die on missing project media, allow locating it</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=582419">582419</a> : images
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=582419">582419</a> : images
 don't seek and cause desynch when rendering</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583242">583242</a> : PiTiVi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583242">583242</a> : PiTiVi
 GUI freezes</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583514">583514</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583514">583514</a> :
 clickable URL in the About dialog</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583592">583592</a> : strange
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583592">583592</a> : strange
 error importing filenames with markups</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583595">583595</a> : cannot
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=583595">583595</a> : cannot
 load a saved project with multiple streams</li>
 </ul>
 <p><a href="http://bugzilla.gnome.org/buglist.cgi?product=pitivi&amp;target_milestone=0.13.1">List of bugs fixed on
@@ -364,45 +472,29 @@ Bugzilla</a></p>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

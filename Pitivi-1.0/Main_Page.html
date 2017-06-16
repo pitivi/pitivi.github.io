@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pitivi</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Main_Page.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="Main_Page.md">
+<h1 id="pitivi-development-website">Pitivi development website</h1>
+<p>This is the documentation for <strong>planning/contributing</strong> to <a href="http://www.pitivi.org">Pitivi</a>, the
+Free and Open Source video editor based on GStreamer. If you're looking
+for documentation on how to <em>use</em> Pitivi, check out our <a href="http://pitivi.org/manual/">User's Manual</a>
+(also available directly inside the application)!</p>
+<p>To edit the website edit the markdown files in our git repo in the
+<code>docs/</code> and follow our <a href="HACKING.html">developer instructions</a>.</p>
+<h1 id="contributors-documentation">Contributors' documentation</h1>
+<p>See the <a href="HACKING.html">Developer documentation</a> section
+page for a complete listing of documentation aimed at contributing to
+Pitivi. Here is a small overview/some starting points taken from that
+category:</p>
+<ul>
+<li><a href="Pitivi_Love.html">Easy and fun projects</a> for new contributors</li>
+<li><a href="Roadmap.html">Roadmap</a> (long-term plans)</li>
+<li><a href="Architecture.html">Architecture</a>: where does Pitivi fit? What
+are all those components?</li>
+<li><a href="design.html">Brainstorming</a> (UI mockups and “future” features only!)</li>
+</ul>
+<p>See also the <a href="http://www.pitivi.org/?go=contributing">Contributing</a> page
+on the website (includes a “Why contribute to Pitivi?” section).</p>
+<h2 id="tools-to-help-you-get-started">Tools to help you get started</h2>
+<ul>
+<li><a href="Git.html">Git</a></li>
+<li><a href="HACKING.html">Setup development environment</a> (official and
+easiest way to get your testing/development environment running,
+with pre-built dependencies)</li>
+<li>The <a href="Testing.html">test suite</a> (outdated)</li>
+</ul>
+<h2 id="ways-to-communicate">Ways to communicate</h2>
+<ul>
+<li><a href="Bug_reporting.html">Reporting bugs</a></li>
+<li>IRC: <a href="irc://irc.freenode.net/pitivi">#pitivi</a> on irc.freenode.net</li>
+<li>Our <a href="https://plus.google.com/+pitivi">Google+ page</a> or
+<a href="https://twitter.com/pitivi">Twitter</a> account. Do <em>not</em> report bugs
+there, use our bug tracker instead!</li>
+<li><a href="The_people.html">The people</a> (who does what)</li>
+</ul>
+<h1 id="random-stuff">Random stuff</h1>
+<ul>
+<li><a href="Goals.html">Goals</a> (mission statement, vision)</li>
+<li><a href="Project_history.html">Project history</a> - rumors of our death
+have been greatly exagerated... :)</li>
+<li><a href="Current_events.html">Current events</a> - releases, meetings,
+talks ... See also the <a href="http://www.pitivi.org/planet">planet</a> for
+news about the project.</li>
+<li><a href="design/Why_python.html">Why Python?</a></li>
+<li><a href="Praise.html">Praise</a> - a page to list some of the praises and
+positive comments we received</li>
+<li><a href="Google_Summer_of_Code.html">Google Summer of Code</a></li>
+</ul>
+<h1 id="pages-that-need-to-be-reworkeddeleted">Pages that need to be reworked/deleted</h1>
+<p>The pages in these categories need to be reworked. Help is welcome!
+Also, feel free to tag pages with these categories should you find that
+a page is woefully incomplete or outdated:</p>
+<ul>
+<li><a href="attic.html">Probably obsolete</a></li>
+</ul>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

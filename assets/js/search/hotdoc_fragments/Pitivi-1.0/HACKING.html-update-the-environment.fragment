@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/HACKING.html#update-the-environment", "fragment": "Update the environment \nTo update the dependencies installed in the dev env run \nThat will actually clean the prefix update all dependencies from their git repos and tarballs as defined in the flatpak manifest located at build flatpak pitivi.template.json \n"});

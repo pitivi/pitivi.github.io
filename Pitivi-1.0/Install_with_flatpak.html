@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Install with flatpak</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Install_with_flatpak.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="Install_with_flatpak.md">
+<h1 id="install-with-flatpak">Install with flatpak</h1>
+<p>The Pitivi community supports a <a href="http://flatpak.org/">flatpak</a>
+repository to let users install the latest Pitivi releases. This is the
+official, recommended way of installing Pitivi on Linux. The repository
+contains only 64-bit builds.</p>
+<p>If you see problems, come to our <a href="http://www.pitivi.org/?go=contact">IRC
+channel</a> or <a href="Bug_reporting.html">file a
+bug</a>.</p>
+<h2 id="getting-flatpak">Getting Flatpak</h2>
+<p>You can get information about how to install flatpak for your
+distribution <a href="http://flatpak.org/getting.html">here</a>.</p>
+<p>You need to log out/in again after installing flatpak for apps to show
+up in menus. Until you log out/in, the flatpak data directories aren't
+part of your desktop environment's search path. This needs to be done
+only one time.</p>
+<h2 id="installing-pitivi">Installing Pitivi</h2>
+<p>To install the latest stable Pitivi release, run as a normal user (no
+root nor sudo):</p>
+<p><code> $ flatpak install --user </code><a href="http://flatpak.pitivi.org/pitivi.flatpakref"><code>http://flatpak.pitivi.org/pitivi.flatpakref</code></a></p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>If your flatpak version is less than 0.8, you need to run instead:</p>
+<p><code> $ flatpak --version</code><br>
+<code> $ curl </code><a href="https://git.gnome.org/browse/pitivi/plain/build/flatpak/pitivi-flatpak"><code>https://git.gnome.org/browse/pitivi/plain/build/flatpak/pitivi-flatpak</code></a><code> -Sso pitivi-flatpak</code><br>
+<code> $ chmod +x pitivi-flatpak</code><br>
+<code> $ ./pitivi-flatpak --branch=</code><strong><code>stable</code></strong><code> --update</code></p>
+<p>When the script finishes installing (or updating), it launches Pitivi.</p>
+<h2 id="installing-pitivi-master-development-version">Installing Pitivi master (development version)</h2>
+<p>To install the development version as a separate application called
+“(Rolling) Pitivi”, run in a terminal:</p>
+<p><code> $ flatpak install --user </code><a href="http://flatpak.pitivi.org/pitivi-master.flatpakref"><code>http://flatpak.pitivi.org/pitivi-master.flatpakref</code></a></p>
+<p>You might want to use Pitivi master to contribute and help us test
+Pitivi, or if a specific bug which annoys you is fixed in master, etc.</p>
+<h2 id="running-pitivi">Running Pitivi</h2>
+<p>You can now launch Pitivi from your applications menu as any other
+installed application.</p>
+<p>You can also re run the installer which launches Pitivi after updating
+to the latest version.</p>
+<p>To see if warning or error messages are printed in the console, run:</p>
+<p><code> $ flatpak run org.pitivi.Pitivi//stable</code></p>
+<p>If for some reason you need to use an older Pitivi version, run:</p>
+<p><code> $ flatpak run org.pitivi.Pitivi//0.96</code></p>
+<h2 id="updating-pitivi">Updating Pitivi</h2>
+<p>To update Pitivi to the latest version you can just run again the
+installer the same way as before.</p>
+<p>Alternatively, update by using directly flatpak:</p>
+<p><code> $ flatpak --user update org.pitivi.Pitivi</code></p>
+<p>If a new version is fetched, it will be made current.</p>
+<h2 id="uninstalling-pitivi">Uninstalling Pitivi</h2>
+<p>If your software manager doesn't allow this yet, run the command below:</p>
+<p><code> $ flatpak --user uninstall org.pitivi.Pitivi stable</code></p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

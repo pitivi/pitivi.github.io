@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/Architecture.html#main-pitivi-dependencies", "fragment": "The Pitivi user interface is made using GTK a toolkit for creating graphical user interfaces using widgets and event handling. \nThe backend is made of the following components \nUltimately all the components above are based on GLib and communicate through its signals. \n"});

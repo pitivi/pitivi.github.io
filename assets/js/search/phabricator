@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "phabricator", "urls": ["Bug_reporting.html#bug-reporting", "QA_Scenarios.html#offcanvasleft-chevron", "HACKING.html#development-workflow", "Mac_OS_X.html#installing", "releases/0-99.html#pitivi-099", "releases/1-0.html#pitivi-10"]});
+urls_downloaded_cb({"token": "phabricator", "urls": ["Bug_reporting.html#bug-reporting", "HACKING.html#development-workflow", "Mac_OS_X.html#installing", "releases/1-0.html#pitivi-10", "releases/0-99.html#pitivi-099", "QA_Scenarios.html#sidenav"]});

@@ -21,7 +21,7 @@ function createTagsDropdown(tags_hashtable) {
 			var widget = '<li class="dropdown">';
 			widget += '<a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
 			widget += title.capitalizeFirstLetter() + ' ';
-			widget += '<span class="caret"></span></button>';
+			widget += '<span class="caret"></span></a>';
 			widget += '<ul class="dropdown-menu" id="' + key + '-menu">';
 
 			widget += '<li><a id="' + key + '">Reset</a></li>';
@@ -242,6 +242,25 @@ function setupFilters() {
 
 	Toc.init($myNav);
 
+	/* Fix BASE anchors */
+	$("#toc a").each (function () {
+		var old_href = $(this).attr("href");
+		$(this).attr("href", utils.hd_context.rel_path + old_href);
+		console.log("Setting", old_href);
+		$(this).attr("data-target", old_href);
+	});
+
+	anchors.options = {
+		visible: 'touch',
+	}
+
+	anchors.add("#main h1:not(data-toc-skip)[id],h2:not(data-toc-skip)[id],h3:not(data-toc-skip)[id],h4:not(data-toc-skip)[id],h5:not(data-toc-skip)[id]");
+
+	$(".anchorjs-link").each (function () {
+		var old_href = $(this).attr("href");
+		$(this).attr("href", utils.hd_context.rel_path + old_href);
+	});
+
 	function layoutTimer(){
 
 		setTimeout(function(){
@@ -252,7 +271,7 @@ function setupFilters() {
 	layoutTimer();
 
 	$grid.on( 'arrangeComplete', function( event, filteredItems ) {
-		$("h1:not(.always-hide-toc),h2:not(.always-hide-toc),h3:not(.always-hide-toc),h4:not(.always-hide-toc),h5:not(.always-hide-toc),h6:not(.always-hide-toc)").removeAttr("data-toc-skip");
+		$("h1,h2,h3,h4,h5,h6").removeAttr("data-toc-skip");
 		$("h1:hidden,h2:hidden,h3:hidden,h4:hidden,h5:hidden,h6:hidden").attr("data-toc-skip", "true");
 		$myNav.empty();
 		Toc.init($myNav);

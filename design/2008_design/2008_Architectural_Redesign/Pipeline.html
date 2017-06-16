@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="../../..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>2008 Architectural Redesign/Pipeline</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,57 +41,64 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="design/2008_design/2008_Architectural_Redesign/Pipeline.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="Pipeline.md">
+				    <div id="page-description" data-hotdoc-source="Pipeline.md" data-hotdoc-role="main">
         <h1 id="2008-architectural-redesignpipeline">2008 Architectural Redesign/Pipeline</h1>
 <p><img src="Pipeline-functional.png" alt="Pipeline functional view" title="Pipeline functional view" id="pipeline-functional-view"></p>
 <h1 id="functional-description">Functional Description</h1>
@@ -97,11 +106,14 @@
 <p>In order to hide the complexity of the underlying GStreamer pipeline, we
 only have to work with 3 concepts:</p>
 <ul>
-<li><strong>Producer</strong>(s), responsible for providing data streams and the
+<li>
+<strong>Producer</strong>(s), responsible for providing data streams and the
 associated GStreamer elements</li>
-<li><strong>Consumer</strong>(s), responsible for consuming data streams and the
+<li>
+<strong>Consumer</strong>(s), responsible for consuming data streams and the
 associated GStreamer elements</li>
-<li><strong>Action</strong>(s), which brings in the combination of:
+<li>
+<strong>Action</strong>(s), which brings in the combination of:
 <ul>
 <li>Which Consumer(s) and Producer(s) to use, and how to link the
 associated GStreamer elements</li>
@@ -119,8 +131,10 @@ adequate interface for each action</li>
 </ul>
 <h3 id="signals">Signals</h3>
 <ul>
-<li><code>action-added</code>, a new Action was added to the pipeline</li>
-<li><code>action-removed</code>, an Action was removed to the pipeline</li>
+<li>
+<code>action-added</code>, a new Action was added to the pipeline</li>
+<li>
+<code>action-removed</code>, an Action was removed to the pipeline</li>
 </ul>
 <h2 id="producer">Producer</h2>
 <h3 id="properties1">Properties</h3>
@@ -179,8 +193,10 @@ which connects a SourceProducer to a LocalSinksConsumer.</p>
 <p><img src="Pipeline-rendering-timeline.png" alt="Example: Rendering a Timeline" title="Example: Rendering a Timeline" id="example-rendering-a-timeline">{width="200"}</p>
 <p>In this example, we are doing 2 actions at the same time:</p>
 <ul>
-<li><strong>View</strong>ing the Timeline and,</li>
-<li><strong>Render</strong>ing the Timeline.</li>
+<li>
+<strong>View</strong>ing the Timeline and,</li>
+<li>
+<strong>Render</strong>ing the Timeline.</li>
 </ul>
 <h3 id="setting-up-the-render">Setting up the render</h3>
 <p>Supposing we already had our Timeline Pipeline (With the
@@ -190,14 +206,16 @@ TimelineProducer, LocalSinksConsumer and ViewAction), we just had to:</p>
 action's producer,</li>
 <li>Set that Action on the Timeline
 <ul>
-<li><strong>UI</strong>: We get notified of a new Action set on the Pipeline, we
+<li>
+<strong>UI</strong>: We get notified of a new Action set on the Pipeline, we
 open the adequate UI for that Action (if needed).</li>
 </ul>
 </li>
 <li>Configure the newly created 'LocalRenderConsumer' which is the
 Consumer to which our RenderAction is linked to.
 <ul>
-<li><strong>UI</strong>: The Render Timeline interface linked to our action has
+<li>
+<strong>UI</strong>: The Render Timeline interface linked to our action has
 access to the configured Consumer and can open the adequate
 Configuration Widget for that Consumer.</li>
 </ul>
@@ -218,7 +236,8 @@ Configuration Widget for that Consumer.</li>
 <li>Remove that Action from the Pipeline (which will deactivate the
 action first, resetting the pipeline internally at the same time)
 <ul>
-<li><strong>UI</strong>: We get notified an action has been removed, we close the
+<li>
+<strong>UI</strong>: We get notified an action has been removed, we close the
 related interface/widgets.</li>
 </ul>
 </li>
@@ -232,45 +251,29 @@ related interface/widgets.</li>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

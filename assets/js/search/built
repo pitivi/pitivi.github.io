@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "built", "urls": ["Plugins.html#the-trac-way", "Plugins.html#ui-integration", "GES.html#ges"]});
+urls_downloaded_cb({"token": "built", "urls": ["GES.html#ges", "Plugins.html#the-trac-way", "Plugins.html#ui-integration"]});

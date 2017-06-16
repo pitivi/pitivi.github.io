@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>0.11.2 Release : Milanesa de Lomo</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,57 +41,64 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0-11-2.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="0.11.2.md">
+				    <div id="page-description" data-hotdoc-source="0.11.2.md" data-hotdoc-role="main">
         <h1 id="0112-release-milanesa-de-lomo">0.11.2 Release : Milanesa de Lomo</h1>
 <p>The PiTiVi team is proud to announce the third release in the unstable
 0.11 PiTiVi series.</p>
@@ -110,37 +119,53 @@ or war caused by this unstable series.</p>
 </ul>
 <h2 id="bugs-fixed">Bugs Fixed</h2>
 <ul>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=552777">552777</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=552777">552777</a> :
 [ruler.py] BadAlloc error with big sources</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=353870">353870</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=353870">353870</a> :
 Save/Load project from/to file</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=332473">332473</a> : Capture
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=332473">332473</a> : Capture
 from given gstreamer input source</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=334631">334631</a> : xvsink
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=334631">334631</a> : xvsink
 crash with python in pitivi</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=339895">339895</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=339895">339895</a> :
 [Advanced Timeline] Zooming in too much causes X error</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=432678">432678</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=432678">432678</a> :
 [discoverer] Files that report a duration of 0s is BUGGY !!!</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=458944">458944</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=458944">458944</a> :
 Cancelling while rendering does not work</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=461738">461738</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=461738">461738</a> :
 [Advanced Timeline] Scrollbar always comes back to beginning</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=498071">498071</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=498071">498071</a> :
 [Simple Timeline] Drag and Drop puts clips in the wrong slot</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=498904">498904</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=498904">498904</a> :
 incorrect indentation: some tabs are mixed with spaces in...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=501028">501028</a> : Missing
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=501028">501028</a> : Missing
 files from POTFILES.in</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=501068">501068</a> : Uses
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=501068">501068</a> : Uses
 make instead of $(MAKE)</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=518301">518301</a> : Pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=518301">518301</a> : Pitivi
 won't start under KDE: " Icon 'misc' not present in...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=547095">547095</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=547095">547095</a> :
 [Export Settings] Filter unusable muxers</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=554544">554544</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=554544">554544</a> :
 net_capture.glade not installed</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=554602">554602</a> : seeking
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=554602">554602</a> : seeking
 is not working correctly ...</li>
 </ul>
 <p><a href="http://bugzilla.gnome.org/buglist.cgi?product=pitivi&amp;target_milestone=0.11.2&amp;resolution=FIXED">List of bugs fixed on
@@ -169,12 +194,14 @@ Bugzilla</a></p>
 <h2 id="information-and-feedback">Information and Feedback</h2>
 <ul>
 <li>Information for users and developers can be found on the PiTiVi
-website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a></li>
+website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a>
+</li>
 <li>Comments and feedback are welcome.
 <ul>
 <li>Mailing-list : pitivi-pitivi@lists.sourceforge.net</li>
 <li>PiTiVi bug-tracker :
-<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a></li>
+<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -185,45 +212,29 @@ website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a></li>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>0.13.2 Release : Jailbreak (out of Deadlock City)</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="https://gstreamer.freedesktop.org/" class="hotdoc-navbar-brand">
+				<img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+			<form action="" class="navbar-form navbar-right">
+				<div class="form-group has-feedback">
+					<input type="text" class="form-control" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+					<span class="glyphicon glyphicon-search form-control-feedback"></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0.13.2.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="0.13.2.md">
+<h1 id="0132-release-jailbreak-out-of-deadlock-city">0.13.2 Release : Jailbreak (out of Deadlock City)</h1>
+<p>The PiTiVi team is proud to announce the second release in the unstable
+0.13 PiTiVi series.</p>
+<p>Due to its dependency on GStreamer, The PiTiVi team strongly recommends
+users have all official latest gstreamer libraries and plugins installed
+for the best user experience.</p>
+<h2 id="features-of-this-release">Features of this release</h2>
+<ul>
+<li>Undo/Redo support</li>
+<li>Audio mixing</li>
+<li>Ripple/Roll edit</li>
+<li>misc fixes everywhere</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>gstreamer &amp;gt;= 0.10.24</li>
+<li>gst-python &amp;gt;= 0.10.16</li>
+<li>gnonlin &amp;gt;= 0.10.12</li>
+<li>pygtk &amp;gt;= 2.14.0</li>
+<li>Python &amp;gt;= 2.5</li>
+<li>zope-interface</li>
+<li>python setuptools</li>
+<li>pygoocanvas (http://live.gnome.org/GooCanvas)</li>
+<li>dbus and HAL for capture support</li>
+</ul>
+<h2 id="contributors">Contributors</h2>
+<p>Ranked by commits:</p>
+<p><code>  148  Alessandro Decina</code><br>
+<code>  102  Brandon Lewis</code><br>
+<code>   61  Edward Hervey</code><br>
+<code>    7  Claude Paroz</code><br>
+<code>    5  Mario Blättermann</code><br>
+<code>    4  Per Kongstad</code><br>
+<code>    3  António Lima</code><br>
+<code>    2  Daniel Nylander</code><br>
+<code>    2  Jan Gerber</code><br>
+<code>    1  Bruce Cowan</code><br>
+<code>    1  Gianvito Cavasoli</code><br>
+<code>    1  Gil Forcada</code><br>
+<code>    1  Jesse Aviles</code><br>
+<code>    1  Jesse Avilés</code></p>
+<h2 id="download">Download</h2>
+<p>PiTiVi source tarballs are available on gnome FTP:
+<a href="http://ftp.gnome.org/pub/GNOME/sources/pitivi/0.13/">http://ftp.gnome.org/pub/GNOME/sources/pitivi/0.13/</a></p>
+<p>Packages for Ubuntu 9.04 (Jaunty Jackalope) are available on <a href="https://launchpad.net/%7Egstreamer-developers/+archive/ppa">this PPA
+repository</a>.</p>
+<h2 id="information-and-feedback">Information and Feedback</h2>
+<ul>
+<li>Information for users and developers can be found on the PiTiVi
+website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a></li>
+<li>Comments and feedback are welcome.
+<ul>
+<li>Mailing-list : pitivi-pitivi@lists.sourceforge.net</li>
+<li>PiTiVi bug-tracker :
+<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="bugs-fixed">Bugs Fixed</h2>
+<ul>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584023">584023</a> : Import
+Folder of Clips menu item not working</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589814">589814</a> :
+[keyframe] should have percentage labels</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=566486">566486</a> :
+[Segmentation fault] (py)goocanvas 0.13 and python 2.6</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576276">576276</a> :
+contextual toolbar buttons should be insensitive when not...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579536">579536</a> : source
+list thumbnails are not shown when loading a project</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583637">583637</a> : Change
+command line interface to be more compatible with ...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584049">584049</a> : PiTiVi
+doesn't keep the " Nothing yet " status on render wi...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584093">584093</a> :
+selecting overlapping clips selected clips moves to top</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584899">584899</a> :
+[Formatter] Fix .pls/.m3u Formatters</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=585181">585181</a> : no
+thumbnails for existing sources after loading .xptv</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=586786">586786</a> : Trying
+to dispose element pngenc0, but it is not in the N...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587332">587332</a> : undo
+forgets about volume keyframes</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587333">587333</a> : no way
+to remove volume node/keyframe</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587334">587334</a> : volume
+operations can not be undone</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587371">587371</a> : crash
+on start if ~/.local does not exist</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587377">587377</a> : Command
+line -i flag broken</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587411">587411</a> :
+keyframes broken with trimmed clips</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587945">587945</a> :
+editing_context and advanced_editing_modes branches</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=588258">588258</a> : undo
+and redo should be in the main toolbar</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=588415">588415</a> :
+Traceback after dropping new clips onto the timeline</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589694">589694</a> : trimmed
+clips can be extended under/over clips next to them</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589695">589695</a> : adding
+several clips with mouse, they overlap if moving t...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589725">589725</a> : don't
+block the user from overlapping clips</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589784">589784</a> : default
+pane positions are fail sauce</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589803">589803</a> :
+Problems while moving a clip to a different layer</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589807">589807</a> :
+Double-clicking a clip in source-list has no effect</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=378597">378597</a> :
+Multiple-resolution logo</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=518689">518689</a> : "
+Internal data stream error " with OGG video</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=568749">568749</a> : Choppy
+Audio with some .avi files</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575945">575945</a> : mix
+concurrent audio clips on different layers</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575952">575952</a> : better
+spacing around thumbnail frames in the timeline</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=576575">576575</a> : clips
+can only be added to first layer</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=577451">577451</a> : Text
+doesn't fit into the box</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583226">583226</a> : can't
+render, clowns will eat me</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583241">583241</a> : better
+default filechooser size for the " missing media " d...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583474">583474</a> : Use
+named placeholders when string contains more than one</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=583861">583861</a> :
+Translation of /pitivi/utils.py:234</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584056">584056</a> : Minor
+string fixes</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584084">584084</a> : File
+filter menu not translated in open dialog</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584086">584086</a> : Button
+labels not translatable</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584123">584123</a> : Some
+strings in encoding dialog are not translatable</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584128">584128</a> : Most
+labels in Preferences are untranslatable</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584415">584415</a> : Cairo -
+&amp;gt; cairo</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=584416">584416</a> :
+Ambigous string</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=586184">586184</a> :
+formatter cant find all streams on project load</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587327">587327</a> : write
+all temp files into one folder in /tmp</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587378">587378</a> : Ctrl +
+Click broken</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589513">589513</a> :
+timeline requests too much space when loading files</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589628">589628</a> : Media
+clip thumbnails not loaded if you re-open a project</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589689">589689</a> :
+keyframe curves go through the roof</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589715">589715</a> :
+implement ripple trims</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589799">589799</a> : Sound
+cuts out replaying mp4</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589820">589820</a> :
+[keyframes] audio volume curves don't allow amplifying th...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=590195">590195</a> :
+0.13.1.1 - &amp;gt; 0.13.1.2 needs newer python-gtk</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=591149">591149</a> :
+regression in the project settings dialog</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579323">579323</a> : save
+button should be insensitive when no changes have be...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579531">579531</a> : warn
+about unsaved changes on close</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=580680">580680</a> : toolbar
+settings not applied on startup</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=585653">585653</a> :
+regression: simple save has been replaced by save as</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=585794">585794</a> :
+regression: render button/menu item is insensitive</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=582327">582327</a> :
+playhead resets the timeline scroll position on clicking ...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=575364">575364</a> :
+[LGM2009] first 4 seconds of OGV (theora) clips cannot be...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=579237">579237</a> : search
+as you type doesn't work in the media library</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=585926">585926</a> :
+importing a DV-in-avi file fails</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=587008">587008</a> :
+keyframes not saved</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589812">589812</a> : the
+mouse cursor should change when over a curve/keyframe</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589813">589813</a> :
+[keyframe] dragging a curve segment between two keyframes...</li>
+<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=589817">589817</a> : cancel
+accidental movement when double-clicking on a curve</li>
+</ul>
+<p><a href="http://bugzilla.gnome.org/buglist.cgi?product=pitivi&amp;target_milestone=0.13.2">List of bugs fixed on
+Bugzilla</a></p>
+
+</div>
+
+
+        <div id="subpages"></div>
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

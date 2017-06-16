@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>0.91 Release “Charming Defects”</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,60 +41,67 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0-91.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="0.91.md">
+				    <div id="page-description" data-hotdoc-source="0.91.md" data-hotdoc-role="main">
         <h1 id="091-release-charming-defects">0.91 Release “Charming Defects”</h1>
 <p>This is the first alpha release for the new version of Pitivi based on
-<a href="../GES.html">GES</a>, the GStreamer Editing Services library.</p>
+<a href="GES.html">GES</a>, the GStreamer Editing Services library.</p>
 <p>It is a major rework of the entire Pitivi
 [architecture](Architecture.md. It includes:</p>
 <ul>
@@ -116,7 +125,7 @@ well it works for you and report detailed bugs for issues you may
 encounter. Again, this is <span style="color:#FF0000">not yet considered
 production-ready software</span>. We can't be sure until we test and
 iron out the bugs! With your help, we will follow up with a beta release
-and eventually a <a href="1-0.html">1.0</a> release.</p>
+and eventually a <a href="releases/1-0.html">1.0</a> release.</p>
 <h2 id="top-features-of-this-release">Top features of this release</h2>
 <p>These features have been documented throughout many blog posts from
 January 2012 to September 2013. Take a look at the <a href="http://jeff.ecchi.ca/blog/category/pitivi">“Pitivi” category of
@@ -148,12 +157,13 @@ improving performance</li>
 <li>Use the system’s default image viewer to preview images</li>
 </ul>
 <h3 id="timeline-and-playback">Timeline and Playback</h3>
-<p><img src="images/Complex_layers_whiteboard_mockup_from_desktop_summit_2011.png" alt="" title="Complex_layers_whiteboard_mockup_from_desktop_summit_2011.png">{width="700"}</p>
+<p><img src="releases/images/Complex_layers_whiteboard_mockup_from_desktop_summit_2011.png" alt="" title="Complex_layers_whiteboard_mockup_from_desktop_summit_2011.png">{width="700"}</p>
 <ul>
 <li>Smooth, modern Clutter-based timeline with animations to enhance
 usability</li>
 <li>Smooth autoscrolling while playing</li>
-<li><a href="http://jeff.ecchi.ca/blog/2012/03/07/trim-like-a-professional-hair-stylist/">Live preview of what you are
+<li>
+<a href="http://jeff.ecchi.ca/blog/2012/03/07/trim-like-a-professional-hair-stylist/">Live preview of what you are
 trimming</a>.
 No more trial and error, no more fuzzying around and moving the
 playhead all the time to figure out if you cut your scene right.</li>
@@ -184,7 +194,8 @@ post</a>
 for an explanation and some numbers, or just look at <a href="http://jeff.ecchi.ca/blog/wp-content/uploads/pitivi-tree-cleanup.png">this
 screenshot</a>
 comparing the old and new amount of source files.</li>
-<li>An awesome <a href="../Testing.html">test suite</a></li>
+<li>An awesome <a href="Testing.html">test suite</a>
+</li>
 <li>A revised and simplified API has been implemented in GES and
 integrated in Pitivi.</li>
 <li>A small <a href="https://git.gnome.org/browse/pitivi/commit/?id=549e1e3b">brand
@@ -216,7 +227,8 @@ suspend when rendering.</li>
 <li>The automated backup feature now works. See <a href="http://jeff.ecchi.ca/blog/2012/01/25/restoring-from-backups/">this blog
 post</a>
 and <a href="http://jeff.ecchi.ca/blog/2013/09/04/fix-it-thrice/">its
-sequel</a></li>
+sequel</a>
+</li>
 <li>Simplified menus</li>
 <li>Fix many, many, many problems with the Media Library, project
 management, keyboard shortcuts, etc.</li>
@@ -296,7 +308,7 @@ dependencies' versions specific to a given release. For 0.91, those are:</p>
 <li>pycanberra (static bindings)</li>
 <li>frei0r</li>
 </ul>
-<p>See also <a href="../attic/Dependencies.html">dependencies</a> for additional tips.</p>
+<p>See also <a href="attic/Dependencies.html">dependencies</a> for additional tips.</p>
 <h2 id="known-issues">Known issues</h2>
 <ul>
 <li>Layer management interface is missing features.</li>
@@ -307,7 +319,7 @@ bugs</a>.</li>
 <li>The transformation box has been disabled (we need someone to <a href="https://bugzilla.gnome.org/show_bug.cgi?id=708495">fix
 it</a>).</li>
 <li>The user manual is completely outdated (it references the
-<a href="0-15.html">0.15</a> series). We are looking for someone to take
+<a href="releases/0-15.html">0.15</a> series). We are looking for someone to take
 on the role of writing the Pitivi user guide. Please get in touch if
 you love writing and are interested in helping out.</li>
 <li>Translations are not all fully up to date.</li>
@@ -329,7 +341,8 @@ module</a>.</li>
 to get involved in fixing/refactoring the xptv formatter module in
 GES. If no interest is shown after a few releases, support for this
 legacy file format may be dropped.</li>
-<li><a href="https://bugzilla.gnome.org/show_bug.cgi?id=686182">No dialog to install missing codecs after discovering
+<li>
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=686182">No dialog to install missing codecs after discovering
 clips</a>, and no
 error gets raised in that case. This means that the clip will
 “appear” to have imported correctly, but if you try inserting it
@@ -351,13 +364,14 @@ Pitivi in GStreamer. However:</p>
 between January and September 2013:</li>
 <li>At least <a href="https://bugzilla.gnome.org/buglist.cgi?chfieldto=2013-09-30;query_format=advanced;chfieldfrom=2011-08-01;longdesc=pitivi;longdesc_type=allwordssubstr;product=GStreamer">96
 bugs</a>
-in GStreamer since <a href="0-15.html">0.15</a> mention Pitivi</li>
+in GStreamer since <a href="releases/0-15.html">0.15</a> mention Pitivi</li>
 </ul>
 <p>In GStreamer Editing Services, the Pitivi team has made 975 commits in
 preparation for this release.</p>
 <p>In Pitivi:</p>
 <ul>
-<li><a href="https://bugzilla.gnome.org/buglist.cgi?query_format=advanced&amp;target_milestone=0.91&amp;product=pitivi">Hundreds of bug
+<li>
+<a href="https://bugzilla.gnome.org/buglist.cgi?query_format=advanced&amp;target_milestone=0.91&amp;product=pitivi">Hundreds of bug
 reports</a>
 were resolved</li>
 <li>There were 1348 commits between 0.15.2 and 0.91.</li>
@@ -638,7 +652,7 @@ repository:</p>
 <p>See <a href="http://www.pitivi.org">the Pitivi website</a> and [building with
 GES](building_with_ges.md for download and installation
 instructions.</p>
-<p>Feedback is welcome. See <a href="../Bug_reporting.html">bug reporting</a> for
+<p>Feedback is welcome. See <a href="Bug_reporting.html">bug reporting</a> for
 tips and tricks.</p>
 
     </div>
@@ -647,45 +661,29 @@ tips and tricks.</p>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

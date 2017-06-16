@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="../../..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>2008 Architectural Redesign/Design Thoughts</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,57 +41,64 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="Design_Thoughts.md">
+				    <div id="page-description" data-hotdoc-source="Design_Thoughts.md" data-hotdoc-role="main">
         <h1 id="2008-architectural-redesigndesign-thoughts">2008 Architectural Redesign/Design Thoughts</h1>
 <p>This is a listing, not entirely sorted, of thoughts, remarks, things to
 do, regarding PiTiVi's design, uses, etc...</p>
@@ -122,16 +131,19 @@ for a full-size (re)design/refactor document.</p>
 <p>These issues/goals are not ordered, since they are all equally
 important.</p>
 <ul>
-<li><strong>No code shall access private values directly</strong>
+<li>
+<strong>No code shall access private values directly</strong>
 <ul>
 <li>Use setter/getter and python 'property' mapper</li>
-<li>Ex: <code>myprop = property(_get_myprop,_set_myprop)</code></li>
+<li>Ex: <code>myprop = property(_get_myprop,_set_myprop)</code>
+</li>
 </ul>
 </li>
 </ul>
 <!-- -->
 <ul>
-<li><strong>Core code shall NOT contain any UI-specific code</strong> (and
+<li>
+<strong>Core code shall NOT contain any UI-specific code</strong> (and
 vice-versa)
 <ul>
 <li>This breaks the fundamental Core/UI separation</li>
@@ -144,7 +156,8 @@ pitivi.ui modules</li>
 </ul>
 <!-- -->
 <ul>
-<li><strong>All Core/UI classes can be subclassable for specific usage</strong>
+<li>
+<strong>All Core/UI classes can be subclassable for specific usage</strong>
 <ul>
 <li>This is essential for full pitivi flexibility, for having all
 kinds of plugins, for having different UI, etc...</li>
@@ -153,7 +166,8 @@ kinds of plugins, for having different UI, etc...</li>
 </ul>
 <!-- -->
 <ul>
-<li><strong>Splitup code in subdirectories/submodules</strong>
+<li>
+<strong>Splitup code in subdirectories/submodules</strong>
 <ul>
 <li>Maybe not as much as one class per file... but that would be a
 good goal</li>
@@ -163,15 +177,18 @@ good goal</li>
 </ul>
 <!-- -->
 <ul>
-<li><strong>UI is NOT compulsory</strong> ==&amp;gt; <strong>pitivi can be used as a LIBRARY</strong>
+<li>
+<strong>UI is NOT compulsory</strong> ==&amp;gt; <strong>pitivi can be used as a LIBRARY</strong>
 <ul>
 <li>There are several tools for which we need all the code from
 pitivi core without a UI implementation</li>
 <li>Ex : rendering backends, command-line/scripting tools, ....</li>
 <li>Disambiguate the naming somewhere
 <ul>
-<li><code>pitivi</code> : python module/library</li>
-<li><code>PiTiVi</code> : application using the <code>pitivi</code> module</li>
+<li>
+<code>pitivi</code> : python module/library</li>
+<li>
+<code>PiTiVi</code> : application using the <code>pitivi</code> module</li>
 </ul>
 </li>
 <li>Still, we should have most of the UI logic in that library, but
@@ -181,7 +198,8 @@ without any forced implementation (like qt/gtk/win32...)</li>
 </ul>
 <!-- -->
 <ul>
-<li><strong>No gnome/gtk/gobject/gst specific code in base classes</strong>
+<li>
+<strong>No gnome/gtk/gobject/gst specific code in base classes</strong>
 <ul>
 <li>This should go in subclasses</li>
 <li>Create our own event-based interface (to remove dependency on
@@ -195,7 +213,8 @@ gobject.GObject)
 </ul>
 <!-- -->
 <ul>
-<li><strong>Use <code>generators/yield</code> wherever it can be applied</strong>
+<li>
+<strong>Use <code>generators/yield</code> wherever it can be applied</strong>
 <ul>
 <li>Speedup and memory usage improvement</li>
 </ul>
@@ -203,7 +222,8 @@ gobject.GObject)
 </ul>
 <!-- -->
 <ul>
-<li><strong>The only HARD DEPENDENCIES of pitivi are python core libraries and
+<li>
+<strong>The only HARD DEPENDENCIES of pitivi are python core libraries and
 gstreamer</strong>
 <ul>
 <li>All other dependencies are optional and should be used from
@@ -213,7 +233,8 @@ plugins</li>
 </ul>
 <!-- -->
 <ul>
-<li><strong>Remove the global instance code</strong>
+<li>
+<strong>Remove the global instance code</strong>
 <ul>
 <li>No code should depend on a single instance of application and
 project</li>
@@ -230,10 +251,12 @@ modules</li>
 </ul>
 <!-- -->
 <ul>
-<li><strong>Prepare for Python 3</strong>
+<li>
+<strong>Prepare for Python 3</strong>
 <ul>
 <li>Article/presentation by Guido about this :
-<a href="http://www.artima.com/weblogs/viewpost.jsp?thread=227041">http://www.artima.com/weblogs/viewpost.jsp?thread=227041</a></li>
+<a href="http://www.artima.com/weblogs/viewpost.jsp?thread=227041">http://www.artima.com/weblogs/viewpost.jsp?thread=227041</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -477,7 +500,8 @@ browser anymore (you've already got your sources)</li>
 <ul>
 <li>
 <ul>
-<li><strong>PROBLEM</strong> Disambiguate SourceProvider and SourceBrowser.
+<li>
+<strong>PROBLEM</strong> Disambiguate SourceProvider and SourceBrowser.
 I'd say the difference is that stuff from SourceProvider(s)
 have to be moved in the SourceBrowser before being used in
 the timeline.</li>
@@ -695,45 +719,29 @@ inter-frame black borders will be visible)</li>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

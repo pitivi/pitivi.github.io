@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/Command_line_tools.html#gdb", "fragment": "gdb \nThe GNU debugger. A C debugger. \nTo debug a segfault you need following syntax to run gdb \ngdb args python bin pitivi \ngdb args sh ges launch l project.xges \n"});

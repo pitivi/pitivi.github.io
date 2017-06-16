@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Design Overview</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+<script src="assets/js/navigation.js"></script>
+
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div>
+                <a href="Main_Page.html" class="hotdoc-navbar-brand">
+                    <img src="assets/images/favicon.png" alt="Home" id="home"> Pitivi
+                </a>
+            </div>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+		</div>
+	</div>
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="design/2007_design/2007_Advanced_UI_implementation.html" class="page_container" id="page-wrapper">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2" id="sidenav-column">
+	<div class="panel panel-collapse" id="sidenav" data-hotdoc-role="navigation">
+		<div id="sidenav-search" role="search">
+			<input type="text" class="form-control" placeholder="Fetching index" id="sidenav-lookup-field" disabled>
+		</div>
+		<div id="sitenav-wrapper" class="mCustomScrollbar" data-mcs-theme="minimal">
+			<div class="sidenav-main-panel-body">
+				<div id="site-navigation">
+				</div>
+			</div>
+			<!-- FIXME -->
+			<div style="height: 76px;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-12 col-md-9 col-xl-8">
+	<div id="main">
+				
+<div id="page-description" data-hotdoc-source="2007_Advanced_UI_implementation.md">
+<h1 id="design-overview">Design Overview</h1>
+<p><a href="image:advanced_inheritance.png.md">Inheritance Diagram</a></p>
+<p>This document <strong>does not reflect the existing codebase</strong>, but rather a
+road map for future development. Some of this design has been
+implemented in the 2008_SOC_BLEWIS branch, and these changes will be
+gradually merged into trunk.</p>
+<p>The goal of the design is to build a UI which supports the following
+features:</p>
+<ul>
+<li>multi-track editing</li>
+<li>multi-layer editing*</li>
+<li>multiple selection</li>
+<li>noun-verb interaction</li>
+<li>direct manipulation</li>
+<li>edge snapping</li>
+<li>multiple-level undo/redo support</li>
+</ul>
+<p>(*) It is important to distinguish between a <strong>track</strong>, and a <strong>layer</strong>
+in application terminology. Existing video editors use the term
+<strong>track</strong> to refer to a UI object which represents a stream of video
+with a sequence of sources. PiTiVi refers to this as a <strong>composition</strong>.
+The term <strong>track</strong> in PiTiVi means a separate channel of output: for
+example, audio and video are in separate tracks. The Timeline class
+contains one TimelineComposition for each of its output tracks.
+Currently these are hard-coded to audiocomp and videocomp, but in the
+future multiple audio and video output tracks will be supported. This
+will enable things like multi-language sound tracks, or multi-angle
+video sequences.</p>
+<p>This is distinguished from the concept of a <strong>layer</strong> which is directly
+related to the notion of <strong>compositing</strong>. Within a track, sources have a
+property called <strong>priority</strong> which determines what will appear when the
+play-head reaches a given position in the timeline. By default, the
+source with the lowest numerical priority is displayed. Adding effects
+to a composition enables multiple sources to be composited together.
+Priority is used to determine which sources will be used by an effect as
+input.</p>
+<h2 id="the-mvcobserver-design-pattern">The MVC/Observer Design Pattern</h2>
+<p>PiTiVi relies heavily on MVC and Observer design patterns to decouple
+the core of the application from the user interface. Core objects emit
+signals which prompt changes in the UI. UI elements wrap core objects to
+manipulate data, which in turn emit signals. The observer pattern allows
+the user interface to listen for changes in the core without coupling
+the core to the UI.</p>
+<p>We use pygobject to provide support for the observer pattern in the
+core. The user interface depends on pygtk and pygoocanvas, both of which
+are based on GObject.</p>
+<h2 id="files">Files</h2>
+<p>The advanced UI is implemented in several files in the pitivi/ui
+directory in the source tree:</p>
+<ul>
+<li>util.py</li>
+<li>complexinterface.py</li>
+<li>complextimeline.py</li>
+<li>ruler.py</li>
+</ul>
+<h2 id="interfaces">Interfaces</h2>
+<ul>
+<li>Selectable</li>
+<li>Draggable</li>
+<li>SelectableDraggable</li>
+<li>Magnetic</li>
+</ul>
+<h2 id="classes">Classes</h2>
+<ul>
+<li>History</li>
+<li>ComplexTimelineObject
+<ul>
+<li>ComplexTimelineFile</li>
+</ul>
+</li>
+<li>Content
+<ul>
+<li>AudioContent</li>
+<li>VideoContent</li>
+</ul>
+</li>
+<li>Handle</li>
+<li>EditMarker</li>
+<li>ComplexTrack</li>
+<li>ComplexTimelineCanvas</li>
+<li>ComplexTimelineWidget</li>
+</ul>
+<h1 id="utilites">Utilites</h1>
+<p>The util.py file provides a number of convenience functions for working
+with goocanvas, including an easy way of creating canvas item objects,
+as well as generic support for drag-and-drop and selections. This file
+also provides the SmartGroup class, which extends goocanvas.Group with
+automatic recalculation of size and position.</p>
+<p>The code in this file is intended to be as reusable and generic as
+possible. Its goal is to overcome some limitations of goocanvas which
+make programming dynamic, reactive interfaces more challenging than
+necessary. Code in this file is also used by the simple timeline.</p>
+<h2 id="smartgroup">SmartGroup</h2>
+<p>SmartGroup is also used to implement HList and VList, which are
+container classes that enforce positioning constraints on their
+children. They work more-or-less like HBox and VBox in gtk. What you
+need to know about smart group is:</p>
+<ul>
+<li>The smart group keeps track of its own position: Setting the x or y
+properties on a smartgroup will cause all the group's children to
+move accordingly.</li>
+<li>The smart gropu keeps track of its size: If any of the group's
+children change size or position, the group recomputes its width and
+height properties.</li>
+</ul>
+<p>This is currently accomplished by using property notification signals.
+SmartGroup overrides the add_child method and connects to the
+notify::x, notify::y, notify::width, and notify::height signals for each
+of its children.</p>
+<h2 id="convenience-functions">Convenience Functions</h2>
+<p>These functions all take an item as input and return the appropriate
+property. They make expressions involving these properties more readable
+and more compact.</p>
+<ul>
+<li>width(item)</li>
+<li>height(item)</li>
+<li>left(item)</li>
+<li>right(item)</li>
+<li>top(item)</li>
+<li>bottom(item)</li>
+<li>center(item)</li>
+</ul>
+<p>This function handles getting coordinates from an event object and
+converting them into the canvas space:</p>
+<ul>
+<li>event_coords(canvas, event)</li>
+</ul>
+<p>These functions manipulate object size and position</p>
+<ul>
+<li>pos(item)</li>
+<li>set_pos(item, pos), where pos is a tuple (x, y)</li>
+<li>size(item)</li>
+<li>set_size(item, size), where size is a tuple (width, height)</li>
+</ul>
+<p>These functions activate draging and selection management:</p>
+<ul>
+<li>manage_selection(canvas, changed_cb)</li>
+<li>make_selectable(canvas, item)</li>
+<li>make_dragable(canvas, item, start_cb, transform, end_cb,
+moved_cb)</li>
+</ul>
+<h2 id="smartcanvas">SmartCanvas</h2>
+<p>This class is yet to be implemented. Intended to provide internal
+support for some of the convenience functions described above:</p>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>manage_selection(), activates internal selection managment,
+deprecates top-level function with same name</li>
+<li>make_selectable(), activates selection management on a given
+object, deprecates top-level function with same name.</li>
+<li>make_selection_dragable(),</li>
+</ul>
+<h1 id="interfaces1">Interfaces</h1>
+<p>All the interfaces used in the complex UI are kept in
+complexinterface.py.</p>
+<h2 id="zoomable">Zoomable</h2>
+<p>This interface allows for sharing a single gtk.Adjustment among multiple
+client objects. When the adjustment's value changes, the the Zoomable
+object's zoomratio property is set, and its zoomChanged() method called.</p>
+<p>Implementing classes must define a zoomChanged() method. This method
+should perform any drawing or size adjustments.</p>
+<p>Zoomable containers have the option of defining a
+setChildZoomAdjustment() method, which they can use to set the zoom
+adjustment on all of their children. In general, however, a container
+should set the child's zoom adjustment whenever the child is added to
+the container.</p>
+<h2 id="draggable">Draggable</h2>
+<p>This interface encapsulates handling the mouse events required to make
+an object dragable with the mouse. Objects can simply extending from
+this interface to get basic drag-and-drop functionality. If more complex
+drag-and-drop behavior is required, this interface provides some hook
+functions which can be overridden by implementing classes.</p>
+<h3 id="methods1">Methods</h3>
+<ul>
+<li>dragStart -- a hook which is called to notify the object that
+dragging is about to begin</li>
+<li>dragEnd -- a hook which is called to notify the object that dragging
+has ended</li>
+<li>dragMotion -- a hook which is called to notify the object that its
+position should be updated.</li>
+</ul>
+<h2 id="selectable">Selectable</h2>
+<p>This encapsulates the notion of an object which may be included in the
+current UI selection. This is kept strictly separate from Dragable, as
+there is a use case for selectable objects which cannot be moved by the
+user, as well as a use case for dragable objects which should never
+become part of the current selection. Objects are selected with
+Select(), and deslected with Deselect(). Objects are notified of their
+selection status through the selected() and deselected() method calls.</p>
+<p>Being part of the selection implies that the object represents data that
+can be manipulated. To this end, all Selectable objects provide a
+core_object property. The list of all selected core objects can be
+obtained with the getSelectedCoreObjects class method.</p>
+<p>The current selection is a set of Selectable objects, and any command
+which affects the current selection operates on these objects (or the
+core objects which they represent). To facilitate this, the interface
+provides class methods to iterate over all instances of selectable
+objects in various ways.</p>
+<h3 id="properties">Properties</h3>
+<ul>
+<li>core_object</li>
+</ul>
+<h3 id="methods2">Methods</h3>
+<ul>
+<li>(absract) selected -- notifies the object it has been selected</li>
+<li>(absract) deselected -- notifies the object it has been deselected</li>
+<li>select -- places this item in the current selection</li>
+<li>deselect -- removes this item from the current selection</li>
+<li>(abstract) delete -- removes the core object from application data
+structures</li>
+<li>(abstract) copy -- places a representation of the core object into
+the application clipboard</li>
+<li>@classmethod getSelected -- returns a list of all selected
+selectable objects</li>
+<li>@classmethod getSelectedCoreObjects -- returns the pitivi core
+object for every object that has been selected</li>
+<li>@classmethod deleteSelected -- deletes all selected objects</li>
+</ul>
+<h2 id="selectabledraggableselectable-dragable">SelectableDraggable(Selectable, Dragable)</h2>
+<p>This is the explicit merging of the Selectable/Dragable interfaces.
+Objects which are both selectable and dragable should implement this
+interface, rather than the two ancestors independently. The reason is
+that this interface provides support for manipulating selections of
+movable items: i.e., if the user has multiple items selected and moves
+one of them, all the other items should move in unison.</p>
+<h3 id="methods3">Methods</h3>
+<ul>
+<li>dragStart -- relays dragStart message to all other selected
+SelectableDraggable objects</li>
+<li>dragEnd -- relays dragEnd message to all other selected
+SelectableDraggable objects</li>
+<li>dragMove -- relays dragmove message to all other selected
+SelectableDraggable objects</li>
+<li>(abstract) setPos -- implemented by derived objects, sets the
+position of the core object represented by this object</li>
+<li>@classmethod selectedDragStart</li>
+<li>@classmethod selectedDragEnd</li>
+<li>@classmethod selectedDragMove</li>
+</ul>
+<h2 id="magnetic">Magnetic</h2>
+<p>Encapsulates the concept of an important point on the timeline to which
+timestamps should be snapped during mouse operations. The class keeps
+track of all its instances in a sorted list, and uses binary search to
+implement the class method snapTime(), and snapObj, which actually
+implement magnetic edge snaping.</p>
+<h3 id="properties1">Properties</h3>
+<ul>
+<li>flags -- when the control point is magnetic to the cursor, values
+are RESIZE, MOVE, RAZOR, COMMAND, ALL</li>
+</ul>
+<p>The flags property is a bit-field defining when a magnetic point will be
+used.</p>
+<ul>
+<li>RESIZE -- control point is magnetic during resize operations</li>
+<li>MOVE -- control point is magnetic during drag operations</li>
+<li>RAZOR -- control point is magnetic to razor tool, or during trimming</li>
+<li>COMMAND -- control point can be the input to a command which
+operates on current selection</li>
+<li>ALL -- equal to RESIZE | MOVE | RAZOR | COMMAND</li>
+</ul>
+<h3 id="methods4">Methods</h3>
+<ul>
+<li>setTime -- update this magnet's time value</li>
+<li>@classmethod snapTime(time, flags) -- snap the input time to the
+nearest magnet according to flags</li>
+<li>@classmethod snapObj(start, duration, flags) -- snap start or end
+time to the nearest magnet, according to flags)</li>
+</ul>
+<h1 id="classes1">Classes</h1>
+<p>These classes implement the majority of the pitivi's advanced (or
+complex) user interface, and can be found in complextimeline.py.</p>
+<h2 id="history">History</h2>
+<p>This class manages the command history for the user interface. It
+maintains a stack of actions and their inverses.</p>
+<h3 id="properites">Properites</h3>
+<ul>
+<li>undo_actions -- stack of (function, data, inverse_function,
+inverse_data) tuples</li>
+<li>redo_actions -- stack of (function, data, inverse_function,
+inverse_data) tuples</li>
+</ul>
+<h3 id="methods5">Methods</h3>
+<ul>
+<li>undoLast -- pop the top of the undo stack, push onto the redo stack
+and execute the inverse operation</li>
+<li>redoLast -- pop the redo stack, push the undo stack, and execute the
+non-inverse operation</li>
+<li>pushAction -- add a new tuple to the top of the history stack.</li>
+<li>peek -- return the top of the undo stack</li>
+<li>poke -- update the top of the undo stack in place</li>
+<li>pop -- pop from the undo stack without performing any action or
+pushing the redo stack (for example, to clear a canceled operation
+from the undo stack)</li>
+<li>clear -- clears the undo/redo stack</li>
+</ul>
+<h2 id="complextimelinewidgetgtkhbox">ComplexTimelineWidget(gtk.HBox)</h2>
+<p>This widget contains the timeline canvas and the ruler. It is also
+responsible for showing and hiding toolbar actions associated with the
+complex timeline.</p>
+<h2 id="complextimelinecanvasgoocanvascanvas-zoomable">ComplexTimelineCanvas(goocanvas.Canvas, Zoomable)</h2>
+<p>(currently called ComplexLayers, will be renamed before the next
+release)</p>
+<p>This class <em>is</em> the timeline. The canvas creates one ComplexTrack item
+for ComplexTrack item for each top-level composition within a timeline.
+PiTiVi core doesn't yet support multi-track editing, but this support is
+planned. ComplexTracks should be able to handle creating/destroying
+tracks dynamically.</p>
+<p>In addition to the timeline itself, this widget keeps track of a number
+of important details about the timeline: current edit points, playhead
+position, current tool (only razor or pointer, at present), and the
+current selection.</p>
+<p>Mouse and pointer events received by this widget are routed to the
+selection or the current active tool. Keyboard events are handled here
+directly depending on the current active tool.</p>
+<h3 id="the-selection">The Selection</h3>
+<p>The primary goal of the editing canvas is to allow the user to modify
+the selection as they see fit, and then apply changes to the selected
+object. The selection consists of a set of objects implementing the
+Selectable interface.</p>
+<p>The canvas keeps track of whether or not objects are selected. Objects
+in the timeline always pass pointer events up to their parent group. If
+an event reaches the root item group, a test is performed to determine
+if the object should be added to the current selection. If this test
+passes, the objects select() method is called.</p>
+<p>The selection also identifies a primary object: this is the object with
+which the user is directly interacting with, i.e. the source of the
+pointer event. Certain operations make the most sense in the context of
+a single active object. For example, if the user selects several sources
+and then drags one of them, this object will be used as a reference
+point for edge snapping.</p>
+<p>Finally, the user is provided with a few tool-bar commands which
+manipulate the selection explicitly.</p>
+<h3 id="selection-management-methods">Selection Management Methods</h3>
+<ul>
+<li>deleteSelected()</li>
+<li>copySelected()</li>
+<li>moveSelected()</li>
+<li>clearSelection()</li>
+<li>selectBeforeCurrent()</li>
+<li>selectAfterCurrent()</li>
+</ul>
+<h3 id="selection-manipulation-methods">Selection Manipulation Methods</h3>
+<ul>
+<li>copySelected()</li>
+<li>deleteSelected()</li>
+<li>moveSelected()</li>
+<li>linkSelected()</li>
+<li>unlinkSelected()</li>
+<li>collapseSelected()</li>
+</ul>
+<p>Commands which operate on the selection are sent to this widget, which
+iterates over the selection and performs operations on every element
+contained therein.</p>
+<h3 id="other">Other</h3>
+<ul>
+<li>activateRazor()</li>
+<li>deactivateRazor()</li>
+</ul>
+<h2 id="complextracksmartgroup-zoomable">ComplexTrack(SmartGroup, Zoomable)</h2>
+<p>This class is a container for pitivi tracks.</p>
+<ul>
+<li>Time is represented by horizontal position, in proportion to the
+current zoom ratio</li>
+<li>Priority is represented by vertical position, with the top of the
+canvas representing the highest priority.</li>
+</ul>
+<p>This class encapsulates an internal view of a TimelineComposition
+object. Each ComplexTrack manages exactly one TimelineComposition, and
+connects to the following signals:</p>
+<ul>
+<li>source-added</li>
+<li>source-removed</li>
+<li>effect-added</li>
+<li>effect-removed</li>
+<li>transition-added</li>
+<li>transition-removed</li>
+</ul>
+<p>These signals are all sent to the same pair of signal handlers,
+_objectAdded, _objectRemoved, respectively. This function takes an
+additional parameter, klass, which is a reference to the sublclass of
+ComplexTimelineObject which should be instantiated.</p>
+<h2 id="handlerect-dragable-magnetic">Handle(Rect, Dragable, Magnetic)</h2>
+<p>This object is used by ComplexTimelineObject to represent the in/out
+edit points of the object. A handle is a goocanvas.Rect item which
+implements the Dragable, and Magnetic interfaces. It is not directly
+selectable. A handle object does not directly set its position, but
+instead hands off mouse events to a callback function, motion_callback.</p>
+<h3 id="properties2">Properties</h3>
+<ul>
+<li>width</li>
+<li>height</li>
+<li>active_color</li>
+<li>normal_color</li>
+<li>motion_callback</li>
+<li>cursor</li>
+</ul>
+<h3 id="methods6">Methods</h3>
+<ul>
+<li>__init__ -- sets up initial properties, and stores the
+motion_callback</li>
+<li>dragBegin -- sets item's color to the active color</li>
+<li>dragEnd -- sets item to the the normal color, updates magnet
+timestamp</li>
+<li>dragMotion -- calls the motion_callback, after performing some
+transformations</li>
+</ul>
+<h2 id="complextimelineobjectgroup-zoomable-selectabledragable">ComplexTimelineObject(Group, Zoomable, SelectableDragable)</h2>
+<p>Corresponds to pitivi.timeline.objects.TimelineObject. It is a base
+class for all objects represented in the ComplexTimeline. When created,
+it is given a reference to a TimelineObject, and connects to that
+object's <code>start-duration-changed</code> signal. When the core object's start
+and duration change, the UI object's horizontal position and width are
+updated. When the core object's layer position changes, the vertical
+position is updated.</p>
+<p>Every TimelineObject has a reference to a Content object which is
+displayed inside of the TimelineObject. This object may be audio or
+video. The Content object can change height or visibility depending on
+its state. The parent ComplexTimelineObject must keep track of the
+height of its content region and adjust its height accordingly.</p>
+<p>ComplexTimelineObjects have drag handles which allow them to be directly
+resized. See the Handle class documentation for more information.</p>
+<h3 id="properties3">Properties</h3>
+<ul>
+<li>background -- background rectangle</li>
+<li>coreobject -- the core PiTiVi object which this timelineobject
+represents</li>
+<li>content -- Content object</li>
+<li>inpoint -- Handle, representing the in point of the source</li>
+<li>outpoint -- Handle, representing the out point of the source</li>
+</ul>
+<h3 id="methods7">Methods</h3>
+<ul>
+<li>dragMotion -- calls setStartPoint, Magnetic.snapTime(), and
+selectable.dragMotion() to adjust the object's position.</li>
+<li>(private) startDurationChanged -- handler for the coreobject's
+start-duration-changed signal</li>
+<li>setStartPoint -- sets coreobject's start property</li>
+<li>setInPoint -- callback given to inpoint as its motion callback,
+which sets coreobject's start/duration properties</li>
+<li>setOutPoint -- callback given to outpoint as its motion callback
+which sets coreobject's duration property</li>
+</ul>
+<h2 id="timelinefileobjecttimelineobject">TimelineFileObject(TimelineObject)</h2>
+<p>This class derives from TimelineObject. It overrides the signal handlers
+which set the in/out edit points so that they also set the
+media-start/media-duration points.</p>
+<h3 id="methods8">Methods</h3>
+<ul>
+<li>setInPoint</li>
+<li>setOutPoint</li>
+</ul>
+<h2 id="contentsmartgroup">Content(Smartgroup)</h2>
+<p>Abstract base class for the content region of ComplexTimelineObject. The
+content region displays a representation of the core object associated
+with the Content object's parent ComplexTimelineObject. Content regions
+may be expanded, contracted, or minimized. When expanded, the full
+preview image is visible, and the widget is expanded to maximum height
+so that the keyframe editor can be used. When contracted, only the
+preview image is visible. When minimized, the content region is
+completely hidden.</p>
+<h3 id="properties4">Properties</h3>
+<ul>
+<li>width</li>
+<li>height</li>
+<li>name</li>
+<li>content_image</li>
+<li>keyframes</li>
+<li>coreobject</li>
+</ul>
+<h3 id="methods9">Methods</h3>
+<ul>
+<li>expand()</li>
+<li>contract()</li>
+<li>minimize()</li>
+<li>make_content_image -- creates a generic image thumbnail.</li>
+</ul>
+<h2 id="audiocontentcontent">AudioContent(Content)</h2>
+<p>Overrides make_content_image to create an audio waveform from audio
+stream data.</p>
+<h3 id="methods10">Methods</h3>
+<ul>
+<li>make_content_image</li>
+</ul>
+<h2 id="videocontentcontent">VideoContent(Content)</h2>
+<p>Overrides make_content_image to create a thumbnail sequence.</p>
+<h3 id="methods11">Methods</h3>
+<ul>
+<li>make_content_image</li>
+</ul>
+<h2 id="markergoocanvaspolygon-selectabledragable-magnetic">Marker(goocanvas.Polygon, SelectableDragable, Magnetic)</h2>
+<p>Similar to a handle, but can be the selected, which implies that it
+contains a reference to a core object.</p>
+<h2 id="scalerulergtklayout-zoomable">ScaleRuler(gtk.Layout, Zoomable)</h2>
+<p>This file contains the ScaleRuler class, a zoomable timeline ruler. It
+should share the same gtk.Adjustment objects for both zooming and
+horizontal scrolling.</p>
+
+</div>
+
+
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+</div>
+<div class="hidden-xs col-xl-2">
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+						
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

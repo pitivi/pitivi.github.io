@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "limit", "urls": ["Plugins.html#the-zope-way", "HACKING.html#coding-style-guide", "design/Rendering_Profiles.html#rendering-profiles"]});
+urls_downloaded_cb({"token": "limit", "urls": ["HACKING.html#coding-style-guide", "Plugins.html#the-zope-way", "design/Rendering_Profiles.html#rendering-profiles"]});

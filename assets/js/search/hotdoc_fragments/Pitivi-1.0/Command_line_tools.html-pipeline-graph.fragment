@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/Command_line_tools.html#pipeline-graph", "fragment": "Pipeline graph \nYou need graphviz installed for this. \nGST_DEBUG_DUMP_DOT_DIR tmp gst launch videotestsrc autovideosink \nNow you can convert the dot files to png \ndot Tpng file.dot o file.png \n"});

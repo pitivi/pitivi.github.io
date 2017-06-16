@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href=".">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>Git repositories</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,57 +41,64 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Git_repositories.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="Git_repositories.md">
+				    <div id="page-description" data-hotdoc-source="Git_repositories.md" data-hotdoc-role="main">
         <h1 id="git-repositories">Git repositories</h1>
 <p>See <a href="Git.html">Git</a> for instructions on how to deal with our
 repositories.</p>
@@ -97,7 +106,8 @@ repositories.</p>
 <p>You should clone and make your own branches based on this repository:
 <a href="git://git.gnome.org/pitivi">git://git.gnome.org/pitivi</a></p>
 <ul>
-<li>Web view: <a href="http://git.gnome.org/pitivi">http://git.gnome.org/pitivi</a></li>
+<li>Web view: <a href="http://git.gnome.org/pitivi">http://git.gnome.org/pitivi</a>
+</li>
 </ul>
 <p>Note that git being a decentralized version control system, you <a href="http://www.youtube.com/watch?v=4XpnKHJAok8#t=19m13s">do not
 need commit access</a>
@@ -118,33 +128,39 @@ using the GNOME one instead.</p>
 the main repository</p>
 <ul>
 <li><a href="git://github.com/thiblahute/pitivi.git">git://github.com/thiblahute/pitivi.git</a></li>
-<li>Webview : <a href="https://github.com/thiblahute/Pitivi/branches">https://github.com/thiblahute/Pitivi/branches</a></li>
+<li>Webview : <a href="https://github.com/thiblahute/Pitivi/branches">https://github.com/thiblahute/Pitivi/branches</a>
+</li>
 </ul>
 <h2 id="jeffs-repository">Jeff's repository</h2>
 <p>Mostly UI/usability fixes or new features</p>
 <ul>
 <li><a href="git://github.com/nekohayo/pitivi.git">git://github.com/nekohayo/pitivi.git</a></li>
-<li>Webview : <a href="http://github.com/nekohayo/pitivi/branches">http://github.com/nekohayo/pitivi/branches</a></li>
+<li>Webview : <a href="http://github.com/nekohayo/pitivi/branches">http://github.com/nekohayo/pitivi/branches</a>
+</li>
 </ul>
 <h2 id="alexs-repository">Alex's repository</h2>
 <ul>
 <li><a href="git://github.com/aleb/pitivi.git">git://github.com/aleb/pitivi.git</a></li>
-<li>Webview : <a href="http://github.com/aleb/pitivi/branches">http://github.com/aleb/pitivi/branches</a></li>
+<li>Webview : <a href="http://github.com/aleb/pitivi/branches">http://github.com/aleb/pitivi/branches</a>
+</li>
 </ul>
 <h1 id="olderinactive-frequent-contributor-repositories">Older/inactive frequent contributor repositories</h1>
 <h2 id="alessandros-repository">Alessandro's repository</h2>
 <ul>
 <li><a href="git://git.pitivi.org/git/user/alessandro/pitivi.git">git://git.pitivi.org/git/user/alessandro/pitivi.git</a></li>
-<li>Webview : <a href="http://git.pitivi.org/?p=user/alessandro/pitivi.git">http://git.pitivi.org/?p=user/alessandro/pitivi.git</a></li>
+<li>Webview : <a href="http://git.pitivi.org/?p=user/alessandro/pitivi.git">http://git.pitivi.org/?p=user/alessandro/pitivi.git</a>
+</li>
 </ul>
 <h2 id="brandons-repository">Brandon's repository</h2>
 <ul>
 <li><a href="git://github.com/emdash/pitivi.git">git://github.com/emdash/pitivi.git</a></li>
-<li>Webview : <a href="http://github.com/emdash/pitivi/">http://github.com/emdash/pitivi/</a></li>
+<li>Webview : <a href="http://github.com/emdash/pitivi/">http://github.com/emdash/pitivi/</a>
+</li>
 </ul>
 <h1 id="other-known-repositories">Other known repositories</h1>
 <ul>
-<li>Stephen Griffiths: <a href="http://github.com/lostcookie/pitivi/">http://github.com/lostcookie/pitivi/</a></li>
+<li>Stephen Griffiths: <a href="http://github.com/lostcookie/pitivi/">http://github.com/lostcookie/pitivi/</a>
+</li>
 <li>“Yuvipanda”</li>
 <li>“Daf”
 <ul>
@@ -162,45 +178,29 @@ text titles</li>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 

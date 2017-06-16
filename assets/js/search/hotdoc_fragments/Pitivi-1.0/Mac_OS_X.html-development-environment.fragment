@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "Pitivi-1.0/Mac_OS_X.html#development-environment", "fragment": "Development environment \nHave a look at HACKING to see how to clone a local repository. \nTo be able to run configure you need to add usr local opt gettext bin to PATH so that msgfmt can be found. \nYou should be able to run bin pitivi \n"});

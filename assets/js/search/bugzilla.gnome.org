@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "bugzilla.gnome.org", "urls": ["Feroze_gsoc.html#3-fix-ui-bugs", "releases/0-15.html#bugs-fixed"]});
+urls_downloaded_cb({"token": "bugzilla.gnome.org", "urls": ["releases/0-15.html#bugs-fixed", "Feroze_gsoc.html#3-fix-ui-bugs"]});

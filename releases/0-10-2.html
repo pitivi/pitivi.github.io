@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+
+<base href="..">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <title>0.10.2 Release : A New Toy</title>
 
@@ -22,11 +25,10 @@
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
-<script src="assets/js/utils.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
-<script src="assets/js/navigation.js"></script>
-
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -39,57 +41,64 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#toc" data-offset="70">
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
 
-<nav class="navbar navbar-fixed-top navbar-default">
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
 	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="home-link" class="hotdoc-navbar-brand">
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
 				<img src="images/pitivi.svg" alt="Home" id="home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
 			<ul class="nav navbar-nav" id="menu">
 							</ul>
-			<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
-			<form action="" class="navbar-form navbar-right" id="navbar-search-form">
-                               <div class="form-group has-feedback">
-                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
-				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
-                               </div>
-                       </form>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p class="navbar-text navbar-center"><b>The Pitivi Developer Documentation</b></p>
+			</div>
 		</div>
 	</div>
 </nav>
 
-<main class="page-row page-row-expanded">
+<main>
 <div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="releases/0-10-2.html" class="page_container" id="page-wrapper">
-	<div class="row">
-		
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-2" id="sidenav-column">
-	<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-		<div id="sitenav-wrapper">
-			<div class="sidenav-main-panel-body">
-				<div id="site-navigation">
-				</div>
-			</div>
-		</div>
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+			<script src="assets/js/sitemap.js"></script>
 	</div>
-	<button id="offcanvasleft" class="btn btn-xs" type="button" data-toggle="offcanvasleft">
-		<i class="glyphicon glyphicon-chevron-right" id="offcanvasleft-chevron"></i>
-	</button>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="content-column">
-
+<div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="0.10.2.md">
+				    <div id="page-description" data-hotdoc-source="0.10.2.md" data-hotdoc-role="main">
         <h1 id="0102-release-a-new-toy">0.10.2 Release : A New Toy</h1>
 <p>The PiTiVi team is proud to announce the third release of the 0.10.x
 series of the PiTiVi opensource video editor.</p>
@@ -103,49 +112,71 @@ series of the PiTiVi opensource video editor.</p>
 </ul>
 <h2 id="bugs-fixed">Bugs Fixed</h2>
 <ul>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=353859">353859</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=353859">353859</a> :
 [discoverer] Use 'no-more-pads' information</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=335699">335699</a> : Pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=335699">335699</a> : Pitivi
 fails to work if project created at wrong time</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=335822">335822</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=335822">335822</a> :
 Transcoding WMV creates tiny file</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=335826">335826</a> : Cancel
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=335826">335826</a> : Cancel
 and restarting rendering not possible</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=336332">336332</a> : Can't
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=336332">336332</a> : Can't
 play a file in pitivi until i scrub forward</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=337990">337990</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=337990">337990</a> :
 [Tracker] Need internationalization/localization</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=338065">338065</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=338065">338065</a> :
 combobox next to time is useless and should go</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=339994">339994</a> : follow
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=339994">339994</a> : follow
 the gnome toolbar and menu settings</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=346584">346584</a> : pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=346584">346584</a> : pitivi
 should have intltool and gettext support</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=346585">346585</a> : Don't
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=346585">346585</a> : Don't
 use whitespace before punctuation in pitivi messages</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=348232">348232</a> : hang
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=348232">348232</a> : hang
 when loading an ogg</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=350562">350562</a> : Error
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=350562">350562</a> : Error
 message when transcoding</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=352400">352400</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=352400">352400</a> :
 [importing] Allow importing (sub)folders</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=353861">353861</a> : Don't
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=353861">353861</a> : Don't
 close filechooser dialog box immediatly</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=377117">377117</a> : pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=377117">377117</a> : pitivi
 won't start</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=378865">378865</a> : Windows
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=378865">378865</a> : Windows
 media transcoding borks with audio</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=381959">381959</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=381959">381959</a> :
 Pressing Alt-F to activate file menu toggles fullscreen</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=381970">381970</a> : Make
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=381970">381970</a> : Make
 pitivi work uninstalled from SVN repositories</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=382249">382249</a> :
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=382249">382249</a> :
 configure on ubuntu edgy fails to find pygtk</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=383826">383826</a> : Pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=383826">383826</a> : Pitivi
 can't scroll one 0.5 sec tic at a time</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=392204">392204</a> : pitivi
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=392204">392204</a> : pitivi
 crash when objectfactory doesn't have valid thumbn...</li>
-<li><a href="http://bugzilla.gnome.org/show_bug.cgi?id=396808">396808</a> : Split
+<li>
+<a href="http://bugzilla.gnome.org/show_bug.cgi?id=396808">396808</a> : Split
 up code from pitivi/ to subdirectories</li>
 </ul>
 <p><a href="http://bugzilla.gnome.org/buglist.cgi?product=pitivi&amp;target_milestone=0.10.2&amp;resolution=FIXED">List of bugs fixed on
@@ -168,12 +199,14 @@ Bugzilla</a></p>
 <h2 id="information-and-feedback">Information and Feedback</h2>
 <ul>
 <li>Information for users and developers can be found on the PiTiVi
-website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a></li>
+website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a>
+</li>
 <li>Comments and feedback are welcome.
 <ul>
 <li>Mailing-list : pitivi-pitivi@lists.sourceforge.net</li>
 <li>PiTiVi bug-tracker :
-<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a></li>
+<a href="http://bugzilla.gnome.org/browse.cgi?product=pitivi">http://bugzilla.gnome.org/browse.cgi?product=pitivi</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -184,45 +217,29 @@ website : <a href="http://www.pitivi.org/">http://www.pitivi.org/</a></li>
 
 
 
-		<div id="subpages"></div>
-		</div>
-		<div id="search_results">
-			<p>The results of the search are</p>
-		</div>
+		
 	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<div id="footer">
+		    
 
+	</div>
 </div>
 
-<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2">
-	<div id="toc-column">
+<div id="toc-column">
+	
+		<div class="edit-button">
+		
+
+	</div>
 		<div id="toc-wrapper">
-			
-							<div class="text-center">
-					
-
-					<hr>
-				</div>
-						<nav id="toc"></nav>
-		</div>
+		<nav id="toc"></nav>
 	</div>
 </div>
-	</div>
-
+</div>
 </main>
-
-
-<footer class="page-row">
-	<div class="container-fluid">
-	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-xl-2" id="footer-left-column"></div>
-		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-7 col-xl-8" id="footer-content-column">
-						    
-
-		</div>
-		<div class="hidden-xs hidden-sm hidden-md col-lg-2 col-xl-2" id="footer-right-column"></div>
-	</div>
-</div>
-</footer>
 
 </body>
 
