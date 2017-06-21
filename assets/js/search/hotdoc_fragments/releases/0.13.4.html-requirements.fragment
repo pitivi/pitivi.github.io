@@ -1,1 +1,0 @@
-fragment_downloaded_cb({"url": "releases/0.13.4.html#requirements", "fragment": "Requirements \ngstreamer gst python gnonlin pygtk Python zope.interface http www.zope.org Products ZopeInterface setuptools http peak.telecommunity.com DevCenter setuptools pygoocanvas http live.gnome.org GooCanvas optional dbus and HAL for capture support \n"});

@@ -2,9 +2,9 @@
 @if return_items:
 <div class="multi_return_value_container">
 	@if len (return_items) == 1:
-	<h4>Returns:</h4>
+	<span><b>Returns:<b></span>
 	@else:
-	<h4>Returns a tuple made of</h4>
+	<span><b>Returns a tuple made of</b></span>
 	@end
 	<div class="container-fluid">
 		@for item in return_items:

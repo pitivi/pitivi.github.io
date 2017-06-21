@@ -240,13 +240,14 @@ function setupFilters() {
 		},
 	});
 
-	Toc.init($myNav);
+	$("h1,h2,h3,h4,h5,h6").removeAttr("data-toc-skip");
+	$("h1:hidden,h2:hidden,h3:hidden,h4:hidden,h5:hidden,h6:hidden").attr("data-toc-skip", "true");
+	Toc.init({$nav: $myNav, depth: 3, $scope: $("#main")});
 
 	/* Fix BASE anchors */
 	$("#toc a").each (function () {
 		var old_href = $(this).attr("href");
 		$(this).attr("href", utils.hd_context.rel_path + old_href);
-		console.log("Setting", old_href);
 		$(this).attr("data-target", old_href);
 	});
 
@@ -271,10 +272,11 @@ function setupFilters() {
 	layoutTimer();
 
 	$grid.on( 'arrangeComplete', function( event, filteredItems ) {
+    console.log("Arrange complete baby");
 		$("h1,h2,h3,h4,h5,h6").removeAttr("data-toc-skip");
 		$("h1:hidden,h2:hidden,h3:hidden,h4:hidden,h5:hidden,h6:hidden").attr("data-toc-skip", "true");
 		$myNav.empty();
-		Toc.init($myNav);
+		Toc.init({$nav: $myNav, depth: 3, $scope: $("#main")});
 	})
 
 	// Isotope messes with our anchors positions

@@ -1,1 +1,0 @@
-fragment_downloaded_cb({"url": "Pitivi-1.0/attic/Building_with_Windows.html#setting-up-git-config", "fragment": "Setting up git config \nThe bootstrap will fail if git config is not set up. Do the following \ngit config global user.email you example.com git config global user.name Your Name \n"});
