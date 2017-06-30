@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "smaller", "urls": ["Roadmap.html#roadmap", "releases/0-93.html#changes-and-fixed-bugs", "Testing.html#testing"]});
+urls_downloaded_cb({"token": "smaller", "urls": ["Roadmap.html#roadmap", "release.html#how-to-make-a-release", "releases/0-93.html#changes-and-fixed-bugs", "Testing.html#testing"]});

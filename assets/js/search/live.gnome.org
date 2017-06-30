@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "live.gnome.org", "urls": ["releases/0-13-4.html#requirements"]});
+urls_downloaded_cb({"token": "live.gnome.org", "urls": ["release.html#how-to-make-a-release", "releases/0-13-4.html#requirements"]});
