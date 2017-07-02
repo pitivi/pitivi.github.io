@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Releasing</title>
+<title>How to make a release</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
@@ -101,10 +101,14 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="release.md" data-hotdoc-role="main">
         <h1 id="how-to-make-a-release">How to make a release</h1>
-<p>See also https://live.gnome.org/MaintainersCorner/Releasing</p>
-<p>Besides the regular releases, you can also make smaller bug-fix releases.
-The regular releases have the version number X.YY, and the bug-fix
-releases have the version number X.YY.Z, where Z is a relatively small
+<p>Ideally these instructions are in line with the <a href="https://live.gnome.org/MaintainersCorner/Releasing">GNOME releasing process</a>.</p>
+<p>We make two types of releases:</p>
+<ul>
+<li>regular releases, when we have new features or improvements, and</li>
+<li>"smaller" bug-fix releases, when a regular relese needs patching.</li>
+</ul>
+<p>The regular releases have the version number X.YY, and the bug-fix
+releases have the version number X.YY.Z, where Z is hopefully a relatively small
 number (1, 2, 3...).</p>
 <p>Most of the steps below should be done in the <a href="HACKING.html">development environment</a>: <code>$ source bin/pitivi-env</code> -&gt; <code>(ptv-flatpak) $</code></p>
 <ol>
@@ -127,30 +131,30 @@ number (1, 2, 3...).</p>
 </li>
 </ul>
 <ol start="3">
-<li>Check your local repository</li>
+<li>Check your local repository:</li>
 </ol>
 <ul>
 <li>Make sure your sandbox is using the latest GStreamer release: <code>$ ptvenv --update --gst-version=&lt;gst-version&gt;</code>
 </li>
-<li>
-<code>$ git status</code> does not show any change</li>
-<li>
-<code>$ configure</code> is all green</li>
+<li>Install git-archive-all in your sandbox to be able to create the archive to be distributed: <code>$ build/flatpak/py-configure --module=git-archive-all &amp;&amp; make install</code>
+</li>
+<li>Check <code>$ git status</code> does not show any change</li>
+<li>Check <code>$ ptvenv ./configure</code> is all green</li>
 </ul>
 <ol start="4">
-<li>Make sure the tests pass</li>
+<li>Make sure the tests pass:</li>
 </ol>
-<ul>
-<li><code>$ ninja test</code></li>
-</ul>
-   <!-- * `$ make validate` FIXME! -->
+<pre><code>$ ninja -C mesonbuild/ test
+</code></pre>
+ <!-- * `$ make validate` FIXME! -->
 <ol start="5">
 <li>Update the following files:</li>
 </ol>
 <ul>
 <li>
 <a href="../meson.build">meson.build</a>:
-Only if doing a regular release. Bump YY up and remove the micro from
+If doing a bugfix release, add or increase the micro.
+If doing a regular release, bump YY up and remove the micro from
 the version number, for example: 0.97.1 -&gt; 0.98. Normally this is the
 same as the name of the Phabricator milestone you just archived.</li>
 <li>
@@ -171,27 +175,39 @@ If there are new maintainers.</li>
 <p>Commit the changes: <code>$ git commit -a -m "Release &lt;version-number&gt;"</code></p>
 </li>
 <li>
-<p>Create the distribution archive</p>
+<p>Create the distribution archive, install it on your favorite system and check that it works:</p>
 </li>
 </ol>
 <ul>
-<li><code>$ cd mesonbuild &amp;&amp; ninja dist &amp;&amp; cd .. &amp;&amp; ls *.tar.gz</code></li>
-<li>Install it on your favorite system, check that it works.</li>
+<li><code>$ ninja -C mesonbuild/ dist &amp;&amp; ls *.tar.gz</code></li>
+<li>For Archlinux try:</li>
 </ul>
+<pre><code>$ cd /tmp
+$ asp checkout pitivi
+$ cd /tmp/pitivi/repos/community-x86_64/
+$ rm -rf .git  # Without this, ./configure is confused re version number.
+$ cp .../pitivi-X.YY.Z.tar.gz .
+$ vim PKGBUILD
+... Update "pkgver",
+... Make sure "source" ends in .tar.gz
+... Update "sha256sums"
+$ makepkg
+$ makepkg -i
+$ pitivi
+</code></pre>
 <ol start="8">
-<li>
-<p>Create a tag: <code>$ git tag -a &lt;version-number&gt; -m "Release &lt;version-number&gt;"</code></p>
-</li>
-<li>
-<p>Push the tag to the official repository: <code>$ git push origin &lt;version-number&gt;</code></p>
-</li>
-<li>
-<p>Publish the archive</p>
-</li>
+<li>Create a tag and push it to the official repository. The TAG must always include the micro. This means when doing a regular release with version number X.YY, the TAG is X.YY.0. When doing a bug-fix release, the version number already includes a micro, so it's all fine.</li>
+</ol>
+<pre><code>$ git tag -a &lt;TAG&gt; -m "Release &lt;version-number&gt;"
+$ git push origin &lt;TAG&gt;
+</code></pre>
+<p>We use tag X.YY.0 instead of X.YY because we want to have the option of later creating the X.YY branch to the official repository, since it's not possible to have both a tag and a branch with the same name. This branch would be used to gather backported fixes and be the official branch for doing a X.YY.Z bug-fix release.</p>
+<ol start="10">
+<li>Publish the archive</li>
 </ol>
 <ul>
-<li><code>$ scp pitivi-X.YY.ZZ.tar.gz master.gnome.org:</code></li>
-<li>On master.gnome.org, run <code>$ ftpadmin install pitivi-X.YY.ZZ.tar.gz</code>
+<li><code>$ scp pitivi-X.YY.Z.tar.gz USER@master.gnome.org:</code></li>
+<li>On master.gnome.org, run <code>$ ftpadmin install pitivi-X.YY.Z.tar.gz</code>
 The tarball will appear as <code>.tar.xz</code> on https://download.gnome.org/sources/pitivi/X.YY/ (also visible on http://ftp.gnome.org/pub/gnome/sources/pitivi/X.YY/)</li>
 </ul>
 <ol start="11">
