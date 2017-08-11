@@ -32,11 +32,6 @@ function sitemap_downloaded_cb(html_sitemap) {
 }
 
 $(document).ready(function() {
-	$('#sidenav a').click(function(e) {
-		scroll_if_anchor ($(this).attr("href"));
-		e.stopPropagation();
-	});
-
 	setupFilters();
 
 	$("#toc-wrapper").mCustomScrollbar({"scrollInertia": 0,

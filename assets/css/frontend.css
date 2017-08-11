@@ -162,9 +162,16 @@ body {
   position: absolute;
   left: 16.66vw;
   right: 16.66vw;
+  text-align: center;
   top: 50px;
   bottom: 0px;
   word-wrap: break-word;
+}
+@media (min-width: 1200px) {
+  #body {
+    width: 800px;
+    margin: auto;
+  }
 }
 @media (max-width: 1200px) {
   #body {
@@ -190,6 +197,7 @@ body.full-width #sidenav-toggle {
 }
 #main {
   flex: 1 0 auto;
+  text-align: left;
 }
 #main > * {
   padding-left: 15px;
@@ -564,27 +572,24 @@ span[aria-expanded=true] .glyphicon-chevron-right {
 span[aria-expanded=false] .glyphicon-chevron-down {
   display: none;
 }
-@media (min-width: 992px) {
-  .parameter-extra,
-  .return-value-extra,
-  .member-value,
-  .field-link {
-    text-align: right;
-  }
+.symbol-detail {
+  padding: 5px 10px;
+  text-indent: -2em;
+  margin-left: 2em;
 }
-@media (max-width: 992px) {
-  .parameter-description > *,
-  .return-value-description > *,
-  .return-value-link > *,
-  .parameter-extra > *,
-  .return-value-extra > *,
-  .field-description > *,
-  .field-link > *,
-  .member-description > *,
-  .member-value > *,
-  .subpage-description > * {
-    padding-left: 10px;
-  }
+.symbol-detail > div {
+  display: inline;
+}
+.symbol-detail > div ~ p {
+  display: inline;
+}
+.return-values-container > .symbol-detail:first-child {
+  padding: 5px 0px;
+}
+.return-values-container,
+.parameters-container,
+.members-container {
+  margin-bottom: 10px;
 }
 .base_symbol_container > table,
 #page-description > table,
@@ -685,6 +690,13 @@ span[aria-expanded=false] .glyphicon-chevron-down {
   padding-top: 0px;
   padding-bottom: 0px;
   padding-right: 13px;
+}
+#subpages :first-child {
+  margin-bottom: 10px;
+}
+#subpages p {
+  text-indent: -2em;
+  margin-left: 2em;
 }
 .navbar-center {
   position: absolute;
