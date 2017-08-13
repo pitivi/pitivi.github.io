@@ -138,7 +138,6 @@ number (1, 2, 3...).</p>
 <li>Make sure your sandbox is using the latest GStreamer release: <code>$ ptvenv --update --gst-version=&lt;gst-version&gt;</code>
 </li>
 <li>Check <code>$ git status</code> does not show any change</li>
-<li>Check <code>$ ptvenv ./configure</code> is all green</li>
 </ul>
 <ol start="4">
 <li>Make sure the tests pass:</li>
@@ -184,7 +183,7 @@ If there are new maintainers.</li>
 <pre><code>$ cd /tmp
 $ asp checkout pitivi
 $ cd /tmp/pitivi/repos/community-x86_64/
-$ rm -rf .git  # Without this, ./configure is confused re version number.
+$ rm -rf .git  # Required to get the version number correctly.
 $ cp .../pitivi-X.YY.Z.tar.gz .
 $ vim PKGBUILD
 ... Update "pkgver",

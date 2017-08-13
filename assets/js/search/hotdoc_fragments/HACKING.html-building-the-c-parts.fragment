@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url": "HACKING.html#building-the-c-parts", "fragment": "Building the C parts \nSelect parts of Pitivi are written in C and need to be built when changed such as the audio envelope renderer for the audio clips. Build them with \n"});

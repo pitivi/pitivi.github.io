@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "autogen.sh", "urls": ["HACKING.html#page-description", "attic/Dependencies.html#pygst"]});
+urls_downloaded_cb({"token": "autogen.sh", "urls": ["attic/Dependencies.html#pygst"]});
