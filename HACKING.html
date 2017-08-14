@@ -34,10 +34,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -313,6 +313,19 @@ but we do use <code>pad</code>.</p>
 <p>You can guess the order of the imported modules by looking at some py files.
 The pre-commit hook has authority in this case as it will reorder the imports
 if the order is not good.</p>
+<h2 id="profiling-pitivi">Profiling Pitivi</h2>
+<p>To profile a pitivi run, simply set the PITIVI_PROFILING environment variable to 1, like so:</p>
+<pre><code>$ PITIVI_PROFILING=1 pitivi
+</code></pre>
+<p>A file named <code>pitivi-runstats</code> will be created in the current directory, a handy tool to examine it is <code>gprof2dot.py</code>, install it with:</p>
+<pre><code>$ pip install gprof2dot
+</code></pre>
+<p>Then run:</p>
+<pre><code>$ gprof2dot -f pstats pitivi-runstats | dot -Tsvg -o profile.svg
+</code></pre>
+<p>You can then inspect the call tree profile with your preferred image viewer:</p>
+<pre><code>$ xdg-open profile.svg
+</code></pre>
 
     </div>
         
