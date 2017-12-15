@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "supposed", "urls": ["Goals.html#page-description", "design/2008_design/2008_Architectural_Redesign.html#components"]});
+urls_downloaded_cb({"token": "supposed", "urls": [{"url": "Goals.html#professional-isnt-this-supposed-to-be-easy-to-use", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign.html#page-description", "context": {"gi-language": ["default"]}}]});

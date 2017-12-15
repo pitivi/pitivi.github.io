@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "study", "urls": ["Plugins.html#considerations", "Google_SoC_2007_-_Simple_Timeline.html#aug-15-2007", "Feroze_gsoc.html#page-description"]});
+urls_downloaded_cb({"token": "study", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_SoC_2007_-_Simple_Timeline.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});

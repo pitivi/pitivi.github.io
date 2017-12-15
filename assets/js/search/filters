@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "filters", "urls": ["Praise.html#other-mentions-in-the-media", "design/2008_design/2008_UI_Design.html#sources-and-effects"]});
+urls_downloaded_cb({"token": "filters", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

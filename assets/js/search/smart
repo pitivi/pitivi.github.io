@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "smart", "urls": ["Google_Summer_of_Code.html#who-we-are-looking-for", "design/2007_design/2007_Advanced_UI_implementation.html#smartgroup"]});
+urls_downloaded_cb({"token": "smart", "urls": [{"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Advanced_UI_implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "counterpart", "urls": ["design/2007_design/2007_Advanced_UI_Mockups.html#general-timeline-overview", "design/2008_design/2008_Architectural_Redesign/High-level_Design.html#application"]});
+urls_downloaded_cb({"token": "counterpart", "urls": [{"url": "design/2007_design/2007_Advanced_UI_Mockups.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign/High-level_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "notification", "urls": ["release.html#how-to-make-a-release", "releases/0-93.html#changes-and-fixed-bugs", "design/2007_design/2007_Advanced_UI_implementation.html#smartgroup"]});
+urls_downloaded_cb({"token": "notification", "urls": [{"url": "release.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-93.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Advanced_UI_implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Medias", "urls": ["design/2007_design/2007_Simple_UI_Mockups.html#medias-added", "design/2007_design/2007_Simple_UI_Mockups.html#add-medias"]});
+urls_downloaded_cb({"token": "Medias", "urls": [{"url": "design/2007_design/2007_Simple_UI_Mockups.html#medias-added", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Simple_UI_Mockups.html#page-description", "context": {"gi-language": ["default"]}}]});

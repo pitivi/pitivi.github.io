@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "modular", "urls": ["Plugins.html#the-trac-way", "Google_Summer_of_Code.html#project-ideas"]});
+urls_downloaded_cb({"token": "modular", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

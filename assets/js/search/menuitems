@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "menuitems", "urls": ["Plugins.html#menu-toolbar-integration"]});
+urls_downloaded_cb({"token": "menuitems", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

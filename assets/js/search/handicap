@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "handicap", "urls": ["Plugins.html#the-deluge-way"]});
+urls_downloaded_cb({"token": "handicap", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

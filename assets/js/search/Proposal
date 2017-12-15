@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Proposal", "urls": ["design/Grouping_and_nesting.html#proposal-recursive-pitivi", "Feroze_gsoc.html#proposal"]});
+urls_downloaded_cb({"token": "Proposal", "urls": [{"url": "design/Grouping_and_nesting.html#proposal-recursive-pitivi", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#proposal", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "org.pitivi.Pitivi", "urls": ["Install_with_flatpak.html#running-pitivi", "Install_with_flatpak.html#updating-pitivi", "Install_with_flatpak.html#uninstalling-pitivi"]});
+urls_downloaded_cb({"token": "org.pitivi.Pitivi", "urls": [{"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}]});

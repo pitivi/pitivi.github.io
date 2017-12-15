@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "applying", "urls": ["Google_Summer_of_Code.html#google-summer-of-code", "Google_Summer_of_Code.html#project-ideas", "design/Rendering_Profiles_Implementation.html#project-settings-dialog"]});
+urls_downloaded_cb({"token": "applying", "urls": [{"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Rendering_Profiles_Implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

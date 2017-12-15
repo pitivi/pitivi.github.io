@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "simplest", "urls": ["Plugins.html#menu-toolbar-integration", "design/2008_design/2008_Architectural_Redesign/Pipeline.html#example-viewing-a-file"]});
+urls_downloaded_cb({"token": "simplest", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign/Pipeline.html#page-description", "context": {"gi-language": ["default"]}}]});

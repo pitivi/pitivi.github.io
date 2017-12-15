@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Links", "urls": ["Plugins.html#links"]});
+urls_downloaded_cb({"token": "Links", "urls": [{"url": "Plugins.html#links", "context": {"gi-language": ["default"]}}]});

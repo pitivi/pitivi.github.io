@@ -9,8 +9,11 @@
 	@for link, subpage in subpages.items():
 		<p>
 		<a href="@link">@subpage.get_title()!e</a>
+		–
 		@if subpage.short_description:
-		– @subpage.short_description
+			@subpage.short_description
+		@else:
+			<i><em>No description available</em></i>
 		@end
 		</p>
 	@end

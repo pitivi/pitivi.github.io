@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "cleaning", "urls": ["Plugins.html#the-jokosher-way", "Project_history.html#project-history", "Plugins.html#direct-core-objects-access", "Google_SoC_2007_-_Simple_Timeline.html#mayjune-2007"]});
+urls_downloaded_cb({"token": "cleaning", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Project_history.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_SoC_2007_-_Simple_Timeline.html#page-description", "context": {"gi-language": ["default"]}}]});

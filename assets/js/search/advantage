@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "advantage", "urls": ["Plugins.html#the-deluge-way", "Plugins.html#considerations", "Plugins.html#plugin-deployment", "Plugins.html#ui-integration", "design/2007_design/2007_Advanced_UI_Mockups.html#general-timeline-overview"]});
+urls_downloaded_cb({"token": "advantage", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Advanced_UI_Mockups.html#page-description", "context": {"gi-language": ["default"]}}]});

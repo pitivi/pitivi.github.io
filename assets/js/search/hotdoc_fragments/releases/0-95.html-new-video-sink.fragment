@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "releases/0-95.html#new-video-sink", "fragment": "New video sink \nThe glimagesink video rendering widget was replaced by the new gtk gl sink which integrates more cleanly inside the application and avoids various bugs we used to encounter while embedding the old sink into Gtk. \n"});
+fragment_downloaded_cb({"url": "releases/0-95.html#new-video-sink", "fragment": "New video sink \n"});

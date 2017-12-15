@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Server", "urls": ["releases/0-15-1.html#contributors"]});
+urls_downloaded_cb({"token": "Server", "urls": [{"url": "releases/0-15-1.html#page-description", "context": {"gi-language": ["default"]}}]});

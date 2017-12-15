@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "enhancements", "urls": ["Plugins.html#the-jokosher-way", "Praise.html#in-the-media", "Feroze_gsoc.html#3-fix-ui-bugs", "Feroze_gsoc.html#page-description"]});
+urls_downloaded_cb({"token": "enhancements", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "ptv", "urls": ["HACKING.html#page-description", "release.html#how-to-make-a-release"]});
+urls_downloaded_cb({"token": "ptv", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "release.html#page-description", "context": {"gi-language": ["default"]}}]});

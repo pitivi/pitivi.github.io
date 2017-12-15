@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "callbacks", "urls": ["HACKING.html#names", "Plugins.html#the-extension-act", "Plugins.html#additional-source-providers"]});
+urls_downloaded_cb({"token": "callbacks", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

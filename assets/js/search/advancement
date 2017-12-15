@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "advancement", "urls": ["releases/1-0.html#pitivi-10", "releases/0-99.html#pitivi-099"]});
+urls_downloaded_cb({"token": "advancement", "urls": [{"url": "releases/1-0.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-99.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "glimagesink", "urls": ["releases/0-95.html#new-video-sink"]});
+urls_downloaded_cb({"token": "glimagesink", "urls": [{"url": "releases/0-95.html#page-description", "context": {"gi-language": ["default"]}}]});

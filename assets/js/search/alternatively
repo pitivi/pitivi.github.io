@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "alternatively", "urls": ["Install_with_flatpak.html#updating-pitivi", "attic/Building_with_Windows.html#configure-hangs"]});
+urls_downloaded_cb({"token": "alternatively", "urls": [{"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});

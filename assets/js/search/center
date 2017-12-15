@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "center", "urls": ["Praise.html#page-description", "releases/0-91.html#page-description"]});
+urls_downloaded_cb({"token": "center", "urls": [{"url": "Praise.html#ubuntu-software-center-reviews", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "x86_64.tar", "urls": ["releases/0-94.html#page-description"]});
+urls_downloaded_cb({"token": "x86_64.tar", "urls": [{"url": "releases/0-94.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "activated", "urls": ["Plugins.html#the-jokosher-way", "Plugins.html#considerations", "Plugins.html#direct-core-objects-access", "design/2008_design/2008_UI_Design.html#roll-edits"]});
+urls_downloaded_cb({"token": "activated", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

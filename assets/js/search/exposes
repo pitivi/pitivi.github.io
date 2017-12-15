@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "exposes", "urls": ["Plugins.html#the-trac-way", "Plugins.html#nomeclature"]});
+urls_downloaded_cb({"token": "exposes", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

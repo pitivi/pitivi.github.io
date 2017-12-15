@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Bazaar", "urls": ["Git.html#page-description", "Git.html#git"]});
+urls_downloaded_cb({"token": "Bazaar", "urls": [{"url": "Git.html#tips-and-tricksgotchas-for-bazaarsubversion-users", "context": {"gi-language": ["default"]}}, {"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}]});

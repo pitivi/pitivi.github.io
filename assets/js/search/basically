@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "basically", "urls": ["GES.html#ges", "Plugins.html#considerations", "Plugins.html#ui-integration", "design/Rendering_Profiles_Implementation.html#rendering-dialog"]});
+urls_downloaded_cb({"token": "basically", "urls": [{"url": "GES.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Rendering_Profiles_Implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

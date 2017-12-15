@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "repo", "urls": ["index.html#pitivi-development-website"]});
+urls_downloaded_cb({"token": "repo", "urls": [{"url": "index.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "inspect", "urls": ["Command_line_tools.html#gstinspect", "HACKING.html#profiling-pitivi"]});
+urls_downloaded_cb({"token": "inspect", "urls": [{"url": "Command_line_tools.html#gstinspect", "context": {"gi-language": ["default"]}}, {"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Command_line_tools.html#page-description", "context": {"gi-language": ["default"]}}]});

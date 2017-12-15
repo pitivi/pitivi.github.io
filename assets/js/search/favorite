@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "favorite", "urls": ["release.html#how-to-make-a-release", "releases/0-95.html#page-description"]});
+urls_downloaded_cb({"token": "favorite", "urls": [{"url": "releases/0-95.html#page-description", "context": {"gi-language": ["default"]}}]});

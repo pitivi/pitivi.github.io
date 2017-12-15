@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "month", "urls": ["releases/0-92.html#092-release-baby-steps"]});
+urls_downloaded_cb({"token": "month", "urls": [{"url": "releases/0-92.html#page-description", "context": {"gi-language": ["default"]}}]});

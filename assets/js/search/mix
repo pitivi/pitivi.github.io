@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "mix", "urls": ["design/2008_design/2008_Plugin_Interface_development.html#current-implementation2", "design/UI_Implementation.html#ui-framework-design"]});
+urls_downloaded_cb({"token": "mix", "urls": [{"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/UI_Implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

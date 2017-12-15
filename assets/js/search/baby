@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "baby", "urls": ["releases/0-92.html#092-release-baby-steps"]});
+urls_downloaded_cb({"token": "baby", "urls": [{"url": "releases/0-92.html#092-release-baby-steps", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "patterns", "urls": ["design/2007_design/2007_Advanced_UI_implementation.html#page-description", "design/UI_Implementation.html#page-description"]});
+urls_downloaded_cb({"token": "patterns", "urls": [{"url": "design/2007_design/2007_Advanced_UI_implementation.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/UI_Implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

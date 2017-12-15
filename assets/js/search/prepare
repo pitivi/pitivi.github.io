@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "prepare", "urls": ["HACKING.html#page-description", "Mac_OS_X.html#current-status"]});
+urls_downloaded_cb({"token": "prepare", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Mac_OS_X.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "efficient", "urls": ["Goals.html#page-description", "Plugins.html#the-zope-way"]});
+urls_downloaded_cb({"token": "efficient", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

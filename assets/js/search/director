@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "director", "urls": ["GES.html#ges", "Plugins.html#plugin-manager"]});
+urls_downloaded_cb({"token": "director", "urls": [{"url": "GES.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

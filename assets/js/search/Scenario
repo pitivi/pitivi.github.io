@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Scenario", "urls": ["design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#page-description", "QA_Scenarios.html#user-provided-scenarios"]});
+urls_downloaded_cb({"token": "Scenario", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#scriptingtemplatescenario-system", "context": {"gi-language": ["default"]}}, {"url": "QA_Scenarios.html#page-description", "context": {"gi-language": ["default"]}}]});

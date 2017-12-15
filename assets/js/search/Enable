@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Enable", "urls": ["Plugins.html#enabledisable-a-plugin", "Feroze_gsoc.html#1-rendering-presets"]});
+urls_downloaded_cb({"token": "Enable", "urls": [{"url": "Plugins.html#enabledisable-a-plugin", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});

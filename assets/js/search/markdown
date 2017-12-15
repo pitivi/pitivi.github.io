@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "markdown", "urls": ["index.html#pitivi-development-website", "attic.html#attic"]});
+urls_downloaded_cb({"token": "markdown", "urls": [{"url": "index.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic.html#page-description", "context": {"gi-language": ["default"]}}]});

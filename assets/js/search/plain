@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "plain", "urls": ["Install_with_flatpak.html#troubleshooting", "releases/0-95.html#page-description"]});
+urls_downloaded_cb({"token": "plain", "urls": [{"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-95.html#page-description", "context": {"gi-language": ["default"]}}]});

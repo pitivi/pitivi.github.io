@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "enhancement", "urls": ["Google_SoC_2007_-_Simple_Timeline.html#ui-enhancement-screenshots", "Bug_reporting.html#bug-reporting", "Plugins.html#menu-toolbar-integration"]});
+urls_downloaded_cb({"token": "enhancement", "urls": [{"url": "Google_SoC_2007_-_Simple_Timeline.html#ui-enhancement-screenshots", "context": {"gi-language": ["default"]}}, {"url": "Bug_reporting.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

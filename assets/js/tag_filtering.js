@@ -184,6 +184,11 @@ function setupFilters() {
 	function shouldBeVisible(item) {
 		var item_tags = parseTags(item);
 
+    if ($(item).hasClass("base_symbol_container"))
+      if ($(item).find(".gi-symbol").length != 0 &&
+          $(item).find(".gi-symbol-" + utils.hd_context.gi_language).length == 0)
+        return false;
+
 		if (!item_tags) {
 			return true;
 		}
@@ -211,17 +216,7 @@ function setupFilters() {
 	}
 
 	function isotopeFilter() {
-		if ($(this).hasClass('summary_section_title')) {
-			res = false;
-			var next = $(this).nextUntil(".summary_section_title");
-
-			next.map(function () {
-				if (shouldBeVisible($(this))) {
-					res = true;
-				}
-			});
-			return res;
-		} else if ($(this).hasClass('symbol_section')) {
+		if ($(this).hasClass('symbol_section')) {
 			res = false;
 			var next = $(this).nextUntil(".symbol_section");
 
@@ -250,7 +245,16 @@ function setupFilters() {
 		},
 	});
 
-	console.log("is main too large ?", main_larger_than_viewport());
+  if (utils.hd_context.extension == 'gi-extension')
+    $(".gi-symbol-" + utils.hd_context.gi_language + " *[data-hotdoc-id]").each (function() {
+      $(this).attr('id', $(this).attr('data-hotdoc-id'));
+    });
+  else
+    $("*[data-hotdoc-id]").each (function() {
+      $(this).attr('id', $(this).attr('data-hotdoc-id'));
+    });
+
+  $(".base_symbol_container").removeAttr("id");
 
   $("h1,h2,h3,h4,h5,h6").removeAttr("data-toc-skip");
   $("h1:hidden,h2:hidden,h3:hidden,h4:hidden,h5:hidden,h6:hidden").attr("data-toc-skip", "true");

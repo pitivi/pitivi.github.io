@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "brew", "urls": ["Mac_OS_X.html#installing"]});
+urls_downloaded_cb({"token": "brew", "urls": [{"url": "Mac_OS_X.html#page-description", "context": {"gi-language": ["default"]}}]});

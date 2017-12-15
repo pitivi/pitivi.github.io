@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "junk", "urls": ["design/2008_design/2008_Plugin_Interface_development.html#development"]});
+urls_downloaded_cb({"token": "junk", "urls": [{"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}]});

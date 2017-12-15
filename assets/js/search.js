@@ -133,7 +133,7 @@ function do_search(trie, query) {
 }
 
 function display_fragment_for_url(data) {
-	var selector = '#' + CSS.escape(data.url) + '-fragment';
+	var selector = 'div[search-id="' + CSS.escape(data.url) + '-fragment' + '"]';
 	var token = $("#sidenav-lookup-field").val();
 
 	var fragment_div = $(selector);
@@ -167,6 +167,28 @@ function display_fragments_for_urls(fragments, token) {
 	}
 }
 
+function update_cookie() {
+  for (var i = 0; i < utils.hd_context.gi_languages.length; i++) {
+    if ($(this).hasClass('search_result_' + utils.hd_context.gi_languages[i])) {
+      utils.setLanguageCookie(utils.hd_context.gi_languages[i]);
+    }
+  }
+}
+
+search_result_template = [
+  '<div class="search_result">',
+  '{{{search_alert}}}',
+  '<a href="{{{url}}}" class="{{{extra_class}}}">{{{url}}}</a>',
+  '<div search-id="{{{final_url}}}-fragment"></div>',
+  '</div>'
+].join('\n');
+
+search_alert_template = [
+  '<div class="search-alert alert-warning" role="alert">',
+  '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>',
+  'Language: {{{language}}}',
+  '</div>'
+].join('\n');
 
 function display_urls_for_token(data) {
 	var token_results_div = $("#actual_search_results");
@@ -180,28 +202,59 @@ function display_urls_for_token(data) {
 	var url;
 	var final_urls = [];
 	for (var i = 0; i < urls.length; i++) {
-		url = utils.hd_context.hd_root + urls[i];
+		url = utils.hd_context.hd_root + urls[i].url;
 		if (url === null) {
 			continue;
 		}
 
-		var final_url = urls[i];
+		var final_url = urls[i].url;
 
 		if (search.matched_urls[final_url])
-			search.matched_urls[final_url].push (data.token);
+			search.matched_urls[final_url].push (urls[i].context);
 		else
-			search.matched_urls[final_url] = [data.token];
+			search.matched_urls[final_url] = [urls[i].context];
 
 		if (search.matched_urls[final_url].length == search.expected_tokens.length) {
-			meat += '<div class="search_result">';
-			meat += '<a href="' + url + '">' + url + '</a>';
-			meat += '<div id="' + final_url + '-fragment"></div>';
-			meat += '</div>';
-			final_urls.push(final_url);
+      var contexts = search.matched_urls[final_url];
+      var context = search.matched_urls[final_url][0];
+
+      for (var j = 1; j < contexts.length; j++) {
+        $(context['gi-language']).filter(contexts[j]['gi-language']);
+      }
+
+      var gi_languages = context['gi-language'];
+
+      if (gi_languages.indexOf('default') != -1 || gi_languages.indexOf(utils.hd_context.gi_language) != -1) {
+        meat += Mustache.to_html(search_result_template, {
+          'url': url,
+          'extra_class': '',
+          'final_url': final_url,
+          'search_alert': '',
+        });
+			  final_urls.push(final_url);
+      } else {
+        var pushed = false;
+        for (var k = 0; k < gi_languages.length; k++) {
+          var search_alert = Mustache.to_html(search_alert_template, {
+            'language': gi_languages[k].capitalizeFirstLetter(),
+          });
+          meat += Mustache.to_html(search_result_template, {
+            'url': url,
+            'extra_class': 'search_result_' + gi_languages[k],
+            'final_url': final_url,
+            'search_alert': search_alert,
+          });
+          if (!pushed) {
+			      final_urls.push(final_url);
+            pushed = true;
+          }
+        }
+      }
 		}
 	}
 
 	token_results_div.html(meat);
+  token_results_div.on("click", "a[href]", update_cookie);
 
 	display_fragments_for_urls(final_urls, data.token);
 }

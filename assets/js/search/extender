@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "extender", "urls": ["Plugins.html#nomeclature", "Plugins.html#the-extension-act"]});
+urls_downloaded_cb({"token": "extender", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

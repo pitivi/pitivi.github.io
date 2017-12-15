@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "gstvalidatescenarios", "urls": ["releases/0-95.html#integration-with-gstvalidate"]});
+urls_downloaded_cb({"token": "gstvalidatescenarios", "urls": [{"url": "releases/0-95.html#page-description", "context": {"gi-language": ["default"]}}]});

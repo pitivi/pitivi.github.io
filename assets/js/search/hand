@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "hand", "urls": ["Praise.html#in-the-media", "design/2008_design/2008_UI_Design.html#default-property-editor"]});
+urls_downloaded_cb({"token": "hand", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Device", "urls": ["design/2008_design/2008_Architectural_Redesign/Browsers.html#device-browser", "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#sourcedevicefactory"]});
+urls_downloaded_cb({"token": "Device", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Browsers.html#device-browser", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#page-description", "context": {"gi-language": ["default"]}}]});

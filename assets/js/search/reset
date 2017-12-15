@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "reset", "urls": ["Git.html#page-description", "releases/0-91.html#page-description"]});
+urls_downloaded_cb({"token": "reset", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}]});

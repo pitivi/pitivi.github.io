@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "bump", "urls": ["release.html#how-to-make-a-release"]});
+urls_downloaded_cb({"token": "bump", "urls": [{"url": "release.html#page-description", "context": {"gi-language": ["default"]}}]});

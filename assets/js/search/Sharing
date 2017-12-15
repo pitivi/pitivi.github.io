@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Sharing", "urls": ["Bug_reporting.html#page-description", "design/2008_design/2008_UI_Design.html#property-editor"]});
+urls_downloaded_cb({"token": "Sharing", "urls": [{"url": "Bug_reporting.html#sharing-sample-files-projects-and-scenarios", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

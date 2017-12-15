@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "design/2008_design/2008_UI_Design.html#edge-frame-snapping", "fragment": "Edge Frame Snapping \nAll objects have edge snapping enabled during horizontal motion. At this point we believe this is the most common use case. This edge snapping effect is intended to be subtle with a deaband of only a few pixels. \n"});
+fragment_downloaded_cb({"url": "design/2008_design/2008_UI_Design.html#edge-frame-snapping", "fragment": "Edge Frame Snapping \n"});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "opt", "urls": ["Roadmap.html#manualsemiautomated-ux", "Mac_OS_X.html#development-environment", "design/Proxy_editing_requirements.html#manualsemiautomated-ux"]});
+urls_downloaded_cb({"token": "opt", "urls": [{"url": "Roadmap.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Mac_OS_X.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Proxy_editing_requirements.html#page-description", "context": {"gi-language": ["default"]}}]});

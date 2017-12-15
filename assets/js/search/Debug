@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Debug", "urls": ["Bug_reporting.html#debug-logs"]});
+urls_downloaded_cb({"token": "Debug", "urls": [{"url": "Bug_reporting.html#debug-logs", "context": {"gi-language": ["default"]}}]});

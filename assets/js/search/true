@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "true", "urls": ["Plugins.html#the-zope-way", "Plugins.html#recording-devices", "releases/0-92.html#changes-and-fixed-bugs"]});
+urls_downloaded_cb({"token": "true", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-92.html#page-description", "context": {"gi-language": ["default"]}}]});

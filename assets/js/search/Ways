@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Ways", "urls": ["index.html#ways-to-communicate"]});
+urls_downloaded_cb({"token": "Ways", "urls": [{"url": "index.html#ways-to-communicate", "context": {"gi-language": ["default"]}}]});

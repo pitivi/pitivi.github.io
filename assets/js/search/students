@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "students", "urls": ["The_people.html#the-people", "Google_Summer_of_Code.html#google-summer-of-code", "Google_Summer_of_Code.html#what-we-offer", "Google_Summer_of_Code.html#project-ideas"]});
+urls_downloaded_cb({"token": "students", "urls": [{"url": "The_people.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

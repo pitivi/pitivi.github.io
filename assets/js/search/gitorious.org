@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "gitorious.org", "urls": ["design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#code-review"]});
+urls_downloaded_cb({"token": "gitorious.org", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#page-description", "context": {"gi-language": ["default"]}}]});

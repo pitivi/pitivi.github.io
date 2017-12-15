@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "extending", "urls": ["Plugins.html#the-deluge-way", "Plugins.html#considerations", "Plugins.html#ui-integration", "design/2007_design/2007_Advanced_UI_implementation.html#draggable"]});
+urls_downloaded_cb({"token": "extending", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Advanced_UI_implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

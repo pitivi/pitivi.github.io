@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "KUSANO", "urls": ["releases/0-14.html#contributors"]});
+urls_downloaded_cb({"token": "KUSANO", "urls": [{"url": "releases/0-14.html#page-description", "context": {"gi-language": ["default"]}}]});

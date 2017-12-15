@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Called", "urls": ["Plugins.html#the-trac-way", "QA_Scenarios.html#user-provided-scenarios"]});
+urls_downloaded_cb({"token": "Called", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "QA_Scenarios.html#page-description", "context": {"gi-language": ["default"]}}]});

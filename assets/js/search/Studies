@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Studies", "urls": ["Plugins.html#case-studies"]});
+urls_downloaded_cb({"token": "Studies", "urls": [{"url": "Plugins.html#case-studies", "context": {"gi-language": ["default"]}}]});

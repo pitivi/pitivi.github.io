@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "away", "urls": ["The_people.html#the-people", "Praise.html#in-the-media", "Praise.html#other-mentions-in-the-media"]});
+urls_downloaded_cb({"token": "away", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}]});

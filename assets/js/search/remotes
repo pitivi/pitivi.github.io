@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "remotes", "urls": ["Git.html#page-description"]});
+urls_downloaded_cb({"token": "remotes", "urls": [{"url": "Git.html#dealing-with-remotes-and-branches", "context": {"gi-language": ["default"]}}, {"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}]});

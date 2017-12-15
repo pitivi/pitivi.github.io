@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "cmake", "urls": ["attic/Building_with_Windows.html#cmake", "attic/Building_with_Windows.html#editing-your-bash-profile"]});
+urls_downloaded_cb({"token": "cmake", "urls": [{"url": "attic/Building_with_Windows.html#cmake", "context": {"gi-language": ["default"]}}, {"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});

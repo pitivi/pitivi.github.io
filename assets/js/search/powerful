@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "powerful", "urls": ["Goals.html#goals", "Goals.html#page-description", "Praise.html#in-the-media"]});
+urls_downloaded_cb({"token": "powerful", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}]});

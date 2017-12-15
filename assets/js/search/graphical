@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "graphical", "urls": ["Git.html#not-going-insane", "Architecture.html#main-pitivi-dependencies"]});
+urls_downloaded_cb({"token": "graphical", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Architecture.html#page-description", "context": {"gi-language": ["default"]}}]});

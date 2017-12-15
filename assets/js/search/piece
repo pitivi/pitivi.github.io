@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "piece", "urls": ["Praise.html#other-mentions-in-the-media", "Plugins.html#ui-integration"]});
+urls_downloaded_cb({"token": "piece", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}]});

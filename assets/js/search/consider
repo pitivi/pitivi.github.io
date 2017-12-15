@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "consider", "urls": ["HACKING.html#coding-style-guide", "Mac_OS_X.html#current-status", "Google_Summer_of_Code.html#google-summer-of-code"]});
+urls_downloaded_cb({"token": "consider", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Mac_OS_X.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

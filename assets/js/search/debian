@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "debian", "urls": ["attic/Dependencies.html#on-ubuntudebian"]});
+urls_downloaded_cb({"token": "debian", "urls": [{"url": "attic/Dependencies.html#on-ubuntudebian", "context": {"gi-language": ["default"]}}]});

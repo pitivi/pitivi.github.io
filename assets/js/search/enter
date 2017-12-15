@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "enter", "urls": ["HACKING.html#page-description", "Troubleshooting.html#troubleshooting"]});
+urls_downloaded_cb({"token": "enter", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Troubleshooting.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "design/2008_design/2008_UI_Design.html#time-stretch", "fragment": "Time Stretch \nAnother variant on basic trimming. The source s in out points are not set as normal but rather the source keeps the same in out points and the source is sped up or slowed down to accommodate the new duration. Timestretch only applies to sources of finite length such as files. \n"});
+fragment_downloaded_cb({"url": "design/2008_design/2008_UI_Design.html#time-stretch", "fragment": "Time Stretch \n"});

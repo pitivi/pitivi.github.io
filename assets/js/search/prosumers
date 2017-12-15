@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "prosumers", "urls": ["Goals.html#goals"]});
+urls_downloaded_cb({"token": "prosumers", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}]});

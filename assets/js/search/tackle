@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "tackle", "urls": ["Goals.html#yeah-so-whats-your-plan", "Test_suite_wishlist.html#test-suite-wishlist"]});
+urls_downloaded_cb({"token": "tackle", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Test_suite_wishlist.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "real", "urls": ["Praise.html#in-the-media"]});
+urls_downloaded_cb({"token": "real", "urls": [{"url": "release.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}]});

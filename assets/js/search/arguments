@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "arguments", "urls": ["HACKING.html#names", "releases/0-93.html#changes-and-fixed-bugs", "design/2008_design/2008_Architectural_Redesign/Project.html#history"]});
+urls_downloaded_cb({"token": "arguments", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-93.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign/Project.html#page-description", "context": {"gi-language": ["default"]}}]});

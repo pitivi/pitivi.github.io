@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "plus", "urls": ["Praise.html#in-the-media", "Google_Summer_of_Code.html#who-we-are-looking-for"]});
+urls_downloaded_cb({"token": "plus", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

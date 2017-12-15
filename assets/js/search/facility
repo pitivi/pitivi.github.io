@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "facility", "urls": ["Plugins.html#considerations", "Plugins.html#plugin-deployment", "Plugins.html#ui-integration"]});
+urls_downloaded_cb({"token": "facility", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

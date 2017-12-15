@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "attic", "urls": ["attic.html#attic"]});
+urls_downloaded_cb({"token": "attic", "urls": [{"url": "attic.html#attic", "context": {"gi-language": ["default"]}}]});

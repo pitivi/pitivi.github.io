@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Ripple", "urls": ["design/2008_design/2008_UI_Design.html#ripple-edits", "QA_Scenarios.html#test-ripple-editing"]});
+urls_downloaded_cb({"token": "Ripple", "urls": [{"url": "design/2008_design/2008_UI_Design.html#ripple-edits", "context": {"gi-language": ["default"]}}, {"url": "QA_Scenarios.html#test-ripple-editing", "context": {"gi-language": ["default"]}}]});

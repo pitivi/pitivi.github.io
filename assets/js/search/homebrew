@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "homebrew", "urls": ["Mac_OS_X.html#current-status", "Mac_OS_X.html#installing"]});
+urls_downloaded_cb({"token": "homebrew", "urls": [{"url": "Mac_OS_X.html#page-description", "context": {"gi-language": ["default"]}}]});

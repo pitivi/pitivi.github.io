@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "learned", "urls": ["Praise.html#in-the-media", "Google_SoC_2007_-_Simple_Timeline.html#aug-21-2007"]});
+urls_downloaded_cb({"token": "learned", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_SoC_2007_-_Simple_Timeline.html#page-description", "context": {"gi-language": ["default"]}}]});

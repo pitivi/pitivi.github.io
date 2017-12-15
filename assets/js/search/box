@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "box", "urls": ["releases/0-95.html#page-description", "Plugins.html#additional-source-providers", "Feroze_gsoc.html#3-fix-ui-bugs"]});
+urls_downloaded_cb({"token": "box", "urls": [{"url": "releases/0-95.html#the-clip-transformation-box-has-been-reimplemented", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});

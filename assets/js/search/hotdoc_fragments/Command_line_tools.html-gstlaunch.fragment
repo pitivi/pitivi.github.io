@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "Command_line_tools.html#gstlaunch", "fragment": "gst launch \nLaunches GStreamer pipelines. \nPlay a video with the decodebin gst launch filesrc location foo.ogv decodebin autovideosink \n"});
+fragment_downloaded_cb({"url": "Command_line_tools.html#gstlaunch", "fragment": "gst launch \n"});

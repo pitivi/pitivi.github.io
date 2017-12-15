@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Images", "urls": ["QA_Scenarios.html#test-still-images"]});
+urls_downloaded_cb({"token": "Images", "urls": [{"url": "QA_Scenarios.html#test-still-images", "context": {"gi-language": ["default"]}}]});

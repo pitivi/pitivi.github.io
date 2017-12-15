@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "broken", "urls": ["releases/0-94.html#changes-and-fixed-bugs", "Troubleshooting.html#incorrect-codec-settings", "attic.html#attic"]});
+urls_downloaded_cb({"token": "broken", "urls": [{"url": "releases/0-94.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Troubleshooting.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic.html#page-description", "context": {"gi-language": ["default"]}}]});

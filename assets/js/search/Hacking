@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Hacking", "urls": ["Mac_OS_X.html#hacking", "HACKING.html#hacking-on-pitivi"]});
+urls_downloaded_cb({"token": "Hacking", "urls": [{"url": "Mac_OS_X.html#hacking", "context": {"gi-language": ["default"]}}, {"url": "HACKING.html#hacking-on-pitivi", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "intuitive", "urls": ["Goals.html#goals", "Goals.html#page-description", "Praise.html#in-the-media", "Feroze_gsoc.html#2-upload-to-video-services"]});
+urls_downloaded_cb({"token": "intuitive", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "decent", "urls": ["Praise.html#in-the-media", "attic/Building_with_Windows.html#text-editor"]});
+urls_downloaded_cb({"token": "decent", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});

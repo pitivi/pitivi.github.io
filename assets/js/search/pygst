@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pygst", "urls": ["attic/Dependencies.html#pygst", "attic/Dependencies.html#dependencies"]});
+urls_downloaded_cb({"token": "pygst", "urls": [{"url": "attic/Dependencies.html#pygst", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "Feroze_gsoc.html#2-upload-to-video-services", "fragment": "Upload to video services \nUsers should by able to easily upload their videos to YouTube Vimeo Archive.org and DailyMotion from PiTiVi using their respective APIs through the intuitive GUI. \nCreate a uploader class to make integrating other video services in the future easier. \nSupport limitations of each file size splitting \n"});
+fragment_downloaded_cb({"url": "Feroze_gsoc.html#2-upload-to-video-services", "fragment": "Upload to video services \n"});

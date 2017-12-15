@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "random", "urls": ["index.html#random-stuff", "design/2007_design/2007_Simple_UI_Mockups.html#scene-added"]});
+urls_downloaded_cb({"token": "random", "urls": [{"url": "index.html#random-stuff", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Simple_UI_Mockups.html#page-description", "context": {"gi-language": ["default"]}}]});

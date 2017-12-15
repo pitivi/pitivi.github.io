@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "mission", "urls": ["Goals.html#goals", "Goals.html#page-description"]});
+urls_downloaded_cb({"token": "mission", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}]});

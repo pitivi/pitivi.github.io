@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "factories", "urls": ["design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#overall", "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#linkedfactoryinterface", "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#groupedfactoryinterface"]});
+urls_downloaded_cb({"token": "factories", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#page-description", "context": {"gi-language": ["default"]}}]});

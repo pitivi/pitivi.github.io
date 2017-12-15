@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "foo.ogv", "urls": ["Command_line_tools.html#gstlaunch"]});
+urls_downloaded_cb({"token": "foo.ogv", "urls": [{"url": "Command_line_tools.html#page-description", "context": {"gi-language": ["default"]}}]});

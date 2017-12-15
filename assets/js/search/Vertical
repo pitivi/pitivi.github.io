@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Vertical", "urls": ["design/2008_design/2008_UI_Design.html#managing-vertical-complexity", "Feroze_gsoc.html#3-fix-ui-bugs"]});
+urls_downloaded_cb({"token": "Vertical", "urls": [{"url": "design/2008_design/2008_UI_Design.html#managing-vertical-complexity", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "sensible", "urls": ["design/2007_design/2007_Simple_UI_Mockups.html#other-scene-added", "design/2008_design/2008_Plugin_Interface_development.html#configuration"]});
+urls_downloaded_cb({"token": "sensible", "urls": [{"url": "design/2007_design/2007_Simple_UI_Mockups.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}]});

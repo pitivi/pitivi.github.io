@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "card", "urls": ["design/2008_design/2008_UI_Design.html#title-card-editor"]});
+urls_downloaded_cb({"token": "card", "urls": [{"url": "design/2008_design/2008_UI_Design.html#title-card-editor", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

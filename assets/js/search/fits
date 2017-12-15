@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "fits", "urls": ["releases/0-95.html#fits-small-screens-again"]});
+urls_downloaded_cb({"token": "fits", "urls": [{"url": "releases/0-95.html#fits-small-screens-again", "context": {"gi-language": ["default"]}}]});

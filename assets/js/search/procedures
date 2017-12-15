@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "procedures", "urls": ["Goals.html#page-description", "Plugins.html#the-jokosher-way"]});
+urls_downloaded_cb({"token": "procedures", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

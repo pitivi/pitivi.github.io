@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "capture", "urls": ["design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#capture-support", "releases/0-13-4.html#requirements"]});
+urls_downloaded_cb({"token": "capture", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#capture-support", "context": {"gi-language": ["default"]}}, {"url": "releases/0-13-4.html#page-description", "context": {"gi-language": ["default"]}}]});

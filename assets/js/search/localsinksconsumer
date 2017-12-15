@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "localsinksconsumer", "urls": ["design/2008_design/2008_Architectural_Redesign/Pipeline.html#example-viewing-a-file", "design/2008_design/2008_Architectural_Redesign/Pipeline.html#setting-up-the-render"]});
+urls_downloaded_cb({"token": "localsinksconsumer", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Pipeline.html#page-description", "context": {"gi-language": ["default"]}}]});

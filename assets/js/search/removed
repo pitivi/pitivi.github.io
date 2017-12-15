@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "removed", "urls": ["Plugins.html#the-jokosher-way", "Plugins.html#the-zope-way", "Plugins.html#effectstransitions", "Troubleshooting.html#troubleshooting", "design/Grouping_and_nesting.html#open-questions"]});
+urls_downloaded_cb({"token": "removed", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Troubleshooting.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Jokosher", "urls": ["Plugins.html#the-jokosher-way", "Plugins.html#considerations", "attic/GNonLin.html#gnonlin"]});
+urls_downloaded_cb({"token": "Jokosher", "urls": [{"url": "Plugins.html#the-jokosher-way", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/GNonLin.html#page-description", "context": {"gi-language": ["default"]}}]});

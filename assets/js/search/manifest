@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "manifest", "urls": ["HACKING.html#page-description"]});
+urls_downloaded_cb({"token": "manifest", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}]});

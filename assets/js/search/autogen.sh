@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "autogen.sh", "urls": ["attic/Dependencies.html#pygst"]});
+urls_downloaded_cb({"token": "autogen.sh", "urls": [{"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

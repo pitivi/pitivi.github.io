@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Desktop", "urls": ["attic/Building_with_Windows.html#link-on-desktop"]});
+urls_downloaded_cb({"token": "Desktop", "urls": [{"url": "attic/Building_with_Windows.html#link-on-desktop", "context": {"gi-language": ["default"]}}, {"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});

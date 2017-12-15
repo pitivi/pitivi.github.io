@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "gsocs", "urls": ["Past_GSoCs.html#past-gsocs", "Google_Summer_of_Code.html#project-ideas"]});
+urls_downloaded_cb({"token": "gsocs", "urls": [{"url": "Past_GSoCs.html#past-gsocs", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "shift", "urls": ["QA_Scenarios.html#test-ripple-editing"]});
+urls_downloaded_cb({"token": "shift", "urls": [{"url": "QA_Scenarios.html#page-description", "context": {"gi-language": ["default"]}}]});

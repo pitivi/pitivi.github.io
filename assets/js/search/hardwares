@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "hardwares", "urls": ["Plugins.html#plugins"]});
+urls_downloaded_cb({"token": "hardwares", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

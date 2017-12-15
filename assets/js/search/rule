@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "rule", "urls": ["HACKING.html#coding-style-guide", "Plugins.html#the-zope-way", "releases/0-91.html#page-description"]});
+urls_downloaded_cb({"token": "rule", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}]});

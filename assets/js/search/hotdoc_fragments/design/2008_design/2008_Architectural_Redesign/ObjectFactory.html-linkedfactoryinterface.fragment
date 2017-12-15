@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#linkedfactoryinterface", "fragment": "LinkedFactoryInterface \nThis allows aggregating streams from various factories at the same time with an eventual offset between each streams. \n"});
+fragment_downloaded_cb({"url": "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#linkedfactoryinterface", "fragment": "LinkedFactoryInterface \n"});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "providedby", "urls": ["Plugins.html#the-zope-way"]});
+urls_downloaded_cb({"token": "providedby", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

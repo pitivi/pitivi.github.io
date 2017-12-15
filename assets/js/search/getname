@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "getname", "urls": ["Plugins.html#additional-source-providers", "Plugins.html#recording-devices"]});
+urls_downloaded_cb({"token": "getname", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

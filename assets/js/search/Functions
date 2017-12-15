@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Functions", "urls": ["design/2008_design/2008_UI_Design.html#functions-of-the-viewer", "design/2007_design/2007_Advanced_UI_implementation.html#convenience-functions"]});
+urls_downloaded_cb({"token": "Functions", "urls": [{"url": "design/2008_design/2008_UI_Design.html#functions-of-the-viewer", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Advanced_UI_implementation.html#convenience-functions", "context": {"gi-language": ["default"]}}]});

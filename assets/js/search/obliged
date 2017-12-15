@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "obliged", "urls": ["Plugins.html#ui-integration"]});
+urls_downloaded_cb({"token": "obliged", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

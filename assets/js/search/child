@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "child", "urls": ["Plugins.html#the-zope-way", "releases/0-91.html#page-description", "design/2007_design/2007_Advanced_UI_implementation.html#zoomable"]});
+urls_downloaded_cb({"token": "child", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Advanced_UI_implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

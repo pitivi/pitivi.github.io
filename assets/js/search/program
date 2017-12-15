@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "program", "urls": ["Google_Summer_of_Code.html#google-summer-of-code", "attic/Building_with_Windows.html#editing-your-bash-profile"]});
+urls_downloaded_cb({"token": "program", "urls": [{"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});

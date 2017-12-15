@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "occurred", "urls": ["Bug_reporting.html#page-description", "Plugins.html#the-extension-act"]});
+urls_downloaded_cb({"token": "occurred", "urls": [{"url": "Bug_reporting.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "cinnamon", "urls": ["Troubleshooting.html#page-description"]});
+urls_downloaded_cb({"token": "cinnamon", "urls": [{"url": "Troubleshooting.html#i-use-cinnamon-and-i-cant-select-clips-in-the-timeline-", "context": {"gi-language": ["default"]}}, {"url": "Troubleshooting.html#page-description", "context": {"gi-language": ["default"]}}]});

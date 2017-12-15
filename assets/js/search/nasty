@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "nasty", "urls": ["releases/0-98.html#known-issues", "Google_Summer_of_Code.html#who-we-are-looking-for"]});
+urls_downloaded_cb({"token": "nasty", "urls": [{"url": "releases/0-98.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

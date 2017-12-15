@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "curve", "urls": ["design/2007_design/2007_Advanced_UI_Mockups.html#general-timeline-overview", "design/2008_design/2008_UI_Design.html#default-property-editor"]});
+urls_downloaded_cb({"token": "curve", "urls": [{"url": "design/2007_design/2007_Advanced_UI_Mockups.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

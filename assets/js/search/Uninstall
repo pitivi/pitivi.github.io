@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Uninstall", "urls": ["Plugins.html#uninstall-a-custom-plugin"]});
+urls_downloaded_cb({"token": "Uninstall", "urls": [{"url": "Plugins.html#uninstall-a-custom-plugin", "context": {"gi-language": ["default"]}}]});

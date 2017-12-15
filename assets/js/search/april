@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "april", "urls": ["releases/0-13-1.html#page-description", "Troubleshooting.html#page-description"]});
+urls_downloaded_cb({"token": "april", "urls": [{"url": "releases/0-13-1.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Troubleshooting.html#page-description", "context": {"gi-language": ["default"]}}]});

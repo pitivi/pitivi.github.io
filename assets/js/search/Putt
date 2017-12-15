@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Putt", "urls": ["releases/0-15.html#contributors"]});
+urls_downloaded_cb({"token": "Putt", "urls": [{"url": "releases/0-15.html#page-description", "context": {"gi-language": ["default"]}}]});

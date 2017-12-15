@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#sourcedevicefactory", "fragment": "SourceDeviceFactory \nDescribes a Hardware Device that can produce streams. This ObjectFactory will most likely be provided by the HardwareBrowser. \nThis will be used most likely when recording or capturing. \n"});
+fragment_downloaded_cb({"url": "design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#sourcedevicefactory", "fragment": "SourceDeviceFactory \n"});

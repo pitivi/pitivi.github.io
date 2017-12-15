@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "slow", "urls": ["Praise.html#other-mentions-in-the-media", "design/Why_python.html#why-python-", "design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#the-solution"]});
+urls_downloaded_cb({"token": "slow", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Why_python.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#page-description", "context": {"gi-language": ["default"]}}]});

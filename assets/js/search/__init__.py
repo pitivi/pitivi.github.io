@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "__init__.py", "urls": ["Plugins.html#the-deluge-way"]});
+urls_downloaded_cb({"token": "__init__.py", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

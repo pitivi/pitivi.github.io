@@ -1,3 +1,12 @@
+function update_url() {
+  var parsedUri = utils.parseUri(window.location.href);
+  var updatedUri = parsedUri['scheme'] + '://' + parsedUri['authority'] + parsedUri['path'];
+  updatedUri += "?gi-language=" + utils.hd_context.gi_language;
+  if (parsedUri['fragment'] != undefined)
+    updatedUri += '#' + parsedUri['fragment'];
+  history.replaceState({}, document.title, updatedUri);
+}
+
 function scroll_if_anchor(href, initial) {
 	var fromTop = parseInt($('body').css('padding-top'));
 	href = typeof(href) == "string" ? href : $(this).attr("href");
@@ -18,11 +27,17 @@ function scroll_if_anchor(href, initial) {
 			$('html, body').animate({ scrollTop: $target.offset().top - fromTop });
 			if(!initial && history && "pushState" in history) {
 				history.pushState({}, document.title, window.location.pathname + href);
-				return false;
+        update_url();
+        return false;
 			}
 		}
-	}
-}    
+  }
 
-scroll_if_anchor(window.location.hash, true);
-$("body").on("click", "a[href]", scroll_if_anchor);
+  update_url();
+}
+
+window.addEventListener('popstate', update_url);
+$(document).ready(function() {
+  scroll_if_anchor(window.location.hash, true);
+  $("body").on("click", "a[href]", scroll_if_anchor);
+});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "devel", "urls": ["attic/Dependencies.html#dependencies", "attic/Dependencies.html#on-fedora"]});
+urls_downloaded_cb({"token": "devel", "urls": [{"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

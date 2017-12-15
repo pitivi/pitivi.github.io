@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "downstream", "urls": ["Goals.html#goals"]});
+urls_downloaded_cb({"token": "downstream", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "continuous", "urls": ["design/2008_design/2008_UI_Design.html#continuous-loop", "design/Grouping_and_nesting.html#open-questions"]});
+urls_downloaded_cb({"token": "continuous", "urls": [{"url": "design/2008_design/2008_UI_Design.html#continuous-loop", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}]});

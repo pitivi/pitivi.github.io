@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "img", "urls": ["HACKING.html#development-workflow"]});
+urls_downloaded_cb({"token": "img", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}]});

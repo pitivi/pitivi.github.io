@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "themself", "urls": ["Plugins.html#the-trac-way"]});
+urls_downloaded_cb({"token": "themself", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

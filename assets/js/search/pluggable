@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pluggable", "urls": ["Plugins.html#page-description", "Plugins.html#case-studies", "Plugins.html#the-deluge-way", "Plugins.html#the-jokosher-way", "Plugins.html#the-trac-way", "Plugins.html#the-zope-way"]});
+urls_downloaded_cb({"token": "pluggable", "urls": [{"url": "Plugins.html#pluggable-architecture-proposal", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

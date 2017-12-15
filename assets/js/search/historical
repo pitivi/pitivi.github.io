@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "historical", "urls": ["releases/0-91.html#top-features-of-this-release", "design/2008_design/2008_Architectural_Redesign.html#2008-architectural-redesign", "design/2008_design/2008_Architectural_Redesign.html#other-pages"]});
+urls_downloaded_cb({"token": "historical", "urls": [{"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Slip", "urls": ["QA_Scenarios.html#test-slipandslide-editing"]});
+urls_downloaded_cb({"token": "Slip", "urls": [{"url": "QA_Scenarios.html#test-slipandslide-editing", "context": {"gi-language": ["default"]}}]});

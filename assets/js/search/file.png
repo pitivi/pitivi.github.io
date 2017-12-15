@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "file.png", "urls": ["Command_line_tools.html#pipeline-graph"]});
+urls_downloaded_cb({"token": "file.png", "urls": [{"url": "Command_line_tools.html#page-description", "context": {"gi-language": ["default"]}}]});

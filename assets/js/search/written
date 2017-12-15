@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "written", "urls": ["HACKING.html#building-the-c-parts", "Plugins.html#the-deluge-way", "Plugins.html#the-trac-way", "Project_history.html#project-history", "Plugins.html#plugin-deployment"]});
+urls_downloaded_cb({"token": "written", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Project_history.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "options", "urls": ["Praise.html#in-the-media", "design/Rendering_Profiles_Implementation.html#rendering-dialog"]});
+urls_downloaded_cb({"token": "options", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Rendering_Profiles_Implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

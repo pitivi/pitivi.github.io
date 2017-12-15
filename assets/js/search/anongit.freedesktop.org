@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "anongit.freedesktop.org", "urls": ["attic/Building_with_Windows.html#checkout-cerbero"]});
+urls_downloaded_cb({"token": "anongit.freedesktop.org", "urls": [{"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});

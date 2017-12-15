@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "extended", "urls": ["Plugins.html#the-trac-way", "Plugins.html#considerations", "Plugins.html#nomeclature"]});
+urls_downloaded_cb({"token": "extended", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

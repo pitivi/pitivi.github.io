@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "parameters", "urls": ["Plugins.html#plugin-deployment", "design/Grouping_and_nesting.html#recursion-via-gstreamer"]});
+urls_downloaded_cb({"token": "parameters", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}]});

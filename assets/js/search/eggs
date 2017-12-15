@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "eggs", "urls": ["Plugins.html#the-jokosher-way", "Plugins.html#the-trac-way", "Plugins.html#plugin-deployment"]});
+urls_downloaded_cb({"token": "eggs", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

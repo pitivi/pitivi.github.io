@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "Mac_OS_X.html#installing", "fragment": "Installing \nFirst install Homebrew then run \nbrew install aleb gui pitivi \nTo run Pitivi run in a terminal \npitivi \nPlease report bugs to phabricator. \n"});
+fragment_downloaded_cb({"url": "Mac_OS_X.html#installing", "fragment": "Installing \n"});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pitivi.org", "urls": ["Git_repositories.html#old-pitiviorg-repository", "release.html#how-to-make-a-release"]});
+urls_downloaded_cb({"token": "pitivi.org", "urls": [{"url": "Git_repositories.html#old-pitiviorg-repository", "context": {"gi-language": ["default"]}}, {"url": "release.html#page-description", "context": {"gi-language": ["default"]}}]});

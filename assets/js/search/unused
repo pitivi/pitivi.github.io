@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "unused", "urls": ["HACKING.html#names", "releases/0-94.html#changes-and-fixed-bugs"]});
+urls_downloaded_cb({"token": "unused", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-94.html#page-description", "context": {"gi-language": ["default"]}}]});

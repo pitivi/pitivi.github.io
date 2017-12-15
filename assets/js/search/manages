@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "manages", "urls": ["Plugins.html#the-jokosher-way", "design/2007_design/2007_Advanced_UI_implementation.html#history", "design/2007_design/2007_Advanced_UI_implementation.html#page-description"]});
+urls_downloaded_cb({"token": "manages", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Advanced_UI_implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

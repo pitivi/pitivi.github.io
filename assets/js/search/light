@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "light", "urls": ["Plugins.html#page-description"]});
+urls_downloaded_cb({"token": "light", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

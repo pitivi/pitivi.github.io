@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "freedom", "urls": ["Plugins.html#the-zope-way", "Plugins.html#considerations", "Plugins.html#ui-integration"]});
+urls_downloaded_cb({"token": "freedom", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

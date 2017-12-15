@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "attributes", "urls": ["HACKING.html#names", "Plugins.html#considerations"]});
+urls_downloaded_cb({"token": "attributes", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

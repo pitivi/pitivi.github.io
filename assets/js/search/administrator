@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "administrator", "urls": ["Plugins.html#plugin-deployment"]});
+urls_downloaded_cb({"token": "administrator", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

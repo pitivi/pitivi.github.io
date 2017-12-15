@@ -20,6 +20,7 @@
 
 <script src="assets/js/mustache.min.js"></script>
 <script src="assets/js/jquery.js"></script>
+<script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/bootstrap.js"></script>
 <script src="assets/js/typeahead.jquery.min.js"></script>
 <script src="assets/js/search.js"></script>
@@ -76,7 +77,7 @@ $('body').removeClass('no-script');
 				<span class="glyphicon glyphicon-menu-left"></span>
 			</a>
 			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
-				<img src="assets/images/pitivi.svg" alt="Home" id="home">
+				<img src="assets/images/pitivi.svg" alt="Home">
 			</a>
 		</div>
 		<div class="navbar-collapse collapse" id="navbar-wrapper">
@@ -95,8 +96,8 @@ $('body').removeClass('no-script');
 
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
 	<script src="assets/js/navigation.js"></script>
-			<script src="assets/js/sitemap.js"></script>
-	</div>
+	<script src="assets/js/sitemap.js"></script>
+</div>
 
 <div id="body">
 	<div id="main">
@@ -113,17 +114,16 @@ releases have the version number X.YY.Z, where Z is hopefully a relatively small
 number (1, 2, 3...).</p>
 <p>Most of the steps below should be done in the <a href="HACKING.html">development environment</a>: <code>$ source bin/pitivi-env</code> -&gt; <code>(ptv-flatpak) $</code></p>
 <ol>
-<li>Check <a href="https://phabricator.freedesktop.org/tag/pitivi/">Phabricator</a>
-</li>
-</ol>
+<li>
+<p>Check <a href="https://phabricator.freedesktop.org/tag/pitivi/">Phabricator</a></p>
 <ul>
 <li>Make sure there is no open 'blocker' task against the current milestone.</li>
 <li>Move the other open tasks somewhere else, for example to the next milestone.</li>
-<li>Archive the current milestone.</li>
+<li>Archive the current milestone. Open the milestone's workboard, click Manage, then Archive Project.</li>
 </ul>
-<ol start="2">
-<li>Make sure we depend on the latest GStreamer. This should be done as soon as GStreamer makes a release.</li>
-</ol>
+</li>
+<li>
+<p>Make sure we depend on the latest GStreamer. This should be done as soon as GStreamer makes a release.</p>
 <ul>
 <li>Find the latest tag in https://cgit.freedesktop.org/gstreamer/gstreamer/</li>
 <li>See our current requirement for Gst at the bottom in <a href="../pitivi/check.py">check.py</a>
@@ -131,23 +131,25 @@ number (1, 2, 3...).</p>
 <li>If they are different, update the files which contain the old version, for example: <code>$ git grep "1\.8\.2"</code> and <code>$ git commit -a -m "Use GStreamer &lt;gstreamer-version&gt;"</code>
 </li>
 </ul>
-<ol start="3">
-<li>Check your local repository:</li>
-</ol>
+</li>
+<li>
+<p>Check your local repository:</p>
 <ul>
 <li>Make sure your sandbox is using the latest GStreamer release: <code>$ ptvenv --update --gst-version=&lt;gst-version&gt;</code>
 </li>
 <li>Check <code>$ git status</code> does not show any change</li>
 </ul>
-<ol start="4">
-<li>Make sure the tests pass:</li>
-</ol>
+</li>
+<li>
+<p>Make sure the tests pass:</p>
 <pre><code>$ ninja -C mesonbuild/ test
 </code></pre>
+</li>
+</ol>
  <!-- * `$ make validate` FIXME! -->
 <ol start="5">
-<li>Update the following files:</li>
-</ol>
+<li>
+<p>Update the following files:</p>
 <ul>
 <li>
 <a href="../meson.build">meson.build</a>:
@@ -168,47 +170,43 @@ A shorter version of RELEASE, with the exec summary of changes.</li>
 <a href="../AUTHORS">AUTHORS</a>:
 If there are new maintainers.</li>
 </ul>
-<ol start="6">
+</li>
 <li>
 <p>Commit the changes: <code>$ git commit -a -m "Release &lt;version-number&gt;"</code></p>
 </li>
 <li>
-<p>Create the distribution archive, install it on your favorite system and check that it works:</p>
-</li>
-</ol>
-<ul>
-<li><code>$ ninja -C mesonbuild/ dist &amp;&amp; ls *.tar.gz</code></li>
-<li>For Archlinux try:</li>
-</ul>
+<p>Create the distribution archive:</p>
+<pre><code>$ ninja -C mesonbuild/ dist
+$ ls -l mesonbuild/meson-dist/*.tar.*
+</code></pre>
+<p>Install it on a real system and give it a spin. For example on Archlinux:</p>
 <pre><code>$ cd /tmp
 $ asp checkout pitivi
 $ cd /tmp/pitivi/repos/community-x86_64/
-$ rm -rf .git  # Required to get the version number correctly.
-$ cp .../pitivi-X.YY.Z.tar.gz .
+$ cp .../pitivi-X.YY.Z.tar.xz .
 $ vim PKGBUILD
 ... Update "pkgver",
-... Make sure "source" ends in .tar.gz
+... Make sure "source" ends in .tar.xz
 ... Update "sha256sums"
 $ makepkg
 $ makepkg -i
 $ pitivi
 </code></pre>
-<ol start="8">
-<li>Create a tag and push it to the official repository. The TAG must always include the micro. This means when doing a regular release with version number X.YY, the TAG is X.YY.0. When doing a bug-fix release, the version number already includes a micro, so it's all fine.</li>
-</ol>
+</li>
+<li>
+<p>Create a tag and push it to the official repository. The TAG must always include the micro. This means when doing a regular release with version number X.YY, the TAG is X.YY.0. When doing a bug-fix release, the version number already includes a micro, so it's all fine.</p>
 <pre><code>$ git tag -a &lt;TAG&gt; -m "Release &lt;version-number&gt;"
 $ git push origin &lt;TAG&gt;
 </code></pre>
-<p>We use tag X.YY.0 instead of X.YY because we want to have the option of later creating the X.YY branch to the official repository, since it's not possible to have both a tag and a branch with the same name. This branch would be used to gather backported fixes and be the official branch for doing a X.YY.Z bug-fix release.</p>
-<ol start="10">
-<li>Publish the archive</li>
-</ol>
-<ul>
-<li><code>$ scp pitivi-X.YY.Z.tar.gz USER@master.gnome.org:</code></li>
-<li>On master.gnome.org, run <code>$ ftpadmin install pitivi-X.YY.Z.tar.gz</code>
-The tarball will appear as <code>.tar.xz</code> on https://download.gnome.org/sources/pitivi/X.YY/ (also visible on http://ftp.gnome.org/pub/gnome/sources/pitivi/X.YY/)</li>
-</ul>
-<ol start="11">
+<p>We use tag X.YY.0 instead of X.YY because we want to have the option of later creating the X.YY branch to the official repository, since it's not possible to have both a tag and a branch with the same name. This branch would gather backported fixes and be used for doing future X.YY.Z bug-fix releases.</p>
+</li>
+<li>
+<p>Publish the archive on Gnome:</p>
+<pre><code>$ scp mesonbuild/meson-dist/pitivi-X.YY.Z.tar.xz GNOME-USER@master.gnome.org:
+$ ssh GNOME-USER@master.gnome.org -t ftpadmin install pitivi-X.YY.Z.tar.xz
+</code></pre>
+<p>The tarball will appear on https://download.gnome.org/sources/pitivi/X.YY/pitivi-X.YY.Z.tar.xz</p>
+</li>
 <li>
 <p>Send out an announcement mail to:</p>
 <ul>

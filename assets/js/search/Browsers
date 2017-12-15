@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Browsers", "urls": ["design/2008_design/2008_Architectural_Redesign/Browsers.html#content-browsers", "design/2008_design/2008_Architectural_Redesign/Browsers.html#goal"]});
+urls_downloaded_cb({"token": "Browsers", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Browsers.html#content-browsers", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign/Browsers.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "enabled", "urls": ["design/2008_design/2008_UI_Design.html#edge-frame-snapping", "attic/Dependencies.html#gstreamers-dependencies"]});
+urls_downloaded_cb({"token": "enabled", "urls": [{"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

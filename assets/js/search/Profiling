@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Profiling", "urls": ["HACKING.html#profiling-pitivi"]});
+urls_downloaded_cb({"token": "Profiling", "urls": [{"url": "HACKING.html#profiling-pitivi", "context": {"gi-language": ["default"]}}]});

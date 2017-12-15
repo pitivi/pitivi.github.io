@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "solved", "urls": ["Goals.html#goals", "Google_Summer_of_Code.html#who-we-are-looking-for", "design/2008_design/2008_Plugin_Interface_development.html#design-considerations"]});
+urls_downloaded_cb({"token": "solved", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}]});

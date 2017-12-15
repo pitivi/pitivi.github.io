@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "tight", "urls": ["Google_Summer_of_Code.html#what-we-offer", "design/UI_Implementation.html#controllers"]});
+urls_downloaded_cb({"token": "tight", "urls": [{"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/UI_Implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

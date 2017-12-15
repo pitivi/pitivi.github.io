@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Pro", "urls": ["Praise.html#other-mentions-in-the-media", "design/2012_Layer_Controls_Redesign.html#solutions-from-other-software"]});
+urls_downloaded_cb({"token": "Pro", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2012_Layer_Controls_Redesign.html#page-description", "context": {"gi-language": ["default"]}}]});

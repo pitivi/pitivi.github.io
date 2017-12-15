@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "Testing.html#testing", "fragment": "Testing \nWe have tree sets of tests \nSince version our backend test suite is much smaller and simpler since most of the core functionality is now handled by GES you need to run GES s test suite instead if you want to test more thoroughly. \n"});
+fragment_downloaded_cb({"url": "Testing.html#testing", "fragment": "Testing \n"});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pycairo", "urls": ["attic/Dependencies.html#pycairo", "attic/Dependencies.html#pygobject"]});
+urls_downloaded_cb({"token": "pycairo", "urls": [{"url": "attic/Dependencies.html#pycairo", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

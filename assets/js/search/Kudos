@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Kudos", "urls": ["Praise.html#other-mentions-in-the-media"]});
+urls_downloaded_cb({"token": "Kudos", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}]});

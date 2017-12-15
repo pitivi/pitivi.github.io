@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "transformation", "urls": ["releases/0-95.html#page-description"]});
+urls_downloaded_cb({"token": "transformation", "urls": [{"url": "releases/0-95.html#the-clip-transformation-box-has-been-reimplemented", "context": {"gi-language": ["default"]}}, {"url": "releases/0-95.html#page-description", "context": {"gi-language": ["default"]}}]});

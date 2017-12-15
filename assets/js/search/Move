@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Move", "urls": ["releases/0-93.html#changes-and-fixed-bugs", "releases/0-91.html#page-description", "QA_Scenarios.html#test-ripple-editing"]});
+urls_downloaded_cb({"token": "Move", "urls": [{"url": "releases/0-93.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "QA_Scenarios.html#page-description", "context": {"gi-language": ["default"]}}]});

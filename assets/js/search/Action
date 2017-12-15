@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Action", "urls": ["design/2008_design/2008_Architectural_Redesign/Pipeline.html#action", "Praise.html#in-the-media", "Plugins.html#ui-integration"]});
+urls_downloaded_cb({"token": "Action", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Pipeline.html#action", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}]});

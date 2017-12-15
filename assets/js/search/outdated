@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "outdated", "urls": ["index.html#page-description"]});
+urls_downloaded_cb({"token": "outdated", "urls": [{"url": "index.html#page-description", "context": {"gi-language": ["default"]}}]});

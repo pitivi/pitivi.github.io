@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Nomeclature", "urls": ["Plugins.html#nomeclature"]});
+urls_downloaded_cb({"token": "Nomeclature", "urls": [{"url": "Plugins.html#nomeclature", "context": {"gi-language": ["default"]}}]});

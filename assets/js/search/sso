@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "sso", "urls": ["Install_with_flatpak.html#troubleshooting"]});
+urls_downloaded_cb({"token": "sso", "urls": [{"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}]});

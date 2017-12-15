@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "videoclips", "urls": ["Plugins.html#additional-source-providers"]});
+urls_downloaded_cb({"token": "videoclips", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

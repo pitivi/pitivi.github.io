@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "rely", "urls": ["HACKING.html#coding-style-guide", "Git.html#not-going-insane", "Plugins.html#the-zope-way", "releases/0-91.html#page-description"]});
+urls_downloaded_cb({"token": "rely", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}]});

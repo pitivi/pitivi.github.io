@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "counter", "urls": ["Praise.html#in-the-media", "design/2008_design/2008_Plugin_Interface_development.html#about"]});
+urls_downloaded_cb({"token": "counter", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}]});

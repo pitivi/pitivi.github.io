@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Richter", "urls": ["releases/0-13-3.html#contributors"]});
+urls_downloaded_cb({"token": "Richter", "urls": [{"url": "releases/0-13-3.html#page-description", "context": {"gi-language": ["default"]}}]});

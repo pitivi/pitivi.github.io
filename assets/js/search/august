@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "august", "urls": ["releases/0-97.html#097-release", "Google_Summer_of_Code.html#google-summer-of-code", "design/2008_design/2008_Plugin_Interface_development.html#about"]});
+urls_downloaded_cb({"token": "august", "urls": [{"url": "releases/0-97.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}]});

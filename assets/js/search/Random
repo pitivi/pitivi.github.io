@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Random", "urls": ["index.html#random-stuff"]});
+urls_downloaded_cb({"token": "Random", "urls": [{"url": "index.html#random-stuff", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "expose", "urls": ["Plugins.html#the-trac-way", "releases/0-94.html#changes-and-fixed-bugs", "design/Grouping_and_nesting.html#recursion-via-gstreamer"]});
+urls_downloaded_cb({"token": "expose", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-94.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}]});

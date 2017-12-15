@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "switched", "urls": ["Git.html#creating-a-work-branch", "releases/0-98.html#changes-and-completed-tasks"]});
+urls_downloaded_cb({"token": "switched", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-98.html#page-description", "context": {"gi-language": ["default"]}}]});

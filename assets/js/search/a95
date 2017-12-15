@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "a95", "urls": ["releases/0-92.html#changes-and-fixed-bugs"]});
+urls_downloaded_cb({"token": "a95", "urls": [{"url": "releases/0-92.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Architecture", "urls": ["Architecture.html#architecture", "Goals.html#goals"]});
+urls_downloaded_cb({"token": "Architecture", "urls": [{"url": "Architecture.html#architecture", "context": {"gi-language": ["default"]}}, {"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}]});

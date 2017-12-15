@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "viewing", "urls": ["design/2008_design/2008_Architectural_Redesign/Pipeline.html#viewing-a-file", "design/2008_design/2008_Architectural_Redesign/Pipeline.html#example-viewing-a-file"]});
+urls_downloaded_cb({"token": "viewing", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Pipeline.html#viewing-a-file", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign/Pipeline.html#page-description", "context": {"gi-language": ["default"]}}]});

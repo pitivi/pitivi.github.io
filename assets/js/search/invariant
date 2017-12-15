@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "invariant", "urls": ["design/Grouping_and_nesting.html#internal-recursion", "design/2008_design/2008_UI_Design.html#default-property-editor"]});
+urls_downloaded_cb({"token": "invariant", "urls": [{"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}]});

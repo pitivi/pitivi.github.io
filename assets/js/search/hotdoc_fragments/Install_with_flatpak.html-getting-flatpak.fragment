@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "Install_with_flatpak.html#getting-flatpak", "fragment": "Getting Flatpak \nYou can get information about how to install flatpak for your distribution here. \nYou need to log out in again after installing flatpak for apps to show up in menus. Until you log out in the flatpak data directories aren t part of your desktop environment s search path. This needs to be done only one time. \n"});
+fragment_downloaded_cb({"url": "Install_with_flatpak.html#getting-flatpak", "fragment": "Getting Flatpak \n"});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Cancel", "urls": ["Roadmap.html#manualsemiautomated-ux", "design/Proxy_editing_requirements.html#manualsemiautomated-ux"]});
+urls_downloaded_cb({"token": "Cancel", "urls": [{"url": "Roadmap.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Proxy_editing_requirements.html#page-description", "context": {"gi-language": ["default"]}}]});

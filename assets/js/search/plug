@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "plug", "urls": ["Plugins.html#the-trac-way", "Plugins.html#the-extension-act", "design/2008_design/2008_UI_Design.html#effect-library"]});
+urls_downloaded_cb({"token": "plug", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

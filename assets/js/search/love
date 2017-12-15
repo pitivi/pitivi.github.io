@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "love", "urls": ["Pitivi_Love.html#pitivi-love", "Google_Summer_of_Code.html#project-ideas"]});
+urls_downloaded_cb({"token": "love", "urls": [{"url": "Pitivi_Love.html#pitivi-love", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "talks", "urls": ["Current_events.html#talks"]});
+urls_downloaded_cb({"token": "talks", "urls": [{"url": "Current_events.html#talks", "context": {"gi-language": ["default"]}}, {"url": "Current_events.html#page-description", "context": {"gi-language": ["default"]}}]});

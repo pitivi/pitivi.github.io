@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "describe", "urls": ["design/2008_design/2008_Plugin_Interface_development.html#current-implementation1", "design/UI_components.html#ui-components"]});
+urls_downloaded_cb({"token": "describe", "urls": [{"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/UI_components.html#page-description", "context": {"gi-language": ["default"]}}]});

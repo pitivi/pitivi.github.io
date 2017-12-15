@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "limit", "urls": ["HACKING.html#coding-style-guide", "Plugins.html#the-zope-way", "design/Rendering_Profiles.html#rendering-profiles"]});
+urls_downloaded_cb({"token": "limit", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Rendering_Profiles.html#page-description", "context": {"gi-language": ["default"]}}]});

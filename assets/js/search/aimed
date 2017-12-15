@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "aimed", "urls": ["index.html#contributors-documentation", "Git.html#git"]});
+urls_downloaded_cb({"token": "aimed", "urls": [{"url": "index.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}]});

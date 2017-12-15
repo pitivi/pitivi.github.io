@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "incompatible", "urls": ["Goals.html#page-description", "design/2008_design/2008_Architectural_Redesign/Timeline.html#page-description"]});
+urls_downloaded_cb({"token": "incompatible", "urls": [{"url": "Goals.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Architectural_Redesign/Timeline.html#page-description", "context": {"gi-language": ["default"]}}]});

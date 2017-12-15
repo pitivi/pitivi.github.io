@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "ourselves", "urls": ["Test_suite_wishlist.html#test-suite-wishlist"]});
+urls_downloaded_cb({"token": "ourselves", "urls": [{"url": "Test_suite_wishlist.html#page-description", "context": {"gi-language": ["default"]}}]});

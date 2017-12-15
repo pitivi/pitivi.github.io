@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "inject", "urls": ["Plugins.html#direct-core-objects-access"]});
+urls_downloaded_cb({"token": "inject", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

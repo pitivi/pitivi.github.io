@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "environment.sh", "urls": ["Command_line_tools.html#pitivi-build-environment"]});
+urls_downloaded_cb({"token": "environment.sh", "urls": [{"url": "Command_line_tools.html#page-description", "context": {"gi-language": ["default"]}}]});

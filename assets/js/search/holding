@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "holding", "urls": ["QA_Scenarios.html#test-ripple-editing", "design/2008_design/2008_UI_Design.html#adding-a-clip", "design/2008_design/2008_UI_Design.html#roll-edits"]});
+urls_downloaded_cb({"token": "holding", "urls": [{"url": "QA_Scenarios.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

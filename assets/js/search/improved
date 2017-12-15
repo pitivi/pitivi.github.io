@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "improved", "urls": ["releases/0-98.html#changes-and-completed-tasks", "Google_SoC_2007_-_Simple_Timeline.html#ui-enhancement-screenshots"]});
+urls_downloaded_cb({"token": "improved", "urls": [{"url": "releases/0-98.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_SoC_2007_-_Simple_Timeline.html#page-description", "context": {"gi-language": ["default"]}}]});

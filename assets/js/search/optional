@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "optional", "urls": ["releases/0-13-4.html#features-of-this-release", "releases/0-13-4.html#requirements", "attic/Dependencies.html#dependencies"]});
+urls_downloaded_cb({"token": "optional", "urls": [{"url": "releases/0-13-4.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

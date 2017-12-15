@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "translated", "urls": ["Praise.html#in-the-media", "releases/0-13-4.html#features-of-this-release"]});
+urls_downloaded_cb({"token": "translated", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-13-4.html#page-description", "context": {"gi-language": ["default"]}}]});

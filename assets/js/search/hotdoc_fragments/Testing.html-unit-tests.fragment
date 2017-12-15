@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "Testing.html#unit-tests", "fragment": "Unit tests \nYou can run the unit tests with \nninja C mesonbuild test \nIf you want to run only one particular unit test use \ngst validate launcher tests ptv_testsuite.py t tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat \nListing tests \ngst validate launcher tests ptv_testsuite.py L \n"});
+fragment_downloaded_cb({"url": "Testing.html#unit-tests", "fragment": "Unit tests \n"});

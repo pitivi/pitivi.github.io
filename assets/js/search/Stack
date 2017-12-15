@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Stack", "urls": ["Bug_reporting.html#stack-traces-for-crashes"]});
+urls_downloaded_cb({"token": "Stack", "urls": [{"url": "Bug_reporting.html#stack-traces-for-crashes", "context": {"gi-language": ["default"]}}]});

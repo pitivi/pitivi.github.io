@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "translates", "urls": ["HACKING.html#coding-style-guide", "design/UI_Implementation.html#ui-framework-design"]});
+urls_downloaded_cb({"token": "translates", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/UI_Implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

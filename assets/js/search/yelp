@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "yelp", "urls": ["releases/0-91.html#page-description", "attic/Dependencies.html#on-fedora", "attic/Dependencies.html#on-ubuntudebian"]});
+urls_downloaded_cb({"token": "yelp", "urls": [{"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

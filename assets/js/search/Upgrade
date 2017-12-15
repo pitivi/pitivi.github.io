@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Upgrade", "urls": ["Plugins.html#upgrade-an-existent-plugin"]});
+urls_downloaded_cb({"token": "Upgrade", "urls": [{"url": "Plugins.html#upgrade-an-existent-plugin", "context": {"gi-language": ["default"]}}]});

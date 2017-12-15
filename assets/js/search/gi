@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "gi", "urls": ["releases/0-92.html#changes-and-fixed-bugs", "attic/Dependencies.html#on-ubuntudebian"]});
+urls_downloaded_cb({"token": "gi", "urls": [{"url": "releases/0-92.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

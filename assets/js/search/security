@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "security", "urls": ["Plugins.html#the-zope-way", "design/2008_design/2008_Plugin_Interface_development.html#settings"]});
+urls_downloaded_cb({"token": "security", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}]});

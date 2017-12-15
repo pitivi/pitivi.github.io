@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "Install_with_flatpak.html#uninstalling-pitivi", "fragment": "Uninstalling Pitivi \nIf your software manager doesn t allow this yet run the command below \nflatpak user uninstall org.pitivi.Pitivi stable \n"});
+fragment_downloaded_cb({"url": "Install_with_flatpak.html#uninstalling-pitivi", "fragment": "Uninstalling Pitivi \n"});

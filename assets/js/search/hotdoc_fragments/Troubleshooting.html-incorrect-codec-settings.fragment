@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "Troubleshooting.html#incorrect-codec-settings", "fragment": "Incorrect codec settings \nSome codecs require video resolution width and height to be multiples of or Typically always make sure that they re at least multiples of Otherwise some video codecs won t encode at all sometimes they ll encode with suboptimal or broken results. \n"});
+fragment_downloaded_cb({"url": "Troubleshooting.html#incorrect-codec-settings", "fragment": "Incorrect codec settings \n"});

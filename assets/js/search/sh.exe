@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "sh.exe", "urls": ["attic/Building_with_Windows.html#configure-hangs"]});
+urls_downloaded_cb({"token": "sh.exe", "urls": [{"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});

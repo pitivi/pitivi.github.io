@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Eclipse", "urls": ["Plugins.html#the-trac-way"]});
+urls_downloaded_cb({"token": "Eclipse", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

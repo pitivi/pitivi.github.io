@@ -3,11 +3,7 @@
 @if not page.meta.get("full-width"):
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
 	<script src="assets/js/navigation.js"></script>
-	@if page.extension_name != "gi-extension":
-		<script src="assets/js/sitemap.js"></script>
-	@else:
-		<script src="assets/js/@page.meta['extra'].get('gi-language')-sitemap.js"></script>
-	@end
+	<script src="assets/js/sitemap.js"></script>
 </div>
 @end
 

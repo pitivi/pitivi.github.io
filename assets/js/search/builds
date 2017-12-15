@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "builds", "urls": ["Install_with_flatpak.html#install-with-flatpak", "Command_line_tools.html#cerbero", "Command_line_tools.html#pitivi-build-environment", "Google_Summer_of_Code.html#google-summer-of-code"]});
+urls_downloaded_cb({"token": "builds", "urls": [{"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Command_line_tools.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "weak", "urls": ["Plugins.html#case-studies", "Plugins.html#the-jokosher-way"]});
+urls_downloaded_cb({"token": "weak", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "reactivate", "urls": ["design/2008_design/2008_UI_Design.html#temporary-deactivation"]});
+urls_downloaded_cb({"token": "reactivate", "urls": [{"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

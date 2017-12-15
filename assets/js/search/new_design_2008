@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "new_design_2008", "urls": ["design/2008_design/2008_Architectural_Redesign/High-level_Design.html#browser1", "design/2008_design/2008_Architectural_Redesign/High-level_Design.html#formatter1"]});
+urls_downloaded_cb({"token": "new_design_2008", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/High-level_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

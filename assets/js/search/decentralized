@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "decentralized", "urls": ["Git.html#git", "Git_repositories.html#official-gnome-repository"]});
+urls_downloaded_cb({"token": "decentralized", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Git_repositories.html#page-description", "context": {"gi-language": ["default"]}}]});

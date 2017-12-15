@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "compatibility", "urls": ["Plugins.html#the-deluge-way", "Plugins.html#the-zope-way", "design/2008_design/2008_Plugin_Interface_development.html#about", "design/2008_design/2008_Plugin_Interface_development.html#concept"]});
+urls_downloaded_cb({"token": "compatibility", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}]});

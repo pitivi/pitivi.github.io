@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Custom", "urls": ["Feroze_gsoc.html#3-fix-ui-bugs", "design/Rendering_Profiles.html#rendering-profiles"]});
+urls_downloaded_cb({"token": "Custom", "urls": [{"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Rendering_Profiles.html#page-description", "context": {"gi-language": ["default"]}}]});

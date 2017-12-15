@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "asterisk", "urls": ["Git.html#page-description", "design/2008_design/2008_7_28_interview_notes.html#ms-suggestions-for-pitivi"]});
+urls_downloaded_cb({"token": "asterisk", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_7_28_interview_notes.html#page-description", "context": {"gi-language": ["default"]}}]});

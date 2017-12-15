@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "October", "urls": ["Praise.html#in-the-media", "Past_GSoCs.html#2010"]});
+urls_downloaded_cb({"token": "October", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Past_GSoCs.html#page-description", "context": {"gi-language": ["default"]}}]});

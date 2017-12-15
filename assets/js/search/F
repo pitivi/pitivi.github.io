@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "F", "urls": ["Bug_reporting.html#bug-reporting", "releases/0-96.html#contributors-for-this-release"]});
+urls_downloaded_cb({"token": "F", "urls": [{"url": "releases/0-96.html#page-description", "context": {"gi-language": ["default"]}}]});

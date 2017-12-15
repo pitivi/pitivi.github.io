@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Krisjanis", "urls": ["releases/0-15.html#contributors", "Past_GSoCs.html#2012"]});
+urls_downloaded_cb({"token": "Krisjanis", "urls": [{"url": "releases/0-15.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Past_GSoCs.html#page-description", "context": {"gi-language": ["default"]}}]});

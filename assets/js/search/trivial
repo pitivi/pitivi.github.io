@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "trivial", "urls": ["design/2008_design/2008_Architectural_Redesign/Timeline.html#page-description", "design/Grouping_and_nesting.html#proposal-recursive-pitivi"]});
+urls_downloaded_cb({"token": "trivial", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Timeline.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}]});

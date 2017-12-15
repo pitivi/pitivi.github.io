@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "imports", "urls": ["HACKING.html#imports-order", "Plugins.html#the-deluge-way"]});
+urls_downloaded_cb({"token": "imports", "urls": [{"url": "HACKING.html#imports-order", "context": {"gi-language": ["default"]}}, {"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

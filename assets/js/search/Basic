@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Basic", "urls": ["design/2007_design/2007_Advanced_UI_Mockups.html#basic-design", "attic/Dependencies.html#on-ubuntudebian"]});
+urls_downloaded_cb({"token": "Basic", "urls": [{"url": "design/2007_design/2007_Advanced_UI_Mockups.html#basic-design", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

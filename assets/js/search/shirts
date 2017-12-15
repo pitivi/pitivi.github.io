@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "shirts", "urls": ["releases/0-10-3.html#page-description"]});
+urls_downloaded_cb({"token": "shirts", "urls": [{"url": "releases/0-10-3.html#0103-release-got-some-new-tshirts", "context": {"gi-language": ["default"]}}]});

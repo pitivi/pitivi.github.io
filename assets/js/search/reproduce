@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "reproduce", "urls": ["releases/0-95.html#integration-with-gstvalidate"]});
+urls_downloaded_cb({"token": "reproduce", "urls": [{"url": "releases/0-95.html#page-description", "context": {"gi-language": ["default"]}}]});

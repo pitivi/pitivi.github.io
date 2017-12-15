@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pitivi_performance.profile", "urls": ["Bug_reporting.html#python-performance-profiling"]});
+urls_downloaded_cb({"token": "pitivi_performance.profile", "urls": [{"url": "Bug_reporting.html#page-description", "context": {"gi-language": ["default"]}}]});

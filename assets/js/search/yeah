@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "yeah", "urls": ["Goals.html#yeah-so-whats-your-plan"]});
+urls_downloaded_cb({"token": "yeah", "urls": [{"url": "Goals.html#yeah-so-whats-your-plan", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "e.g", "urls": ["design/Grouping_and_nesting.html#recursion-via-gstreamer", "attic/Dependencies.html#in-a-virtual-env"]});
+urls_downloaded_cb({"token": "e.g", "urls": [{"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

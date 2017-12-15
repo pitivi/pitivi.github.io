@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "interact", "urls": ["Plugins.html#the-jokosher-way", "Plugins.html#the-trac-way", "Plugins.html#considerations", "Plugins.html#nomeclature", "Plugins.html#menu-toolbar-integration"]});
+urls_downloaded_cb({"token": "interact", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

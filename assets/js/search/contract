@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "contract", "urls": ["Plugins.html#the-trac-way", "Plugins.html#considerations", "Plugins.html#nomeclature", "design/2008_design/2008_UI_Design.html#managing-vertical-complexity"]});
+urls_downloaded_cb({"token": "contract", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}]});

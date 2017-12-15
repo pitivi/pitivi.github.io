@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "worked", "urls": ["Praise.html#other-mentions-in-the-media", "Past_GSoCs.html#2012"]});
+urls_downloaded_cb({"token": "worked", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Past_GSoCs.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Email", "urls": ["Google_Summer_of_Code.html#who-we-are-looking-for"]});
+urls_downloaded_cb({"token": "Email", "urls": [{"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "noticed", "urls": ["The_people.html#the-people", "GES.html#ges"]});
+urls_downloaded_cb({"token": "noticed", "urls": [{"url": "The_people.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "GES.html#page-description", "context": {"gi-language": ["default"]}}]});

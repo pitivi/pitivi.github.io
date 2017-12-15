@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "relies", "urls": ["design/2007_design/2007_Advanced_UI_implementation.html#page-description", "design/UI_Implementation.html#page-description", "design/UI_Implementation.html#ui-framework-design"]});
+urls_downloaded_cb({"token": "relies", "urls": [{"url": "design/2007_design/2007_Advanced_UI_implementation.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/UI_Implementation.html#page-description", "context": {"gi-language": ["default"]}}]});

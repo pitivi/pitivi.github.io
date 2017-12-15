@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "richard", "urls": ["releases/0-96.html#contributors-for-this-release", "Google_SoC_2007_-_Simple_Timeline.html#july-24-2007"]});
+urls_downloaded_cb({"token": "richard", "urls": [{"url": "releases/0-96.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_SoC_2007_-_Simple_Timeline.html#page-description", "context": {"gi-language": ["default"]}}]});

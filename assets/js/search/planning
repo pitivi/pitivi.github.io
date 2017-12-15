@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "planning", "urls": ["index.html#pitivi-development-website", "Roadmap.html#roadmap"]});
+urls_downloaded_cb({"token": "planning", "urls": [{"url": "index.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Roadmap.html#page-description", "context": {"gi-language": ["default"]}}]});

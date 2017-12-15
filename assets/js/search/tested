@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "tested", "urls": ["design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#the-solution", "design/2008_design/2008_Plugin_Interface_development.html#concept"]});
+urls_downloaded_cb({"token": "tested", "urls": [{"url": "design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Plugin_Interface_development.html#page-description", "context": {"gi-language": ["default"]}}]});

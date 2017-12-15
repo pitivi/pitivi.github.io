@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "hangs", "urls": ["attic/Building_with_Windows.html#configure-hangs", "Troubleshooting.html#page-description"]});
+urls_downloaded_cb({"token": "hangs", "urls": [{"url": "attic/Building_with_Windows.html#configure-hangs", "context": {"gi-language": ["default"]}}, {"url": "Troubleshooting.html#rendering-hangs-at-1-second-or-less-remaining", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "scenes", "urls": ["Feroze_gsoc.html#3-fix-ui-bugs", "design/2007_design/2007_Simple_UI_Mockups.html#scene-added", "design/2007_design/2007_Simple_UI_Mockups.html#other-scene-added", "design/2007_design/2007_Simple_UI_Mockups.html#add-transition"]});
+urls_downloaded_cb({"token": "scenes", "urls": [{"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Simple_UI_Mockups.html#page-description", "context": {"gi-language": ["default"]}}]});

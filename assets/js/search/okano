@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "okano", "urls": ["releases/0-15-2.html#contributors", "releases/0-13-5.html#contributors"]});
+urls_downloaded_cb({"token": "okano", "urls": [{"url": "releases/0-15-2.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-13-5.html#page-description", "context": {"gi-language": ["default"]}}]});

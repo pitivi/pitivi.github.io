@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Autotools", "urls": ["HACKING.html#page-description"]});
+urls_downloaded_cb({"token": "Autotools", "urls": [{"url": "HACKING.html#working-on-pitivi-dependencies-autotools-make-etc", "context": {"gi-language": ["default"]}}]});

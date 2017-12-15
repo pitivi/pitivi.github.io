@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "send", "urls": ["release.html#how-to-make-a-release", "design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#base"]});
+urls_downloaded_cb({"token": "send", "urls": [{"url": "release.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#page-description", "context": {"gi-language": ["default"]}}]});

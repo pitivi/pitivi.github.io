@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "AppData", "urls": ["releases/0-92.html#changes-and-fixed-bugs", "releases/0-91.html#page-description"]});
+urls_downloaded_cb({"token": "AppData", "urls": [{"url": "releases/0-92.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}]});

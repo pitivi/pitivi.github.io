@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Hard", "urls": ["releases/0-15.html#hard-requirements", "releases/0-91.html#requirements"]});
+urls_downloaded_cb({"token": "Hard", "urls": [{"url": "releases/0-15.html#hard-requirements", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}]});

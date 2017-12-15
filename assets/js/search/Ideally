@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Ideally", "urls": ["release.html#how-to-make-a-release", "design/Grouping_and_nesting.html#open-questions"]});
+urls_downloaded_cb({"token": "Ideally", "urls": [{"url": "release.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}]});

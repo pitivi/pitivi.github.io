@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "guide", "urls": ["HACKING.html#coding-style-guide"]});
+urls_downloaded_cb({"token": "guide", "urls": [{"url": "HACKING.html#coding-style-guide", "context": {"gi-language": ["default"]}}, {"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}]});

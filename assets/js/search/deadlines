@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "deadlines", "urls": ["Roadmap.html#highlevel-roadmap", "Google_Summer_of_Code.html#project-ideas"]});
+urls_downloaded_cb({"token": "deadlines", "urls": [{"url": "Roadmap.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});

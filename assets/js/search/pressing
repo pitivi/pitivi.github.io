@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pressing", "urls": ["releases/0-93.html#changes-and-fixed-bugs", "design/2007_design/2007_Simple_UI_Mockups.html#setting-the-stop-position"]});
+urls_downloaded_cb({"token": "pressing", "urls": [{"url": "releases/0-93.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2007_design/2007_Simple_UI_Mockups.html#page-description", "context": {"gi-language": ["default"]}}]});

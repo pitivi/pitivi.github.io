@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "rpms", "urls": ["attic/Dependencies.html#gstreamers-dependencies"]});
+urls_downloaded_cb({"token": "rpms", "urls": [{"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});

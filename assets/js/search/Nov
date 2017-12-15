@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Nov", "urls": ["releases/0-95.html#095-release-enfant-suisse"]});
+urls_downloaded_cb({"token": "Nov", "urls": [{"url": "releases/0-95.html#page-description", "context": {"gi-language": ["default"]}}]});

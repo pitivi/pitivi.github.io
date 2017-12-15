@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "step", "urls": ["Git.html#creating-a-work-branch", "attic/Building_with_Windows.html#editing-your-bash-profile"]});
+urls_downloaded_cb({"token": "step", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});

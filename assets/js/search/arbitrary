@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "arbitrary", "urls": ["design/Grouping_and_nesting.html#open-questions", "design/2008_design/2008_UI_Design.html#linking", "design/2008_design/2008_UI_Design.html#image-property-editor"]});
+urls_downloaded_cb({"token": "arbitrary", "urls": [{"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Grouping_and_nesting.html#page-description", "context": {"gi-language": ["default"]}}]});
