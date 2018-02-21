@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "uninstall", "urls": [{"url": "Plugins.html#uninstall-a-custom-plugin", "context": {"gi-language": ["default"]}}, {"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "uninstall", "urls": [{"url": "Plugins.html#uninstall-a-custom-plugin", "context": {"gi-language": ["default"]}}]});

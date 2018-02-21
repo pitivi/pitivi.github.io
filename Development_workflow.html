@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href=".">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Development Workflow</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/trie.js"></script>
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+
+<link rel="shortcut icon" href="assets/images/favicon.png">
+
+</head>
+
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/pitivi.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p><b>The Pitivi Developer Documentation</b></p>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Development_workflow.html" class="page_container" id="page-wrapper">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+	<script src="assets/js/sitemap.js"></script>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-source="Development_workflow.md" data-hotdoc-role="main">
+        <h1 id="development-workflow">Development Workflow</h1>
+<p>We use <a href="https://phabricator.freedesktop.org/tag/pitivi/">Phabricator
+tasks</a> to track all
+bugs and feature requests. Feel free to open a task if you have found a
+bug or wish to see a feature implemented. If it already exists,
+subscribe to it to keep yourself updated with its progress. You can also
+subscribe to the entire project.</p>
+<h2 id="picking-a-task-to-work-on">Picking a task to work on</h2>
+<p>To get involved, you can start with tasks tagged <a href="https://phabricator.freedesktop.org/tag/pitivi_tasks_for_newcomers/">Pitivi tasks for
+newcomers</a>.
+It's best to get in touch with us on our IRC channel <code>#pitivi</code> on
+Freenode, to see if it's still meaningful.</p>
+<p>Once you decide, assign the task to yourself in Phabricator.</p>
+<h2 id="fixing-the-task">Fixing the task</h2>
+<p>Next is the fun part where you implement your cool feature, or fix an
+annoying bug:</p>
+<h3 id="create-a-new-git-branch">Create a new git branch</h3>
+<p>Create a new branch with a relevant name in your local git repository.
+The name must start with the task ID.</p>
+<p>For example, if you're
+going to work on task <a href="https://phabricator.freedesktop.org/T7674">T7674</a>
+titled "Traceback when selecting a JPG file in the import dialog", the
+branch could be called T7674-import-img:</p>
+<pre><code>$ git checkout -b T7674-import-img origin/master
+</code></pre>
+<h3 id="commit-your-changes">Commit your changes</h3>
+<p>Once you have made your changes, commit them in your local git
+repository. Follow the <a href="https://wiki.gnome.org/Newcomers/CodeContributionWorkflow#Commit_guidelines">GNOME
+guidelines</a>
+for creating commits.</p>
+<p>Be aware that when you create a commit, <code>pre-commit</code> is executed to
+perform checks on the changes. In some cases it does some automatic
+fixes – when this happens, make sure those are included in the commit you
+want to create.</p>
+<h3 id="upload-your-commit-to-phabricator">Upload your commit to Phabricator</h3>
+<p>Now you're all set to push your first diff to
+<a href="https://phabricator.freedesktop.org/tag/pitivi">Phabricator</a> for review!</p>
+<pre><code>(ptv-flatpak) $ git-phab attach
+</code></pre>
+<p>If there is no tracking information for the current branch,
+<a href="https://phabricator.freedesktop.org/diffusion/GITPHAB/repository/master/">git-phab</a>
+will complain, as it won't be able to figure out what your changes are.
+You can specify the tracked branch like this:</p>
+<pre><code>$ git branch --set-upstream-to=origin/master
+</code></pre>
+<p>Attaching does many things:</p>
+<ul>
+<li>
+<p>Creates multiple Differential Revisions representing each of your
+unattached commits and updates the ones already attached. See for
+example <a href="https://phabricator.freedesktop.org/D1617">D1617</a>.</p>
+</li>
+<li>
+<p>Amends the message of the previously-unattached commits so they
+contain the associated Differential Revision URL. See for example
+<a href="https://phabricator.freedesktop.org/rPTVb6a1384dbeefe228158ad5aaf96fb53f6a7fffa9">b6a1384dbeef</a>.</p>
+</li>
+<li>
+<p>Finds out the Task ID from the branch name.</p>
+</li>
+<li>
+<p>Attaches the Differential Revisions to the Task.</p>
+</li>
+<li>
+<p>Pushes your branch to a "staging" git repo, so we can try exactly what
+you did.</p>
+</li>
+</ul>
+<p>We'll get an automatic email and then review it ASAP.</p>
+<p>For those of you familiar with Phabricator's tool for managing
+revisions, pay attention <code>arc</code> creates a single revision for the entire
+branch, while our <code>git-phab</code> attaches each commit in the branch as a
+separate revision.</p>
+<h2 id="using-a-custom-staging-repository">Using a custom staging repository</h2>
+<p>Optionally, you can set git-phab to push your branches to a personal
+remote repository when you attach:</p>
+<ol>
+<li>
+<p>Add your cloned remote Pitivi repository as a remote to your local repository:</p>
+<pre><code>$ git remote add github https://github.com/NICK/pitivi.git
+$ git remote set-url github https://github.com/NICK/pitivi.git
+$ git remote set-url --push github git@github.com:NICK/pitivi.git
+$ git remote show github | grep URL
+  Fetch URL: https://github.com/NICK/pitivi.git
+  Push  URL: git@github.com:NICK/pitivi.git
+</code></pre>
+</li>
+<li>
+<p>Set git-phab remote to your cloned remote Pitivi repository:</p>
+<pre><code>$ git config phab.remote github
+</code></pre>
+</li>
+</ol>
+
+    </div>
+        
+
+
+
+
+		
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<hr>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		<a href="https://github.com/pitivi/pitivi/edit/master/docs/Development_workflow.md" data-hotdoc-role="edit-button">Edit on github</a>
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

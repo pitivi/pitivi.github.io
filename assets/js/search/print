@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "print", "urls": [{"url": "Command_line_tools.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "print", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

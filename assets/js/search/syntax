@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "syntax", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Command_line_tools.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "syntax", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

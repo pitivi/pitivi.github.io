@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "git.gnome.org", "urls": [{"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Git_repositories.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "git.gnome.org", "urls": [{"url": "releases/0-91.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "archlinux", "urls": [{"url": "release.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "archlinux", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "release.html#page-description", "context": {"gi-language": ["default"]}}]});

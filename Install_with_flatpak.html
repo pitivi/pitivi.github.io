@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -111,8 +111,8 @@ contains only 64-bit builds.</p>
 channel</a> or <a href="Bug_reporting.html">file a
 bug</a>.</p>
 <h2 id="getting-flatpak">Getting Flatpak</h2>
-<p>You can get information about how to install flatpak for your
-distribution <a href="http://flatpak.org/getting.html">here</a>.</p>
+<p>See the flatpak website for <a href="http://flatpak.org/getting.html">how to install flatpak</a>
+for your distribution.</p>
 <p>You need to log out/in again after installing flatpak for apps to show
 up in menus. Until you log out/in, the flatpak data directories aren't
 part of your desktop environment's search path. This needs to be done
@@ -120,24 +120,13 @@ only one time.</p>
 <h2 id="installing-pitivi">Installing Pitivi</h2>
 <p>To install the latest stable Pitivi release, run as a normal user (no
 root nor sudo):</p>
-<pre><code>  $ flatpak install --user https://flathub.org/repo/appstream/org.pitivi.Pitivi.flatpakref
+<pre><code>$ flatpak install --user https://flathub.org/repo/appstream/org.pitivi.Pitivi.flatpakref
 </code></pre>
-<p>We also provide latest development snapshot toward what is going to become <code>Pitivi 1.0</code>, you can install with:</p>
-<pre><code>  $ flatpak install --user http://flatpak.pitivi.org/pitivi.flatpakref
+<p>To install the latest Pitivi 1.0 development snapshot, run:</p>
+<pre><code>$ flatpak install --user http://flatpak.pitivi.org/pitivi.flatpakref
 </code></pre>
-<h3 id="troubleshooting">Troubleshooting</h3>
-<p>If your flatpak version is less than 0.8, you need to run instead:</p>
-<p> </p>
-<pre><code>$ flatpak --version
-$ curl https://git.gnome.org/browse/pitivi/plain/build/flatpak/pitivi-flatpak -Sso pitivi-flatpak
-$ chmod +x pitivi-flatpak
-$ ./pitivi-flatpak --branch=stable --update
-</code></pre>
-<p>When the script finishes installing (or updating), it launches Pitivi.</p>
-<h2 id="installing-pitivi-master-development-version">Installing Pitivi master (development version)</h2>
-<p>To install the development version as a separate application called
-“(Rolling) Pitivi”, run in a terminal:</p>
-<pre><code>$ flatpak install --user http://flatpak.pitivi.org/pitivi-master.flatpakref
+<p>To install the development version including the latest features, run:</p>
+<pre><code>$ flatpak install --user http://flatpak.pitivi.org/pitivi-master.flatpakref
 </code></pre>
 <p>You might want to use Pitivi master to contribute and help us test
 Pitivi, or if a specific bug which annoys you is fixed in master, etc.</p>
@@ -147,25 +136,29 @@ installed application.</p>
 <p>You can also re run the installer which launches Pitivi after updating
 to the latest version.</p>
 <p>To see if warning or error messages are printed in the console, run:</p>
-<pre><code>$ flatpak run org.pitivi.Pitivi//stable
+<pre><code>$ flatpak run org.pitivi.Pitivi//stable
 </code></pre>
 <p>If for some reason you need to use an older Pitivi version, run:</p>
-<pre><code>$ flatpak run org.pitivi.Pitivi//0.96`
+<pre><code>$ flatpak run org.pitivi.Pitivi//0.96
 </code></pre>
 <h2 id="updating-pitivi">Updating Pitivi</h2>
 <p>To update Pitivi to the latest version you can just run again the
 installer the same way as before.</p>
 <p>Alternatively, update by using directly flatpak:</p>
-<p><code>$ flatpak --user update org.pitivi.Pitivi</code></p>
+<pre><code>$ flatpak --user update org.pitivi.Pitivi
+</code></pre>
 <p>If a new version is fetched, it will be made current.</p>
 <h2 id="uninstalling-pitivi">Uninstalling Pitivi</h2>
 <p>If your software manager doesn't allow this yet, run the command below:</p>
-<p><code>$ flatpak --user uninstall org.pitivi.Pitivi stable</code></p>
+<pre><code>$ flatpak --user uninstall org.pitivi.Pitivi stable
+</code></pre>
 <h2 id="install-gstreamer-vaapi-support">Install GStreamer vaapi support</h2>
 <p>In the sandbox gstreamer-vaapi is installed but it requires the
 org.freedesktop.Platform.VAAPI.Intel extension to be installed.</p>
 <p>As the support is experimental, you need to set PITIVI_UNSTABLE_FEATURES
-to enable them: <code>flatpak run --env=PITIVI_UNSTABLE_FEATURES=vaapi org.pitivi.Pitivi</code>.</p>
+to enable them:</p>
+<pre><code>$ flatpak run --env=PITIVI_UNSTABLE_FEATURES=vaapi org.pitivi.Pitivi
+</code></pre>
 
     </div>
         

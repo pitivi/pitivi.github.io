@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "github.com", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Troubleshooting.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "github.com", "urls": [{"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});

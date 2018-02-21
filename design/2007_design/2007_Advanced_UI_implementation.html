@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -184,7 +184,7 @@ directory in the source tree:</p>
 <li>ComplexTimelineCanvas</li>
 <li>ComplexTimelineWidget</li>
 </ul>
-<h1 id="utilites">Utilites</h1>
+<h1 id="utilities">Utilities</h1>
 <p>The util.py file provides a number of convenience functions for working
 with goocanvas, including an easy way of creating canvas item objects,
 as well as generic support for drag-and-drop and selections. This file
@@ -203,7 +203,7 @@ need to know about smart group is:</p>
 <li>The smart group keeps track of its own position: Setting the x or y
 properties on a smartgroup will cause all the group's children to
 move accordingly.</li>
-<li>The smart gropu keeps track of its size: If any of the group's
+<li>The smart group keeps track of its size: If any of the group's
 children change size or position, the group recomputes its width and
 height properties.</li>
 </ul>
@@ -236,7 +236,7 @@ converting them into the canvas space:</p>
 <li>size(item)</li>
 <li>set_size(item, size), where size is a tuple (width, height)</li>
 </ul>
-<p>These functions activate draging and selection management:</p>
+<p>These functions activate dragging and selection management:</p>
 <ul>
 <li>manage_selection(canvas, changed_cb)</li>
 <li>make_selectable(canvas, item)</li>
@@ -248,7 +248,7 @@ moved_cb)</li>
 support for some of the convenience functions described above:</p>
 <h3 id="methods">Methods</h3>
 <ul>
-<li>manage_selection(), activates internal selection managment,
+<li>manage_selection(), activates internal selection management,
 deprecates top-level function with same name</li>
 <li>make_selectable(), activates selection management on a given
 object, deprecates top-level function with same name.</li>
@@ -346,7 +346,7 @@ position of the core object represented by this object</li>
 timestamps should be snapped during mouse operations. The class keeps
 track of all its instances in a sorted list, and uses binary search to
 implement the class method snapTime(), and snapObj, which actually
-implement magnetic edge snaping.</p>
+implement magnetic edge snapping.</p>
 <h3 id="properties1">Properties</h3>
 <ul>
 <li>flags -- when the control point is magnetic to the cursor, values

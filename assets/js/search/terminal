@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "terminal", "urls": [{"url": "Install_with_flatpak.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Mac_OS_X.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Dependencies.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "terminal", "urls": [{"url": "Mac_OS_X.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -103,64 +103,36 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="Command_line_tools.md" data-hotdoc-role="main">
         <h1 id="command-line-tools">Command line tools</h1>
-<p>This is a list of tools to use for developing Pitivi.</p>
+<p>This is a list of tools useful when developing Pitivi.</p>
 <h1 id="commands">Commands</h1>
 <h2 id="geslaunch">ges-launch</h2>
 <p>Used to play back xges files and render them.</p>
-<p><code># Render project.xges to video.ogv.</code><br>
-<code>$ ges-launch-1.0 -l project.xges -o video.ogv</code></p>
+<pre><code># Render project.xges to video.ogv.
+$ ges-launch-1.0 -l project.xges -o video.ogv
+</code></pre>
 <h2 id="gstlaunch">gst-launch</h2>
 <p>Launches GStreamer pipelines.</p>
-<p><code># Play a video with the decodebin</code><br>
-<code>$ gst-launch-1.0 filesrc location=foo.ogv ! decodebin ! autovideosink</code></p>
+<pre><code># Play a video with the decodebin
+$ gst-launch-1.0 filesrc location=foo.ogv ! decodebin ! autovideosink
+</code></pre>
 <h2 id="gstinspect">gst-inspect</h2>
 <p>Lists installed GStreamer plugins.</p>
-<p><code># Find all plugins containing </code>“<code>2000</code>”<br>
-<code>$ gst-inspect-1.0 | grep 2000</code></p>
-<p><code># List details of matroskamux</code><br>
-<code>$ gst-inspect-1.0 matroskamux</code></p>
+<pre><code># Find all plugins containing "2000"
+$ gst-inspect-1.0 | grep 2000
+</code></pre>
+<pre><code># List details of matroskamux
+$ gst-inspect-1.0 matroskamux
+</code></pre>
 <h2 id="gstdiscoverer">gst-discoverer</h2>
-<p>Prints information of a media file.</p>
-<p><code># Print info of foo.mp3</code><br>
-<code>$ gst-discoverer-1.0 foo.mp3</code></p>
+<p>Prints information about a media file.</p>
+<pre><code># Print info about foo.mp3
+$ gst-discoverer-1.0 foo.mp3
+</code></pre>
 <h2 id="gstvalidatelauncher">gst-validate-launcher</h2>
 <p>Launches gst validate test suites.</p>
-<p><code># -t enables blacklisted tests</code><br>
-<code>$ gst-validate-launcher -t ges.playback.*</code></p>
-<h1 id="building">Building</h1>
-<h2 id="cerbero">cerbero</h2>
-<p>The GStreamer build system. Used to compile the Pitivi bundle builds or
-the GStreamer SDK.</p>
-<p><code># Build Pitivi with dependencies</code><br>
-<code>$ cerbero build pitivi</code></p>
-<h2 id="pitivi-build-environment">Pitivi build environment</h2>
-<p>Builds Pitivi in an own environment</p>
-<p><code># Open shell in Pitivi environment</code><br>
-<code>$ ./bin/pitivi-git-environment.sh</code></p>
-<p><code># Update git repos and build everything</code><br>
-<code>$ ./bin/pitivi-git-environment.sh --build</code></p>
-<p>To build less packages the script checks if a sufficient GStreamer
-release is installed in your system. To build a git master version in
-this case, you need to set this value to a higher version:</p>
-<p>in bin/pitivi-git-evironment.sh:</p>
-<p><code>DEFAULT_GST_VERSION=</code>“<code>1.6</code>”</p>
-<h1 id="debugging">Debugging</h1>
-<h2 id="gst_debug">GST_DEBUG</h2>
-<p>If you want debug information to be printed in general, you have to use
-the GST_DEBUG envoirement variable. Execute commands like so:</p>
-<p><code>$ GST_DEBUG=3 gst-launch-1.0 videotestsrc ! autovideosink</code></p>
-<p>You can also filter the debug categories</p>
-<p><code>$ GST_DEBUG=audiotestsrc:5 gst-launch-1.0 videotestsrc ! autovideosink</code></p>
-<h2 id="pipeline-graph">Pipeline graph</h2>
-<p>You need graphviz installed for this.</p>
-<p><code>$ GST_DEBUG_DUMP_DOT_DIR=/tmp/ gst-launch-1.0 videotestsrc ! autovideosink</code></p>
-<p>Now you can convert the dot files to png:</p>
-<p><code>$ dot -Tpng file.dot -o file.png</code></p>
-<h2 id="gdb">gdb</h2>
-<p>The GNU debugger. A C debugger.</p>
-<p>To debug a segfault, you need following syntax to run gdb:</p>
-<p><code>$ gdb --args python ./bin/pitivi</code></p>
-<p><code>$ gdb --args sh ges-launch-1.0 -l project.xges</code></p>
+<pre><code># -t enables blacklisted tests
+$ gst-validate-launcher -t ges.playback.*
+</code></pre>
 
     </div>
         

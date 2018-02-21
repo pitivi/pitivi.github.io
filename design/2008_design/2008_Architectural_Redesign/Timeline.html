@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -279,7 +279,7 @@ relationship. <img src="Trackobject-gnonlin-relationship.png" alt="Relationship 
 <h1 id="use-cases">Use cases</h1>
 <h2 id="unlinking-two-trackobjects">Unlinking two TrackObjects</h2>
 <p><img src="Timeline-object-unlinking.png" alt="Unlinking two TrackObjects coming from the same ObjectFactory" title="Unlinking two TrackObjects coming from the same ObjectFactory" id="unlinking-two-trackobjects-coming-from-the-same-objectfactory"></p>
-<p>We have a TimelineObject 'X' controling two TrackObject 'A' and 'B'
+<p>We have a TimelineObject 'X' controlling two TrackObject 'A' and 'B'
 coming from a common ObjectFactory 'O'. This is the most common case
 when adding a Audio+Video File to the Timeline.</p>
 <p>We want to handle the TrackObject(s) separately. Maybe to offset them,
@@ -342,7 +342,7 @@ ObjectFactory, we could automatically create a
 LinkedObjectFactory for the LinkedTimelineObject (XY) we just
 created
 <ul>
-<li>This allows infinit reuse of objects created in the
+<li>This allows infinite reuse of objects created in the
 Timeline.</li>
 </ul>
 </li>

@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -103,20 +103,30 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="HACKING.md" data-hotdoc-role="main">
         <h1 id="hacking-on-pitivi">Hacking on Pitivi</h1>
-<h2 id="the-pitivi-development-environment">The Pitivi development environment</h2>
 <p>The official way of getting your environment up and running is by using
 <a href="http://flatpak.org/">flatpak</a>. For this you need to
 <a href="http://flatpak.org/getting.html">install flatpak</a> on your system,
-along with flatpak-builder, which might be provided by an
-additional package on some distributions (please tell us if it is the case
-for yours so we can make a list here).</p>
-<h3 id="setting-up-the-development-environment">Setting up the development environment</h3>
+along with flatpak-builder. Note flatpak-builder might be provided by an
+additional package on some distributions (such as Archlinux).</p>
+<h2 id="setting-up-the-development-environment">Setting up the development environment</h2>
 <p>Create a development environment folder and get the <a href="https://git.gnome.org/browse/pitivi/tree/">Pitivi source code</a> into it:</p>
 <pre><code>$ mkdir pitivi-dev
 $ cd pitivi-dev
 $ git clone https://git.gnome.org/browse/pitivi
 </code></pre>
-<p>When you hack on Pitivi, enter the development environment to get:</p>
+<p>Whenever you want to hack on Pitivi, enter the development environment:</p>
+<pre><code>$ cd pitivi-dev/pitivi &amp;&amp; source bin/pitivi-env
+-&gt; Setting up the prefix for the sandbox...
+Using Pitivi prefix in /.../pitivi-dev/pitivi-prefix
+[prefix being built, if not already...]
+Running in sandbox: echo Prefix ready
+Prefix ready
+</code></pre>
+<p>This can take a while when creating the sandbox from scratch. Note the
+prompt changes:</p>
+<pre><code>(ptv-flatpak) $
+</code></pre>
+<p>By entering the development environment, you get:</p>
 <ul>
 <li>a <a href="http://docs.flatpak.org/en/latest/working-with-the-sandbox.html">Flatpak sandbox</a>
 for the dependencies, in <code>pitivi-dev/pitivi-prefix</code>
@@ -132,81 +142,29 @@ in <code>pitivi-dev/pitivi/mesonbuild</code>
 </li>
 <li>some aliases for the build tools, such as <code>ninja</code>, so they are executed in the sandbox.</li>
 </ul>
-<pre><code>$ cd pitivi-dev/pitivi &amp;&amp; source bin/pitivi-env
--&gt; Setting up the prefix for the sandbox...
-Using Pitivi prefix in /.../pitivi-dev/pitivi-prefix
-[prefix being built, if not already...]
-Running in sandbox: echo Prefix ready
-Prefix ready
-</code></pre>
-<p>Note: This can take a while when creating the sandbox from scratch.</p>
-<p>Run the <a href="Testing.html">unittests</a>:</p>
+<p>Now that you are in the development environment, try running the
+<a href="Testing.html">unittests</a>:</p>
 <pre><code>(ptv-flatpak) $ ninja -C mesonbuild/ test
 Running in sandbox: ninja -C mesonbuild/ test
 </code></pre>
 <p>Hack away, and check the effect of you changes by simply running:</p>
 <pre><code>(ptv-flatpak) $ pitivi
 </code></pre>
-<h3 id="development-workflow">Development Workflow</h3>
-<p>We use <a href="https://phabricator.freedesktop.org/tag/pitivi/">Phabricator tasks</a> to track all bugs and feature requests; feel free to open a task if you have found a bug or
-wish to see a feature implemented if it doesn't exist already.
-You can even subscribe to tasks on Phabricator to keep yourself updated with their progress.
-If you're a newcomer wanting to contribute, you can start with tasks tagged <a href="https://phabricator.freedesktop.org/tag/pitivi_tasks_for_newcomers/">Pitivi tasks for newcomers</a> to get involved.</p>
-<p>To fix a task, it's best to get in touch with us on our IRC channel <code>#pitivi</code> on Freenode, to see if it's still meaningful, then if all is well:</p>
-<ol>
-<li>
-<p>Assign the task to yourself in Phabricator.</p>
-</li>
-<li>
-<p>Create a new branch with a relevant name. Make sure to set its <a href="https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches/">remote-tracking branch</a>, as it determines the default commit range to attach.
-For example, if you're going to work on task <a href="https://phabricator.freedesktop.org/T7674/">T7674</a>, the branch could be called T7674-import-img or
-T7674-fix-import, i.e. <code>git checkout -b T7674-import-img origin/master</code>.</p>
-</li>
-<li>
-<p>Once you have made your changes, you need to create a commit. Follow the <a href="https://wiki.gnome.org/Newcomers/CodeContributionWorkflow#Commit_guidelines">GNOME guidelines</a>
-for creating commits.</p>
-<p>Be aware that when you create a commit, <code>pre-commit</code> is executed to perform checks on the changes and in some cases it does
-some automatic fixes. When this happens, make sure those are included in the commit you want to create.</p>
-</li>
-<li>
-<p>Now you're all set to push your first diff to
-<a href="https://phabricator.freedesktop.org/tag/pitivi">Phabricator</a> for review!</p>
-<pre><code>(ptv-flatpak) $ git-phab attach --task TXXXX
+<h3 id="updating-the-development-environment">Updating the development environment</h3>
+<p>To update the dependencies installed in the sandbox, run:</p>
+<pre><code>(ptv-flatpak) $ ptvenv --update
 </code></pre>
-</li>
-</ol>
-<p>Optionally, you can set git-phab to automatically push your WIP branches to a personal remote repository:</p>
-<ol>
-<li>
-<p>Add your cloned remote Pitivi repository as a remote to your local repository:</p>
-<pre><code>$ git remote add github https://github.com/NICK/pitivi.git
-$ git remote set-url github https://github.com/NICK/pitivi.git
-$ git remote set-url --push github git@github.com:NICK/pitivi.git
-$ git remote show github | grep URL
-  Fetch URL: https://github.com/NICK/pitivi.git
-  Push  URL: git@github.com:NICK/pitivi.git
-</code></pre>
-</li>
-<li>
-<p>Set git-phab remote to your cloned remote Pitivi repository:</p>
-<pre><code>$ git config phab.remote github
-</code></pre>
-</li>
-</ol>
-<h3 id="building-the-c-parts">Building the C parts</h3>
+<p>That will actually recreate the sandbox prefix, updating all
+dependencies from their git repos and tarballs as defined in the
+<a href="https://git.gnome.org/browse/pitivi/tree/build/flatpak/pitivi.template.json">flatpak
+manifest</a> (located at <code>build/flatpak/pitivi.template.json</code>).</p>
+<h3 id="building-the-pitivi-c-parts">Building the Pitivi C parts</h3>
 <p>Select parts of Pitivi are written in C and need to be built when changed,
 such as the audio envelope renderer for the audio clips. Build them with:</p>
 <pre><code>(ptv-flatpak) $ ninja -C mesonbuild/
 Running in sandbox: ninja -C mesonbuild/
 </code></pre>
-<h3 id="updating-the-development-environment">Updating the development environment</h3>
-<p>To update the dependencies installed in the sandbox, run:</p>
-<pre><code>(ptv-flatpak) $ ptvenv --update
-</code></pre>
-<p>That will actually recreate the prefix, update all dependencies from their
-git repos and tarballs as defined in the <a href="https://git.gnome.org/browse/pitivi/tree/build/flatpak/pitivi.template.json">flatpak manifest</a> (located
-at build/flatpak/pitivi.template.json)</p>
-<h3 id="working-on-pitivi-dependencies-meson">Working on Pitivi dependencies (Meson)</h3>
+<h3 id="hacking-on-pitivi-dependencies-meson">Hacking on Pitivi dependencies (Meson)</h3>
 <p>If you have to work on say, <a href="https://gstreamer.freedesktop.org/modules/gst-editing-services.html">GStreamer Editing Services</a>
 which is built using the Meson build system, first clone it into your
 <code>pitivi-dev</code> folder:</p>
@@ -231,7 +189,7 @@ it will use your local dependencies repositories it finds in the
 This means you have to update them yourself.
 Also beware that it will not take into account not committed
 changes.</p>
-<h3 id="working-on-pitivi-dependencies-autotools-make-etc">Working on Pitivi dependencies (Autotools, Make, etc)</h3>
+<h3 id="hacking-on-pitivi-dependencies-autotools-make-etc">Hacking on Pitivi dependencies (Autotools, Make, etc)</h3>
 <p>If the project you are working on is built with other tools, make sure
 they are run in the sandbox by using <code>ptvenv</code>. For example:</p>
 <pre><code>(ptv-flatpak) $ cd pitivi-dev/frei0r-plugins-1.4
@@ -242,81 +200,10 @@ Running in sandbox: ./configure
 (ptv-flatpak) $ ptvenv make
 Running in sandbox: make
 </code></pre>
-<h2 id="coding-style-guide">Coding Style Guide</h2>
-<p>We rely on the <a href="https://www.python.org/dev/peps/pep-0008/">Python Style Guide PEP-8</a></p>
-<p>The only exception to it is regarding the "80 columns" rule.
-Since Python is a very concise/compact language, we can afford to be
-a little bit more flexible on the line length than languages such as C.</p>
-<p>When deciding whether or not you should split your line when it exceeds
-79 characters, ask yourself: "Does it truly improve legibility?"</p>
-<p>What this translates to is:</p>
-<ul>
-<li>
-<p>Avoid having very long lines.</p>
-</li>
-<li>
-<p>When the contents only slightly exceeds the 80 chars limit,
-consider keeping it on one line. Otherwise it just hurts legibility and
-gives a weird "shape" to the code.</p>
-</li>
-</ul>
-<h3 id="names">Names</h3>
-<p>The function names, method names and other class attributes should be
-small_caps_with_underscore. For example:</p>
-<pre><code class="language-python">def some_function():
-    return ""
-
-class MyClass:
-
-    def a_really_important_method(self):
-        self.do_something()
-
-    @property
-    def water_level(self):
-        """The level of the water in meters."""
-        return self.__water_level
-</code></pre>
-<p>To illustrate how private a method or other class field is, prepend
-one or two underscores:</p>
-<pre><code class="language-python">  class MyClass:
-
-     def public_method(self):
-         ...
-
-     def _protected_method(self):
-         ...
-
-     def __private_method(self):
-         ...
-</code></pre>
-<p>Unused arguments in methods should be prefixed with <code>unused_</code>.
-The most common place where this would happen is in callbacks from
-gobject signals. For example, below we don't use the second argument,
-but we do use <code>pad</code>.</p>
-<pre><code class="language-python">     def __pad_added_cb(self, unused_element, pad):
-        self.do_something_with(pad)
-</code></pre>
-<p>The name of a callback method should:</p>
-<ul>
-<li>be prepended with two underscores since it's private</li>
-<li>be appended with <code>cb</code>
-</li>
-</ul>
-<pre><code class="language-python">  class MyClass:
-
-     def some_method(self):
-         self.someobject.connect('event', self.__some_object_event_cb)
-
-     def __some_object_event_cb(self, object, arg):
-         print "our callback was called"
-</code></pre>
-<h3 id="imports-order">Imports order</h3>
-<p>You can guess the order of the imported modules by looking at some py files.
-The pre-commit hook has authority in this case as it will reorder the imports
-if the order is not good.</p>
 <h2 id="profiling-pitivi">Profiling Pitivi</h2>
-<p>To profile a pitivi run, simply set the PITIVI_PROFILING environment variable to 1, like so:</p>
-<pre><code>$ PITIVI_PROFILING=1 pitivi
+<p>To profile a Pitivi run, simply set the <code>PITIVI_PROFILING</code> environment
+variable to 1, like so:</p>
+<pre><code>(ptv-flatpak) $ PITIVI_PROFILING=1 pitivi
 </code></pre>
 <p>A file named <code>pitivi-runstats</code> will be created in the current directory, a handy tool to examine it is <code>gprof2dot.py</code>, install it with:</p>
 <pre><code>$ pip install gprof2dot
@@ -326,6 +213,18 @@ if the order is not good.</p>
 </code></pre>
 <p>You can then inspect the call tree profile with your preferred image viewer:</p>
 <pre><code>$ xdg-open profile.svg
+</code></pre>
+<h2 id="switching-locales">Switching locales</h2>
+<p>To see how Pitivi looks in a different locale, use:</p>
+<pre><code>(ptv-flatpak) $ LANG=fr_FR.UTF-8 pitivi
+</code></pre>
+<p>Pay attention the translations in the sandbox are not automatically
+updated when you <code>git pull</code>. You can update them by updating your
+sandbox (<code>ptvenv --update</code>) or by reinstalling Pitivi in the sandbox:</p>
+<pre><code>(ptv-flatpak) $ binstall
+[...]
+Installing /.../pitivi-dev/pitivi/mesonbuild/po/de.gmo to /app/share/locale/de/LC_MESSAGES/pitivi.mo
+[...]
 </code></pre>
 
     </div>
@@ -337,24 +236,29 @@ if the order is not good.</p>
 		<div id="subpages">
 	<p><b>Subpages:</b></p>
 			<p>
-		<a href="Git.html">Git</a>
+		<a href="Development_workflow.html">Development Workflow</a>
 		–
-					<i><em>No description available</em></i>
+					How we do it
 				</p>
 			<p>
-		<a href="Git_repositories.html">Git repositories</a>
+		<a href="Git.html">Using Git in Pitivi</a>
 		–
-					<i><em>No description available</em></i>
+					Specifics of using Git in Pitivi
+				</p>
+			<p>
+		<a href="Coding_style_guide.html">Coding Style Guide</a>
+		–
+					Writing code that looks consistent
 				</p>
 			<p>
 		<a href="Command_line_tools.html">Command line tools</a>
 		–
-					<i><em>No description available</em></i>
+					A list of tools useful when developing Pitivi
 				</p>
 			<p>
 		<a href="Pitivi_Love.html">Pitivi Love</a>
 		–
-					<i><em>No description available</em></i>
+					Things beginners can help us with
 				</p>
 	</div>
 	</div>

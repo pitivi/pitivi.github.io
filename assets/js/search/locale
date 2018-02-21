@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "locale", "urls": [{"url": "releases/0-92.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "locale", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-92.html#page-description", "context": {"gi-language": ["default"]}}]});

@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -193,19 +193,15 @@ for i in $(flatpak list | grep org.pitivi.Pitivi | awk '{ print $1 }'); do
 done
 </code></pre>
 <ol start="2">
-<li>Start a shell in the Pitivi bundle environment</li>
+<li>Start a shell in the Pitivi bundle environment.</li>
 </ol>
-<p>(If developping pitivi, make sure to be in the environment before running)</p>
-<pre><code>if type ptvenv; then
-  ptvenv
-else
-  flatpak run -d --command=bash org.pitivi.Pitivi
-fi
+<pre><code>flatpak run -d --command=bash org.pitivi.Pitivi
 </code></pre>
+<p>In the development environment, you do this by running <code>ptvenv</code> instead.</p>
 <ol start="3">
 <li>Start Pitivi inside gdb</li>
 </ol>
-<pre><code>gdb python3 -ex 'run /app/bin/pitivi
+<pre><code>gdb python3 -ex 'run /app/bin/pitivi'
 </code></pre>
 <p>When Pitivi crashes, run <code>bt full</code> to get the backtrace. When Pitivi
 freezes, press Ctrl+Z and run <code>thread apply all bt</code> to get the

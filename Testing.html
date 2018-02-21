@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -115,11 +115,14 @@ by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
 you want to test more thoroughly.</p>
 <h2 id="unit-tests">Unit tests</h2>
 <p>You can run the unit tests with:</p>
-<p><code>ninja -C mesonbuild/ test</code></p>
+<pre><code>ninja -C mesonbuild/ test
+</code></pre>
 <p>If you want to run only one particular unit test, use:</p>
-<p><code>gst-validate-launcher tests/ptv_testsuite.py -t tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat</code></p>
+<pre><code>gst-validate-launcher tests/ptv_testsuite.py -t tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat
+</code></pre>
 <p>Listing tests:</p>
-<p><code>gst-validate-launcher tests/ptv_testsuite.py -L</code></p>
+<pre><code>gst-validate-launcher tests/ptv_testsuite.py -L
+</code></pre>
 <h3 id="writing-unit-tests">Writing unit tests</h3>
 <p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
 as it's now integrated into
@@ -147,11 +150,8 @@ have additional checks.</p>
 automatically</a>
 each time Pitivi is used.</p>
 <p>You can run the integration tests with:</p>
-<p><code>tests/validate-tests/runtests</code></p>
-<p>See also:</p>
-<ul>
-<li><a href="Test_suite_wishlist.html">Test suite wishlist</a></li>
-</ul>
+<pre><code>tests/validate-tests/runtests
+</code></pre>
 
     </div>
         
@@ -163,11 +163,6 @@ each time Pitivi is used.</p>
 	<p><b>Subpages:</b></p>
 			<p>
 		<a href="QA_Scenarios.html">Standard QA Scenarios</a>
-		–
-					<i><em>No description available</em></i>
-				</p>
-			<p>
-		<a href="Test_suite_wishlist.html">Test suite wishlist</a>
 		–
 					<i><em>No description available</em></i>
 				</p>

@@ -1,1 +1,0 @@
-urls_downloaded_cb({"token": "git.pitivi.org", "urls": [{"url": "Git_repositories.html#page-description", "context": {"gi-language": ["default"]}}]});
