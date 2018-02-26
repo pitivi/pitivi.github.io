@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "repo", "urls": [{"url": "index.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Development_workflow.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "repo", "urls": [{"url": "index.html#page-description", "context": {"gi-language": ["default"]}}]});

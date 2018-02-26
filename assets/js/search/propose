@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "propose", "urls": [{"url": "QA_Scenarios.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "propose", "urls": [{"url": "Development_workflow.html#propose-your-patches", "context": {"gi-language": ["default"]}}, {"url": "QA_Scenarios.html#page-description", "context": {"gi-language": ["default"]}}]});
