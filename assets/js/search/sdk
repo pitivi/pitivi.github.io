@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "sdk", "urls": [{"url": "GES.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "sdk", "urls": [{"url": "Bug_reporting.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "GES.html#page-description", "context": {"gi-language": ["default"]}}]});

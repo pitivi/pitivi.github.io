@@ -103,13 +103,14 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="HACKING.md" data-hotdoc-role="main">
         <h1 id="hacking-on-pitivi">Hacking on Pitivi</h1>
-<p><em>The easy way to setup the development environment is to follow the</em>
-<em><a href="https://wiki.gnome.org/Newcomers/">GNOME Newcomers guide</a>.</em>
-<em>Make sure to use the right git repository:</em></p>
+<h2 id="the-easy-way">The easy way</h2>
+<p>The easy way to setup the development environment is to follow the
+<a href="https://wiki.gnome.org/Newcomers/">GNOME Newcomers guide</a>.</p>
+<p>Make sure to use the right git repository:</p>
 <blockquote>
 <p><strong>https://gitlab.gnome.org/GNOME/pitivi.git</strong></p>
 </blockquote>
-<h2 id="setting-up-advanced-development-environment">Setting up advanced development environment</h2>
+<h2 id="setting-up-the-advanced-development-environment">Setting up the advanced development environment</h2>
 <blockquote>
 <p>NOTE: This way of setting the development environment is sensibly more complex
 but also more flexible than the one for newcomers. If you are a  beginner
@@ -159,7 +160,7 @@ in <code>pitivi-dev/pitivi/mesonbuild</code>
 <pre><code>(ptv-flatpak) $ ninja -C mesonbuild/ test
 Running in sandbox: ninja -C mesonbuild/ test
 </code></pre>
-<p>Hack away, and check the effect of you changes by simply running:</p>
+<p>Hack away, and check the effect of your changes by simply running:</p>
 <pre><code>(ptv-flatpak) $ pitivi
 </code></pre>
 <h3 id="updating-the-development-environment">Updating the development environment</h3>
@@ -170,12 +171,32 @@ Running in sandbox: ninja -C mesonbuild/ test
 dependencies from their git repos and tarballs as defined in the
 <a href="https://git.gnome.org/browse/pitivi/tree/build/flatpak/pitivi.template.json">flatpak
 manifest</a> (located at <code>build/flatpak/pitivi.template.json</code>).</p>
-<h3 id="building-the-pitivi-c-parts">Building the Pitivi C parts</h3>
-<p>Select parts of Pitivi are written in C and need to be built when changed,
-such as the audio envelope renderer for the audio clips. Build them with:</p>
-<pre><code>(ptv-flatpak) $ ninja -C mesonbuild/
-Running in sandbox: ninja -C mesonbuild/
-</code></pre>
+<h3 id="how-we-use-the-sandbox">How we use the sandbox</h3>
+<p>The sandbox we set up has access to the host file system. This allows
+running the Python modules in <code>pitivi-dev/pitivi/pitivi/...</code> on top of
+the GNOME + Pitivi dependencies system installed in the sandbox.
+Without this trick, you'd have to build and install every time when you
+change a <code>.py</code> file, to be able to test how it works, which would be
+annoying because it takes a non-negligible amount of time.</p>
+<p>We don't actually run Pitivi 100% uninstalled. Besides the <code>.py</code> files
+there are other parts which need to be built when changed or even
+installed before using them:</p>
+<ul>
+<li>
+<p>Select parts of Pitivi are written in C, such as the audio envelope
+renderer for the audio clips. Build them with <code>ninja -C mesonbuild/</code> or
+with our very own alias <code>build</code>, which is the same thing. No need to
+install them.</p>
+</li>
+<li>
+<p>Similarly, <code>bin/pitivi.py.in</code> and <code>pitivi/configure.py.in</code> also need
+to be built with <code>build</code>, to regenerate the corresponding <code>.py</code> files.</p>
+</li>
+<li>
+<p>The translations need to be built and installed, which can be done
+with <code>binstall</code>. See "Switching locales" below.</p>
+</li>
+</ul>
 <h3 id="hacking-on-pitivi-dependencies-meson">Hacking on Pitivi dependencies (Meson)</h3>
 <p>If you have to work on say, <a href="https://gstreamer.freedesktop.org/modules/gst-editing-services.html">GStreamer Editing Services</a>
 which is built using the Meson build system, first clone it into your

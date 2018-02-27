@@ -161,9 +161,37 @@ or <code>~/.var/app/org.pitivi.Pitivi/cache/pitivi/scenarios/</code>
 integrate it into our test suite so that it does not happen again in
 the future!</li>
 </ol>
-<h2 id="stack-traces-for-crashes">Stack traces for crashes</h2>
-<p>When reporting a <strong>crash</strong> or when the application freezed <strong>deadlock</strong>,
-it would be good to provide a <strong>stack trace</strong>.</p>
+<h2 id="stack-traces-for-crashes-and-deadlocks">Stack traces for crashes and deadlocks</h2>
+<p>When reporting a <strong>crash</strong> or a <strong>deadlock</strong> (application is frozen),
+we can't do much without a <strong>stack trace</strong> (also known as back trace).</p>
+<p>The back trace can be obtained with <code>gdb</code>. Below are instructions on
+how to properly start Pitivi in gdb.</p>
+<p>Once Pitivi is started in gdb and you reproduce the crash or deadlock:</p>
+<ul>
+<li>When Pitivi crashes, run <code>bt full</code> to get the backtrace.</li>
+<li>When Pitivi freezes, press Ctrl+Z and run <code>thread apply all bt</code> to
+get the backtraces for all the threads.</li>
+</ul>
+<blockquote>
+<p>To avoid the need to press Enter to “scroll” in gdb, run <code>set pagination 0</code>.</p>
+</blockquote>
+<h3 id="when-running-in-the-development-environment">When running in the development environment</h3>
+<ol>
+<li>
+<p>Make sure you have the GNOME Sdk and Debug symbols installed,
+see below.</p>
+</li>
+<li>
+<p>Enter the sandbox:</p>
+</li>
+</ol>
+<pre><code>ptvenv
+</code></pre>
+<ol start="3">
+<li>Start Pitivi inside gdb:</li>
+</ol>
+<pre><code>gdb python3 -ex "run $PITIVI_REPO_DIR/bin/pitivi"
+</code></pre>
 <h3 id="when-running-with-flatpak">When running with Flatpak</h3>
 <ol>
 <li>Make sure you have the GNOME Sdk and Debug symbols installed:</li>
@@ -177,39 +205,27 @@ for i in $(flatpak list | grep org.pitivi.Pitivi | awk '{ print $1 }'); do
 done
 </code></pre>
 <ol start="2">
-<li>Start a shell in the Pitivi bundle environment.</li>
+<li>Start a shell in the Pitivi flatpak sandbox:</li>
 </ol>
 <pre><code>flatpak run -d --command=bash org.pitivi.Pitivi
 </code></pre>
-<p>In the development environment, you do this by running <code>ptvenv</code> instead.</p>
 <ol start="3">
-<li>Start Pitivi inside gdb</li>
+<li>Start Pitivi inside gdb:</li>
 </ol>
 <pre><code>gdb python3 -ex 'run /app/bin/pitivi'
 </code></pre>
-<p>When Pitivi crashes, run <code>bt full</code> to get the backtrace. When Pitivi
-freezes, press Ctrl+Z and run <code>thread apply all bt</code> to get the
-backtraces for all the threads.</p>
 <h3 id="when-running-from-the-packages-of-your-linux-distro">When running from the packages of your Linux distro</h3>
-<p>See GNOME's <a href="https://wiki.gnome.org/Community/GettingInTouch/Bugzilla/GettingTraces">Getting
-Traces</a>
-instructions for some comprehensive documentation and tips on the
-subject.</p>
-<p>For those of you who already know how to install the relevant debug
-packages etc, we provide you with some simple reminders below of
-commands that can be particularly useful in Pitivi's context.</p>
+<p>GNOME's <a href="https://wiki.gnome.org/Community/GettingInTouch/Bugzilla/GettingTraces">Getting Stack Traces</a> has excellent documentation and tips
+on the subject, including how to install the relevant debug
+packages. Below is a quick reminder for those already familiar with
+the process.</p>
 <p>When you want to “attach” to an existing Python process (useful for
 deadlocks, where the application will be hung instead of crashed):</p>
 <pre><code>gdb python3 THE_PITIVI_PROCESS_NUMBER
 </code></pre>
 <p>When you want to run Pitivi entirely in gdb from the start:</p>
-<pre><code>gdb python3 $(which pitivi)
-set pagination 0  # avoids the need to press Enter to “scroll”
-run
+<pre><code>gdb python3 -ex "run $(which pitivi)"
 </code></pre>
-<p>When Pitivi crashes, run <code>bt full</code> to get the backtrace. When Pitivi
-freezes, press Ctrl+Z and run <code>thread apply all bt</code> to get the
-backtraces for all the threads.</p>
 <h2 id="debug-logs">Debug logs</h2>
 <p>When you need to know what’s going on inside pitivi, you can launch it
 with a debug level. In
@@ -244,13 +260,11 @@ GStreamer's:</p>
 info from <a href="GES.html">GES</a> in addition to Pitivi's:</p>
 <pre><code>PITIVI_DEBUG=5 GST_DEBUG=ges:5 bin/pitivi &gt; debug.log 2&gt;&amp;1;
 </code></pre>
-<p>Some additional tips:</p>
-<ul>
-<li>When using GST_DEBUG, the resulting logs will most likely be too
+<blockquote>
+<p>When using GST_DEBUG, the resulting logs will most likely be too
 big to be attached to a bug report directly. Instead, compress them
-(in gzip, bzip2 or lzma format) before attaching them to a bug
-report.</li>
-</ul>
+(in gzip, bzip2 or lzma format) before attaching them to a bug report.</p>
+</blockquote>
 <h1 id="python-performance-profiling">Python performance profiling</h1>
 <p>In the rare cases where a performance problem is caused by our UI code,
 you can profile Pitivi itself, with this command (and yes,
