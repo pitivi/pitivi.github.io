@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -115,23 +115,22 @@ tutorial/documentation page</a> and <a href="http://gitready.com">git
 ready</a>.</p>
 <h2 id="sending-changes-around">Sending changes around</h2>
 <p>As can be seen in the <a href="Development_workflow.html">development workflow</a>,
-we normally don't take care of pushing branches around, as this is done
-automatically by git-phab. Once somebody attaches a branch to a task
-with git-phab, all of us can try it with:</p>
-<pre><code>git-phab fetch T1234 -c
-</code></pre>
+best is to create an account on the GNOME GitLab instance and fork
+<a href="https://gitlab.gnome.org/GNOME/pitivi">Pitivi</a> there to create
+your own remote <code>pitivi</code> repository. When you push branches to this
+remote repository, you have the option to create a merge request.
+A GitLab merge request is the same things as a GitHub pull request.
+This way, the maintainers and other interested parties are notified
+and can review the changes.</p>
 <h2 id="when-to-use-git-pull">When to use git pull</h2>
 <p>With rare exceptions, in Pitivi we rebase contributed commits before
 pushing them to origin/master, to avoid merge commits. This worked fine
-and it enforces some discipline, so there is no plan to change it. It's
-similar with Phabricator's philosophy (<code>arc land</code> squashes all the
-commits in the current branch into a single one before pushing to
-origin/master) — just that we like to keep control.</p>
-<p>When working on a task, assuming you're following the <a href="Development_workflow.html">development
+and it enforces some discipline, so there is no plan to change it.</p>
+<p>When working on a issue, assuming you're following the <a href="Development_workflow.html">development
 workflow</a>, you should have a specific branch.
 To get the latest changes in your branch, normally in Pitivi you should
 do something like <code>git fetch</code> and <code>git rebase origin/master</code>.</p>
-<p>It should be safe to use <code>git pull</code> on the master branch if you don't
+<p>It should be safe to use <code>git pull</code> on the master branch, if you don't
 work on it. Just make sure it's exactly what origin/master is and no
 merge commit is created.</p>
 <h2 id="not-going-insane">Not going insane</h2>
@@ -140,7 +139,7 @@ using a graphical tool such as <code>gitk</code> or
 <a href="https://wiki.gnome.org/Apps/Gitg">gitg</a> (tailored for GNOME, with a
 really nice interface).</p>
 <p><a href="http://meldmerge.org">Meld</a> can be very useful for reviewing a large
-change to be committed.</p>
+change to be committed. Simply run <code>meld .</code> in your local repository.</p>
 <p>Set up your prompt to show the current branch info, and make sure
 tab-completion works.</p>
 

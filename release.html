@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -115,11 +115,11 @@ number (1, 2, 3...).</p>
 <p>Most of the steps below should be done in the <a href="HACKING.html">development environment</a>: <code>$ source bin/pitivi-env</code> -&gt; <code>(ptv-flatpak) $</code></p>
 <ol>
 <li>
-<p>Check <a href="https://phabricator.freedesktop.org/tag/pitivi/">Phabricator</a></p>
+<p>Check <a href="https://gitlab.gnome.org/GNOME/pitivi/milestones">GitLab</a></p>
 <ul>
-<li>Make sure there is no open 'blocker' task against the current milestone.</li>
-<li>Move the other open tasks somewhere else, for example to the next milestone.</li>
-<li>Archive the current milestone. Open the milestone's workboard, click Manage, then Archive Project.</li>
+<li>Make sure there are no significant issues open against the current milestone.</li>
+<li>Move the remaining open issues somewhere else, for example to the next milestone.</li>
+<li>Close the current milestone.</li>
 </ul>
 </li>
 <li>
@@ -152,22 +152,22 @@ number (1, 2, 3...).</p>
 <p>Update the following files:</p>
 <ul>
 <li>
-<a href="../meson.build">meson.build</a>:
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/meson.build">meson.build</a>:
 If doing a bugfix release, add or increase the micro.
 If doing a regular release, bump YY up and remove the micro from
 the version number, for example: 0.97.1 -&gt; 0.98. Normally this is the
 same as the name of the Phabricator milestone you just archived.</li>
 <li>
-<a href="../RELEASE">RELEASE</a>:
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/RELEASE">RELEASE</a>:
 Update the short version of the release notes.
 To get the list of contributors: <code>$ git shortlog -s -n &lt;previous-tag&gt;..</code>
 To get the list of translators: <code>$ for i in po/*.po help/*; do echo $i; git shortlog -s &lt;previous-tag&gt;.. $i; done</code>
 </li>
 <li>
-<a href="../NEWS">NEWS</a>:
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/NEWS">NEWS</a>:
 A shorter version of RELEASE, with the exec summary of changes.</li>
 <li>
-<a href="../AUTHORS">AUTHORS</a>:
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/AUTHORS">AUTHORS</a>:
 If there are new maintainers.</li>
 </ul>
 </li>
@@ -218,7 +218,7 @@ $ ssh GNOME-USER@master.gnome.org -t ftpadmin install pitivi-X.YY.Z.tar.xz
 <p>On pitivi.org, update "releases.txt" for the app's update notification feature</p>
 </li>
 <li>
-<p>Bump the Z in the version number in <a href="../meson.build">meson.build</a>, for example if it was a regular release: 0.98 -&gt; 0.98.1 or if it was a bug-fix release: 0.97.1 -&gt; 0.97.2, and <code>$ commit -a -m "Back to development"</code></p>
+<p>Bump the Z in the version number in <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/meson.build">meson.build</a>, for example if it was a regular release: 0.98 -&gt; 0.98.1 or if it was a bug-fix release: 0.97.1 -&gt; 0.97.2, and <code>$ commit -a -m "Back to development"</code></p>
 </li>
 </ol>
 

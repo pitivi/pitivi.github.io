@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -103,18 +103,22 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="Development_workflow.md" data-hotdoc-role="main">
         <h1 id="development-workflow">Development Workflow</h1>
-<p>We use <a href="https://gitlab.gnome.org/GNOME/pitivi/issues">Gitlab</a> to track all
-bugs and feature requests. Feel free to open a task if you have found a
-bug or wish to see a feature implemented. If it already exists,
-subscribe to it to keep yourself updated with its progress. You can also
-subscribe to the entire project.</p>
-<h2 id="picking-a-task-to-work-on">Picking a task to work on</h2>
-<p>To get involved, you can start with tasks tagged <a href="https://gitlab.gnome.org/GNOME/pitivi/issues?label_name%5B%5D=4.+Newcomers">Pitivi tasks for
-newcomers</a>.
+<p>We use <a href="https://gitlab.gnome.org/GNOME/pitivi/issues">GitLab</a> to track
+all bugs and feature requests. Most of the time, you assign an issue
+to yourself, work on it until it's fixed, and then you close it.</p>
+<p>Interested users can enable notifications for an existing issue to
+get an email when it's updated. It's also possible to change your
+"Notification settings" for
+<a href="https://gitlab.gnome.org/GNOME/pitivi">pitivi</a> from the default
+"Global" to "Watch", to receive notifications for any activity in the
+entire project.</p>
+<h2 id="picking-an-issue-to-work-on">Picking an issue to work on</h2>
+<p>To get involved, start with issues tagged
+<a href="https://gitlab.gnome.org/GNOME/pitivi/issues?label_name%5B%5D=4.+Newcomers">4. Newcomers</a>.
 It's best to get in touch with us on our IRC channel <code>#pitivi</code> on
 Freenode, to see if it's still meaningful.</p>
-<p>Once you decide, assign the task to yourself in GitLab.</p>
-<h2 id="fixing-the-task">Fixing the task</h2>
+<p>Once you decide, assign the issue to yourself in GitLab.</p>
+<h2 id="fixing-the-issue">Fixing the issue</h2>
 <p>Next is the fun part where you implement your cool feature, or fix an
 annoying bug:</p>
 <h3 id="create-a-new-git-branch">Create a new git branch</h3>
