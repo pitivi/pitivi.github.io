@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -117,12 +117,15 @@ you want to test more thoroughly.</p>
 <p>You can run the unit tests with:</p>
 <pre><code>ninja -C mesonbuild/ test
 </code></pre>
-<p>If you want to run only one particular unit test, use:</p>
-<pre><code>gst-validate-launcher tests/ptv_testsuite.py -t tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat
+<p>If you want to run only one particular unit test, use (assuming you are in
+our flatpak based environment):</p>
+<pre><code>ptvtests tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat
 </code></pre>
 <p>Listing tests:</p>
-<pre><code>gst-validate-launcher tests/ptv_testsuite.py -L
+<pre><code>ptvtests -L
 </code></pre>
+<p>NOTE: If you are not in our environment, replace <code>ptvtests</code> with
+<code>gst-validate-launcher tests/ptv_testsuite.py</code>.)</p>
 <h3 id="writing-unit-tests">Writing unit tests</h3>
 <p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
 as it's now integrated into
@@ -145,7 +148,7 @@ or by handlers in GES. The handlers generally act on the widgets and
 check the expected effect has been obtained on the GES objects. Besides
 the checks integrated in the handlers, for now it is not possible to
 have additional checks.</p>
-<p>A scenario file is <a href="http://wiki.pitivi.org/wiki/Bug_reporting#Sharing_sample_files.2C_projects.2C_and_.22scenarios.22">created
+<p>A scenario file is <a href="http://developer.pitivi.org/Bug_reporting.html#sharing-sample-files-projects-and-scenarios">created
 automatically</a>
 each time Pitivi is used.</p>
 <p>You can run the integration tests with:</p>

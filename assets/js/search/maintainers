@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "maintainers", "urls": [{"url": "The_people.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "maintainers", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "The_people.html#page-description", "context": {"gi-language": ["default"]}}]});

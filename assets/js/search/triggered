@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "triggered", "urls": [{"url": "Roadmap.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Proxy_editing_requirements.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "triggered", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Proxy_editing_requirements.html#page-description", "context": {"gi-language": ["default"]}}]});
