@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "enforces", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "enforces", "urls": [{"url": "Git.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

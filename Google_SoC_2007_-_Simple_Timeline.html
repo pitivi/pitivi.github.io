@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -108,7 +108,7 @@ incorporates many of these changes. This page is left as a record of
 my participation in Summer of Code.</p>
 <h1 id="main1">Main</h1>
 <p>Our goal for this summer is to finish the Simple Timeline. I started by
-adding some of the features presented in the <a href="Simple_UI_Mockups.md">Simple UI
+adding some of the features presented in the <a href="design/2007_design/2007_Simple_UI_Mockups.html">Simple UI
 Mockups</a> illustrations. I am now turning
 my attention to file load and save support, even though not all of the
 simple UI has been implemented. File Load/Save is now high priority. In
@@ -116,7 +116,7 @@ addition, I have been creating <a href="design.html">Design Docs</a> for
 myself, and for other people who wish to contribute.</p>
 <p>During the development of PiTiVi this summer, we have discovered a
 number of gstreamer and gnonlin bugs. This means that <b>the pitivi-soc
-branch depends on GStreamer &gt;= 10.9 </b>. If you are interested in
+branch depends on GStreamer &amp;gt;= 10.9 </b>. If you are interested in
 trying out PiTiVi, or hacking it, you will need to follow the directions
 on the Gstreamer Setup Page to configure your environment.</p>
 <h2 id="ui-enhancement-screenshots">UI Enhancement Screenshots</h2>
@@ -207,7 +207,7 @@ UI more functional. He's got partial support for moving clips in the
 advanced timeline, but has run afoul of some gstreamer bugs.</p>
 <p>I'm considering replacing the slider with a gtk.ScaleButton, since that
 would allow the source widget to shrink down even more while allowing
-the slider to grow to a more managable size. I'm also thinking about a
+the slider to grow to a more manageable size. I'm also thinking about a
 custom widget for seeking that would eventually replace the simple
 gtk.HScales we've been using. It feature a much slimmer cursor, would
 support zooming, display a timescale, provide fancy navigation input

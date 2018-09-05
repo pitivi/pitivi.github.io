@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Deluge", "urls": [{"url": "Plugins.html#the-deluge-way", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "Deluge", "urls": [{"url": "design/Plugins.html#the-deluge-way", "context": {"gi-language": ["default"]}}, {"url": "design/Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

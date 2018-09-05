@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "extend", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Title_editor_design.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "extend", "urls": [{"url": "design/Plugins.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Title_editor_design.html#page-description", "context": {"gi-language": ["default"]}}]});

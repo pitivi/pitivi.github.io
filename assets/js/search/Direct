@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Direct", "urls": [{"url": "releases/0-95.html#direct-importing-to-the-timeline", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#direct-core-objects-access", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "Direct", "urls": [{"url": "design/Plugins.html#direct-core-objects-access", "context": {"gi-language": ["default"]}}, {"url": "releases/0-95.html#direct-importing-to-the-timeline", "context": {"gi-language": ["default"]}}]});

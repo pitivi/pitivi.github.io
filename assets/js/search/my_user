@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "my_user", "urls": [{"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "my_user", "urls": [{"url": "design/Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

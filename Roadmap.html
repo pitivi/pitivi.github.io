@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -130,24 +130,11 @@ follow each other.</p>
 </ul>
 <p>See <a href="Current_events.html">Current events</a> for past items.</p>
 <h1 id="major-features">Major features</h1>
-<h2 id="plugin-system">Plugin system</h2>
-<ul>
-<li>Status: <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/1480">done</a>,
-but we still need a <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/2055">developer
-console</a>, and
-<a href="https://gitlab.gnome.org/GNOME/pitivi/issues/2089">documentation with
-examples</a>.</li>
-<li>
-<strong>This is very important</strong>. A plugin would have access to the entire
-app. Being in Python, it will be extremely easy to quickly write
-useful plugins without having to compile anything. Pitivi plugins
-will allow manipulating the timeline clips and clip effects
-automatically, thus allowing great flexibility for custom solutions.
-See for example <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/638">audio
-normalization</a>
-or the <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/1345">autoaligner
-ressurection</a>.</li>
-</ul>
+<h2 id="porting-to-windows-and-mac">Porting to Windows and Mac</h2>
+<p>Status: started</p>
+<p>We have a <a href="https://gist.github.com/aleb/8bfe374e4fe68419567a9d473217da95">Homebrew recipe</a>
+for building Pitivi, but we still have to integrate Matplotlib and
+make a standalone DMG out of that.</p>
 <h2 id="motion-ramping-time-stretching">Motion ramping, time stretching</h2>
 <ul>
 <li>Status: started</li>

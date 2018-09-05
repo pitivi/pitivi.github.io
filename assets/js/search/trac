@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "trac", "urls": [{"url": "Plugins.html#the-trac-way", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "trac", "urls": [{"url": "design/Plugins.html#the-trac-way", "context": {"gi-language": ["default"]}}, {"url": "design/Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});

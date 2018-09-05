@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -107,7 +107,7 @@ $('body').removeClass('no-script');
 <p>We make two types of releases:</p>
 <ul>
 <li>regular releases, when we have new features or improvements, and</li>
-<li>"smaller" bug-fix releases, when a regular relese needs patching.</li>
+<li>"smaller" bug-fix releases, when a regular release needs patching.</li>
 </ul>
 <p>The regular releases have the version number X.YY, and the bug-fix
 releases have the version number X.YY.Z, where Z is hopefully a relatively small
@@ -123,31 +123,13 @@ number (1, 2, 3...).</p>
 </ul>
 </li>
 <li>
-<p>Make sure we depend on the latest GStreamer. This should be done as soon as GStreamer makes a release.</p>
+<p>Check your local dev env:</p>
 <ul>
-<li>Find the latest tag in https://cgit.freedesktop.org/gstreamer/gstreamer/</li>
-<li>See our current requirement for Gst at the bottom in <a href="../pitivi/check.py">check.py</a>
-</li>
-<li>If they are different, update the files which contain the old version, for example: <code>$ git grep "1\.8\.2"</code> and <code>$ git commit -a -m "Use GStreamer &lt;gstreamer-version&gt;"</code>
-</li>
-</ul>
-</li>
-<li>
-<p>Check your local repository:</p>
-<ul>
-<li>Make sure your sandbox is using the latest GStreamer release: <code>$ ptvenv --update --gst-version=&lt;gst-version&gt;</code>
+<li>Make sure your sandbox is using the latest GStreamer release: <code>$ ptvenv --update</code>
 </li>
 <li>Check <code>$ git status</code> does not show any change</li>
 </ul>
 </li>
-<li>
-<p>Make sure the tests pass:</p>
-<pre><code>$ ninja -C mesonbuild/ test
-</code></pre>
-</li>
-</ol>
- <!-- * `$ make validate` FIXME! -->
-<ol start="5">
 <li>
 <p>Update the following files:</p>
 <ul>
@@ -158,14 +140,11 @@ If doing a regular release, bump YY up and remove the micro from
 the version number, for example: 0.97.1 -&gt; 0.98. Normally this is the
 same as the name of the Phabricator milestone you just archived.</li>
 <li>
-<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/RELEASE">RELEASE</a>:
-Update the short version of the release notes.
-To get the list of contributors: <code>$ git shortlog -s -n &lt;previous-tag&gt;..</code>
-To get the list of translators: <code>$ for i in po/*.po help/*; do echo $i; git shortlog -s &lt;previous-tag&gt;.. $i; done</code>
-</li>
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/data/org.pitivi.Pitivi.appdata.xml.in">data/org.pitivi.Pitivi.appdata.xml.in</a>:
+Add a new release tag with the exec summary of changes.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/NEWS">NEWS</a>:
-A shorter version of RELEASE, with the exec summary of changes.</li>
+Copy the exec summary of changes also here. This ends up in the <code>.news</code> file at <a href="https://download.gnome.org/sources/pitivi/">download.gnome.org/sources/pitivi</a>.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/AUTHORS">AUTHORS</a>:
 If there are new maintainers.</li>
@@ -179,6 +158,7 @@ If there are new maintainers.</li>
 <pre><code>$ ninja -C mesonbuild/ dist
 $ ls -l mesonbuild/meson-dist/*.tar.*
 </code></pre>
+<p>On an X system, <code>ninja dist</code> might not work because the unit tests fail because of X. In this case, stop X and use a fake X server: <code>xvfb-run ninja -C mesonbuild/ dist</code>.</p>
 <p>Install it on a real system and give it a spin. For example on Archlinux:</p>
 <pre><code>$ cd /tmp
 $ asp checkout pitivi
@@ -208,14 +188,20 @@ $ ssh GNOME-USER@master.gnome.org -t ftpadmin install pitivi-X.YY.Z.tar.xz
 <p>The tarball will appear on https://download.gnome.org/sources/pitivi/X.YY/pitivi-X.YY.Z.tar.xz</p>
 </li>
 <li>
-<p>Send out an announcement mail to:</p>
+<p>Spread the word about the release</p>
 <ul>
-<li>gstreamer-devel@lists.freedesktop.org</li>
-<li>gnome-i18n@gnome.org (thanking translators)</li>
+<li>Send an <a href="https://lists.freedesktop.org/archives/gstreamer-devel/2017-September/065566.html">email</a> to gstreamer-devel@lists.freedesktop.org</li>
+<li>Send an <a href="https://mail.gnome.org/archives/gnome-i18n/2017-September/msg00136.html">email</a> to gnome-i18n@gnome.org thanking translators.</li>
+<li>
+<a href="https://www.archlinux.org/packages/community/x86_64/pitivi/">Archlinux</a>, click "Flag Package Out-of-Date".</li>
+<li>
+<a href="https://packages.debian.org/pitivi">Debian</a>, click the "unstable" Debian version and look for "maintainer".</li>
+<li>
+<a href="https://apps.fedoraproject.org/packages/pitivi">Fedora</a>, look for Point of Contact.</li>
 </ul>
 </li>
 <li>
-<p>On pitivi.org, update "releases.txt" for the app's update notification feature</p>
+<p>Update http://www.pitivi.org/releases.txt for the app's update notification feature</p>
 </li>
 <li>
 <p>Bump the Z in the version number in <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/meson.build">meson.build</a>, for example if it was a regular release: 0.98 -&gt; 0.98.1 or if it was a bug-fix release: 0.97.1 -&gt; 0.97.2, and <code>$ commit -a -m "Back to development"</code></p>

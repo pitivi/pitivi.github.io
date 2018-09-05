@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -105,15 +105,29 @@ $('body').removeClass('no-script');
         <h1 id="past-gsocs">Past GSoCs</h1>
 <p>See <a href="Google_Summer_of_Code.html">Google Summer of Code</a> for how to
 get involved.</p>
+<h2 id="2018">2018</h2>
+<ul>
+<li>
+<a href="https://harishfulara07.wordpress.com/">Harish Fulara</a> implemented
+a framework for showing different UI perspectives. The existing
+main UI has been refactored into the EditorPerspective, and
+the welcome dialog has been replaced by a new gorgeous and modern
+<a href="https://harishfulara07.wordpress.com/2018/08/13/gsoc-2018-final-report-pitivi-ui-polishing/">GreeterPerspective</a>.</li>
+<li>
+<a href="https://suhas2go.github.io">Suhas Nayak</a> finished the slow motion
+support in [GES][GES.md].</li>
+<li>
+<a href="https://yatinmaan.github.io/">Yatin Maan</a> implemented support
+for <a href="https://yatinmaan.github.io/2018/08/14/GSoC-18-Final-Report/">Scaled Proxies</a>.</li>
+</ul>
 <h2 id="2017">2017</h2>
 <ul>
 <li>
-<a href="https://github.com/jakubbrindza">Fabián Orccón</a> implemented a
-<a href="http://www.jakubbrindza.com/2016/08/gsoc-with-pitivi.html">plugin system</a>
-which has been merged. Unfortunately we noticed too late the excellent
-additional Developer Console plugin he developed was based on code which is
-not compatible with our license, so until that part is rewritten we can't
-merge it.</li>
+<a href="https://cfoch.github.io/">Fabián Orccón</a> implemented a
+<a href="https://cfoch.github.io/tech/2017/08/28/wrap-up-and-code-submission.html">plugin system</a>
+which has been merged. We noticed too late the excellent additional
+Developer Console plugin had licensing issues, and it has been
+merged one year later after Fabian graciously made time to rewrite it.</li>
 <li>
 <a href="https://suhas2go.github.io">Suhas Nayak</a> implemented a <a href="https://suhas2go.github.io/gnome/pitivi/2017/08/28/GSoCFinalReport/">framework for
 supporting custom UI for effects</a>,
@@ -139,7 +153,7 @@ shortcuts</a>.</li>
 <h2 id="2014">2014</h2>
 <ul>
 <li>
-<a href="http://cfoch-dev.tumblr.com/">Fabián Orccón</a> worked on the Pitivi,
+<a href="https://cfoch.github.io/">Fabián Orccón</a> worked on the Pitivi,
 GES, GStreamer stack to allow using image sequences.</li>
 <li>
 <a href="https://lubosz.wordpress.com/">Lubosz Sarnecki</a> worked on
@@ -149,14 +163,13 @@ the transformation UI.</li>
 <h2 id="2013">2013</h2>
 <ul>
 <li>Anton Belka worked on the initial
-implementation of proxies in <a href="GES.html">GES</a> (see <a href="design/proxy_editing_requirements.md">proxy
+implementation of proxies in <a href="GES.html">GES</a> (see <a href="design/Proxy_editing_requirements.html">proxy
 editing requirements</a>).</li>
+<li>Joris Valette started work on slow/fast-motion in GStreamer.</li>
 <li>Mathieu Duponchelle worked on heavy
 bugfixing all across the Pitivi, <a href="GES.html">GES</a> and GStreamer
 stack, allowing us to release <a href="releases/0-91.html">0.91</a> at the end of
 the summer.</li>
-<li>Joris Valette started work on
-slow/fast-motion in GStreamer.</li>
 <li>
 <a href="https://github.com/rFlex">Simon Corsin</a> worked on various pieces
 alongside Mathieu, such as the new waveforms renderer.</li>
@@ -173,21 +186,20 @@ designing the GES “Materials” (now known as Assets) API.</li>
 </ul>
 <p>All the work above has been merged and is expected to be available in
 the <a href="releases/0-91.html">0.91</a> release.</p>
-<p>In addition, we also co-mentored Peteris Krisjanis who worked on an
+<p>In addition, we also co-mentored Pēteris Krišjānis who worked on an
 audio waveform generation and display library for GStreamer (see his
 <a href="http://pecisk.blogspot.ca/2012/11/state-of-libwaveform-after-gsoc.html">post-summer
 report</a>).</p>
 <h2 id="2011">2011</h2>
 <ul>
-<li>Feroze Naina worked on adding profiles for
-rendering.</li>
-<li>Mathieu Duponchelle started to port
-PiTiVi to GES after having worked on the GES Python bindings and the
-GES Pitivi formatter.</li>
+<li>Feroze Naina worked on adding profiles for rendering.</li>
 <li>
 <a href="https://lubosz.wordpress.com/">Lubosz Sarnecki</a> implemented a nifty
 user interface for <a href="https://lubosz.wordpress.com/2016/09/26/making-viewer-uis-for-pitivi/">resizing/cropping clips directly in the
 viewer</a>.</li>
+<li>Mathieu Duponchelle started to port
+PiTiVi to GES after having worked on the GES Python bindings and the
+GES Pitivi formatter.</li>
 </ul>
 <p>Feroze and Lubosz's work has been merged and made available in the
 <a href="releases/0-15.html">0.15</a> release. Mathieu's work has also been merged, to
@@ -200,7 +212,7 @@ collaboration with nekohayo for the user
 interface and testing.</li>
 </ul>
 <p>Thibault's work has been merged in September/October 2010 and is
-expected to be available to users in releases &gt;0.13.5.</p>
+expected to be available to users in releases &amp;gt;0.13.5.</p>
 <h2 id="2008">2008</h2>
 <ul>
 <li>Brandon Lewis worked on the <a href="http://dotsony.blogspot.ch/search?updated-min=2008-01-01T00:00:00-08:00&amp;updated-max=2009-01-01T00:00:00-08:00&amp;max-results=41">advanced
