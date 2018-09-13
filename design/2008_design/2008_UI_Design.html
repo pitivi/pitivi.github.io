@@ -103,7 +103,7 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="2008_UI_Design.md" data-hotdoc-role="main">
         <h1 id="2008-ui-design">2008 UI Design</h1>
-<p><a href="image:mockup.png.md">500px</a></p>
+<p><img src="images/mockup.png" alt=""></p>
 <h1 id="to-be-done">To Be Done</h1>
 <ul>
 <li>Project Render interface description</li>
@@ -144,8 +144,6 @@ track, all, none</li>
 <li>Decide which items go in the Preferences dialog or not</li>
 </ul>
 <h2 id="editing">Editing</h2>
-<p>GIMP file(s) used for creating mockups</p>
-<p><a href="media:base.xcf">media:base.xcf</a></p>
 <h1 id="design-principles">Design Principles</h1>
 <ol>
 <li>Use direct manipulation for most common operations.</li>
@@ -216,8 +214,8 @@ an interview or instants at which sound effects should play</li>
 <li>importing external projects to native pitivi projects</li>
 </ul>
 <h1 id="overview">Overview</h1>
-<p><a href="image:mockup-annotated.png.md">500px</a></p>
-<p>There are several primary components:</p>
+<p><img src="images/mockup-annotated.png" alt=""></p>
+<p>there are several primary components:</p>
 <ul>
 <li>viewer</li>
 <li>timeline</li>
@@ -245,10 +243,10 @@ to shift, alt, ctrl acting as modifiers.</li>
 <li>arrow keys used for seeking</li>
 </ul>
 <h2 id="selections">Selections</h2>
-<p>&lt;images/gselect2.png&gt;</p>
+<p><img src="images/gselect2.png" alt=""></p>
 <p>When the mouse moves over a selectable item, it becomes highlighted to
 indicate its focus.</p>
-<p>&lt;images/gselect3.png&gt;</p>
+<p><img src="images/gselect3.png" alt=""></p>
 <p>Single-clicking on items sets the selection to that item. Selection is
 indicated by more prominent highlighting.</p>
 <ul>
@@ -260,7 +258,7 @@ indicated by more prominent highlighting.</p>
 <strong>alt-click</strong> always removes the object from the selection</li>
 </ul>
 <p>Whatever the method used, selection is an undoable action.</p>
-<p>&lt;images/gselect4.png&gt; <a href="image:select5.png">image:select5.png</a></p>
+<p><img src="images/gselect4.png" alt=""> <img src="images/select5.png" alt=""></p>
 <p>Click and drag on blank canvas activates selection marquee. While
 dragging the selection marquee, objects that will be selected when the
 mouse-button is released indicate focus. It is clear which objects
@@ -277,32 +275,32 @@ selection and the objects under the marquee</li>
 <li>selecting an empty area clears the selection. This means clicking on
 blank canvas also clears the selection.</li>
 </ul>
-<p>&lt;images/gselect_basic.png&gt;</p>
+<p><img src="images/gselect_basic.png" alt=""></p>
 <p>Some tool-bar commands to modify selection. These are track-wise
 operations. The operation will be performed for each track which
 contains a selected clip. These operations to not apply to selections of
 key-frame points within clips, but they do apply to timeline and
 track-level markers.</p>
-<p>&lt;images/gselect_before.png&gt;</p>
+<p><img src="images/gselect_before.png" alt=""></p>
 <p>“Select before” -- select everything between the start of the project
 and the current selection</p>
-<p>&lt;images/gselect_after.png&gt;</p>
+<p><img src="images/gselect_after.png" alt=""></p>
 <p>“Select After” -- select everything between the end of the project and
 the current selection</p>
-<p>&lt;images/gselect_above.png&gt;</p>
+<p><img src="images/gselect_above.png" alt=""></p>
 <p>“Select Above” -- select everything between the top-most layer and the
 current selection</p>
-<p>&lt;images/gselect_below.png&gt;</p>
+<p><img src="images/gselect_below.png" alt=""></p>
 <p>“Select Below”</p>
-<p>&lt;images/gselect_layer.png&gt;</p>
+<p><img src="images/gselect_layer.png" alt=""></p>
 <p>“Select Entire Layer” -- selects everything else in the layer(s) of the
 currently selected source(s)</p>
-<p>&lt;images/gselect_track.png&gt;</p>
+<p><img src="images/gselect_track.png" alt=""></p>
 <p>“Select Entire Track” -- selects everything else in the track(s) of the
 currently selected source(s)</p>
-<p>&lt;images/gselect_none.png&gt;</p>
+<p><img src="images/gselect_none.png" alt=""></p>
 <p>“Select None” -- remove all items from the current selection</p>
-<p>&lt;images/gselect_all.png&gt;</p>
+<p><img src="images/gselect_all.png" alt=""></p>
 <p>“Select All” -- select the entire project</p>
 <h1 id="viewer">Viewer</h1>
 <p>Used for playing back video from a variety of sources, primarily the
@@ -339,7 +337,7 @@ define an an area and then press the loop command.</li>
 </li>
 </ul>
 <h1 id="timeline">Timeline</h1>
-<p>&lt;images/gtimeline_detail.png&gt;</p>
+<p><img src="images/gtimeline_detail.png" alt=""></p>
 <p>The primary component of the UI. This is where the user directly
 manipulates sources and effects which will appear in the final output.
 It is a time-proportional representation of the edit decision list.
@@ -362,7 +360,7 @@ current project framerate.</li>
 scroll to center the play-head in view.</li>
 </ul>
 <h2 id="tracks">Tracks</h2>
-<p>&lt;images/gMulti_track_editing.png&gt;</p>
+<p><img src="images/gMulti_track_editing.png" alt=""></p>
 <p>The timeline is subdivided into <strong>tracks</strong>. Tracks represent separate
 output channels with a single media type. Within a track, all objects
 have the same media type, and there is at least one track in the
@@ -382,7 +380,7 @@ into a single stream. For video, all sources within a track are
 composited together in a single stream. The layer position determines
 the order in which videos are composited, with the visually topmost
 layer appearing as the top-most source in the stream.</p>
-<p>&lt;images/glayer_addition.png&gt; The user can add layers to a given track by
+<p><img src="images/glayer_addition.png" alt=""> The user can add layers to a given track by
 dragging the track's separator bar downward. Similarly, the user can
 remove tracks by dragging the layer's separator bar upward; however,
 removal of the bottom layer will only be permitted if the layer is
@@ -390,17 +388,17 @@ empty. Objects within layers can be stacked arbitrarily. This is
 particularly useful for effects, which operate lower-priority objects
 within the timeline.</p>
 <h3 id="managing-vertical-complexity">Managing Vertical Complexity</h3>
-<p><a href="image:expanded_layer.png.md">expanded layer|Expanded Layer</a></p>
+<p><img src="images/expanded_layer.png" alt="Expanded Layer" id="expanded-layer"></p>
 <p>Ordinarily, layers take up a fair amount of space. This is to make room
 for thumbnails, waveforms, and keyframes.</p>
-<p><a href="image:contracted_layer.png.md">collapsed layer|Collapsed Layer</a></p>
+<p><img src="images/contracted_layer.png" alt="Collapsed Layer" id="collapsed-layer"></p>
 <p>Layers and tracks can be contracted to save space. The user can contract
 a layer by clicking their expander widgets on the far left side of the
 timeline.</p>
-<p>&lt;images/gcontracted_track.png&gt;</p>
+<p><img src="images/gcontracted_track.png" alt=""></p>
 <p>This can also be done for entire tracks</p>
 <h3 id="sources-and-effects">Sources and Effects</h3>
-<p>&lt;images/gtimelineobject_detail.png&gt;</p>
+<p><img src="images/gtimelineobject_detail.png" alt=""></p>
 <p>Sources and effects (within a track) are content streams of a single
 media type. Sources are clips which provide data. Effects are filters
 which consume lower priority clips as input and produce filtered output.</p>
@@ -439,7 +437,7 @@ will tend to “stick” to when they get close enough.
 </li>
 </ul>
 <h3 id="temporary-deactivation">Temporary Deactivation</h3>
-<p>&lt;images/gdeactivated_objects&gt;</p>
+<p><img src="images/gdeactivated_objects.png" alt=""></p>
 <p>Objects in the timeline can be temporarily deactivated. The deactivate
 command is in found in the timeline toolbar, and will deactivate
 whatever objects are in the current selection. The reactivate command
@@ -448,23 +446,23 @@ undoes this operation.</p>
 toggle near the track's name on the left side of the timeline.</p>
 <h2 id="adding-objects">Adding Objects</h2>
 <h3 id="adding-a-clip">Adding a Clip</h3>
-<p>&lt;images/gadd_clip1.png&gt; The user chooses the clip from the clip browser by
+<p><img src="images/gadd_clip1.png" alt=""> The user chooses the clip from the clip browser by
 clicking and dragging.</p>
-<p>&lt;images/gadd_clip2.png&gt; When the object enters the timeline, the timeline
+<p><img src="images/gadd_clip2.png" alt=""> When the object enters the timeline, the timeline
 responds by showing how the timeline will change. In this case the clip
 has both audio and video streams, so objects appear in both audio and
 video tracks.</p>
-<p>&lt;images/gadd_clip3.png&gt; The user can move objects to desired layers and
+<p><img src="images/gadd_clip3.png" alt=""> The user can move objects to desired layers and
 time offsets.</p>
-<p>&lt;images/gadd_clip4.png&gt; By holding the appropriate modifier key, the user
+<p><img src="images/gadd_clip4.png" alt=""> By holding the appropriate modifier key, the user
 can push existing objects out of the way...</p>
-<p>&lt;images/gadd_clip5.png&gt; ...or add a source into a new layer.</p>
+<p><img src="images/gadd_clip5.png" alt=""> ...or add a source into a new layer.</p>
 <h3 id="adding-an-effect">Adding an Effect</h3>
 <p>Effects can be dropped into the timeline in almost exactly the same way
 as clips. The main difference is that effects come from the effects
 library.</p>
-<p>&lt;images/gadd_effect1.png&gt; User selects the effects library from the tab.</p>
-<p>&lt;images/gadd_effect2.png&gt; When adding effects into a new layer, the layer
+<p><img src="images/gadd_effect1.png" alt=""> User selects the effects library from the tab.</p>
+<p><img src="images/gadd_effect2.png" alt=""> When adding effects into a new layer, the layer
 is initially collapsed.</p>
 <h2 id="fine-tuning-trimming-objects">Fine Tuning: Trimming Objects</h2>
 <p>Trimming a clip is always possible by clicking/dragging on source
@@ -473,11 +471,11 @@ edge-snapped (so that it is easy to put the clip back the way it was).
 The UI should constrain the setting of in/out point so that sources
 can't be stretched beyond maximum native duration. <strong>clicking and
 dragging a trimming handle should not change the current selection</strong></p>
-<p>&lt;images/gtrim1.png&gt;</p>
+<p><img src="images/gtrim1.png" alt=""></p>
 <p>First, the user moves the mouse over the desired clip's trimming handle</p>
-<p>&lt;images/gtrim2.png&gt;</p>
+<p><img src="images/gtrim2.png" alt=""></p>
 <p>The cursor changes to a left- or right-edge trimming cursor.</p>
-<p>&lt;images/gtrim3.png&gt;</p>
+<p><img src="images/gtrim3.png" alt=""></p>
 <p>Click-and drag sets the in or out point of the clip as appropriate.</p>
 <h3 id="roll-edits">Roll Edits</h3>
 <p>A variant of trimming, which works when two clips are adjacent in the
@@ -487,14 +485,14 @@ Roll edits are activated by holding the appropriate modifier key while
 dragging a trimming handle. Note that this is only expected to work when
 it is possible to set the in/out points of both sources to the same
 point in time.</p>
-<p>&lt;images/groll1.png&gt;</p>
+<p><img src="images/groll1.png" alt=""></p>
 <p>First the user places the mouse over the appropriate trimming handle.</p>
-<p>&lt;images/groll2.png&gt;</p>
+<p><img src="images/groll2.png" alt=""></p>
 <p>The user holds down the appropriate modifier key. Cursor changes from
 trimming to roll-edit cursor.</p>
-<p>&lt;images/groll3.png&gt;</p>
+<p><img src="images/groll3.png" alt=""></p>
 <p>When the user drags the mouse, the edit points are set as appropriate.</p>
-<p>&lt;images/gtrim3.png&gt;</p>
+<p><img src="images/gtrim3.png" alt=""></p>
 <p>However, if the user releases the roll-edit modifier key, the edit
 reverts to the default trimming operation.</p>
 <h3 id="ripple-edits">Ripple Edits</h3>
@@ -504,13 +502,13 @@ source(s) are rightward in the appropriate direction, so that the
 trimming does not create a gap between the sources. This shifting
 carries down the entire length of the track, keeping sources in the same
 relative position.</p>
-<p>&lt;images/gripple1.png&gt;</p>
+<p><img src="images/gripple1.png" alt=""></p>
 <p>User places cursor over the desired source's trimming handle.</p>
-<p>&lt;images/gripple2.png&gt;</p>
+<p><img src="images/gripple2.png" alt=""></p>
 <p>User holds the appropriate modifier key. Cursor changes to ripple cursor</p>
-<p>&lt;images/gripple3.png&gt;</p>
+<p><img src="images/gripple3.png" alt=""></p>
 <p>User drags the the mouse. Adjacent sources are shifted.</p>
-<p>&lt;images/gripple4.png&gt;</p>
+<p><img src="images/gripple4.png" alt=""></p>
 <p>The user can also hold an additional modifier key to make the ripple
 edit work across multiple layers.</p>
 <p>If the user releases the ripple-edit modifier key, the edit reverts to
@@ -525,10 +523,10 @@ Timestretch only applies to sources of finite length, such as files.</p>
 and grouping. Linking allows the user to keep distinct timeline objects
 synchronized. Moving one object causes all of its linked “sibling”
 objects to move. The relative offset between siblings is preserved.</p>
-<p>&lt;images/glink1.png&gt; <a href="image:link2.png">image:link2.png</a></p>
+<p><img src="images/glink1.png" alt=""> <img src="images/link2.png" alt=""></p>
 <p>Some clips will be linked by default (for example, audio and video from
 the same file).</p>
-<p>&lt;images/glink1.png&gt; <a href="image:link3.png">image:link3.png</a></p>
+<p><img src="images/glink1.png" alt=""> <img src="images/link3.png" alt=""></p>
 <p>But the user can link arbitrary objects together as well.</p>
 <p>To link objects:</p>
 <ul>
@@ -551,7 +549,7 @@ the master will ripple out to each of the clones. Unlike linking,
 grouping creates a new “clip” in the Clip Library. Effects applied to
 the group apply to the output of the group as a whole, rather than the
 topmost object in the group.</p>
-<p>&lt;images/ggrouping1.png&gt;<a href="image:grouping2.png">image:grouping2.png</a></p>
+<p><img src="images/ggrouping1.png" alt=""> <img src="images/grouping2.png" alt=""></p>
 <p>To group objects:</p>
 <ul>
 <li>select one or more objects</li>
@@ -568,7 +566,7 @@ group object is substituted.</li>
 “expanding” in place. What are the pros and cons of each? Other issues:
 full, partial, or no synchronization of clones.</p>
 <h1 id="clip-library-formerly-source-browser">Clip Library (formerly Source Browser)</h1>
-<p>&lt;images/gclip_library.png&gt;</p>
+<p><img src="images/gclip_library.png" alt=""></p>
 <p>Contains a list of all the clips in the project. The user can drag
 external files onto this component to add them to the project (an import
 tool bar command also works. The user adds clips to the Timeline by
@@ -674,7 +672,7 @@ same delta</li>
 </ul>
 </li>
 </ul>
-<p>&lt;images/gproperties_curve.png&gt;</p>
+<p><img src="images/gproperties_curve.png" alt=""></p>
 <p>The user can add key-frames in two different ways ways:</p>
 <ul>
 <li>double-clicking the curve</li>
@@ -705,15 +703,15 @@ curves are selected.</li>
 <p>The user can add still images to the timeline. By default the image is
 letterboxed to the current project resolution, but these defaults can be
 changed to suit the users's needs.</p>
-<p>&lt;images/gimage_source1.png&gt; First the user selects the image in the
+<p><img src="images/gimage_source1.png" alt=""> First the user selects the image in the
 timeline</p>
-<p>&lt;images/gimage_source2.png&gt; The image property editor appears in the
+<p><img src="images/gimage_source2.png" alt=""> The image property editor appears in the
 property browser.</p>
-<p>&lt;images/gimgage_source3.png&gt; The user can crop the image to an arbitrary
+<p><img src="images/gimgage_source3.png" alt=""> The user can crop the image to an arbitrary
 region.</p>
-<p>&lt;images/gimage_source4.png&gt;</p>
-<p>&lt;images/gimage_source5.png&gt; The user can scale the image as appropriate.</p>
-<p>&lt;images/gimage_source6.png&gt; The user can also set the orientation of the
+<p><img src="images/gimage_source4.png" alt=""></p>
+<p><img src="images/gimage_source5.png" alt=""> The user can scale the image as appropriate.</p>
+<p><img src="images/gimage_source6.png" alt=""> The user can also set the orientation of the
 image.</p>
 <h2 id="animation-property-editor">Animation Property Editor</h2>
 <p>NEEDS WORK</p>
@@ -753,8 +751,8 @@ composite multiple layers of translucent/transparent cells</li>
 <p>Should thresholds and key-color be time varying? Definitely need at
 least a local preview. Using the viewer would be better.</p>
 <h2 id="title-card-editor">Title Card Editor</h2>
-<p><a href="image:title_card_editor.md">image:title card editor</a> The title
-card editor might look something like this.</p>
+<p>The title card editor might look something like this.
+<img src="images/title_card_editor.png" alt="Title Card Editor" id="title-card-editor1"></p>
 <h1 id="effect-library">Effect Library</h1>
 <p>The effect library lists all of the available effects, whether delivered
 through plug-ins or internal to PiTiVi. The user can drag-and-drop

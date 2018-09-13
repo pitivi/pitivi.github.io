@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>2008 Architectural Redesign/Pipeline</title>
+<title>Pipeline</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
@@ -102,9 +102,8 @@ $('body').removeClass('no-script');
 <div id="body">
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="Pipeline.md" data-hotdoc-role="main">
-        <h1 id="2008-architectural-redesignpipeline">2008 Architectural Redesign/Pipeline</h1>
+        <h1 id="pipeline">Pipeline</h1>
 <p><img src="Pipeline-functional.png" alt="Pipeline functional view" title="Pipeline functional view" id="pipeline-functional-view"></p>
-<h1 id="functional-description">Functional Description</h1>
 <p>A <strong>Pipeline</strong> is where all the media processing takes place in PiTiVi.</p>
 <p>In order to hide the complexity of the underlying GStreamer pipeline, we
 only have to work with 3 concepts:</p>
@@ -125,7 +124,7 @@ adequate interface for each action</li>
 </ul>
 </li>
 </ul>
-<h2 id="pipeline">Pipeline</h2>
+<h2 id="pipeline1">Pipeline</h2>
 <h3 id="properties">Properties</h3>
 <ul>
 <li>Actions, the list of Actions currently being used in the pipeline</li>
@@ -188,12 +187,12 @@ manage</li>
 </ul>
 <h1 id="use-cases">Use Cases</h1>
 <h2 id="viewing-a-file">Viewing a File</h2>
-<p><img src="Pipeline-viewing-file.png" alt="Example: Viewing a File" title="Example: Viewing a File" id="example-viewing-a-file">{width="200"}</p>
+<p><img src="Pipeline-viewing-file.png" alt="Example: Viewing a File" title="Example: Viewing a File" id="example-viewing-a-file"></p>
 <p>This is the simplest use-case for a Pipeline, which is viewing a File.</p>
 <p>As can be seen in the Schema, there is only one action (<strong>ViewAction</strong>)
 which connects a SourceProducer to a LocalSinksConsumer.</p>
 <h2 id="rendering-a-timeline">Rendering a Timeline</h2>
-<p><img src="Pipeline-rendering-timeline.png" alt="Example: Rendering a Timeline" title="Example: Rendering a Timeline" id="example-rendering-a-timeline">{width="200"}</p>
+<p><img src="Pipeline-rendering-timeline.png" alt="Example: Rendering a Timeline" title="Example: Rendering a Timeline" id="example-rendering-a-timeline"></p>
 <p>In this example, we are doing 2 actions at the same time:</p>
 <ul>
 <li>
@@ -246,7 +245,7 @@ related interface/widgets.</li>
 </li>
 </ul>
 <h1 id="relationship-with-gstreamer">Relationship with GStreamer</h1>
-<p><img src="Pipeline-gstreamer-relationship.png" alt="Relationship with GStreamer" title="Relationship with GStreamer" id="relationship-with-gstreamer1">{width="200"}</p>
+<p><img src="Pipeline-gstreamer-relationship.png" alt="Relationship with GStreamer" title="Relationship with GStreamer" id="relationship-with-gstreamer1"></p>
 
     </div>
         

@@ -1,1 +1,0 @@
-urls_downloaded_cb({"token": "show_bug.cgi", "urls": [{"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});

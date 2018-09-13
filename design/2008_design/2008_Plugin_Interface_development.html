@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Introduction</title>
+<title>2008 Plugin Interface</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
@@ -102,7 +102,7 @@ $('body').removeClass('no-script');
 <div id="body">
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="2008_Plugin_Interface_development.md" data-hotdoc-role="main">
-        <h2 id="introduction">Introduction</h2>
+        <h2 id="2008-plugin-interface">2008 Plugin Interface</h2>
 <h3 id="about">About</h3>
 <p>Pitivi's current interface, whist having a solid base is a little
 lackluster with regards to API compatibility and formality, I
@@ -141,26 +141,34 @@ exception if its called before then</p>
 <p>The current API uses epydoc for its documentation and is structured as
 follows:</p>
 <ul>
-<li>pitivi
+<li>
+<code>pitivi</code>
 <ul>
-<li>PluginInterface
+<li>
+<code>PluginInterface</code>
 <ul>
-<li>gui
+<li>
+<code>gui</code>
 <ul>
-<li>show_gui(self, *args, **kwargs) shows or hides the
+<li>
+<code>show_gui(self, *args, **kwargs)</code> shows or hides the
 main application window depending on the value of
 'visible'</li>
-<li>add_menu_item(self, *args, **kwargs) Adds a menu
+<li>
+<code>add_menu_item(self, *args, **kwargs)</code> Adds a menu
 item to the appropriate main window menu</li>
-<li>remove_menu_item(self, name) removes the given menu
+<li>
+<code>remove_menu_item(self, name)</code> removes the given menu
 item from the user interface</li>
-<li>remove_ui(self) removes all changes this instance of
+<li>
+<code>remove_ui(self)</code> removes all changes this instance of
 the plugininterface has made to the user interface</li>
 </ul>
 </li>
-<li>Project
+<li>
+<code>Project</code>
 <ul>
-<li>add_source</li>
+<li><code>add_source</code></li>
 </ul>
 </li>
 </ul>
@@ -271,7 +279,7 @@ class Settings(pluginsettings.SettingsStore):
 </code></pre>
 <h5 id="custom-configuration-widget-example-preview">custom configuration widget example - preview</h5>
 <p>The above example produces the following image</p>
-<p><img src="Config-custom-widget.png" alt="" title="Config-custom-widget.png"></p>
+<p><img src="design/2008_design/images/Config-custom-widget.png" alt="" title="Config-custom-widget.png"></p>
 <h2 id="plugin-examples">Plugin Examples</h2>
 <h3 id="plugin-that-demonstrates-the-configuration-dialog-builder">Plugin that demonstrates the configuration dialog builder</h3>
 <pre><code>#!/usr/bin/env python
@@ -421,7 +429,7 @@ class Configure_Test(pluginsettings.ConfigureBuilder):
                 self.cleanup()
 </code></pre>
 <h4 id="preview-of-the-previous-example">Preview of the previous example</h4>
-<p><img src="Config-example.png" alt="" title="Config-example.png"></p>
+<p><img src="design/2008_design/images/Config-example.png" alt="" title="Config-example.png"></p>
 
     </div>
         

@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>2008 Architectural Redesign/High-level Design</title>
+<title>High-level Design</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
@@ -102,7 +102,7 @@ $('body').removeClass('no-script');
 <div id="body">
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="High-level_Design.md" data-hotdoc-role="main">
-        <h1 id="2008-architectural-redesignhighlevel-design">2008 Architectural Redesign/High-level Design</h1>
+        <h1 id="highlevel-design">High-level Design</h1>
 <p><strong>High Level overview</strong></p>
 <h1 id="overall">Overall</h1>
 <p><img src="Top-level-uicore.png" alt="Top-level organisation" title="Top-level organisation" id="toplevel-organisation"></p>
@@ -114,7 +114,7 @@ components, a plugin-system and various tools.</li>
 use Core</li>
 </ul>
 <h1 id="core">Core</h1>
-<p><img src="Top-level-core-only.png" alt="Contents of Core" title="Contents of Core" id="contents-of-core">{width="300"}</p>
+<p><img src="Top-level-core-only.png" alt="Contents of Core" title="Contents of Core" id="contents-of-core"></p>
 <p>Core contains several essential components, of which the most important
 are:</p>
 <ul>
@@ -122,7 +122,7 @@ are:</p>
 well as general application settings.</li>
 <li>The <strong>Projects</strong>, centralizing information on editing projects,
 including timeline, sources used, settings, ...</li>
-<li>The <a href="New_Design_2008/Pipeline.md"><strong>Pipelines</strong></a>, allowing
+<li>The <a href="design/2008_design/2008_Architectural_Redesign/Pipeline.html"><strong>Pipelines</strong></a>, allowing
 combining some Actions (View, Record, Stream,...) with Producers
 (Timeline, File, Camera, VCR, ...) and Consumers (Loudspeakers,
 Screen, File, Network stream,...)</li>
@@ -141,16 +141,16 @@ Thumbnailer (To generically produce thumbnails of contents)</li>
 <ul>
 <li>The <strong>Settings</strong> of the application, user-interface and plugins</li>
 <li>One or more <strong>Project</strong>(s), corresponding to the various
-<a href="New_Design_2008/Timeline.md">Timelines</a> currently opened.</li>
-<li>One or more <a href="New_Design_2008/Pipeline.md"><strong>Pipeline</strong>(s)</a>,
+<a href="design/2008_design/2008_Architectural_Redesign/Timeline.html">Timelines</a> currently opened.</li>
+<li>One or more <a href="design/2008_design/2008_Architectural_Redesign/Pipeline.html"><strong>Pipeline</strong>(s)</a>,
 corresponding to the various processing pipelines currently used.</li>
 </ul>
 <p>If a User Interface is used, the Application object is its core
 counterpart.</p>
-<p><img src="Top-level-project-pipeline.png" alt="Project/Pipeline relationship and contents" title="Project/Pipeline relationship and contents" id="projectpipeline-relationship-and-contents">{width="300"}</p>
+<p><img src="Top-level-project-pipeline.png" alt="Project/Pipeline relationship and contents" title="Project/Pipeline relationship and contents" id="projectpipeline-relationship-and-contents"></p>
 <h3 id="project">Project</h3>
 <p>Represents an editing project, corresponding to ONE
-<a href="New_Design_2008/Timeline.md">Timeline</a>.</p>
+<a href="design/2008_design/2008_Architectural_Redesign/Timeline.html">Timeline</a>.</p>
 <p>It contains:</p>
 <ul>
 <li>The <strong>Settings</strong> of the project and timeline</li>
@@ -160,7 +160,7 @@ Timeline.</li>
 in this project. All sources used in the Timeline are present in
 that list, but it can also contains sources not (yet) used in the
 Timeline.</li>
-<li>The <a href="New_Design_2008/Timeline.md"><strong>Timeline</strong></a>. All the
+<li>The <a href="design/2008_design/2008_Architectural_Redesign/Timeline.html"><strong>Timeline</strong></a>. All the
 timeline editing is done through this object.</li>
 </ul>
 <h3 id="pipeline">Pipeline</h3>
@@ -183,7 +183,7 @@ Render Timeline, Capture from DV VCR, ...)</li>
 <p><strong>TO BE DEFINED</strong></p>
 <h2 id="tools">Tools</h2>
 <h3 id="browser">Browser</h3>
-<p><img src="Browser-functional.png" alt="Browser" title="Browser" id="browser1"></p>
+<p><img src="design/2008_design/2008_Architectural_Redesign/images/Browser-functional.png" alt="Browser" title="Browser" id="browser1"></p>
 <p>Browser are a unified way of searching/browsing for contents and
 devices, or more generally speaking <em>Media Assets</em>.</p>
 <p>This includes, but is not limited to:</p>
@@ -194,7 +194,7 @@ devices, or more generally speaking <em>Media Assets</em>.</p>
 <li>Media Asset Management Browser</li>
 <li>Online Service Browser (ex: youtube, flickr, archive.org, ...)</li>
 </ul>
-<p>See <a href="New_Design_2008/Browser.md">New_Design_2008/Browser</a> for
+<p>See <a href="design/2008_design/2008_Architectural_Redesign/Browsers.html">Browsers</a> for
 more details.</p>
 <h3 id="formatter">Formatter</h3>
 <p><img src="Formatter-functional.png" alt="Formatter" title="Formatter" id="formatter1"></p>
@@ -202,7 +202,7 @@ more details.</p>
 file formats.</p>
 <p>Formatters can also provide subclasses of existing core objects in order
 to store/provide format-specific information.</p>
-<p>See <a href="New_Design_2008/Formatter.md">New_Design_2008/Formatter</a>
+<p>See <a href="design/2008_design/2008_Architectural_Redesign/Formatter.html">Formatter</a>
 for more details.</p>
 <h2 id="utilities">Utilities</h2>
 <h3 id="discoverer">Discoverer</h3>

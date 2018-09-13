@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href="..">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Project loading and saving</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+<link rel="shortcut icon" href="assets/images/favicon.png">
+
+</head>
+
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/pitivi.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p><b>The Pitivi Developer Documentation</b></p>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="attic/Project_loading_and_saving.html" class="page_container" id="page-wrapper">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+	<script src="assets/js/sitemap.js"></script>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-source="Project_loading_and_saving.md" data-hotdoc-role="main">
+        <h1 id="project-loading-and-saving">Project loading and saving</h1>
+<p>File load/save support in PiTiVi is seemingly simple; however, it has do
+be done properly, or user experience will suffer. That is the motivation
+for this rather lengthy design document.</p>
+<p>The following document is partially based on a patch supplied by Richard
+Boulton, including comments and documentation strings. As the patch no
+longer cleanly applies, I have been asked to re-work it into a design
+document so that we can determine how best to incorporate his ideas.</p>
+<h1 id="use-cases">Use Cases</h1>
+<p>There are 4 states and 4 commands, giving the user a total of 14
+possible scenarios that users might encounter (the initial state does
+not allow for two of the commands).</p>
+<h2 id="save-vs-save-as">“Save” vs. “Save As”</h2>
+<p>“Save As” will be treated as a special case of “Save” for the purposes
+of this document. When the “Save As” command is issued, the user will be
+asked to supply a file path, and the project will be saved. From then
+on, pitivi will be editing the file pointed to by the new file path,
+rather than the previous one. In all other respects, “Save As” is
+identical to “Save”. When a “Save” command is given on a new project,
+the scenario will be identical to the “Save As” scenario.</p>
+<h2 id="overwriting-modified-files">Overwriting Modified Files</h2>
+<p>Before saving, PiTiVi checks to see if the file has been modified since
+the last save. When a file has changed on disk, the user will be
+prompted to ask if it is acceptable to overwrite the file. PiTiVi will
+not check to see if the file has been altered except in these
+circumstances.</p>
+<h2 id="pitivi-save-states-visible-to-user">PiTiVi Save States Visible to User</h2>
+<ol>
+<li>Initial state
+<ol>
+<li>Pitivi can be launched with, or without the path to a project
+which can be automatically loaded</li>
+</ol>
+</li>
+<li>Unmodified project state
+<ol>
+<li>pitivi is running, and the current project is unmodified since
+the last save operation</li>
+</ol>
+</li>
+<li>Modified project state
+<ol>
+<li>pitivi is running, and the current project has been modified
+since the last save operation.</li>
+<li>A save operation implicitly returns PiTiVi to the unmodified
+state</li>
+</ol>
+</li>
+</ol>
+<h2 id="pitivi-saveload-commands-visible-to-user">PiTiVi Save/Load Commands Visible to User</h2>
+<ol>
+<li>New project</li>
+<li>Save Project</li>
+<li>Save Project As</li>
+<li>Load Project</li>
+</ol>
+<h2 id="things-invisible-to-user">Things Invisible to User</h2>
+<p>PiTiVi only edits a single project at a time. Consequently, implicit in
+the New, Save, and Save As commands is the “Close Project” command.
+Since PiTiVi's UI must always display a project, a “Close Project”
+command would be identical to the “New Project” command. Based on this,
+it makes sense to omit “Close Project” from the UI. Nevertheless, it
+should still be considered a command that is part of this module, for
+the sake of code reuse.</p>
+<h2 id="loadsave-behavior">Load/Save Behavior</h2>
+<p>PiTiVi should follow the established convention for large applications
+of keeping unsaved changes in a temporary file to minimize the potential
+amount of work lost due to crashes, power failures, accidental quits,
+etc. After a user-specifiable interval, unsaved changes will be saved to
+a temporary file. In addition to this, PiTiVi should not directly
+overwrite a file when saving, but instead back up the original file
+first.</p>
+<h2 id="pitivi-use-cases-visible-to-user">PiTiVi Use Cases Visible to User</h2>
+<ol>
+<li>Initial State, No Project Path Argument
+<ol>
+<li>PiTiVi initializes and displays a blank project</li>
+</ol>
+</li>
+<li>Initial State, With Project Path Argument
+<ol>
+<li>PiTivi initializes and loads the specified project from disk</li>
+</ol>
+</li>
+<li>Unmodified Project State, New Project Command
+<ol>
+<li>A new project is loaded.</li>
+</ol>
+</li>
+<li>Unmodified Project State, Save Project Command
+<ol>
+<li>Nothing happens</li>
+</ol>
+</li>
+<li>Unmodified Project State, Save Project As Command
+<ol>
+<li>A dialog prompts the user for a new project path</li>
+<li>The current project is saved under this new path</li>
+</ol>
+</li>
+<li>Unmodified Project State, Load Project Command
+<ol>
+<li>A dialog prompts the user to open a new file</li>
+<li>The new file is loaded, replacing the current project</li>
+</ol>
+</li>
+<li>Unmodified Project State, Save Project Command, File Changed On Disk
+<ol>
+<li>A Dialog is displayed presenting choices of “Overwrite”, “Save
+As”, and Cancel
+<ol>
+<li>overwrite: the project is saved over the top of the original</li>
+<li>user interaction proceeds as if “Save As” had been issued</li>
+<li>cancel: the save operation is canceled</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Unmodified Project State, Save Project As Command, (or file already
+exists)
+<ol>
+<li>File chooser dialog prompts user for filepath</li>
+<li>If the file exists at all, then the overwrite confirmation
+dialog is displayed offering the following choices
+<ol>
+<li>overwrite: the project is saved over the top of the existing
+file</li>
+<li>save as: file is saved over the top of the existing file</li>
+<li>cancel: the save operation is canceled</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Unmodified Project State, Load Project Command, File Changed On Disk
+<ol>
+<li>Identical to Unmodified, Load Project where original file is
+unchanged</li>
+</ol>
+</li>
+<li>Modified Project State, New Project Command
+<ol>
+<li>Close Project confirmation dialog displayed, presenting choices
+of “Save”, “Don't Save”, and “Cancel”
+<ol>
+<li>Cancel: a new project is not created, and the old project is
+not saved</li>
+<li>Don't Save: the new project will replace the current, and it
+will not be saved</li>
+<li>Save: The project is saved, and a new project is created.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Modified Project State, Save Project Command
+<ol>
+<li>If the project has not been saved before, this scenario is
+identical to choosing “Save As”.</li>
+<li>If the project has been saved before, the project simply
+overwrites the old one on disk.</li>
+</ol>
+</li>
+<li>Modified Project State, Save As Project Command
+<ol>
+<li>A dialog prompts the user save a new file</li>
+<li>The file is saved under the new path</li>
+<li>PiTiVi continues editing the project under the new pathname</li>
+</ol>
+</li>
+<li>Modified Project State, Load Project Command
+<ol>
+<li>Close Project Confirmation Dialog displayed, presenting choices
+of “Save”, “Don't Save”, and “Cancel”
+<ol>
+<li>Cancel: the project is not loaded, and the old project is
+not saved</li>
+<li>Don't Save: the current project will not be saved, but the
+user will be prompted to load a project</li>
+<li>Save: The project is saved, and the user is prompted to load
+a project</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Modified Project State, Save Project Command, File Changed On Disk
+<ol>
+<li>A confirm overwrite dialog is displayed presenting choices of
+“Overwrite”, “Save As”, and “Cancel”</li>
+</ol>
+</li>
+<li>Modified Project State, Save As Project Command, File Changed On
+Disk
+<ol>
+<li>Identical to Modified State, Save As</li>
+</ol>
+</li>
+<li>Modified Project State, Load Project Command, File Changed On Disk
+<ol>
+<li>Identical to Modified State, Load Project Command</li>
+</ol>
+</li>
+</ol>
+<h1 id="application-logic">Application Logic</h1>
+<p>The high level application logic is relatively straight forward. The
+coding will not be, due to the nature of the GObject/Gtk. The logic is
+divided into four operations. these are “New”, “Load”, “Save”, and
+“Close”. The “Close” process is not directly operation by the user, but
+is performed any time the current project is to be replaced.</p>
+<p>Image:New flowchart.png|Logic for creating a new project Image:Load
+flowchart.png|Logic for loading an existing project Image:Save
+flowchart.png|Logic for saving a project (both “Save” and “Save As”)
+Image:Close flowchart.png|Logic for closing a project</p>
+<p>At the lower level, the application logic will be implemented through
+signals, and callbacks.</p>
+<p>The core classes will provide public methods for initiating the
+operations of saving, loading, and creating new projects. If the core
+needs user input, it will emit the appropriate signal, passing a
+reference to a callback. If the UI determines that further action is
+necessary by the system, the UI then returns control to the system by
+calling the callback. This means that system code could be split into
+two functions, the public interface which initiates the action, and the
+deferred callback which finalizes the action.</p>
+<h1 id="native-file-format">Native file format</h1>
+<p>While PiTiVi should make every effort to support a wide range of file
+formats, most of these will be through external plugins. PiTiVi provides
+a reference implementation that uses Python's cPickle module to
+serialize and deserialize data in the intermediate format.</p>
+<h1 id="pluggable-saving-backend">Pluggable Saving Backend</h1>
+<p>One goal of PiTiVis is to work work with a wide variety of project file
+formats.</p>
+<p>The <code>ProjectSaver</code> class coordinates the work of saving, loading, and
+validating project data. The class works with an intermediate format
+which concisely represents the project. Everything contained within a
+project (sources, transitions, effects, compositions, settings, etc)
+must implement the <code>Serializable</code> interface, which includes the
+<code>toDataFormat()</code> and <code>fromDataFormat()</code> methods. These methods convert
+to and from this intermediate format.</p>
+<p>Multiple file formats can be supported by sub-classing <code>ProjectSaver</code>
+These classes must provide <code>dump()</code> and <code>load()</code> methods for the file
+format they implement. Users of the ProjecSaver's public interface can
+use the methods <code>saveToFile(), openFrom File, listFormats()</code>, and
+<code>newProjectSaver</code>. These methods are summarized in the following table:</p>
+<table>
+<tr>
+<td>
+<strong>Method Name</strong>
+</td>
+<td>
+parameters
+</td>
+<td>
+purpose
+</td>
+</tr>
+<tr>
+<td>
+`saveToFile`
+</td>
+<td>
+`tree, output_stream`
+</td>
+<td>
+write project data to file
+</td>
+</tr>
+<tr>
+<td>
+`openFromFile`
+</td>
+<td>
+`tree, output_stream`
+</td>
+<td>
+read project data from file
+</td>
+</tr>
+<tr>
+<td>
+`@classmethod newProjectSaver`
+</td>
+<td>
+`fmt` - string representing the project file format
+</td>
+<td>
+return a new projectSaver instance
+</td>
+</tr>
+<tr>
+<td>
+`@classmethod listFormats`
+</td>
+<td>
+</td>
+<td>
+return a list of strings representing project file formats
+</td>
+</tr>
+</table>
+## The intermediate data structure
+<p>The following example assumes the following:</p>
+<ul>
+<li>There are 5 media sources located in the same directory as the
+project
+<ul>
+<li>Three video files <code>video1.ogm, video2.ogm</code>, and <code>video4.ogm</code>
+</li>
+<li>Two audio files <code>audio1.ogg</code>, and <code>audio2.ogg</code>
+</li>
+</ul>
+</li>
+<li>The project output format is 320x240 resolution, 15fps video and</li>
+</ul>
+<p>Of these sources, only 4 have been added to the timeline (time-stamps
+given in h:mm:ss.sss):</p>
+<ul>
+<li>video1.ogm:
+<ul>
+<li>media-start: 0:00:02:0.000</li>
+<li>media-duration: 0:00:37.000</li>
+<li>start: 0:00:00.000</li>
+<li>duration: 0:00:37.000</li>
+</ul>
+</li>
+<li>video2.ogm:
+<ul>
+<li>media-start: 0:00:00:0.000</li>
+<li>media-duration: 0:00:30.242</li>
+<li>start: 0:00:00.37.000</li>
+<li>duration: 0:00:30.242</li>
+</ul>
+</li>
+<li>video1.ogm:
+<ul>
+<li>start: 0:01:7.242</li>
+<li>duration: 0:00:20.0</li>
+<li>media-start: 00:30:00.000</li>
+<li>media-duration: 00:00:20.0</li>
+</ul>
+</li>
+<li>audio1.ogm
+<ul>
+<li>media-start: 00:00:00.000</li>
+<li>media-duration: 00:01:27.242</li>
+<li>start: 00:00:00.000</li>
+<li>duration: 00:01:27.242</li>
+</ul>
+</li>
+<li>audio2.ogm:
+<ul>
+<li>media-start: 0:00:00:00.000</li>
+<li>media-duration: 0:00:05.200</li>
+<li>start: 0:00:45.127</li>
+<li>duration: 0:00:5.2</li>
+</ul>
+</li>
+</ul>
+<p>In this example, media-duration and timeline duration correspond. This
+is not necessarily the case, however.</p>
+<p>The equivalent python data structure will look like this (currently
+incomplete):</p>
+<code>
+<p>project = {</p>
+<p>“<code>timeline</code>”<code> : {</code><br>
+<code>    </code>“<code>compositions</code>”<code> :</code><br>
+<code>    (</code><br>
+<code>        {</code><br>
+<code>              </code>“<code>type</code>”<code>: </code>“<code>video</code>”<code>,</code><br>
+<code>              </code>“<code>sources</code>”<code> :</code><br>
+<code>              (</code><br>
+<code>                    {</code><br>
+<code>                        </code>“<code>project-source</code>”<code> : </code><ref to video1.ogm source definition><code>,</code><br>
+<code>                        </code>“<code>start</code>”<code>:0,</code><br>
+<code>                        </code>“<code>duration</code>”<code>: 37000,</code><br>
+<code>                        </code>“<code>media-start</code>”<code>: 120000,</code><br>
+<code>                        </code>“<code>media-duration</code>”<code>: 37000</code><br>
+<code>                    }</code><br>
+<code>                    {</code><br>
+<code>                        </code>“<code>project-source</code>”<code> : </code><ref to video2.ogm source definition><code>,</code><br>
+<code>                        </code>“<code>start</code>”<code>: 37000,</code><br>
+<code>                        </code>“<code>duration</code>”<code>: 30242,</code><br>
+<code>                        </code>“<code>media-start</code>”<code>: 67242,</code><br>
+<code>                        </code>“<code>media-duration</code>”<code>: 30242,</code><br>
+<code>                    }</code><br>
+<code>                    {</code><br>
+<code>                        </code>“<code>project-source</code>”<code> : </code><rref to video1.ogm source definition><code>,</code><br>
+<code>                        </code>“<code>start</code>”<code>: 67242,</code><br>
+<code>                        </code>“<code>duration</code>”<code>: 20000,</code><br>
+<code>                        </code>“<code>media-start</code>”<code>: 30000,</code><br>
+<code>                        </code>“<code>media-duration</code>”<code>: 20000</code><br>
+<code>                    }</code><br>
+<code>              )</code><br>
+<code>         },</code></rref></ref></ref></p>
+<p><code>         {</code><br>
+<code>            </code>“<code>type</code>”<code> : </code>“<code>audio</code>”<code>,</code><br>
+<code>            </code>“<code>sources</code>”<code> : (</code><br>
+<code>                  {</code><br>
+<code>                        </code>“<code>project-source</code>”<code> : </code><ref to audio1.ogg source definition><code>,</code><br>
+<code>                        </code>“<code>start</code>”<code>: 0,</code><br>
+<code>                        </code>“<code>duration</code>”<code>: 87242,</code><br>
+<code>                        </code>“<code>media-start</code>”<code>: 0,</code><br>
+<code>                        </code>“<code>media-duration</code>”<code>: 87242</code><br>
+<code>                    }</code><br>
+<code>                    {</code><br>
+<code>                        </code>“<code>project-source</code>”<code> : </code><ref to audio2.ogg source definition><code>,</code><br>
+<code>                        </code>“<code>start</code>”<code>: 45127,</code><br>
+<code>                        </code>“<code>duration</code>”<code>: 5200,</code><br>
+<code>                        </code>“<code>media-start</code>”<code>: 0,</code><br>
+<code>                        </code>“<code>media-duration</code>”<code>: 5200</code><br>
+<code>                    }</code><br>
+<code>             )</code><br>
+<code>         }</code><br>
+<code>    )</code><br>
+<code>  },</code></ref></ref></p>
+<p><code>  </code>“<code>sources</code>”<code> : ....</code></p>
+<p><code>  </code>“<code>settings</code>”<code> : ....</code></p>
+<p>} </p></code>
+<p>More specifically, the project is composed python dictionaries, tuples,
+and strings. It could be thought of as a “tree” but it is really more of
+a “deep dictionary,” with several levels of nesting. Each dictionary
+contains a key called “datatype” which identifies what the kind of
+object it is. Optional keys are not required to exist, but you must
+handle them if they do.</p>
+<h3 id="project">Project</h3>
+<p>The project is the root of the “tree.” It is a dictionary, with three
+keys:</p>
+<ul>
+<li>
+<code>datatype</code> -- “project”</li>
+<li>
+<code>timeline</code> -- maps to a tuple of “Composition” dictionaries (see
+below)</li>
+<li>
+<code>sources</code> -- maps to a “source-list”</li>
+<li>
+<code>settings</code> --maps to a dictionary of project-specific settings (the
+ExportSettings field of a Project object)</li>
+</ul>
+<h3 id="compositions">Compositions</h3>
+<p>The composition field represents a PiTiVi timeline composition element.
+There is one main timeline per project, but sub-compositions can be
+represented as well. A sub composition is represented as a source
+dictionary whose ID field refers to a composition dictionary as defined
+here. This allows multiple instances of the same composition in the
+timeline, as well as allowing only part of the composition to be used.</p>
+<ul>
+<li>
+<code>datatype</code> -- “timeline-composition”</li>
+<li>
+<code>sources</code> -- maps to a tuple containing source dictionaries. (see
+below)</li>
+<li>
+<code>effects</code> (optional) -- maps to a tuple of effects dictionaries (see
+bleow)</li>
+<li>
+<code>transitions</code> (optional) -- maps a tuple of transitions dictionaries
+(see below)</li>
+</ul>
+<h4 id="source-composition">Source (composition)</h4>
+<p>This represents a source object in a timeline. It is a dictionary
+containing the following keys:</p>
+<ul>
+<li>
+<code>datatype</code> -- “timeline-source”, “timeline-live-source”,
+“timeline-blank-source”</li>
+<li>
+<code>id</code> -- maps to a reference to a source in this project's sources
+list or to a composition</li>
+<li>
+<code>start</code> -- maps to an integer in gnonlin time format (milliseconds).
+the start of the source in the timeline.</li>
+<li>
+<code>duration</code> -- maps to an integer in gnonlin time format. how long
+the source lasts in the timeline.</li>
+</ul>
+<p>There is also the FileSource, which has the same properties as above,
+but also the following:</p>
+<ul>
+<li>
+<code>datatype</code> -- “timeline-file-source”</li>
+<li>
+<code>media-start</code> -- where the source starts in the media, in gnonlin
+time units</li>
+<li>
+<code>media-duration</code> -- how long the source plays the media, in gnonlin
+time units</li>
+<li>
+<code>volume</code> (optional) -- a real number, 0 being mute, 1 being original
+source volume, and &amp;gt; 1 being some multiple of source volume.</li>
+</ul>
+<h3 id="sourcelist">SourceList</h3>
+<p>Represents a list of source factories in a project. Source factories are
+objects which can create timeline sources. The source-list is a
+dictionary containing:</p>
+<ul>
+<li>
+<code>datatype</code> -- “source-list”</li>
+<li>
+<code>source-factories</code> -- maps to a list containing “source-factory”
+dictionaries.</li>
+</ul>
+<h4 id="source-factory">Source Factory</h4>
+<p>Represents a source factory in the project sources list. It is a
+dictionary containing the following keys:</p>
+<ul>
+<li>
+<code>datatype</code> -- “file-source-factory”, “operation-factory”,
+“simple-operation-factory”, “transition-factory”, “SMPTE-factory”</li>
+<li>
+<code>uid</code> -- an id mapping to the object's unique id</li>
+</ul>
+<h3 id="settings">Settings</h3>
+<p>Project-specific settings are as follows. This section is incomplete</p>
+<ul>
+<li>
+<code>datatype</code> -- “export-settings”</li>
+<li><code>videowidth</code></li>
+<li><code>videoheight</code></li>
+<li><code>videorate</code></li>
+<li><code>audiochans</code></li>
+<li><code>audiorate</code></li>
+<li><code>audiodepth</code></li>
+<li><code>vencoder</code></li>
+<li><code>aencoder</code></li>
+<li><code>containersettings</code></li>
+<li><code>acodecsettings</code></li>
+<li><code>vcodecsettings</code></li>
+</ul>
+<h3 id="formats-for-unimplemented-features">Formats for Unimplemented Features</h3>
+<p>A number of features are planned for future releases of PiTiVi. Handling
+these is currently considered optional, and these specifications are
+subject to change.</p>
+<h4 id="transitions">Transitions</h4>
+<p>Transitions and effects have not yet been implemented in PiTiVi. This
+This represents a transition object in a timeline. It is a dictionary
+containing the following keys:</p>
+<ul>
+<li>
+<code>type</code> -- maps to a string naming the transition to apply. valid
+names have not yet been established.</li>
+<li>
+<code>start</code> -- the start of the transition in the timeline, (see
+Source(Timeline) above)</li>
+<li>
+<code>duration</code> -- maps to the duration of the transition in the timeline
+(see Source(Timeline above)</li>
+<li>
+<code>parameters</code> -- maps to the parameters of the transition, which are
+specific to each transition. specifications for these have yet to be
+established.</li>
+</ul>
+<h4 id="effects">Effects</h4>
+<ul>
+<li>
+<code>type</code> -- maps to a string naming the effect to apply. valid names
+have not yet been established</li>
+<li>
+<code>start</code> -- maps to the start of the effect in the timeline (see
+Source(Timeline above)</li>
+<li>
+<code>duration</code> -- maps to the duration of the effect in the timeline
+(see Source(Timeline) above)</li>
+<li>
+<code>parameters</code> -- maps to the parameters of the effect, which are
+specific to each effect. specifications for these have yet to be
+established.</li>
+</ul>
+<h2 id="implementing-other-file-formats">Implementing other File Formats</h2>
+<p>TODO: explain how to implement a file format as a plugin</p>
+<p>Support for a variety of formats will be provided by plugins which
+implement the <code>ProjectSaver</code> interface. A reference implementation
+exists in projectsaver.py, called PickleFormat.</p>
+<p>When implementing a custom file format, you should subclass
+ProjectSaver. Your child class should define:</p>
+<ul>
+<li>the doc string for the class. It should contain a brief,
+human-readable description of the file format your class implements</li>
+<li>
+<code>__file_format__</code> -- a string used by pitivi to represent your
+format</li>
+<li>
+<code>__extensions__</code> -- a list of valid file extensions for the module.</li>
+<li>
+<code>dump(tree, output_stream)</code> -- a method which converts the
+intermediate representation <code>tree</code> into your file format, and writes
+it to the open file object <code>output_stream</code>
+</li>
+<li><code>load(input_stream) -- a method which reads from the open file
+object <code>input_stream</code> and returns an object in the intermediate
+representation</code></li>
+</ul>
+<h2 id="test-cases">Test Cases</h2>
+<h3 id="unit-test-cases">Unit Test Cases</h3>
+<h4 id="test-serialization-of-objects">Test Serialization of Objects</h4>
+<ol>
+<li>Test the serialization methods of each kind of object. Create an
+object with known parameters, then test that the python object
+returned is as expected</li>
+<li>Test deserialization methods of each kind of object. Create a python
+data structure with known parameters, check that the timeline object
+returned is as expected</li>
+</ol>
+<h4 id="test-tree-traversal-code">Test tree traversal code</h4>
+<ol>
+<li>Create a complicated project data structure with nested
+compositions. Test that it is properly converted into a Project
+object.</li>
+<li>Test project serialization code. Create a complicated project using
+the available interface functions. Test that the project is properly
+serialized into python data structure. Do deep comparison of
+generated tree and expected tree</li>
+</ol>
+<h4 id="test-file-processing-code">Test file processing code</h4>
+<ol>
+<li>Take a tree representing a complicated project, and save it to a
+file. Load the file back from disk, and compare the trees. They
+should be identical. Note: here we can saving/loading of features
+which are not yet implemented in PiTiVi.</li>
+<li>Test everything. Create a project using the available interface.
+Save the project using the high-level interface. Load the project.
+The two projects should be identical.</li>
+</ol>
+
+    </div>
+        
+
+
+
+
+		
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<hr>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/attic/Project_loading_and_saving.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

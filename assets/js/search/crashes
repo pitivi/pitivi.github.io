@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "crashes", "urls": [{"url": "Bug_reporting.html#stack-traces-for-crashes-and-deadlocks", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "crashes", "urls": [{"url": "Bug_reporting.html#stack-traces-for-crashes-and-deadlocks", "context": {"gi-language": ["default"]}}, {"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic/Project_loading_and_saving.html#page-description", "context": {"gi-language": ["default"]}}]});

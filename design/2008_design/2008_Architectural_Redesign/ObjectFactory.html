@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Overall</title>
+<title>ObjectFactory</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
@@ -102,43 +102,39 @@ $('body').removeClass('no-script');
 <div id="body">
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="ObjectFactory.md" data-hotdoc-role="main">
-        <h1 id="overall">Overall</h1>
-<blockquote>
+        <h1 id="objectfactory">ObjectFactory</h1>
 <p><strong>ObjectFactory are the descriptions of objects producing and/or
 consuming data streams.</strong></p>
-</blockquote>
 <ul>
 <li>They contain a list of the Stream(s) they can produce and/or
 consume.</li>
 </ul>
-<blockquote>
 <p>This implies <strong>ALL</strong> The potential streams the factory can
 provide/consume.</p>
-</blockquote>
-<blockquote>
 <p>Ex: A <strong>FileSourceFactory</strong> of a raw DV File will list the following
 streams:</p>
 <ul>
 <li>
-<code>video/x-dv,systemstream=True</code>, The container stream,</li>
+<p><code>video/x-dv,systemstream=True</code>, The container stream,</p>
+</li>
 <li>
-<code>video/x-dv,systemstream=False</code>, The I-Frame only DV video stream,</li>
+<p><code>video/x-dv,systemstream=False</code>, The I-Frame only DV video stream,</p>
+</li>
 <li>
-<code>video/x-raw-yuv</code>, The decoded raw video stream</li>
+<p><code>video/x-raw-yuv</code>, The decoded raw video stream</p>
+</li>
 <li>
-<code>audio/x-raw-int</code>, The audio stream</li>
+<p><code>audio/x-raw-int</code>, The audio stream</p>
+</li>
+<li>
+<p>They produce GStreamer elements for all, or a selected number of,
+streams.</p>
+</li>
 </ul>
-</blockquote>
-<ul>
-<li>They produce GStreamer elements for all, or a selected number of,
-streams.</li>
-</ul>
-<blockquote>
 <p>Some factories will be able to produce a different GStreamer element
 every time, some will only be able to produce one at a time (Ex:
 Video4Linux source, or audio sink with retarded backend that can have
 multiple sockets opened).</p>
-</blockquote>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
@@ -256,7 +252,7 @@ consumes/processes/produces live. Ex: a Webcam source, or a
 StreamingSink. They too require a 'record' phase in order to produce
 a local, editable, copy.</li>
 </ul>
-<p><img src="Objectfactory-hierarchy.png" alt="ObjectFactory hierarchy" title="ObjectFactory hierarchy" id="objectfactory-hierarchy">{width="600"}</p>
+<p><img src="Objectfactory-hierarchy.png" alt="ObjectFactory hierarchy" title="ObjectFactory hierarchy" id="objectfactory-hierarchy"></p>
 
     </div>
         

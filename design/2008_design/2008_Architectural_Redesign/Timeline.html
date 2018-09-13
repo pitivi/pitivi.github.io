@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Overall</title>
+<title>Timeline</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
@@ -102,7 +102,7 @@ $('body').removeClass('no-script');
 <div id="body">
 	<div id="main">
 				    <div id="page-description" data-hotdoc-source="Timeline.md" data-hotdoc-role="main">
-        <h1 id="overall">Overall</h1>
+        <h1 id="timeline">Timeline</h1>
 <p>The <strong>Timeline</strong> object:</p>
 <p>Those TimelineObjects can control one or many TrackObjects from one or
 many Tracks of the Timeline.</p>
@@ -113,7 +113,6 @@ taking place on the overall Timeline, or on the individual Tracks.</p>
 <p>This allows both creating simple and complex UI while offering the
 same interfaces</p>
 </blockquote>
-<p>.</p>
 <p><strong>All of the following editing actions must be done on the <code>Timeline</code>,
 <code>TimelineObject</code>(s) or <code>TimelineSelection</code>s</strong> and not on the <code>Track</code>(s)
 or <code>TrackObject(s)</code>:</p>
@@ -151,39 +150,39 @@ keep the modifications of those properties in sync
 rendering, ...).</li>
 </ul>
 <h2 id="timeline-properties">Timeline properties</h2>
-<p><code>tracks</code> : Ordered list of <code>Tracks</code> controlled by the <code>Timeline</code><br>
-<code>selections</code> : List of <code>TimelineSelection</code> in use.<br>
-<code>objects</code> : Ordered list of <code>TimelineObject</code> controlled by the <code>Timeline</code>. First ordered by <code>start</code> property, and then by <code>priority</code>.<br>
+<p><code>tracks</code> : Ordered list of <code>Tracks</code> controlled by the <code>Timeline</code>
+<code>selections</code> : List of <code>TimelineSelection</code> in use.
+<code>objects</code> : Ordered list of <code>TimelineObject</code> controlled by the <code>Timeline</code>. First ordered by <code>start</code> property, and then by <code>priority</code>.
 <code>factory</code> : The <code>TimelineFactory</code> to use in <code>Pipeline</code>s.</p>
 <h2 id="track-properties">Track properties</h2>
-<p><code>objects</code> : Ordered list of <code>TrackObject</code>s controlled by the Track.<br>
+<p><code>objects</code> : Ordered list of <code>TrackObject</code>s controlled by the Track.
 <code>stream</code> : The <code>Stream</code> of the Track.</p>
 <h2 id="timelineobject-properties">TimelineObject properties</h2>
-<p><a href="image:anatomy_of_timeline_object.png.md">thumb</a></p>
+<p><img src="design/2008_design/2008_Architectural_Redesign/images/Anatomy_of_timeline_object.png" alt=""></p>
 <p><code>factory</code> : The ObjectFactory this TimelineObject corresponds to.
 :   None is an accepted value</p>
-<p><code>start</code> : The position of the TimelineObject.<br>
-<code>duration</code> : The duration of the TimelineObject.<br>
-<code>in-point</code> : The in-point of the contents of the TimelineObject.<br>
-<code>out-point</code> : The out-point of the contents of the TimelineObject.<br>
-<code>priority</code> : The priority of the TimelineObject.<br>
-<code>min-start</code> : The earliest time to which we can set the start property of the TimelineObject with the trimStart method<br>
+<p><code>start</code> : The position of the TimelineObject.
+<code>duration</code> : The duration of the TimelineObject.
+<code>in-point</code> : The in-point of the contents of the TimelineObject.
+<code>out-point</code> : The out-point of the contents of the TimelineObject.
+<code>priority</code> : The priority of the TimelineObject.
+<code>min-start</code> : The earliest time to which we can set the start property of the TimelineObject with the trimStart method
 <code>max-duration</code> : The maximum value we can set the duration property of the TimelienObject to</p>
 <!-- -->
-<p>; <code>track-objects</code> :: The TrackObject(s) it the TimelineObject controls.<br>
-; <code>track</code> : the track to which the object belongs<br>
-; <code>object</code> : The actual TrackObject<br>
-; <code>time-offset</code> : The offset between the TimelineObject <code>start</code> position and the TrackObject <code>start</code> position. ALWAYS POSITIVE.<br>
+<p>; <code>track-objects</code> :: The TrackObject(s) it the TimelineObject controls.
+; <code>track</code> : the track to which the object belongs
+; <code>object</code> : The actual TrackObject
+; <code>time-offset</code> : The offset between the TimelineObject <code>start</code> position and the TrackObject <code>start</code> position. ALWAYS POSITIVE.
 ; <code>priority-offset</code> : The offset between the TimelineObject <code>priority</code> and the TrackObject <code>priority</code>. ALWAYS POSITIVE.</p>
 <h2 id="timelineselection-properties">TimelineSelection properties</h2>
 <p><code>objects</code> : The list of TimelineObject controlled by the <code>TimelineSelection</code></p>
 <h2 id="trackobject-properties">TrackObject properties</h2>
-<p><a href="image:Anatomy_of_trackobject.png.md">thumb</a></p>
-<p><code>parent</code> : The <code>TimelineObject</code> controlling this <code>TrackObject</code>. All the properties below <strong>MUST NOT BE MODIFIED DIRECTLY</strong> but through the <code>parent</code> TimelineObject.<br>
-<code>start</code> : The position of the TrackObject.<br>
-<code>duration</code> : The duration of the TrackObject.<br>
-<code>in-point</code> : The in-point of the contents of the TrackObject.<br>
-<code>out-point</code> : The out-point of the contents of the TrackObject.<br>
+<p><img src="design/2008_design/2008_Architectural_Redesign/images/Anatomy_of_trackobject.png" alt=""></p>
+<p><code>parent</code> : The <code>TimelineObject</code> controlling this <code>TrackObject</code>. All the properties below <strong>MUST NOT BE MODIFIED DIRECTLY</strong> but through the <code>parent</code> TimelineObject.
+<code>start</code> : The position of the TrackObject.
+<code>duration</code> : The duration of the TrackObject.
+<code>in-point</code> : The in-point of the contents of the TrackObject.
+<code>out-point</code> : The out-point of the contents of the TrackObject.
 <code>priority</code> : The priority of the TrackObject.</p>
 <h1 id="relationships">Relationships</h1>
 <h2 id="between-timeline-and-tracks">Between Timeline and Track(s)</h2>

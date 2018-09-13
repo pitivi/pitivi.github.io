@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "broken", "urls": [{"url": "releases/0-999.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "releases/0-94.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token": "broken", "urls": [{"url": "releases/0-999.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "attic.html#page-description", "context": {"gi-language": ["default"]}}]});

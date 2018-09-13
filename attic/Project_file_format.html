@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href="..">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Preamble</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+<link rel="shortcut icon" href="assets/images/favicon.png">
+
+</head>
+
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/pitivi.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p><b>The Pitivi Developer Documentation</b></p>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="attic/Project_file_format.html" class="page_container" id="page-wrapper">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+	<script src="assets/js/sitemap.js"></script>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-source="Project_file_format.md" data-hotdoc-role="main">
+        <h1 id="preamble">Preamble</h1>
+<p>Although video editors are complex by nature, the information they need
+to create a timeline is rather lightweight compared to the data they
+process. There is therefore no need to create a memory-efficient and/or
+binary file format. It is more important to have an format which is
+<strong>easy to parse and extensible</strong>, an <strong>XML-based</strong> format is therefore
+chosen.</p>
+<h1 id="requirements">Requirements</h1>
+<p>The various information we need to store can be summarized in 3
+categories:</p>
+<ul>
+<li>
+<strong>Global project information</strong>
+<ul>
+<li>metadata: title, comment, revision history, authors, ...</li>
+<li>sources, ...</li>
+<li>export settings, ...</li>
+<li>...</li>
+</ul>
+</li>
+<li>
+<strong>Timeline specific information</strong>
+<ul>
+<li>tracks, layers</li>
+<li>layout of sources/effects/transitions,</li>
+<li>...</li>
+</ul>
+</li>
+<li>
+<strong>Extensions information</strong>
+<ul>
+<li>Parsing/Serializing done by extension plugins.</li>
+</ul>
+</li>
+</ul>
+<h1 id="specification">Specification</h1>
+<h1 id="implementation-sample">Implementation sample</h1>
+<p><strong>This page was a draft from 2007</strong>. It badly needs to be updated. Help
+welcome!</p>
+<pre><code class="language-xml">&lt;?xml version="1.0"?&gt;
+&lt;project xmlns='http://www.pitivi.org/projectxml'&gt;
+    &lt;formatversion&gt;1&lt;/formatversion&gt;
+    &lt;title&gt;Insane video&lt;/title&gt;
+    &lt;comment&gt;
+        This is my very first video done with PiTiVi.
+    &lt;/comment&gt;
+    &lt;authors&gt;
+        &lt;author id="0" name="Edward Hervey" /&gt;
+        &lt;author id="1" name="George Lucas" /&gt;
+    &lt;/authors&gt;
+    &lt;history&gt;
+        &lt;revision id="0" date="Mon 25 Sep 2006 12:00" who="0" &gt;Initial version&lt;/revision&gt;
+        &lt;revision id="1" date="Mon 25 Sep 2006 12:25" who="1" /&gt;
+    &lt;/history&gt;
+    &lt;sources&gt;
+    &lt;/sources&gt;
+    &lt;timeline&gt;
+        &lt;composition type="video"&gt;
+            &lt;transitions&gt;
+                &lt;transition type="fade" start="2000000000" duration="2000000000" /&gt;
+            &lt;/transitions&gt;
+            &lt;sources&gt;{startFrom="0"}&lt;/sources&gt;
+        &lt;/composition&gt;
+        &lt;composition type="audio"&gt;
+            &lt;transitions&gt;
+                &lt;transition start="2000000000" duration="200000000" /&gt;
+            &lt;/transitions&gt;
+        &lt;/composition&gt;
+    &lt;/timeline&gt;
+&lt;/project&gt;
+</code></pre>
+
+    </div>
+        
+
+
+
+
+		
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<hr>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/attic/Project_file_format.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>
