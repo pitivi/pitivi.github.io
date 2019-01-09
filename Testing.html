@@ -114,18 +114,18 @@ smaller and simpler; since most of the core functionality is now handled
 by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
 you want to test more thoroughly.</p>
 <h2 id="unit-tests">Unit tests</h2>
-<p>You can run the unit tests with:</p>
-<pre><code>ninja -C mesonbuild/ test
+<p>You can run the unit tests with one of:</p>
+<pre><code>$ ptvtests
 </code></pre>
 <p>If you want to run only one particular unit test, use (assuming you are in
-our flatpak based environment):</p>
-<pre><code>ptvtests tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat
+our flatpak based development environment):</p>
+<pre><code>$ ptvtests -t tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat
 </code></pre>
 <p>Listing tests:</p>
-<pre><code>ptvtests -L
+<pre><code>$ ptvtests -L
 </code></pre>
-<p>NOTE: If you are not in our environment, replace <code>ptvtests</code> with
-<code>gst-validate-launcher tests/ptv_testsuite.py</code>.)</p>
+<p>NOTE: If you are not in our dev env, replace <code>ptvtests</code> with
+<code>gst-validate-launcher tests/ptv_testsuite.py</code>.</p>
 <h3 id="writing-unit-tests">Writing unit tests</h3>
 <p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
 as it's now integrated into
@@ -152,7 +152,7 @@ have additional checks.</p>
 automatically</a>
 each time Pitivi is used.</p>
 <p>You can run the integration tests with:</p>
-<pre><code>tests/validate-tests/runtests
+<pre><code>$ tests/validate-tests/runtests
 </code></pre>
 
     </div>
