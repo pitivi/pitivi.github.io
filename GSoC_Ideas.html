@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href=".">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>GSoC Project Ideas</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/trie.js"></script>
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+
+<link rel="shortcut icon" href="assets/images/favicon.png">
+
+</head>
+
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/pitivi.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p><b>The Pitivi Developer Documentation</b></p>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="GSoC_Ideas.html" class="page_container" id="page-wrapper">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+	<script src="assets/js/sitemap.js"></script>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-source="GSoC_Ideas.md" data-hotdoc-role="main">
+        <h1 id="gsoc-project-ideas">GSoC Project Ideas</h1>
+<p>These ideas can be used as a base for writing a detailed project proposal if you want to apply for a <a href="Google_Summer_of_Code.html">GSoC internship</a>. You are welcome to come up with your own ideas.</p>
+<h2 id="media-library-improvements">Media Library improvements</h2>
+<ul>
+<li>Brief explanation: The first task would be to refactor the Media Library, to <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/1343">replace the two separate widgets</a> we use for the list view and the icon view with a single flexible <a href="https://lazka.github.io/pgi-docs/#Gtk-3.0/classes/FlowBox.html#Gtk.FlowBox">Gtk.FlowBox</a> widget. The second task would be to <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/537">allow basic tagging of clips in the Media Library</a>, and extend the search functionality to work on tags. The remaining time could be allocated to prepare for advanced clips filtering in the Media Library, based on tags.</li>
+<li>Requirements: Python, eye for detail. Minimal experience contributing to Pitivi.</li>
+<li>Mentor: Alexandru "aleb" Băluț</li>
+</ul>
+<h2 id="effects-usability">Effects usability</h2>
+<ul>
+<li>Brief explanation: The main task would be to improve the Effects discovery experience, and find a way to make a set of <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/2146">whitelisted effects easily accessible</a>. We should take into account also the effects used most often by the user. Depending on what ideas we explore and how much this takes, a potential second task is related to the consistency of the UI for configuring effects. For example, quite a few effects for which the configuration UI is generated automatically allow specifying a color, but the UI is very rough—We should create a polished widget to be reused in all these cases for selecting or specifying a color.</li>
+<li>Requirements: Python, eye for detail. Minimal experience contributing to Pitivi. Experience with GStreamer would be a big plus.</li>
+<li>Mentor: Alexandru "aleb" Băluț</li>
+</ul>
+<h2 id="timeline-interval">Timeline interval</h2>
+<ul>
+<li>Brief explanation: The initial task would be to allow the user to specify an <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/1842">interval on the timeline</a>. The next tasks follow up on this: playing the interval in a loop, or <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/1006">rendering only the interval</a> instead of the entire timeline of the project, or zoom-fitting the timeline on the selected interval.</li>
+<li>Requirements: Python. Minimal experience contributing to Pitivi. Experience with GStreamer would be a big plus.</li>
+<li>Mentor: Alexandru "aleb" Băluț</li>
+</ul>
+<h2 id="render-experience">Render experience</h2>
+<ul>
+<li>Brief explanation: The Render dialog has options the users should not normally need to care about. This will be an exploratory task involving usability studies with people. You'll have the opportunity to learn about usability studies. We'll be in close contact with the GNOME Designers team. The experience when using the Encoder Settings dialog could similarly be improved for one or more important encoders.</li>
+<li>Requirements: Python, eye for detail. Minimal experience contributing to Pitivi. Experience with GStreamer would be a big plus.</li>
+<li>Mentor: Alexandru "aleb" Băluț</li>
+</ul>
+<h2 id="render-queue">Render queue</h2>
+<ul>
+<li>Brief explanation: Currently when starting a render, the edit functionality is blocked until the render is done. The main task would be to render in the background. The second task would be to have a render queue with a simple management UI.</li>
+<li>Requirements: Python. Minimal experience contributing to Pitivi. Experience with GStreamer would be a big plus.</li>
+<li>Mentor: Mathieu Duponchelle</li>
+</ul>
+<h2 id="nested-timelinesprojects">Nested timelines/projects</h2>
+<ul>
+<li>Brief explanation: The user should be able to use a project as if it was a clip in the timeline, allowing to <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/500">separate the scene in different sub projects</a> to better organize complex projects. The focus will be on the User Interface to expose the feature that needs to be finalized in <a href="GES.html">GStreamer Editing Services</a>. A usability study can be performed, which you have the opportunity to learn about.</li>
+<li>Requirements: Python. Minimal experience contributing to Pitivi. Experience with the GStreamer Editing Services would be a big plus.</li>
+<li>Mentor: Thibault "thiblahute" Saunier</li>
+</ul>
+<h2 id="fix-gpu-support-in-pitivi">Fix GPU support in Pitivi</h2>
+<ul>
+<li>Brief explanation: GStreamer has pretty good GPU support through the OpenGL set of plugins, but Pitivi/GES is not able to take full advantage of that infrastructure yet, mainly because of lack of testing and bug fixing on our side. This project is about enabling GL plugins for compositing and rendering and fix any issue that shows up. The second part would be about making sure hardware accelerated decoders can be used in the pipelines.</li>
+<li>Requirements: C. Experience with GStreamer is mandatory. Minimal experience contributing to Pitivi. Experience with OpenGL is a plus.</li>
+<li>Mentor: Thibault "thiblahute" Saunier</li>
+</ul>
+
+    </div>
+        
+
+
+
+
+		
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<hr>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/GSoC_Ideas.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>
