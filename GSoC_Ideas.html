@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -105,6 +105,18 @@ $('body').removeClass('no-script');
         <h1 id="gsoc-project-ideas">GSoC Project Ideas</h1>
 <p>These ideas can be used as a base for writing a detailed project proposal if you want to apply for a <a href="Google_Summer_of_Code.html">GSoC internship</a>. You are welcome to come up with your own ideas.</p>
 <p>To create a detailed proposal, use <a href="https://wiki.gnome.org/Outreach/SummerOfCode/Students#Fill_out_the_Application">GNOME's GSoC application template</a>.</p>
+<h2 id="focus-on-the-music">Focus on the music</h2>
+<ul>
+<li>Brief explanation: Often people want to pick a nice tune and then sync their weekend clips on it. To make this easy, Pitivi can detect the beats using a 3rd party library, and allow aligning and cutting the clips to the beat. It might sound easy, but the entire experience should be super-polished so everybody can do it.</li>
+<li>Requirements: Python, C. Minimal experience contributing to Pitivi.</li>
+<li>Mentor: Mathieu Duponchelle</li>
+</ul>
+<h2 id="face-blurring">Face blurring</h2>
+<ul>
+<li>Brief explanation: We should make it easy to blur faces. We can use an existing 3rd party plugin to analyze the video and report the location of the faces. The resulting data can be used to blur a specific face. The challenge is making this process as friendly as possible.</li>
+<li>Requirements: Python. Minimal experience contributing to Pitivi.</li>
+<li>Mentor: Mathieu Duponchelle</li>
+</ul>
 <h2 id="media-library-improvements">Media Library improvements</h2>
 <ul>
 <li>Brief explanation: The first task would be to refactor the Media Library, to <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/1343">replace the two separate widgets</a> we use for the list view and the icon view with a single flexible <a href="https://lazka.github.io/pgi-docs/#Gtk-3.0/classes/FlowBox.html#Gtk.FlowBox">Gtk.FlowBox</a> widget. The second task would be to <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/537">allow basic tagging of clips in the Media Library</a>, and extend the search functionality to work on tags. The remaining time could be allocated to prepare for advanced clips filtering in the Media Library, based on tags.</li>
