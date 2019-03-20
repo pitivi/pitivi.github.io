@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Testing</title>
+<title>How to interact with the timeline</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
@@ -91,7 +91,7 @@ $('body').removeClass('no-script');
 </nav>
 
 <main>
-<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Testing.html" class="page_container" id="page-wrapper">
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Gap_Remover_plugin.html" class="page_container" id="page-wrapper">
 <script src="assets/js/utils.js"></script>
 
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
@@ -101,59 +101,65 @@ $('body').removeClass('no-script');
 
 <div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="Testing.md" data-hotdoc-role="main">
-        <h1 id="testing">Testing</h1>
-<p>We have three sets of tests:</p>
+				    <div id="page-description" data-hotdoc-source="Gap_Remover_plugin.md" data-hotdoc-role="main">
+        <h1 id="how-to-interact-with-the-timeline">How to interact with the timeline</h1>
+<p>Let's add a button for removing the gaps between clips!</p>
+<p><img src="images/Plugins_Gap_Remover-1.gif" alt=""></p>
+<p>Follow the steps in the <a href="Plugins.html">hello world example</a> to create a plugin directory and a plugin info file. What's left is to create the Python module with the logic.</p>
+<h2 id="adding-the-new-button">Adding the new button</h2>
+<p>Since the button is related to the timeline, we add it in the timeline toolbar, at the right of the timeline.</p>
+<pre><code class="language-python">from gi.repository import GObject
+from gi.repository import Gtk
+from gi.repository import Peas
+
+class GapRemover(GObject.Object, Peas.Activatable):
+
+    object = GObject.Property(type=GObject.Object)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        self.app = self.object.app
+        self.button = Gtk.ToolButton.new_from_stock(Gtk.STOCK_STRIKETHROUGH)
+        self.button.set_tooltip_text("Remove gaps between clips")
+        self.button.show()
+
+        toolbar = self.app.gui.editor.timeline_ui.toolbar
+        toolbar.add(self.button)
+</code></pre>
+<p>At this point, you can re-start Pitivi, activate the plugin and notice the new button in the UI!</p>
+<h2 id="making-it-dance">Making it dance</h2>
+<p>The interesting part is the <code>__clicked_cb</code> callback method, which is connected to the button's "clicked" signal:</p>
+<pre><code class="language-python">
+    def do_activate(self):
+        ...
+        self.button.connect("clicked", self.__clicked_cb)
+
+    def __clicked_cb(self, unused_button):
+        timeline = self.app.gui.editor.timeline_ui.timeline
+        clips = sorted(timeline.selection, key=lambda x : x.get_start())
+        if len(clips) &gt;= 2:
+            timeline.current_group.ungroup(False)  # https://gitlab.gnome.org/GNOME/pitivi/issues/2288
+            previous = clips[0]
+            for clip in clips[1:]:
+                clip.set_start(previous.get_start() + previous.get_duration())
+                previous = clip
+</code></pre>
+<p>Finally, we can add some cleanup logic when the plugin is deactivated, because we're nice:</p>
+<pre><code class="language-python">    def do_deactivate(self):
+        self.app.gui.editor.timeline_ui.toolbar.remove(self.button)
+</code></pre>
+<h2 id="making-it-shine">Making it shine</h2>
+<p>The plugin can be improved by:</p>
 <ul>
-<li>the normal unit tests (ninja test)</li>
-<li>integration tests using GstValidate.</li>
-<li><a href="QA_Scenarios.html">manual tests</a></li>
+<li>Associating the action with a keyboard shortcut.</li>
+<li>Checking whether the clips are <a href="http://www.pitivi.org/manual/selectiongrouping.html">grouped</a>, because the entire group moves when a clip in the group is moved, so they should be dealt with somehow.</li>
+<li>Making the operation undoable by wrapping it in a <code>with self.app.action_log.started("add clip", toplevel=True):</code>.</li>
+<li>Disabling the button automatically when <code>timeline.selection</code> contains less than two clips.</li>
+<li>Making it work for the entire timeline in case there is no selection.</li>
 </ul>
-<p>Since version <a href="releases/0-91.html">0.91</a>, our backend test suite is much
-smaller and simpler; since most of the core functionality is now handled
-by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
-you want to test more thoroughly.</p>
-<h2 id="unit-tests">Unit tests</h2>
-<p>You can run the unit tests with one of:</p>
-<pre><code>$ ptvtests
-</code></pre>
-<p>If you want to run only one particular unit test, use (assuming you are in
-our flatpak based development environment):</p>
-<pre><code>$ ptvtests -t tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat
-</code></pre>
-<p>Listing tests:</p>
-<pre><code>$ ptvtests -L
-</code></pre>
-<p>NOTE: If you are not in our dev env, replace <code>ptvtests</code> with
-<code>gst-validate-launcher tests/ptv_testsuite.py</code>.</p>
-<h3 id="writing-unit-tests">Writing unit tests</h3>
-<p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
-as it's now integrated into
-<a href="http://docs.python.org/dev/library/unittest.mock">Python3</a> which we use
-as of <a href="releases/0-94.html">0.94</a>.</p>
-<p>If you're curious about our unit tests, the best way to get to know them
-is to write a few Pitivi unit tests and have us review them. Check out
-<a href="HACKING.html">how to set up your dev env</a> and
-come in our <a href="http://www.pitivi.org/?go=contact">IRC channel</a>!</p>
-<h2 id="integration-tests">Integration tests</h2>
-<p>The integration tests are run with GstValidate. They are located in the
-<a href="https://git.gnome.org/browse/pitivi/tree/tests/validate-tests">tests/validate-tests</a>
-directory. Each <code>.scenario</code> file in the
-<a href="https://github.com/pitivi/pitivi/tree/master/tests/validate-tests/scenarios">scenarios</a>
-subdirectory contains a sequence of actions which represent a test.</p>
-<p>When a test is run, the actions in the scenario are performed by
-handlers in
-<a href="https://github.com/pitivi/pitivi/blob/master/pitivi/utils/validate.py">pitivi/utils/validate.py</a>,
-or by handlers in GES. The handlers generally act on the widgets and
-check the expected effect has been obtained on the GES objects. Besides
-the checks integrated in the handlers, for now it is not possible to
-have additional checks.</p>
-<p>A scenario file is <a href="http://developer.pitivi.org/Bug_reporting.html#sharing-sample-files-projects-and-scenarios">created
-automatically</a>
-each time Pitivi is used.</p>
-<p>You can run the integration tests with:</p>
-<pre><code>$ tests/validate-tests/runtests
-</code></pre>
+<p>Check out the Pitivi code and the <a href="http://lazka.github.io/pgi-docs/#GES-1.0">GES API</a> to see what can be done, and tell us what you are hacking!</p>
 
     </div>
         
@@ -161,14 +167,7 @@ each time Pitivi is used.</p>
 
 
 
-		<div id="subpages">
-	<p><b>Subpages:</b></p>
-			<p>
-		<a href="QA_Scenarios.html">Standard QA Scenarios</a>
-		–
-					<i><em>No description available</em></i>
-				</p>
-	</div>
+		
 	</div>
 	<div id="search_results">
 		<p>The results of the search are</p>
@@ -183,7 +182,7 @@ each time Pitivi is used.</p>
 <div id="toc-column">
 	
 		<div class="edit-button">
-		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/Testing.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
+		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/Gap_Remover_plugin.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
 
 	</div>
 		<div id="toc-wrapper">

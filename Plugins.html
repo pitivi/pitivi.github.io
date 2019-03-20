@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Testing</title>
+<title>Plugins</title>
 
 <link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
@@ -91,7 +91,7 @@ $('body').removeClass('no-script');
 </nav>
 
 <main>
-<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Testing.html" class="page_container" id="page-wrapper">
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Plugins.html" class="page_container" id="page-wrapper">
 <script src="assets/js/utils.js"></script>
 
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
@@ -101,59 +101,57 @@ $('body').removeClass('no-script');
 
 <div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="Testing.md" data-hotdoc-role="main">
-        <h1 id="testing">Testing</h1>
-<p>We have three sets of tests:</p>
-<ul>
-<li>the normal unit tests (ninja test)</li>
-<li>integration tests using GstValidate.</li>
-<li><a href="QA_Scenarios.html">manual tests</a></li>
-</ul>
-<p>Since version <a href="releases/0-91.html">0.91</a>, our backend test suite is much
-smaller and simpler; since most of the core functionality is now handled
-by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
-you want to test more thoroughly.</p>
-<h2 id="unit-tests">Unit tests</h2>
-<p>You can run the unit tests with one of:</p>
-<pre><code>$ ptvtests
+				    <div id="page-description" data-hotdoc-source="Plugins.md" data-hotdoc-role="main">
+        <h1 id="plugins">Plugins</h1>
+<p>Pitivi's <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/pluginmanager.py">Plugin Manager</a> is based on <a href="https://wiki.gnome.org/Projects/Libpeas">libpeas</a>. Currently we only support plugins written in Python 3.</p>
+<h2 id="location">Location</h2>
+<p>There are two directories where Pitivi is looking for plugins. One is the system plugins directory, where the system administrator can install and manage the plugins for your corporation. Normally you'll find here the <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/plugins">plugins we ship by default</a>. The other is the user plugins directory, where you can hack your own plugin.</p>
+<p>Depending on how you installed Pitivi, these directories can have different locations. In the Plugins tab in the Preferences window you should be able to find out the location of the two directories. Normally the user plugins should be in <code>~/.local/share/pitivi/plugins/</code>, which should be created if it does not exist.</p>
+<h2 id="hello-world">Hello World</h2>
+<p>Each plugin must have its own directory, so start with creating a directory, for example <code>hello</code>.</p>
+<p>To provide some info about the plugin, create a <a href="https://developer.gnome.org/libpeas/stable/PeasPluginInfo.html">plugin info file</a>, for example <code>hello/world.plugin</code>:</p>
+<pre><code class="language-ini">[Plugin]
+Name=Hello World
+Description=A very simple plugin.
+Authors=...
+website=...
+Copyright=...
+
+Loader=python3
+Module=world
 </code></pre>
-<p>If you want to run only one particular unit test, use (assuming you are in
-our flatpak based development environment):</p>
-<pre><code>$ ptvtests -t tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat
+<p>The "Loader=python3" and "Module=world" above specify the plugin is loaded from the <code>hello/world.py</code> Python module. It should contain at least one class implementing the <a href="https://lazka.github.io/pgi-docs/#Peas-1.0/classes/Activatable.html#Peas.Activatable">Peas.Activatable</a> interface:</p>
+<pre><code class="language-python">from gi.repository import GObject
+from gi.repository import Peas
+
+class HelloWorld(GObject.Object, Peas.Activatable):
+
+    object = GObject.Property(type=GObject.Object)
+
+    def __init__(self):
+        GObject.Object.__init__(self)
+
+    def do_activate(self):
+        print("Hello World!", self.object)
+
+    def do_deactivate(self):
+        print("Bye!")
 </code></pre>
-<p>Listing tests:</p>
-<pre><code>$ ptvtests -L
+<p>Start Pitivi, activate the plugin in Preferences &gt; Plugins, and notice "Hello World!" in the console.</p>
+<p><img src="images/Plugins_Hello_World_preferences.png" alt=""></p>
+<h2 id="api">API</h2>
+<p>There is no API really. Plugins have full access to the entire app. Needless to say, they will break sooner or later, as we refactor parts of the app. Use them to have fun and try things out. If you think more people would be interested in them, <a href="http://www.pitivi.org/?go=contact">talk with us</a> to see what we can do to help them survive.</p>
+<p>The entire Pitivi instance is provided through <code>self.object.app</code> in the <code>do_activate</code> method:</p>
+<pre><code class="language-python">    def do_activate(self):
+        # Keep a reference to the app so you can access later
+        # the current project, for example.
+        self.app = self.object.app
+
+        # You can access the MainWindow to add your widgets, or
+        # change the behavior of the existing widgets.
+        main_window = self.app.gui
 </code></pre>
-<p>NOTE: If you are not in our dev env, replace <code>ptvtests</code> with
-<code>gst-validate-launcher tests/ptv_testsuite.py</code>.</p>
-<h3 id="writing-unit-tests">Writing unit tests</h3>
-<p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
-as it's now integrated into
-<a href="http://docs.python.org/dev/library/unittest.mock">Python3</a> which we use
-as of <a href="releases/0-94.html">0.94</a>.</p>
-<p>If you're curious about our unit tests, the best way to get to know them
-is to write a few Pitivi unit tests and have us review them. Check out
-<a href="HACKING.html">how to set up your dev env</a> and
-come in our <a href="http://www.pitivi.org/?go=contact">IRC channel</a>!</p>
-<h2 id="integration-tests">Integration tests</h2>
-<p>The integration tests are run with GstValidate. They are located in the
-<a href="https://git.gnome.org/browse/pitivi/tree/tests/validate-tests">tests/validate-tests</a>
-directory. Each <code>.scenario</code> file in the
-<a href="https://github.com/pitivi/pitivi/tree/master/tests/validate-tests/scenarios">scenarios</a>
-subdirectory contains a sequence of actions which represent a test.</p>
-<p>When a test is run, the actions in the scenario are performed by
-handlers in
-<a href="https://github.com/pitivi/pitivi/blob/master/pitivi/utils/validate.py">pitivi/utils/validate.py</a>,
-or by handlers in GES. The handlers generally act on the widgets and
-check the expected effect has been obtained on the GES objects. Besides
-the checks integrated in the handlers, for now it is not possible to
-have additional checks.</p>
-<p>A scenario file is <a href="http://developer.pitivi.org/Bug_reporting.html#sharing-sample-files-projects-and-scenarios">created
-automatically</a>
-each time Pitivi is used.</p>
-<p>You can run the integration tests with:</p>
-<pre><code>$ tests/validate-tests/runtests
-</code></pre>
+<p>For an advanced example, check out how to create a plugin for <a href="Advanced_plugin.html">automating the operations with the clips in the timeline</a>.</p>
 
     </div>
         
@@ -164,9 +162,9 @@ each time Pitivi is used.</p>
 		<div id="subpages">
 	<p><b>Subpages:</b></p>
 			<p>
-		<a href="QA_Scenarios.html">Standard QA Scenarios</a>
+		<a href="Advanced_plugin.html">How to interact with the timeline</a>
 		–
-					<i><em>No description available</em></i>
+					An advanced plugin example
 				</p>
 	</div>
 	</div>
@@ -183,7 +181,7 @@ each time Pitivi is used.</p>
 <div id="toc-column">
 	
 		<div class="edit-button">
-		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/Testing.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
+		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/Plugins.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
 
 	</div>
 		<div id="toc-wrapper">
