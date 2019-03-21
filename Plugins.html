@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -105,8 +105,8 @@ $('body').removeClass('no-script');
         <h1 id="plugins">Plugins</h1>
 <p>Pitivi's <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/pluginmanager.py">Plugin Manager</a> is based on <a href="https://wiki.gnome.org/Projects/Libpeas">libpeas</a>. Currently we only support plugins written in Python 3.</p>
 <h2 id="location">Location</h2>
-<p>There are two directories where Pitivi is looking for plugins. One is the system plugins directory, where the system administrator can install and manage the plugins for your corporation. Normally you'll find here the <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/plugins">plugins we ship by default</a>. The other is the user plugins directory, where you can hack your own plugin.</p>
-<p>Depending on how you installed Pitivi, these directories can have different locations. In the Plugins tab in the Preferences window you should be able to find out the location of the two directories. Normally the user plugins should be in <code>~/.local/share/pitivi/plugins/</code>, which should be created if it does not exist.</p>
+<p>There are two directories where Pitivi is looking for plugins. One is the system plugins directory, where normally you'll find the <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/plugins">plugins we ship by default</a>. The other is the user plugins directory, where you can hack your own plugin.</p>
+<p>Depending on how you installed Pitivi, these directories can have different locations. In the Plugins tab in the Preferences window you should be able to find out the location of the two directories.</p>
 <h2 id="hello-world">Hello World</h2>
 <p>Each plugin must have its own directory, so start with creating a directory, for example <code>hello</code>.</p>
 <p>To provide some info about the plugin, create a <a href="https://developer.gnome.org/libpeas/stable/PeasPluginInfo.html">plugin info file</a>, for example <code>hello/world.plugin</code>:</p>
@@ -120,16 +120,13 @@ Copyright=...
 Loader=python3
 Module=world
 </code></pre>
-<p>The "Loader=python3" and "Module=world" above specify the plugin is loaded from the <code>hello/world.py</code> Python module. It should contain at least one class implementing the <a href="https://lazka.github.io/pgi-docs/#Peas-1.0/classes/Activatable.html#Peas.Activatable">Peas.Activatable</a> interface:</p>
+<p>The "Loader=python3" and "Module=world" above specify the plugin is loaded from the <code>hello/world.py</code> Python module. The module should contain at least one class implementing the <a href="https://lazka.github.io/pgi-docs/#Peas-1.0/classes/Activatable.html#Peas.Activatable">Peas.Activatable</a> interface:</p>
 <pre><code class="language-python">from gi.repository import GObject
 from gi.repository import Peas
 
 class HelloWorld(GObject.Object, Peas.Activatable):
 
     object = GObject.Property(type=GObject.Object)
-
-    def __init__(self):
-        GObject.Object.__init__(self)
 
     def do_activate(self):
         print("Hello World!", self.object)
