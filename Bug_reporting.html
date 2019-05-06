@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -195,7 +195,7 @@ see below.</p>
 <ol>
 <li>Make sure you have the GNOME Sdk and Debug symbols installed:</li>
 </ol>
-<pre><code>GNOME_REPO=$(flatpak info org.gnome.Platform//3.24 | grep Origin | awk '{ print $2 }')
+<pre><code>GNOME_REPO=$(flatpak info org.gnome.Platform//3.32 | grep Origin | awk '{ print $2 }')
 for i in $(flatpak list | grep org.pitivi.Pitivi/ | awk '{ print $1 }'); do
   flatpak install --user $GNOME_REPO $(flatpak info $i |grep Runtime |awk '{ print $2 }' |sed s/Platform/Sdk/)
   flatpak update --user $(flatpak info $i |grep Runtime |awk '{ print $2 }' |sed s/Platform/Sdk/)
