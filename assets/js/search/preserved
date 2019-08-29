@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "preserved", "urls": [{"url": "design/2008_design/2008_UI_Design.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/Multi-Layer_Editing.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"preserved","urls":[{"url":"design/2008_design/2008_UI_Design.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"design/Multi-Layer_Editing.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});

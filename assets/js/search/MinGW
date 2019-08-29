@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "MinGW", "urls": [{"url": "attic/Building_with_Windows.html#mingw", "context": {"gi-language": ["default"]}}, {"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"MinGW","urls":[{"url":"attic/Building_with_Windows.html#mingw","node_type":"h2","context":{"gi-language":["default"]}},{"url":"attic/Building_with_Windows.html#page-description","node_type":"ul","context":{"gi-language":["default"]}}]});

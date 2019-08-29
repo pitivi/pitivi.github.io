@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "brew", "urls": [{"url": "Mac_OS_X.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"brew","urls":[{"url":"Mac_OS_X.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "considerations", "urls": [{"url": "design/2008_design/2008_Plugin_Interface_development.html#design-considerations", "context": {"gi-language": ["default"]}}, {"url": "design/Plugins.html#considerations", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"considerations","urls":[{"url":"design/2008_design/2008_Plugin_Interface_development.html#design-considerations","node_type":"h3","context":{"gi-language":["default"]}},{"url":"design/Plugins.html#considerations","node_type":"h2","context":{"gi-language":["default"]}}]});

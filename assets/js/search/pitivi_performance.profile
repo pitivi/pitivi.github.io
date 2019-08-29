@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "pitivi_performance.profile", "urls": [{"url": "Bug_reporting.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"pitivi_performance.profile","urls":[{"url":"Bug_reporting.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});

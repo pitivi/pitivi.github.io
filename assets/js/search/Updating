@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Updating", "urls": [{"url": "HACKING.html#updating-the-development-environment", "context": {"gi-language": ["default"]}}, {"url": "Install_with_flatpak.html#updating-pitivi", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"Updating","urls":[{"url":"HACKING.html#updating-the-development-environment","node_type":"h3","context":{"gi-language":["default"]}},{"url":"Install_with_flatpak.html#updating-pitivi","node_type":"h2","context":{"gi-language":["default"]}}]});

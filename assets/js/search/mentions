@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "mentions", "urls": [{"url": "Praise.html#other-mentions-in-the-media", "context": {"gi-language": ["default"]}}, {"url": "Current_events.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"mentions","urls":[{"url":"Current_events.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"Praise.html#other-mentions-in-the-media","node_type":"h2","context":{"gi-language":["default"]}}]});

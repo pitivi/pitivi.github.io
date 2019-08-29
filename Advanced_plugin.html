@@ -91,7 +91,7 @@ $('body').removeClass('no-script');
 </nav>
 
 <main>
-<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="Advanced_plugin.html" class="page_container" id="page-wrapper">
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi" data-hotdoc-ref="Advanced_plugin.html" class="page_container" id="page-wrapper">
 <script src="assets/js/utils.js"></script>
 
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
@@ -101,7 +101,7 @@ $('body').removeClass('no-script');
 
 <div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="Advanced_plugin.md" data-hotdoc-role="main">
+				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="how-to-interact-with-the-timeline">How to interact with the timeline</h1>
 <p>Let's add a button for removing the gaps between clips!</p>
 <p><img src="images/Plugins_Gap_Remover-1.gif" alt=""></p>
@@ -137,7 +137,6 @@ class GapRemover(GObject.Object, Peas.Activatable):
         timeline = self.app.gui.editor.timeline_ui.timeline
         clips = sorted(timeline.selection, key=lambda x : x.get_start())
         if len(clips) &gt;= 2:
-            timeline.current_group.ungroup(False)  # https://gitlab.gnome.org/GNOME/pitivi/issues/2288
             previous = clips[0]
             for clip in clips[1:]:
                 clip.set_start(previous.get_start() + previous.get_duration())

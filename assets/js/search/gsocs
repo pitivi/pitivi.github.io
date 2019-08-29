@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "gsocs", "urls": [{"url": "Past_GSoCs.html#past-gsocs", "context": {"gi-language": ["default"]}}, {"url": "Google_Summer_of_Code.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"gsocs","urls":[{"url":"Google_Summer_of_Code.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"Google_Summer_of_Code.html#subpages","node_type":"p","context":{"gi-language":["default"]}},{"url":"Past_GSoCs.html#past-gsocs","node_type":"h1","context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "greatly", "urls": [{"url": "releases/0-98.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"greatly","urls":[{"url":"Feroze_gsoc.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"releases/0-98.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});

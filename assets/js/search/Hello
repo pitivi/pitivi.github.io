@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "Hello", "urls": [{"url": "Plugins.html#hello-world", "context": {"gi-language": ["default"]}}, {"url": "Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"Hello","urls":[{"url":"Plugins.html#hello-world","node_type":"h2","context":{"gi-language":["default"]}},{"url":"Plugins.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"index.html#subpages","node_type":"p","context":{"gi-language":["default"]}}]});

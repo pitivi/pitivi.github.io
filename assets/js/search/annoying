@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "annoying", "urls": [{"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "Development_workflow.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"annoying","urls":[{"url":"Development_workflow.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"HACKING.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});

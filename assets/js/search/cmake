@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "cmake", "urls": [{"url": "attic/Building_with_Windows.html#cmake", "context": {"gi-language": ["default"]}}, {"url": "attic/Building_with_Windows.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"cmake","urls":[{"url":"attic/Building_with_Windows.html#cmake","node_type":"h2","context":{"gi-language":["default"]}},{"url":"attic/Building_with_Windows.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});

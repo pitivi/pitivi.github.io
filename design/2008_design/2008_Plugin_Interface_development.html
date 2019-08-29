@@ -91,7 +91,7 @@ $('body').removeClass('no-script');
 </nav>
 
 <main>
-<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi-1.0" data-hotdoc-ref="design/2008_design/2008_Plugin_Interface_development.html" class="page_container" id="page-wrapper">
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi" data-hotdoc-ref="design/2008_design/2008_Plugin_Interface_development.html" class="page_container" id="page-wrapper">
 <script src="assets/js/utils.js"></script>
 
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
@@ -101,7 +101,7 @@ $('body').removeClass('no-script');
 
 <div id="body">
 	<div id="main">
-				    <div id="page-description" data-hotdoc-source="2008_Plugin_Interface_development.md" data-hotdoc-role="main">
+				    <div id="page-description" data-hotdoc-role="main">
         <h2 id="2008-plugin-interface">2008 Plugin Interface</h2>
 <h3 id="about">About</h3>
 <p>Pitivi's current interface, whist having a solid base is a little
@@ -221,7 +221,7 @@ solve this I am proposing an interface that will be able to take
 settings defined by a plugin and turn that into a sensible gtk
 configuration dialog.</p>
 <h3 id="current-implementation2">Current implementation</h3>
-<p>The current implimentation is a mix-in object that replaces the
+<p>The current implementation is a mix-in object that replaces the
 configure() method with our own gui-builder code (plugin authors that
 need more flexibility can create their own configure() method)</p>
 <p>the gui-builder code simply parses the current settings object and is

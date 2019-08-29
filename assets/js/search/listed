@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "listed", "urls": [{"url": "design/2008_design/2008_Architectural_Redesign/Browsers.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"listed","urls":[{"url":"design/2008_design/2008_Architectural_Redesign/Browsers.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"releases/0-14.html#page-description","node_type":"ul","context":{"gi-language":["default"]}},{"url":"releases/0-15.html#page-description","node_type":"ul","context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url": "releases/0-999.html#0999-release-test-me-please", "fragment": "Release Test me please \n"});
+fragment_downloaded_cb({"url":"releases/0-999.html#0999-release-test-me-please","fragment":"0.999 Release “Test me please”\n"});

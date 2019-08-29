@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "gpu", "urls": [{"url": "GSoC_Ideas.html#fix-gpu-support-in-pitivi", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"gpu","urls":[{"url":"GSoC_Ideas.html#fix-gpu-support-in-pitivi","node_type":"h2","context":{"gi-language":["default"]}},{"url":"GSoC_Ideas.html#page-description","node_type":"ul","context":{"gi-language":["default"]}},{"url":"Praise.html#page-description","node_type":"ul","context":{"gi-language":["default"]}}]});

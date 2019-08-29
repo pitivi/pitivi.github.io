@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "deployment", "urls": [{"url": "design/Plugins.html#plugin-deployment", "context": {"gi-language": ["default"]}}, {"url": "design/Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"deployment","urls":[{"url":"design/Plugins.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"design/Plugins.html#plugin-deployment","node_type":"h2","context":{"gi-language":["default"]}}]});

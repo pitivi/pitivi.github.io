@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "insane", "urls": [{"url": "Git.html#not-going-insane", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"insane","urls":[{"url":"Git.html#not-going-insane","node_type":"h2","context":{"gi-language":["default"]}},{"url":"design/Proxy_editing_requirements.html#page-description","node_type":"ul","context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "manet", "urls": [{"url": "releases/0-13-1.html#0131-release-laquila-immota-manet-the-eagle-remains-unmoved", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"manet","urls":[{"url":"Current_events.html#page-description","node_type":"ul","context":{"gi-language":["default"]}},{"url":"Current_events.html#subpages","node_type":"p","context":{"gi-language":["default"]}},{"url":"releases/0-13-1.html#0131-release-laquila-immota-manet-the-eagle-remains-unmoved","node_type":"h1","context":{"gi-language":["default"]}}]});

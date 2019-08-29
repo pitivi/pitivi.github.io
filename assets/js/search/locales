@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "locales", "urls": [{"url": "HACKING.html#switching-locales", "context": {"gi-language": ["default"]}}, {"url": "HACKING.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"locales","urls":[{"url":"HACKING.html#page-description","node_type":"ul","context":{"gi-language":["default"]}},{"url":"HACKING.html#switching-locales","node_type":"h2","context":{"gi-language":["default"]}}]});

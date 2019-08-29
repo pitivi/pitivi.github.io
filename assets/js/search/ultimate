@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "ultimate", "urls": [{"url": "Feroze_gsoc.html#what-is-its-ultimate-goal", "context": {"gi-language": ["default"]}}, {"url": "Feroze_gsoc.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"ultimate","urls":[{"url":"Feroze_gsoc.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"Feroze_gsoc.html#what-is-its-ultimate-goal","node_type":"h2","context":{"gi-language":["default"]}}]});

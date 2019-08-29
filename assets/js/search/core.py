@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "core.py", "urls": [{"url": "design/Plugins.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"core.py","urls":[{"url":"design/Plugins.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});

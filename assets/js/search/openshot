@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token": "openshot", "urls": [{"url": "Praise.html#page-description", "context": {"gi-language": ["default"]}}, {"url": "design/2012_Layer_Controls_Redesign.html#page-description", "context": {"gi-language": ["default"]}}]});
+urls_downloaded_cb({"token":"openshot","urls":[{"url":"Praise.html#page-description","node_type":"ul","context":{"gi-language":["default"]}},{"url":"design/2012_Layer_Controls_Redesign.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
