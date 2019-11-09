@@ -237,10 +237,10 @@ deadlocks, where the application will be hung instead of crashed):</p>
 <pre><code>gdb python3 -ex "run $(which pitivi)"
 </code></pre>
 <h2 id="debug-logs">Debug logs</h2>
-<p>When you need to know what’s going on inside pitivi, you can launch it
+<p>When you need to know what’s going on inside Pitivi, you can launch it
 with a debug level. In
-<a href="https://git.gnome.org/browse/pitivi/tree/pitivi/utils/loggable.py#n50">loggable.py</a>,
-there are five levels: ( <span style="color:red;">ERROR</span>,
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/utils/loggable.py#L61">loggable.py</a>,
+there are six levels: ( <span style="color:red;">ERROR</span>,
 <span style="color:yellow; background-color:gray;">WARN</span>,
 <span style="color:magenta;">FIXME</span>,
 <span style="color:green;">INFO</span>,
@@ -280,7 +280,7 @@ big to be attached to a bug report directly. Instead, compress them
 you can profile Pitivi itself, with this command (and yes,
 <code>JUMP_THROUGH_HOOPS</code> is needed for this case, it is an environment
 variable of
-<a href="https://git.gnome.org/browse/pitivi/tree/bin/pitivi.in">bin/pitivi</a>:</p>
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/bin/pitivi.in">bin/pitivi</a>:</p>
 <pre><code>JUMP_THROUGH_HOOPS=1 python3 -m cProfile -s time -o pitivi_performance.profile bin/pitivi
 </code></pre>
 <p>The resulting <code>pitivi_performance.profile</code> file can then be processed

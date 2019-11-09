@@ -103,10 +103,17 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="coding-style-guide">Coding Style Guide</h1>
+<p>The code must be easy to understand, so it should look consistent.</p>
+<p>When entering the development environment, a git
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pre-commit.hook">pre-commit hook</a>
+is set up on your local repo. When you create a commit, the hook
+performs some
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/.pre-commit-config.yaml">lightweight checks</a>
+and at the end runs
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pylint.rc">pylint</a>
+in the sandbox to check for all kinds of errors.</p>
 <p>We rely on the <a href="https://www.python.org/dev/peps/pep-0008/">Python Style Guide PEP-8</a></p>
-<p>The only exception to it is regarding the "80 columns" rule.
-Since Python is a very concise/compact language, we can afford to be
-a little bit more flexible on the line length than languages such as C.</p>
+<h2 id="line-length">Line length</h2>
 <p>When deciding whether or not you should split your line when it exceeds
 79 characters, ask yourself: "Does it truly improve legibility?"</p>
 <p>What this translates to is:</p>
@@ -165,15 +172,14 @@ but we do use <code>pad</code>.</p>
 <pre><code class="language-python">  class MyClass:
 
      def some_method(self):
-         self.someobject.connect('event', self.__some_object_event_cb)
+         self.someobject.connect("event", self.__some_object_event_cb)
 
      def __some_object_event_cb(self, object, arg):
          print "our callback was called"
 </code></pre>
-<h2 id="imports-order">Imports order</h2>
-<p>You can guess the order of the imported modules by looking at some py files.
-The pre-commit hook has authority in this case as it will reorder the imports
-if the order is not good.</p>
+<h2 id="docstrings">Docstrings</h2>
+<p>We follow the <a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google Python Style Guide</a>
+for docstrings.</p>
 
     </div>
         

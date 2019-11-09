@@ -246,32 +246,32 @@ a singleton.</li>
 <p>Trac approach intruces a simple implementation for interfaces in python,
 an example code of how this architecture is used for creating plugins is
 reported in the following example (taken from Trac documentation):</p>
-<pre><code>from trac.core import *
+<pre><code>from trac.core import *
 
-class ITodoObserver(Interface):
+class ITodoObserver(Interface):
 
-    def todo_added(name, description):
-    """Called when a to-do item is added."""
+    def todo_added(name, description):
+    """Called when a to-do item is added."""
 
-class TodoList(Component):
+class TodoList(Component):
 
-    observers = ExtensionPoint(ITodoObserver)
+    observers = ExtensionPoint(ITodoObserver)
 
-    def __init__(self):
-        self.todos = {}
+    def __init__(self):
+        self.todos = {}
 
-    def add(self, name, description):
-        assert not name in self.todos, 'To-do already in list'
-        self.todos[name] = description
-        for observer in self.observers:
-            observer.todo_added(name, description)
+    def add(self, name, description):
+        assert not name in self.todos, 'To-do already in list'
+        self.todos[name] = description
+        for observer in self.observers:
+            observer.todo_added(name, description)
 
-class TodoPrinter(Component):
-    implements(ITodoObserver)
+class TodoPrinter(Component):
+    implements(ITodoObserver)
 
-    def todo_added(self, name, description):
-        print 'TODO:', name
-        print '     ', description
+    def todo_added(self, name, description):
+        print 'TODO:', name
+        print '     ', description
 </code></pre>
 <p>ITodoObserver interface provides a todo_added() callback to trigger
 plugin's functionalities.</p>
@@ -301,20 +301,20 @@ this approach leaves complete freedom to the plugin developer to
 organize its code in the way it prefers, as long the intefrace
 requirements are fulfilled; in this way duck typing gets formalized
 without adding a big overhead.</p>
-<pre><code>from zope.interface import Interface, implements,  providedBy
+<pre><code>from zope.interface import Interface, implements,  providedBy
 
-class ISing(Interface):
-   def sing():
-       """Returns a melody"""
+class ISing(Interface):
+   def sing():
+       """Returns a melody"""
 
-class Sinatra(object):
-   implements(ISing)
+class Sinatra(object):
+   implements(ISing)
 
-   def sing(self):
-       return "In singing in the rain..."
+   def sing(self):
+       return "In singing in the rain..."
 
-frank = Sinatra()
-ISing.providedBy(frank)    &lt;-- True
+frank = Sinatra()
+ISing.providedBy(frank)    &lt;-- True
 </code></pre>
 <p>Interfaces fully supports inheritance from other interfaces (with the
 security check that children's methods conforms to ancestor's one if
@@ -549,11 +549,11 @@ plugin).</p>
 interact with the user, the following interfaces provide convenient ways
 for the plugin to integrate widgets in the main user interface:</p>
 <p>Class IMenuProvider(Interface):</p>
-<pre><code>def getUI():
-    """Return the xml code defining the user interface enhancement"""
+<pre><code>def getUI():
+    """Return the xml code defining the user interface enhancement"""
 
-def getActions():
-    """Return the list of actions triggered by new menuitems"""
+def getActions():
+    """Return the list of actions triggered by new menuitems"""
 </code></pre>
 <h2 id="additional-source-providers">Additional source providers</h2>
 <p>This kind of plugins provides items user can drag into the timeline such
@@ -562,12 +562,12 @@ sources notebook displayed in the top-left portion of the main window.
 Plugins that want to be source providers must implement the following
 interface:</p>
 <p>Class ISourceProvider(Interface):</p>
-<pre><code>def getName():
-    """Return the name to be displayed in the notebook tab title"""
-def getWidget():
-    """Return the source view widget, usually a gtk box"""
-def getCallbacks():
-    """Return a tuple of (cb_name, signal_name) in the order they must be connected"
+<pre><code>def getName():
+    """Return the name to be displayed in the notebook tab title"""
+def getWidget():
+    """Return the source view widget, usually a gtk box"""
+def getCallbacks():
+    """Return a tuple of (cb_name, signal_name) in the order they must be connected"
 </code></pre>
 <p>Note on signals handling: the plugin may provide callbacks to observe
 application signals, they're retrieved from the plugin with the
@@ -578,28 +578,28 @@ disconnected in reverse order when the plugin is deactivated.</p>
 <p>Recording devices such as webcams, microphones but also unconventional
 items like screencast share the same requirements to be used by Pitivi:</p>
 <pre><code>class IRecordingDevice(Interface):
-    __gsignals__ =
-    {
-    "recording-started": (gobject.SIGNAL_RUN_LAST, gobject.TYPE_VOID, ()),
-    "recording-finished": (gobject.SIGNAL_RUN_LAST, gobject.TYPE_PYOBJECT, ())
-    }
-    """recording-started informs observers the device started recording.
-       recording-finished signals the main application that a new clip is produced by the device,
-       the clip uri is returned by the signal in order to be added among
-       sources """
+    __gsignals__ =
+    {
+    "recording-started": (gobject.SIGNAL_RUN_LAST, gobject.TYPE_VOID, ()),
+    "recording-finished": (gobject.SIGNAL_RUN_LAST, gobject.TYPE_PYOBJECT, ())
+    }
+    """recording-started informs observers the device started recording.
+       recording-finished signals the main application that a new clip is produced by the device,
+       the clip uri is returned by the signal in order to be added among
+       sources """
 
-    def getName():
-        """Return the name of the device"""
-    def hasVideo():
-        """Return true if device can provide video"""
-    def hasAudio():
-        """Return true if device can provide audio"""
-    def record():
-        """Start recording"""
-    def stop():
-        """Stop recording"""
-    def isRecording():
-        """Returns true if the device is currently recording"""
+    def getName():
+        """Return the name of the device"""
+    def hasVideo():
+        """Return true if device can provide video"""
+    def hasAudio():
+        """Return true if device can provide audio"""
+    def record():
+        """Start recording"""
+    def stop():
+        """Stop recording"""
+    def isRecording():
+        """Returns true if the device is currently recording"""
 </code></pre>
 <h2 id="effectstransitions">Effects/Transitions</h2>
 <p>This kind of items represent an exception to the general concept of

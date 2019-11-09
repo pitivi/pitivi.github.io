@@ -107,31 +107,31 @@ $('body').removeClass('no-script');
 <h1 id="commands">Commands</h1>
 <h2 id="geslaunch">ges-launch</h2>
 <p>Used to play back xges files and render them.</p>
-<pre><code># Render project.xges to video.ogv.
-$ ges-launch-1.0 -l project.xges -o video.ogv
+<pre><code># Render project.xges to video.ogv.
+$ ges-launch-1.0 -l project.xges -o video.ogv
 </code></pre>
 <h2 id="gstlaunch">gst-launch</h2>
 <p>Launches GStreamer pipelines.</p>
-<pre><code># Play a video with the decodebin
-$ gst-launch-1.0 filesrc location=foo.ogv ! decodebin ! autovideosink
+<pre><code># Play a video with the decodebin
+$ gst-launch-1.0 filesrc location=foo.ogv ! decodebin ! autovideosink
 </code></pre>
 <h2 id="gstinspect">gst-inspect</h2>
 <p>Lists installed GStreamer plugins.</p>
-<pre><code># Find all plugins containing "2000"
-$ gst-inspect-1.0 | grep 2000
+<pre><code># Find all plugins containing "2000"
+$ gst-inspect-1.0 | grep 2000
 </code></pre>
-<pre><code># List details of matroskamux
-$ gst-inspect-1.0 matroskamux
+<pre><code># List details of matroskamux
+$ gst-inspect-1.0 matroskamux
 </code></pre>
 <h2 id="gstdiscoverer">gst-discoverer</h2>
 <p>Prints information about a media file.</p>
-<pre><code># Print info about foo.mp3
-$ gst-discoverer-1.0 foo.mp3
+<pre><code># Print info about foo.mp3
+$ gst-discoverer-1.0 foo.mp3
 </code></pre>
 <h2 id="gstvalidatelauncher">gst-validate-launcher</h2>
 <p>Launches gst validate test suites.</p>
-<pre><code># -t enables blacklisted tests
-$ gst-validate-launcher -t ges.playback.*
+<pre><code># -t enables blacklisted tests
+$ gst-validate-launcher -t ges.playback.*
 </code></pre>
 
     </div>

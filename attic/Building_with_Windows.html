@@ -165,10 +165,10 @@ folder, you need to edit this file.</li>
 <li>It is a cmd like shell. Pasting sucks. We should install a cooler
 one with transparency and stuff.</li>
 </ul>
-<p><code>$ mingw-get install mintty</code></p>
+<p><code>$ mingw-get install mintty</code></p>
 <p>Now we need to set it as the default shell</p>
 <p>Add following line to C:\MinGW\msys\1.0\mys.bat after line 58:</p>
-<p><code>set MSYSCON=mintty.exe</code></p>
+<p><code>set MSYSCON=mintty.exe</code></p>
 <ul>
 <li>Open your new cool shell mintty.</li>
 </ul>
@@ -177,54 +177,54 @@ can paste with middle click. Cool.</p>
 <h2 id="editing-your-bash-profile">Editing your bash profile</h2>
 <p>We will need to add everything to our path manually.</p>
 <p>Add the following lines at the end of C:\MinGW\msys\1.0\etc\profile</p>
-<p><code>export PATH=$PATH:/c/Python27</code><br>
-<code>export PATH=$PATH:/c/Program\ Files\ </code>$x86$<code>/Git/bin</code><br>
-<code>export PATH=$PATH:/home/bmonkey/cerbero/</code><br>
-<code>export PATH=$PATH:/c/Program\ Files\ </code>$x86$<code>/CMake/bin</code></p>
-<p><code>alias cerbero=cerbero-uninstalled</code></p>
+<p><code>export PATH=$PATH:/c/Python27</code><br>
+<code>export PATH=$PATH:/c/Program\ Files\</code>$x86$<code>/Git/bin</code><br>
+<code>export PATH=$PATH:/home/bmonkey/cerbero/</code><br>
+<code>export PATH=$PATH:/c/Program\ Files\</code>$x86$<code>/CMake/bin</code></p>
+<p><code>alias cerbero=cerbero-uninstalled</code></p>
 <p>Note that the cerbero path is the path where we will clone cerbero into
 in the next step. You need to change it to your user name.</p>
 <p>Save the file and restart your shell.</p>
 <h2 id="setting-up-git-config">Setting up git config</h2>
 <p>The bootstrap will fail if git config is not set up. Do the following:</p>
-<p><code>$ git config --global user.email </code>“<code>you@example.com</code>”<br>
-<code>$ git config --global user.name </code>“<code>Your`` ``Name</code>”</p>
+<p><code>$ git config --global user.email</code>“<code>you@example.com</code>”<br>
+<code>$ git config --global user.name</code>“<code>Your`` ``Name</code>”</p>
 <h1 id="compile">Compile</h1>
 <h3 id="checkout-cerbero">Checkout cerbero</h3>
-<p><code>$ git clone </code><a href="git://anongit.freedesktop.org/gstreamer/cerbero"><code>git://anongit.freedesktop.org/gstreamer/cerbero</code></a></p>
+<p><code>$ git clone</code><a href="git://anongit.freedesktop.org/gstreamer/cerbero"><code>git://anongit.freedesktop.org/gstreamer/cerbero</code></a></p>
 <h2 id="install-dependencies">Install dependencies</h2>
 <p>Now we need to get some extra dependencies from mingw-get to start the
 bootstrap.</p>
-<p><code>$ mingw-get.exe install msys-perl msys-patch msys-bison msys-flex msys-coreutils</code></p>
+<p><code>$ mingw-get.exe install msys-perl msys-patch msys-bison msys-flex msys-coreutils</code></p>
 <h2 id="bootstrap">Bootstrap</h2>
 <p>Now we can start cerbero bootstrap.</p>
 <p>If you cannot access the cerbero command, make sure its in the PATH in
 your bash profile.</p>
-<p><code>$ cerbero bootstrap</code></p>
+<p><code>$ cerbero bootstrap</code></p>
 <p>Go get some coffee.</p>
 <h2 id="building-gstreamer-editing-services">Building GStreamer Editing Services</h2>
-<p><code>$ cerbero build gst-editing-services-1.0</code></p>
+<p><code>$ cerbero build gst-editing-services-1.0</code></p>
 <p>Go plant a tree. This can take hours.</p>
 <h2 id="building-gstreamer-plugins">Building GStreamer Plugins</h2>
 <p>Since GES does not depend on all plugins, you need to build them
 manually.</p>
-<p><code>$ cerbero build gst-plugins-bad-1.0</code><br>
-<code>$ cerbero build gst-plugins-ugly-1.0</code><br>
-<code>$ cerbero build gst-libav-1.0</code></p>
+<p><code>$ cerbero build gst-plugins-bad-1.0</code><br>
+<code>$ cerbero build gst-plugins-ugly-1.0</code><br>
+<code>$ cerbero build gst-libav-1.0</code></p>
 <h3 id="adding-gstreamer-tools-to-the-path">Adding GStreamer tools to the PATH</h3>
 <p>You probably want to use ges-launch-1.0.exe and friends in the shell. To
 do this, add the dist folder to the PATH.</p>
 <p>In your bash profle:</p>
-<p><code>export PATH=$PATH:/home/bmonkey/cerbero/dist/windows_x86_64/bin/</code></p>
+<p><code>export PATH=$PATH:/home/bmonkey/cerbero/dist/windows_x86_64/bin/</code></p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="configure-hangs">Configure hangs</h3>
 <p>If you encounter the configure process to freeze, you need to close the
 shell and kill all sh.exe processes in the task manager. Alternatively
 you can log out and log in.</p>
-<p><code>checking for msgfmt... /c/Users/Lubosz/cerbero/build-tools/bin/msgfmt</code><br>
-<code>checking for gmsgfmt... /c/Users/Lubosz/cerbero/build-tools/bin/msgfmt</code><br>
-<code>checking for xgettext... /c/Users/Lubosz/cerbero/build-tools/bin/xgettext</code><br>
-<code>checking for msgmerge...</code></p>
+<p><code>checking for msgfmt... /c/Users/Lubosz/cerbero/build-tools/bin/msgfmt</code><br>
+<code>checking for gmsgfmt... /c/Users/Lubosz/cerbero/build-tools/bin/msgfmt</code><br>
+<code>checking for xgettext... /c/Users/Lubosz/cerbero/build-tools/bin/xgettext</code><br>
+<code>checking for msgmerge...</code></p>
 
     </div>
         

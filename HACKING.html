@@ -169,8 +169,8 @@ Running in sandbox: gst-validate-launcher .../pitivi/tests/ptv_testsuite.py
 </code></pre>
 <p>That will actually recreate the sandbox prefix, updating all
 dependencies from their git repos and tarballs as defined in the
-<a href="https://git.gnome.org/browse/pitivi/tree/build/flatpak/pitivi.template.json">flatpak
-manifest</a> (located at <code>build/flatpak/pitivi.template.json</code>).</p>
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/build/flatpak/org.pitivi.Pitivi.json">flatpak
+manifest</a>.</p>
 <h3 id="how-we-use-the-sandbox">How we use the sandbox</h3>
 <p>The sandbox we set up has access to the host file system. This allows
 running the Python modules in <code>pitivi-dev/pitivi/pitivi/...</code> on top of
@@ -203,9 +203,9 @@ which is built using the Meson build system, first clone it into your
 <code>pitivi-dev</code> folder:</p>
 <pre><code>(ptv-flatpak) $ git clone git://anongit.freedesktop.org/gstreamer/gst-editing-services
 </code></pre>
-<p>Prepare its build directory. Once it has been set up, you won't have to
-run <code>meson</code> again for this build directory.</p>
-<pre><code>(ptv-flatpak) $ setup
+<p>Prepare its build directory (Once it has been set up, you won't have to
+run <code>meson</code> again for this build directory):</p>
+<pre><code>(ptv-flatpak) $ cd gst-editing-services &amp;&amp; setup
 Using Pitivi prefix in /.../pitivi-dev/pitivi-prefix
 Running in sandbox: meson mesonbuild/ --prefix=/app --libdir=lib -Ddisable_gtkdoc=true -Ddisable_doc=true
 </code></pre>

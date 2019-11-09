@@ -461,62 +461,66 @@ given in h:mm:ss.sss):</p>
 is not necessarily the case, however.</p>
 <p>The equivalent python data structure will look like this (currently
 incomplete):</p>
-<code>
-<p>project = {</p>
-<p>“<code>timeline</code>”<code> : {</code><br>
-<code>    </code>“<code>compositions</code>”<code> :</code><br>
-<code>    (</code><br>
-<code>        {</code><br>
-<code>              </code>“<code>type</code>”<code>: </code>“<code>video</code>”<code>,</code><br>
-<code>              </code>“<code>sources</code>”<code> :</code><br>
-<code>              (</code><br>
-<code>                    {</code><br>
-<code>                        </code>“<code>project-source</code>”<code> : </code><ref to video1.ogm source definition><code>,</code><br>
-<code>                        </code>“<code>start</code>”<code>:0,</code><br>
-<code>                        </code>“<code>duration</code>”<code>: 37000,</code><br>
-<code>                        </code>“<code>media-start</code>”<code>: 120000,</code><br>
-<code>                        </code>“<code>media-duration</code>”<code>: 37000</code><br>
-<code>                    }</code><br>
-<code>                    {</code><br>
-<code>                        </code>“<code>project-source</code>”<code> : </code><ref to video2.ogm source definition><code>,</code><br>
-<code>                        </code>“<code>start</code>”<code>: 37000,</code><br>
-<code>                        </code>“<code>duration</code>”<code>: 30242,</code><br>
-<code>                        </code>“<code>media-start</code>”<code>: 67242,</code><br>
-<code>                        </code>“<code>media-duration</code>”<code>: 30242,</code><br>
-<code>                    }</code><br>
-<code>                    {</code><br>
-<code>                        </code>“<code>project-source</code>”<code> : </code><rref to video1.ogm source definition><code>,</code><br>
-<code>                        </code>“<code>start</code>”<code>: 67242,</code><br>
-<code>                        </code>“<code>duration</code>”<code>: 20000,</code><br>
-<code>                        </code>“<code>media-start</code>”<code>: 30000,</code><br>
-<code>                        </code>“<code>media-duration</code>”<code>: 20000</code><br>
-<code>                    }</code><br>
-<code>              )</code><br>
-<code>         },</code></rref></ref></ref></p>
-<p><code>         {</code><br>
-<code>            </code>“<code>type</code>”<code> : </code>“<code>audio</code>”<code>,</code><br>
-<code>            </code>“<code>sources</code>”<code> : (</code><br>
-<code>                  {</code><br>
-<code>                        </code>“<code>project-source</code>”<code> : </code><ref to audio1.ogg source definition><code>,</code><br>
-<code>                        </code>“<code>start</code>”<code>: 0,</code><br>
-<code>                        </code>“<code>duration</code>”<code>: 87242,</code><br>
-<code>                        </code>“<code>media-start</code>”<code>: 0,</code><br>
-<code>                        </code>“<code>media-duration</code>”<code>: 87242</code><br>
-<code>                    }</code><br>
-<code>                    {</code><br>
-<code>                        </code>“<code>project-source</code>”<code> : </code><ref to audio2.ogg source definition><code>,</code><br>
-<code>                        </code>“<code>start</code>”<code>: 45127,</code><br>
-<code>                        </code>“<code>duration</code>”<code>: 5200,</code><br>
-<code>                        </code>“<code>media-start</code>”<code>: 0,</code><br>
-<code>                        </code>“<code>media-duration</code>”<code>: 5200</code><br>
-<code>                    }</code><br>
-<code>             )</code><br>
-<code>         }</code><br>
-<code>    )</code><br>
-<code>  },</code></ref></ref></p>
-<p><code>  </code>“<code>sources</code>”<code> : ....</code></p>
-<p><code>  </code>“<code>settings</code>”<code> : ....</code></p>
-<p>} </p></code>
+<pre><code>project = {
+
+“timeline” : {
+    “compositions” :
+    (
+        {
+              “type”: “video”,
+              “sources” :
+              (
+                    {
+                        “project-source” : &lt;ref to video1.ogm source definition&gt;,
+                        “start”:0,
+                        “duration”: 37000,
+                        “media-start”: 120000,
+                        “media-duration”: 37000
+                    }
+                    {
+                        “project-source” : &lt;ref to video2.ogm source definition&gt;,
+                        “start”: 37000,
+                        “duration”: 30242,
+                        “media-start”: 67242,
+                        “media-duration”: 30242,
+                    }
+                    {
+                        “project-source” : &lt;rref to video1.ogm source definition&gt;,
+                        “start”: 67242,
+                        “duration”: 20000,
+                        “media-start”: 30000,
+                        “media-duration”: 20000
+                    }
+              )
+         },
+
+         {
+            “type” : “audio”,
+            “sources” : (
+                  {
+                        “project-source” : &lt;ref to audio1.ogg source definition&gt;,
+                        “start”: 0,
+                        “duration”: 87242,
+                        “media-start”: 0,
+                        “media-duration”: 87242
+                    }
+                    {
+                        “project-source” : &lt;ref to audio2.ogg source definition&gt;,
+                        “start”: 45127,
+                        “duration”: 5200,
+                        “media-start”: 0,
+                        “media-duration”: 5200
+                    }
+             )
+         }
+    )
+  },
+
+  “sources” : ....
+
+  “settings” : ....
+}
+</code></pre>
 <p>More specifically, the project is composed python dictionaries, tuples,
 and strings. It could be thought of as a “tree” but it is really more of
 a “deep dictionary,” with several levels of nesting. Each dictionary

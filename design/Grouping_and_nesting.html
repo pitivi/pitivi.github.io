@@ -167,19 +167,19 @@ wrapper around GnlSource (which is a GstBin itself), this bin would
 contain a GESTimeline. Then the TrackObject of this TimelineObject
 contain GESTrack themselves. We should have 3 ways of creating a
 GESTimelineTimelineObject:</p>
-<pre><code>   ges_timeline_timeline_object_new()
-   ges_timeline_timeline_object_new_from_objects (GList *timeline_object) /*So we can group them easyly */
-   ges_timeline_timeline_object_new_from_project (const gchar *project_file_uri)
+<pre><code>   ges_timeline_timeline_object_new()
+   ges_timeline_timeline_object_new_from_objects (GList *timeline_object) /*So we can group them easyly */
+   ges_timeline_timeline_object_new_from_project (const gchar *project_file_uri)
 </code></pre>
 <p>The timeline contained in a GESTimelineTimelineObject can obviously also
 contain themselves a GESTimelineTimelineObject so we can infinitely
 recurse.</p>
 <h4 id="new-classes">New Classes</h4>
-<pre><code>   GESTimelineSource
-       +---- GESTimelineTimelineObject
+<pre><code>   GESTimelineSource
+       +---- GESTimelineTimelineObject
 
-   GESTrackSource
-       +---- GESTrackTrackObject
+   GESTrackSource
+       +---- GESTrackTrackObject
 </code></pre>
 <h3 id="ui-niceties">UI Niceties</h3>
 <p>Because the UI can easily determine that a timeline-object is in fact a

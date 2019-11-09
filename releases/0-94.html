@@ -165,39 +165,39 @@ lot of old code.</li>
 0.94</a>.</p>
 <p>Since the 0.93 release, 240 commits were made across 159 files. Here is
 a summary of some noteworthy commits:</p>
-<pre><code>8f252a4 viewer: Do not call the expose function when we set the aspect ratio
-2846425 viewer: Do not forget to set ViewerWidget sink when setting our pipeline
-c6b12b7 Show an error dialog when encountering Unicode decoding errors/broken locales
-8776f73 clipmediaprops: Handle potentially broken framerates such as 1000 fps
-10d82cd pitivi: Remove our hard dependency to GdkX11
-4ef394b timeline: Fix dragging of second clip from the media library to the timeline
-b019640 Make the title editor's infobar more compact to avoid excessive wrapping
-f0d8f4f Make the “User Manual” menu item work in the main MenuButton
-4c6e137 Fix the text wrapping in the rendering progress dialog
-8bc597f effects: Allow reordering the effects of a clip
-ba5a7a8 timeline: Fix effects dragged onto clips
-d9e89f8 effects: Display the human names in the list of effects of a clip
-b054f9f clipproperties: Disable sorting of the clip's effects
-e4702c5 clipproperties: Fix effects tooltips
-374aa64 mainwindow: Better default placement for panes
-279b6ed previewers: Avoid removing sources already running
-a1985ae previewers: Always set lastUpdate when computing geometry
-ae0ef1f video previewer: remove unused self._callback_id
-67b9d5c previewers: Fix initial value of AudioPreviewer.lastUpdate
-fb3f3da timeline: Get rid of some clip animations
-9e39466 project: Fix setting of restriction caps values
-e34bbfe Set emblem-system-symbolic for menu icon before gtk 3.13
-c671383 render: Play the rendered file without blocking the UI
-860d904 timeline: make sure not to set a negative size on elements.
-89a9349 Change some infobars to be more discrete
-af65ef5 elements: Don't use Cogl anymore.
-c4c11de elements: Don't use path_round_rectangle.
-9d171bf Use Gio.SimpleActions to handle global app keyboard events
-f7e23b0 Make Pitivi a GtkApplication
-d48a39c mainwindow: Replace the menubar and main toolbar by HeaderBar and MenuButton
-2696f41 Port Pitivi to Python 3
-4c09ca6 mainwindow: Fix main window's panes shifting position
-6e894d8 tabsmanager: Fix utility windows' shifting behaviour
+<pre><code>8f252a4 viewer: Do not call the expose function when we set the aspect ratio
+2846425 viewer: Do not forget to set ViewerWidget sink when setting our pipeline
+c6b12b7 Show an error dialog when encountering Unicode decoding errors/broken locales
+8776f73 clipmediaprops: Handle potentially broken framerates such as 1000 fps
+10d82cd pitivi: Remove our hard dependency to GdkX11
+4ef394b timeline: Fix dragging of second clip from the media library to the timeline
+b019640 Make the title editor's infobar more compact to avoid excessive wrapping
+f0d8f4f Make the “User Manual” menu item work in the main MenuButton
+4c6e137 Fix the text wrapping in the rendering progress dialog
+8bc597f effects: Allow reordering the effects of a clip
+ba5a7a8 timeline: Fix effects dragged onto clips
+d9e89f8 effects: Display the human names in the list of effects of a clip
+b054f9f clipproperties: Disable sorting of the clip's effects
+e4702c5 clipproperties: Fix effects tooltips
+374aa64 mainwindow: Better default placement for panes
+279b6ed previewers: Avoid removing sources already running
+a1985ae previewers: Always set lastUpdate when computing geometry
+ae0ef1f video previewer: remove unused self._callback_id
+67b9d5c previewers: Fix initial value of AudioPreviewer.lastUpdate
+fb3f3da timeline: Get rid of some clip animations
+9e39466 project: Fix setting of restriction caps values
+e34bbfe Set emblem-system-symbolic for menu icon before gtk 3.13
+c671383 render: Play the rendered file without blocking the UI
+860d904 timeline: make sure not to set a negative size on elements.
+89a9349 Change some infobars to be more discrete
+af65ef5 elements: Don't use Cogl anymore.
+c4c11de elements: Don't use path_round_rectangle.
+9d171bf Use Gio.SimpleActions to handle global app keyboard events
+f7e23b0 Make Pitivi a GtkApplication
+d48a39c mainwindow: Replace the menubar and main toolbar by HeaderBar and MenuButton
+2696f41 Port Pitivi to Python 3
+4c09ca6 mainwindow: Fix main window's panes shifting position
+6e894d8 tabsmanager: Fix utility windows' shifting behaviour
 </code></pre>
 <h2 id="requirements">Requirements</h2>
 <p>In this release:</p>
@@ -241,29 +241,29 @@ and the list of <a href="https://bugzilla.gnome.org/buglist.cgi?query_format=adv
 (you can help!)</p>
 <h1 id="contributors-for-this-release">Contributors for this release</h1>
 <p>In Pitivi:</p>
-<pre><code>94  Alexandru Băluț
-33  Tomas Karger
-24  Thibault Saunier
-22  Jean-François Fortin Tam
-20  Lubosz Sarnecki
- 8  Mathieu Duponchelle
- 2  Fabian Orccon
- 2  Georges Basile Stavracas Neto
- 2  Ken MacLeod
- 1  Brion Vibber
- 1  Dominique Leuenberger
+<pre><code>94  Alexandru Băluț
+33  Tomas Karger
+24  Thibault Saunier
+22  Jean-François Fortin Tam
+20  Lubosz Sarnecki
+ 8  Mathieu Duponchelle
+ 2  Fabian Orccon
+ 2  Georges Basile Stavracas Neto
+ 2  Ken MacLeod
+ 1  Brion Vibber
+ 1  Dominique Leuenberger
 </code></pre>
 <p>In GES:</p>
-<pre><code>53  Thibault Saunier
-15  Mathieu Duponchelle
- 5  Edward Hervey
- 5  Lubosz Sarnecki
- 4  Sebastian Dröge
- 3  Tim-Philipp Müller
- 2  Christoph Reiter
- 1  Alexandru Băluț
- 1  Lazar Claudiu
- 1  Vincent Penquerc'h
+<pre><code>53  Thibault Saunier
+15  Mathieu Duponchelle
+ 5  Edward Hervey
+ 5  Lubosz Sarnecki
+ 4  Sebastian Dröge
+ 3  Tim-Philipp Müller
+ 2  Christoph Reiter
+ 1  Alexandru Băluț
+ 1  Lazar Claudiu
+ 1  Vincent Penquerc'h
 </code></pre>
 <p>Translations:</p>
 <pre><code>   cs  Marek Černocký
@@ -286,8 +286,12 @@ zh_TW  Cheng-Chia Tseng
 <p>A tarball is available on
 <a href="https://download.gnome.org/sources/pitivi/0.94/">https://download.gnome.org/sources/pitivi/0.94/</a></p>
 <p>A bundle usable on any linux distribution is avalaible at:</p>
-<p> * 64 bits platforms: <a href="http://pitivi.ecchi.ca/bundles/releases/pitivi-0.94-beta-x86_64.tar">http://pitivi.ecchi.ca/bundles/releases/pitivi-0.94-beta-x86_64.tar</a>
- * 32 bits platforms: <a href="http://pitivi.ecchi.ca/bundles/releases/pitivi-0.94-beta-x86.tar">http://pitivi.ecchi.ca/bundles/releases/pitivi-0.94-beta-x86.tar</a></p>
+<ul>
+<li>64 bits platforms: <a href="http://pitivi.ecchi.ca/bundles/releases/pitivi-0.94-beta-x86_64.tar">http://pitivi.ecchi.ca/bundles/releases/pitivi-0.94-beta-x86_64.tar</a>
+</li>
+<li>32 bits platforms: <a href="http://pitivi.ecchi.ca/bundles/releases/pitivi-0.94-beta-x86.tar">http://pitivi.ecchi.ca/bundles/releases/pitivi-0.94-beta-x86.tar</a>
+</li>
+</ul>
 <p>See <a href="http://www.pitivi.org">the Pitivi website</a> and <a href="attic/building_with_ges.html">building with
 GES</a> for download and installation
 instructions.</p>
