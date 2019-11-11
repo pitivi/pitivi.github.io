@@ -107,8 +107,8 @@ $('body').removeClass('no-script');
 <p>To create a detailed proposal, use <a href="https://wiki.gnome.org/Outreach/SummerOfCode/Students#Fill_out_the_Application">GNOME's GSoC application template</a>.</p>
 <h2 id="render-experience">Render experience</h2>
 <ul>
-<li>Brief explanation: The Render dialog has options the users should not normally need to care about. This will be an exploratory task involving usability studies with people. You'll have the opportunity to learn about usability studies. We'll be in close contact with the GNOME Designers team. The experience when using the Encoder Settings dialog could similarly be improved for one or more important encoders.</li>
-<li>Requirements: Python, eye for detail. Minimal experience contributing to Pitivi. Experience with GStreamer would be a big plus.</li>
+<li>Brief explanation: The render dialog should be simplified to avoid overwhelming the users, while still allowing full control. The dialog with the advanced settings of the encoders should similarly be improved for the officially supported encoders. In preparation, the render dialog should be <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/2382">refactored into a perspective</a>.</li>
+<li>Requirements: Python, eye for detail. Minimal experience contributing to Pitivi.</li>
 <li>Mentor: Alexandru "aleb" Băluț</li>
 </ul>
 <h2 id="focus-on-the-music">Focus on the music</h2>
@@ -143,7 +143,7 @@ $('body').removeClass('no-script');
 </ul>
 <h2 id="fix-gpu-support-in-pitivi">Fix GPU support in Pitivi</h2>
 <ul>
-<li>Brief explanation: GStreamer has pretty good GPU support through the OpenGL set of plugins, but Pitivi/GES is not able to take full advantage of that infrastructure yet, mainly because of lack of testing and bug fixing on our side. This project is about enabling GL plugins for compositing and rendering and fix any issue that shows up. The second part would be about making sure hardware accelerated decoders can be used in the pipelines.</li>
+<li>Brief explanation: GStreamer has pretty good GPU support through the OpenGL set of plugins, but Pitivi/GES is not able to take full advantage of that infrastructure yet, mainly because of lack of testing and bug fixing on our side. This project is about enabling GL plugins for compositing and rendering, and fixing any issue that shows up. The second part would be about making sure hardware accelerated decoders can be used in the pipelines.</li>
 <li>Requirements: C. Experience with GStreamer is mandatory. Minimal experience contributing to Pitivi. Experience with OpenGL is a plus.</li>
 <li>Mentor: Thibault "thiblahute" Saunier</li>
 </ul>
