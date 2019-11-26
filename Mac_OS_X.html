@@ -104,25 +104,34 @@ $('body').removeClass('no-script');
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="mac-os-x">Mac OS X</h1>
 <p>Mac OS X is a funny kind of Unix, but it's a Unix and should be able to
-run Pitivi. It's also popular -- even lots of open source types lug
-around a MacBook of some kind. Think of applications as a free software
-gateway drug! ;)</p>
-<h2 id="current-status">Current status</h2>
-<p>Pitivi runs pretty well on Mac, but consider it alpha quality. A few
-<a href="https://phabricator.freedesktop.org/project/view/123/">bugs</a> have been
-filed already. If you are interested please <a href="http://www.pitivi.org/?go=contact">get in
+run Pitivi easily. It's also popular -- even lots of open source types
+lug around a MacBook of some kind. Think of applications as a free
+software gateway drug! ;)</p>
+<p>If you are interested to help please <a href="http://www.pitivi.org/?go=contact">get in
 touch</a>!</p>
-<p>Besides fixing bugs, we need to prepare somehow out of the <a href="https://github.com/aleb/homebrew-gui/blob/master/pitivi.rb">Homebrew
+<h2 id="current-status">Current status</h2>
+<p>We're working on a system to build and package Pitivi for Mac
+using GStreamer's Cerbero build system.</p>
+<p>At the moment it's alpha quality. See the list of <a href="https://gitlab.gnome.org/GNOME/pitivi/issues?label_name%5B%5D=on+Mac+OS+X">macOS
+issues</a>
+for details.</p>
+<p>Besides fixing bugs, we need to also prepare a DMG the <a href="https://github.com/aleb/homebrew-gui/blob/master/pitivi.rb">Homebrew
 formula</a> a
 proper Mac app. Help is welcome!</p>
-<h2 id="installing">Installing</h2>
-<p>First install <a href="http://brew.sh/">Homebrew</a> then run:</p>
-<p><code>brew install aleb/gui/pitivi</code></p>
-<p>To run Pitivi, run in a terminal:</p>
-<p><code>pitivi</code></p>
-<p>Please report bugs to
-<a href="https://phabricator.freedesktop.org/project/view/123/">phabricator</a>.</p>
-<h2 id="hacking">Hacking</h2>
+<h2 id="building">Building</h2>
+<p>Clone our Cerbero repository which includes <code>recipes/pitivi.recipe</code>:</p>
+<pre><code>$ git clone https://gitlab.gnome.org/aleb/cerbero-pitivi.git
+</code></pre>
+<p>Follow the instructions in the <a href="https://gitlab.gnome.org/aleb/cerbero-pitivi/blob/pitivi-master/README.md">README</a>
+to bootstrap the system.</p>
+<p>Start the build. This takes ~1h30m on my laptop:</p>
+<pre><code>$ cd cerbero-pitivi
+$ ./cerbero-uninstall build pitivi
+</code></pre>
+<p>To start Pitivi, run in a terminal:</p>
+<pre><code>$ ./build/dist/darwin_x86_64/bin/pitivi
+</code></pre>
+<h2 id="particularities">Particularities</h2>
 <p>Mac OS X has a few major differences from Linux:</p>
 <ul>
 <li>GTK+ uses Quartz backend instead of X11</li>
@@ -142,10 +151,8 @@ directories which encapsulate their binaries, libraries, and shared
 data.</li>
 </ul>
 <h2 id="development-environment">Development environment</h2>
-<p>Have a look at <a href="HACKING.html">HACKING</a> to see how to clone a local repository.</p>
-<p>To be able to run <code>./configure</code>, you need to add
-<code>/usr/local/opt/gettext/bin/</code> to <code>PATH</code> so that <code>msgfmt</code> can be found.</p>
-<p>You should be able to run <code>bin/pitivi</code></p>
+<p>Have a look at <a href="HACKING.html">HACKING</a> for some inspiration. Feel free
+to add some suggestions here if you find a useful workflow.</p>
 
     </div>
         
