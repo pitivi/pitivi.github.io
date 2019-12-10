@@ -121,11 +121,15 @@ touch</a>!</p>
 <p>Clone our Cerbero repository which includes <code>recipes/pitivi.recipe</code>:</p>
 <pre><code>$ git clone https://gitlab.gnome.org/aleb/cerbero-pitivi.git
 </code></pre>
-<p>Follow the instructions in the <a href="https://gitlab.gnome.org/aleb/cerbero-pitivi/blob/pitivi-master/README.md">README</a>
-to bootstrap the system.</p>
+<p>As described in the
+<a href="https://gitlab.gnome.org/aleb/cerbero-pitivi/blob/pitivi-master/README.md#macos-setup">README</a>
+Cerbero needs XCode and <a href="https://www.python.org/downloads/">Python 3.5 or
+later</a> to be able to bootstrap.</p>
+<pre><code>/cerbero-uninstalled bootstrap
+</code></pre>
 <p>Start the build. This takes ~1h30m on my laptop:</p>
 <pre><code>$ cd cerbero-pitivi
-$ ./cerbero-uninstall build pitivi
+$ ./cerbero-uninstalled build pitivi
 </code></pre>
 <p>To start Pitivi, run in a terminal:</p>
 <pre><code>$ ./build/dist/darwin_x86_64/bin/pitivi
