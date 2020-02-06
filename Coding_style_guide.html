@@ -104,14 +104,25 @@ $('body').removeClass('no-script');
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="coding-style-guide">Coding Style Guide</h1>
 <p>The code must be easy to understand, so it should look consistent.</p>
-<p>When entering the development environment, a git
-<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pre-commit.hook">pre-commit hook</a>
-is set up on your local repo. When you create a commit, the hook
-performs some
-<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/.pre-commit-config.yaml">lightweight checks</a>
-and at the end runs
-<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pylint.rc">pylint</a>
-in the sandbox to check for all kinds of errors.</p>
+<p>When entering the development environment, a <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">git pre-commit
+hook</a> is set
+up on your local repo. When you create a commit, the
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pre-commit.hook">hook</a>
+runs the <code>pre-commit</code> tool which:</p>
+<ul>
+<li>
+<p>performs some <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/.pre-commit-config.yaml">lightweight
+checks</a></p>
+</li>
+<li>
+<p>runs <a href="https://gitlab.com/pycqa/flake8">flake8</a> to check the code style</p>
+</li>
+<li>
+<p>runs
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pylint.rc">pylint</a> in
+the sandbox to check for all kinds of errors.</p>
+</li>
+</ul>
 <p>We rely on the <a href="https://www.python.org/dev/peps/pep-0008/">Python Style Guide PEP-8</a></p>
 <h2 id="line-length">Line length</h2>
 <p>When deciding whether or not you should split your line when it exceeds

@@ -104,8 +104,9 @@ $('body').removeClass('no-script');
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="development-workflow">Development Workflow</h1>
 <p>We use <a href="https://gitlab.gnome.org/GNOME/pitivi/issues">GitLab</a> to track
-all bugs and feature requests. Most of the time, you assign an issue
-to yourself, work on it until it's fixed, and then you close it.</p>
+all bugs and feature requests. Most of the time, you announce you are
+working on an issue, work on it until it's fixed, and then the issue is
+closed automatically when a commit with "Fixes #issue_number" is merged.</p>
 <p>Interested users can enable notifications for an existing issue to
 get an email when it's updated. It's also possible to change your
 "Notification settings" for
@@ -116,8 +117,8 @@ entire project.</p>
 <p>To get involved, start with issues tagged
 <a href="https://gitlab.gnome.org/GNOME/pitivi/issues?label_name%5B%5D=4.+Newcomers">4. Newcomers</a>.
 It's best to get in touch with us on our IRC channel <code>#pitivi</code> on
-Freenode, to see if it's still meaningful.</p>
-<p>Once you decide, assign the issue to yourself in GitLab.</p>
+Freenode, to see if it's still meaningful, etc.</p>
+<p>Once you decide, add a comment on the issue saying you're working on it.</p>
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 <p>Next is the fun part where you implement your cool feature, or fix an
 annoying bug:</p>
@@ -132,28 +133,68 @@ guidelines</a>
 for creating commits.</p>
 <p>Be aware that when you create a commit, <code>pre-commit</code> is executed to
 perform checks on the changes. In some cases it does some automatic
-fixes – when this happens, make sure those are included in the commit you
-want to create.</p>
+fixes – when this happens, make sure those are included in the commit
+you want to create.</p>
 <h3 id="propose-your-patches">Propose your patches</h3>
-<ol>
+<p>Patches are proposed by crating a merge request in GitLab.</p>
+<p>To do this, you need your own Pitivi repo on <a href="https://gitlab.gnome.org">GNOME's
+GitLab</a>. Start by creating an account. Then go
+to
+<a href="https://gitlab.gnome.org/GNOME/pitivi">gitlab.gnome.org/GNOME/pitivi</a>
+and press the "fork" button. <em>Make sure to be authenticated otherwise
+the button won't be available.</em></p>
+<p>To be able to push seamlessly to your remote fork, <a href="https://gitlab.gnome.org/profile/keys">add your public ssh
+key to GitLab</a>.</p>
+<p>Add the remote git repository you just forked as a "remote" to your
+local git repository:</p>
+<pre><code>$ git remote add your_gitlab_username git@gitlab.gnome.org:your_gitlab_username/pitivi.git
+$ git fetch your_gitlab_username
+</code></pre>
+<p>To make a merge request, first push your branch to your fork:</p>
+<pre><code>$ git push your_gitlab_username your_branch_name
+[...]
+remote:
+remote: To create a merge request for docs, visit:
+remote:   https://gitlab.gnome.org/your_gitlab_username/pitivi/merge_requests/new?merge_request%5Bsource_branch%5D=your_branch_name
+remote:
+[...]
+</code></pre>
+<p>Open the displayed URL in the browser and fill the form for creating a
+merge request. Alternatively, go to
+<a href="https://gitlab.gnome.org/GNOME/pitivi">gitlab.gnome.org/GNOME/pitivi</a>
+&gt; Merge Requests &gt; New merge request.</p>
+<blockquote>
+<p>Note: Make sure to select "Allow commits from members who can merge to
+the target branch". This way we'll be able to rebase the branch easily
+to be able to merge it in case it's behind origin/master.</p>
+</blockquote>
+<h3 id="the-code-review-cycle">The code review cycle</h3>
+<p>One of the maintainers will review your changes and either merge your
+branch, or comment and ask for changes.</p>
+<p>The comments made by the reviewer have to be addressed by you:</p>
+<ul>
 <li>
-<p>In the <a href="https://gitlab.gnome.org/GNOME/pitivi">GitLab UI</a> press the "fork"
-button (<em>WARNING: Make sure to be authenticated otherwise the button won't be
-available</em>)</p>
+<p>If you disagree with a comment, reply how it's better differently.</p>
 </li>
 <li>
-<p>Add the remote git repository you just forked as a remote to your local git repository:</p>
-<p>git remote add <em>yourgitlabusername</em> https://gitlab.gnome.org/yourgitlabusername/pitivi</p>
+<p>If you agree with the requests for changes, implement the changes,
+commit them and push your branch.</p>
 </li>
-<li>
-<p>Push your branch to your fork with:</p>
-<p>git push <em>yourgitlabusername</em></p>
-</li>
-<li>
-<p>Create merge request either by the link that shows in the command line after
-pushing or in the GitLab UI clicking "Create merge request" in your branch.</p>
-</li>
-</ol>
+</ul>
+<p>Mark the addressed comment threads as "resolved", unless there is a
+disagreement. Finally, inform the reviewer when you are done!</p>
+<p>Everybody can see the merge request and comment on it. If you see an
+interesting merge request, feel free to review it yourself.</p>
+<h4 id="tips-for-creating-the-commits">Tips for creating the commits</h4>
+<p>Run <code>gitk main_file_you_changed.py</code> to see how the commit messages
+are formatted and try to follow the model.</p>
+<p>Before pushing, use <code>gitk</code> to have a quick look at your branch and
+review your own changes.</p>
+<p>Avoid creating separate "update" commits. We don't need the full history
+of changes in the commit history. Consider squashing these in one of the
+previous commits where it makes sense.</p>
+<p>If you add some new logic and a unittest for it, the unittest should be
+included in the same commit as the tested logic.</p>
 
     </div>
         
