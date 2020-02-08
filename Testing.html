@@ -114,27 +114,39 @@ smaller and simpler; since most of the core functionality is now handled
 by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
 you want to test more thoroughly.</p>
 <h2 id="unit-tests">Unit tests</h2>
-<p>You can run the unit tests with one of:</p>
+<p>You can run the tests with the <code>ptvtests</code> alias created when you enter
+the <a href="HACKING.html">development environment</a>:</p>
+<pre><code>$ alias ptvtests
+ptvtests='ptvenv gst-validate-launcher /.../pitivi-dev/pitivi/tests/ptv_testsuite.py'
+</code></pre>
+<p>NOTE: If you are on <a href="crossplatform.html">macOS or Windows</a>, replace
+<code>ptvtests</code> with <code>gst-validate-launcher tests/ptv_testsuite.py</code>.</p>
+<p>Run the entire unit tests suite:</p>
 <pre><code>$ ptvtests
 </code></pre>
-<p>If you want to run only one particular unit test, use (assuming you are in
-our flatpak based development environment):</p>
-<pre><code>$ ptvtests -t tests.test_project.TestProjectManager.testLoadProjectFailedUnknownFormat
+<p>Run only the tests in a particular file:</p>
+<pre><code>$ ptvtests -t test_project
 </code></pre>
-<p>Listing tests:</p>
+<p>Run only one particular unit test:</p>
+<pre><code>$ ptvtests -t tests.test_project.TestProjectManager.test_loading_missing_project_file
+</code></pre>
+<p>Normally it should work to use just the name of the test method:</p>
+<pre><code>$ ptvtests -t test_loading_missing_project_file
+</code></pre>
+<p>To lists all the available tests, run:</p>
 <pre><code>$ ptvtests -L
 </code></pre>
-<p>NOTE: If you are not in our dev env, replace <code>ptvtests</code> with
-<code>gst-validate-launcher tests/ptv_testsuite.py</code>.</p>
 <h3 id="writing-unit-tests">Writing unit tests</h3>
 <p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
 as it's now integrated into
 <a href="http://docs.python.org/dev/library/unittest.mock">Python3</a> which we use
 as of <a href="releases/0-94.html">0.94</a>.</p>
+<p>We use the <code>unittest.mock</code> module extensively for writing unit tests for
+the UI.</p>
 <p>If you're curious about our unit tests, the best way to get to know them
 is to write a few Pitivi unit tests and have us review them. Check out
-<a href="HACKING.html">how to set up your dev env</a> and
-come in our <a href="http://www.pitivi.org/?go=contact">IRC channel</a>!</p>
+<a href="HACKING.html">how to set up your dev env</a> and come in our <a href="http://www.pitivi.org/?go=contact">IRC channel or
+Matrix room</a>!</p>
 <h2 id="integration-tests">Integration tests</h2>
 <p>The integration tests are run with GstValidate. They are located in the
 <a href="https://gitlab.gnome.org/GNOME/pitivi/tree/master/tests/validate-tests">tests/validate-tests</a>
