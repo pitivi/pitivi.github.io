@@ -103,46 +103,23 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="hacking-on-pitivi">Hacking on Pitivi</h1>
-<p>There are two ways to set up a flatpak sandbox with all the
-dependencies required to run and develop Pitivi. We recommend
-the advanced way, but if you want something quick, go ahead with
-the easy way.</p>
-<h2 id="the-easy-way">The easy way</h2>
-<p>The easy way to setup the development environment is to follow the
-<a href="https://wiki.gnome.org/Newcomers/">GNOME Newcomers guide</a>.</p>
-<p>This implies using GNOME Builder to manage the dependencies sandbox.</p>
-<p>Clone the <code>https://gitlab.gnome.org/GNOME/pitivi.git</code> git repository
-in GNOME Builder.</p>
-<p>To run the unittests, click in Builder: Unittests &gt; pitivi &gt; Pitivi unit tests.
-Make sure they all pass, or tell us about any failures.</p>
-<p>To be able to use our pre-commit git hook, run:</p>
-<pre><code>$ cd ~/Projects/pitivi
-$ ln -s ../../pre-commit.hook .git/hooks/pre-commit
-</code></pre>
-<p>When creating commits, for the pre-commit git hook to work properly
-it has to run in the sandbox. This is possible only by running <code>git</code>
-in a Build Terminal in GNOME Builder. You might want to
-<code>export EDITOR=nano</code> if you get "error: unable to start editor 'vi'"
-when you have to enter a commit message.</p>
-<h2 id="setting-up-the-advanced-development-environment">Setting up the advanced development environment</h2>
-<blockquote>
-<p>NOTE: This way of setting the development environment is sensibly more complex
-but also more flexible than the one for newcomers. If you are a  beginner
-or if you usually use <a href="https://wiki.gnome.org/Apps/Builder">GNOME Builder</a>
-as your main IDE, follow, as previously advised, the
-<a href="https://wiki.gnome.org/Newcomers/">GNOME Newcomers guide</a></p>
-</blockquote>
-<p>The official way of getting your environment up and running is by using
-<a href="http://flatpak.org/">flatpak</a>. For this you need to
-<a href="http://flatpak.org/getting.html">install flatpak</a> on your system,
-along with flatpak-builder. Note flatpak-builder might be provided by an
-additional package on some distributions (such as Archlinux).</p>
-<p>Create a development environment folder and get the <a href="http://gitlab.gnome.org/GNOME/pitivi">Pitivi source code</a> into it:</p>
+<p>To develop Pitivi on Linux you need to set up a development environment,
+as described below. For <a href="crossplatform.html">other platforms</a>, get in
+touch with us.</p>
+<p>By setting up a development environment, you create a
+<a href="https://flatpak.org">flatpak</a> sandbox containing all the Pitivi
+dependencies. The sandbox is then used to run Pitivi and the unittests,
+without messing your system.</p>
+<p>Start by installing <strong>both</strong> <a href="http://flatpak.org/getting.html">flatpak</a>
+and <code>flatpak-builder</code> on your system.</p>
+<p>Create a development environment folder and get the <a href="http://gitlab.gnome.org/GNOME/pitivi">Pitivi source
+code</a> into it:</p>
 <pre><code>$ mkdir pitivi-dev
 $ cd pitivi-dev
 $ git clone https://gitlab.gnome.org/GNOME/pitivi.git
 </code></pre>
-<p>Whenever you want to hack on Pitivi, enter the development environment:</p>
+<p>Whenever you want to hack on Pitivi, start a new terminal and enter the
+development environment:</p>
 <pre><code>$ cd pitivi-dev/pitivi &amp;&amp; source bin/pitivi-env
 -&gt; Setting up the prefix for the sandbox...
 Using Pitivi prefix in /.../pitivi-dev/pitivi-prefix
@@ -150,19 +127,15 @@ Using Pitivi prefix in /.../pitivi-dev/pitivi-prefix
 Running in sandbox: echo Prefix ready
 Prefix ready
 </code></pre>
-<p>This can take a while when creating the sandbox from scratch. Note the
-prompt changes:</p>
+<p>When creating the sandbox from scratch it can take up to a few hours,
+depending on your internet connection speed and the CPU. Note the prompt
+changes:</p>
 <pre><code>(ptv-flatpak) $
 </code></pre>
 <p>By entering the development environment, you get:</p>
 <ul>
 <li>a <a href="http://docs.flatpak.org/en/latest/working-with-the-sandbox.html">Flatpak sandbox</a>
-for the dependencies, in <code>pitivi-dev/pitivi-prefix</code>
-</li>
-<li>a <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">Python virtual environment</a>
-with development tools, such as
-<a href="http://pre-commit.com">pre-commit</a>,
-in <code>pitivi-dev/pitivi/build/flatpak/pyvenv</code>
+with dependencies and some development tools, in <code>pitivi-dev/pitivi-prefix</code>
 </li>
 <li>the <a href="http://mesonbuild.com/Quick-guide.html">Meson build directory</a>,
 in <code>pitivi-dev/pitivi/mesonbuild</code>
