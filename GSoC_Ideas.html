@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -103,50 +103,57 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="gsoc-project-ideas">GSoC Project Ideas</h1>
-<p>These ideas can be used as a base for writing a detailed project proposal if you want to apply for a <a href="Google_Summer_of_Code.html">GSoC internship</a>. You are welcome to come up with your own ideas.</p>
-<p>To create a detailed proposal, use <a href="https://wiki.gnome.org/Outreach/SummerOfCode/Students#Fill_out_the_Application">GNOME's GSoC application template</a>.</p>
-<h2 id="render-experience">Render experience</h2>
-<ul>
-<li>Brief explanation: The render dialog should be simplified to avoid overwhelming the users, while still allowing full control. The dialog with the advanced settings of the encoders should similarly be improved for the officially supported encoders. In preparation, the render dialog should be <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/2382">refactored into a perspective</a>.</li>
-<li>Requirements: Python, eye for detail. Minimal experience contributing to Pitivi.</li>
-<li>Mentor: Alexandru "aleb" Băluț</li>
-</ul>
-<h2 id="focus-on-the-music">Focus on the music</h2>
-<ul>
-<li>Brief explanation: Often people want to pick a nice tune and then sync their weekend clips on it. To make this easy, Pitivi can detect the beats using a 3rd party library, and allow aligning and cutting the clips to the beat. It might sound easy, but the entire experience should be super-polished so everybody can do it.</li>
-<li>Requirements: Python, C. Minimal experience contributing to Pitivi.</li>
-<li>Mentor: Mathieu Duponchelle</li>
-</ul>
-<h2 id="face-blurring">Face blurring</h2>
-<ul>
-<li>Brief explanation: We should make it easy to blur faces. We can use an existing 3rd party plugin to analyze the video and report the location of the faces. The resulting data can be used to blur a specific face. The challenge is <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/1942">making this process as friendly as possible</a>.</li>
-<li>Requirements: Python. Minimal experience contributing to Pitivi.</li>
-<li>Mentor: Mathieu Duponchelle</li>
-</ul>
-<h2 id="closing-credits">Closing credits</h2>
-<ul>
-<li>Brief explanation: For <a href="https://en.wikipedia.org/wiki/Closing_credits">end credits</a> and other advanced text display, we could use the new <a href="https://www.youtube.com/watch?v=no7rvUk8GqM">GStreamer WPE</a> element in <a href="https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad/tree/master/ext/wpe">gst-plugins-bad</a>, which can display an HTML page as a video element. As GstWPE is a live source it does not allow seeking (getting frames at random positions), we have to add logic in Pitivi for seamlessly creating a video file out of an animated HTML page. The resulting file can be used in the project timeline as any other video clip. You'd have to extend the UI with a new <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/perspective.py">perspective</a> for managing the closing credits HTML, and the corresponding video files.</li>
-<li>Requirements: Python. Minimal experience contributing to Pitivi.</li>
-<li>Mentor: Philippe Normand</li>
-</ul>
-<h2 id="media-library-improvements">Media Library improvements</h2>
-<ul>
-<li>Brief explanation: The first task would be to refactor the Media Library, to <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/1343">replace the two separate widgets</a> we use for the list view and the icon view with a single flexible <a href="https://lazka.github.io/pgi-docs/#Gtk-3.0/classes/FlowBox.html#Gtk.FlowBox">Gtk.FlowBox</a> widget. The second task would be to <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/537">allow basic tagging of clips in the Media Library</a>, and extend the search functionality to work on tags. The remaining time could be allocated to prepare for advanced clips filtering in the Media Library, based on tags.</li>
-<li>Requirements: Python, eye for detail. Minimal experience contributing to Pitivi.</li>
-<li>Mentor: Alexandru "aleb" Băluț</li>
-</ul>
+<p>These ideas shall be used as a base for writing a detailed project proposal if
+you want to apply for a <a href="Google_Summer_of_Code.html">GSoC internship</a>. You are
+welcome to come up with your own ideas.</p>
+<p>To create a detailed proposal, use our <a href="GSoC_Application.html">GSoC application
+template</a>.</p>
 <h2 id="cut-perspective">Cut perspective</h2>
-<ul>
-<li>Brief explanation: The most tedious process of video editing is the initial cutting and structuring of the global timeline. A new perspective similar to the <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/editorperspective.py">EditorPerspective</a> will offer a <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/2381">second timeline representation</a> above the timeline, that is always zoom-fitted. This could build on the <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/timeline/markers.py">markers functionality</a> to allow for pre-insertion trimming.</li>
-<li>Requirements: Python. Minimal experience contributing to Pitivi.</li>
-<li>Mentor: Thibault "thiblahute" Saunier</li>
-</ul>
+<p>The most tedious process of video editing is the initial cutting and structuring
+of the global timeline. A new perspective similar to the
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/editorperspective.py">EditorPerspective</a>
+will offer a <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/2381">second timeline
+representation</a> above the
+timeline, that is always zoom-fitted.</p>
+<p>Requirements: Python. Minimal experience contributing to Pitivi including unit
+tests.</p>
+<h2 id="timeline-enhancements">Timeline enhancements</h2>
+<p>Fixing timeline issues and making small enhancements would improve a lot the
+timeline usability, making it a delight to use Pitivi. See
+<a href="https://gitlab.gnome.org/GNOME/pitivi/-/issues?label_name%5B%5D=6.+Component%3A+Timeline">GitLab</a>.</p>
+<p>Requirements: Python. Minimal experience contributing to Pitivi including unit
+tests.</p>
+<h2 id="focus-on-the-music">Focus on the music</h2>
+<p>Often people want to pick a nice tune and then sync their weekend clips on it.
+To make this easy, Pitivi can detect the beats using a 3rd party library, and
+allow aligning and cutting the clips to the beat. It might sound easy, but the
+entire experience should be super-polished so it works nice and everybody can do
+it.</p>
+<p>Requirements: Python, C. Minimal experience contributing to Pitivi including
+unit tests.</p>
+<h2 id="closing-credits">Closing credits</h2>
+<p>For <a href="https://en.wikipedia.org/wiki/Closing_credits">end credits</a> and other
+advanced text display, we could use the new <a href="https://www.youtube.com/watch?v=no7rvUk8GqM">GStreamer
+WPE</a> element in
+<a href="https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad/tree/master/ext/wpe">gst-plugins-bad</a>,
+which can display an HTML page as a video element. As GstWPE is a live source it
+does not allow seeking (getting frames at random positions), we have to add
+logic in Pitivi for seamlessly creating a video file out of an animated HTML
+page. The resulting file can be used in the project timeline as any other video
+clip. You'd have to extend the UI with a new
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/perspective.py">perspective</a>
+for managing the closing credits HTML, and the corresponding video files.</p>
+<p>Requirements: Python. Minimal experience contributing to Pitivi including unit
+tests.</p>
 <h2 id="fix-gpu-support-in-pitivi">Fix GPU support in Pitivi</h2>
-<ul>
-<li>Brief explanation: GStreamer has pretty good GPU support through the OpenGL set of plugins, but Pitivi/GES is not able to take full advantage of that infrastructure yet, mainly because of lack of testing and bug fixing on our side. This project is about enabling GL plugins for compositing and rendering, and fixing any issue that shows up. The second part would be about making sure hardware accelerated decoders can be used in the pipelines.</li>
-<li>Requirements: C. Experience with GStreamer is mandatory. Minimal experience contributing to Pitivi. Experience with OpenGL is a plus.</li>
-<li>Mentor: Thibault "thiblahute" Saunier</li>
-</ul>
+<p>GStreamer has pretty good GPU support through the OpenGL set of plugins, but
+Pitivi/GES is not able to take full advantage of that infrastructure yet, mainly
+because of lack of testing and bug fixing on our side. This project is about
+enabling GL plugins for compositing and rendering, and fixing any issue that
+shows up. The second part would be about making sure hardware accelerated
+decoders can be used in the pipelines.</p>
+<p>Requirements: C. Experience with GStreamer is mandatory. Minimal experience
+contributing to Pitivi including unit tests. Experience with OpenGL is a plus.</p>
 
     </div>
         

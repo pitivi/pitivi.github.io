@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -195,7 +195,7 @@ see below.</p>
 <ol>
 <li>Make sure you have the GNOME Sdk and Debug symbols installed:</li>
 </ol>
-<pre><code>GNOME_REPO=$(flatpak info org.gnome.Platform//3.34 | grep Origin | awk '{ print $2 }')
+<pre><code>GNOME_REPO=$(flatpak info org.gnome.Platform//3.36 | grep Origin | awk '{ print $2 }')
 for i in $(flatpak list | grep org.pitivi.Pitivi/ | awk '{ print $1 }'); do
   flatpak install --user $GNOME_REPO $(flatpak info $i |grep Runtime |awk '{ print $2 }' |sed s/Platform/Sdk/)
   flatpak update --user $(flatpak info $i |grep Runtime |awk '{ print $2 }' |sed s/Platform/Sdk/)
@@ -236,28 +236,28 @@ there are six levels: ( <span style="color:red;">ERROR</span>,
 <span style="color:blue;">DEBUG</span>,
 <span style="color:cyan;">LOG</span> ) = range(1, 7). As such, if you
 want to see errors and warnings only, you launch</p>
-<pre><code>PITIVI_DEBUG=2 bin/pitivi
+<pre><code>PITIVI_DEBUG=2 pitivi
 </code></pre>
 <p>...and if you want to see everything you do</p>
-<pre><code>PITIVI_DEBUG=6 bin/pitivi
+<pre><code>PITIVI_DEBUG=6 pitivi
 </code></pre>
 <p>If that's “too much” and you want to focus on particular parts of the
 code, you can do so. For example, you can get output from the <code>Timeline</code>
 and <code>MediaLibraryWidget</code> classes only:</p>
-<pre><code>PITIVI_DEBUG=timeline:6,medialibrarywidget:6 bin/pitivi
+<pre><code>PITIVI_DEBUG=timeline:6,medialibrarywidget:6 pitivi
 </code></pre>
 <p>Here are various examples of commands you can use to generate detailed
 debug logs that include not only Pitivi's debug output, but also
 GStreamer's:</p>
 <p>A basic log can be obtained by running:</p>
-<pre><code>PITIVI_DEBUG=*:5 GST_DEBUG=2 bin/pitivi &gt; debug.log 2&gt;&amp;1
+<pre><code>PITIVI_DEBUG=*:5 GST_DEBUG=2 pitivi &gt; debug.log 2&gt;&amp;1
 </code></pre>
 <p>To get debugging information from Non-Linear Engine, you could use:</p>
-<pre><code>PITIVI_DEBUG=5 GST_DEBUG=3,nle*:5,python:5 bin/pitivi &gt; debug.log 2&gt;&amp;1
+<pre><code>PITIVI_DEBUG=5 GST_DEBUG=3,nle*:5,python:5 pitivi &gt; debug.log 2&gt;&amp;1
 </code></pre>
 <p>The information most likely to be useful would probably be the debug
 info from <a href="GES.html">GES</a> in addition to Pitivi's:</p>
-<pre><code>PITIVI_DEBUG=5 GST_DEBUG=ges:5 bin/pitivi &gt; debug.log 2&gt;&amp;1;
+<pre><code>PITIVI_DEBUG=5 GST_DEBUG=ges:5 pitivi &gt; debug.log 2&gt;&amp;1;
 </code></pre>
 <blockquote>
 <p>When using GST_DEBUG, the resulting logs will most likely be too

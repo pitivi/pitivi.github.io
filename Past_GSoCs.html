@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -105,6 +105,30 @@ $('body').removeClass('no-script');
         <h1 id="past-gsocs">Past GSoCs</h1>
 <p>See <a href="Google_Summer_of_Code.html">Google Summer of Code</a> for how to
 get involved.</p>
+<h2 id="2020">2020</h2>
+<ul>
+<li>
+<a href="https://gaharavara.github.io">Abhishek Kumar Singh</a>
+refactored the Media Library to use a single <code>Gtk.FlowBox</code> for both the
+Icon view and the List view modes. This allowed implementing <a href="https://gaharavara.github.io/gsoc-2020-final-report/">tagging of
+the clips</a> in the
+Media Library.</li>
+<li>
+<a href="https://ayush9398.github.io/blog/">Ayush Mittal</a> simplified the Render
+Dialog to avoid overwhelming people, while still allowing full control.
+The new UI asks only about the desired render preset and quality,
+<a href="https://ayush9398.github.io/blog/GSOC'20-work-product">taking care of the
+rest</a>.</li>
+<li>
+<a href="https://123vivekr.github.io/">Vivek R</a> implemented object tracking.
+This required a new GStreamer element which uses
+<a href="https://docs.opencv.org/4.4.0/d2/d0a/tutorial_introduction_to_tracker.html">OpenCV</a>
+to track an object.
+A new UI perspective allows tracking objects and editing the tracked data.
+For now it's possible to <a href="https://123vivekr.github.io/2020/08/29/pitivi-gsoc-work-product.html">cover each tracked
+object</a>
+with a black rectangle.</li>
+</ul>
 <h2 id="2019">2019</h2>
 <ul>
 <li>
@@ -205,7 +229,7 @@ audio waveform generation and display library for GStreamer (see his
 report</a>).</p>
 <h2 id="2011">2011</h2>
 <ul>
-<li>Feroze Naina worked on adding profiles for rendering.</li>
+<li>Feroze Naina worked on adding <a href="Feroze_gsoc.html">profiles for rendering</a>.</li>
 <li>
 <a href="https://lubosz.wordpress.com/">Lubosz Sarnecki</a> implemented a nifty
 user interface for <a href="https://lubosz.wordpress.com/2016/09/26/making-viewer-uis-for-pitivi/">resizing/cropping clips directly in the
