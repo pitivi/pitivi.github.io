@@ -103,16 +103,21 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="how-to-make-a-release">How to make a release</h1>
-<p>Ideally these instructions are in line with the <a href="https://live.gnome.org/MaintainersCorner/Releasing">GNOME releasing process</a>.</p>
+<p>Ideally these instructions are in line with the <a href="https://live.gnome.org/MaintainersCorner/Releasing">GNOME releasing
+process</a>.</p>
 <p>We make two types of releases:</p>
 <ul>
 <li>regular releases, when we have new features or improvements, and</li>
 <li>"smaller" bug-fix releases, when a regular release needs patching.</li>
 </ul>
-<p>The regular releases have the version number X.YY, and the bug-fix
-releases have the version number X.YY.Z, where Z is hopefully a relatively small
+<p>The regular releases have the version number YYYY.MM, and the bug-fix releases
+have the version number YYYY.MM.Z, where Z is hopefully a relatively small
 number (1, 2, 3...).</p>
-<p>Most of the steps below should be done in the <a href="HACKING.html">development environment</a>: <code>$ source bin/pitivi-env</code> -&gt; <code>(ptv-flatpak) $</code></p>
+<p>Most of the steps below should be done in the <a href="HACKING.html">development
+environment</a>:</p>
+<pre><code>$ source bin/pitivi-env
+(ptv-flatpak) $ _
+</code></pre>
 <ol>
 <li>
 <p>Check <a href="https://gitlab.gnome.org/GNOME/pitivi/milestones">GitLab</a></p>
@@ -125,9 +130,16 @@ number (1, 2, 3...).</p>
 <li>
 <p>Check your local dev env:</p>
 <ul>
-<li>Make sure your sandbox is using the latest GStreamer release: <code>$ ptvenv --update</code>
+<li>
+<p>Make sure your sandbox is using the latest GStreamer release:</p>
+<pre><code>$ ptvenv --update
+</code></pre>
 </li>
-<li>Check <code>$ git status</code> does not show any change</li>
+<li>
+<p>Check there are no uncommitted changes:</p>
+<pre><code>$ git status
+</code></pre>
+</li>
 </ul>
 </li>
 <li>
@@ -135,13 +147,13 @@ number (1, 2, 3...).</p>
 <ul>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/meson.build">meson.build</a>:
-If doing a bugfix release, add or increase the micro.
-If doing a regular release, bump YY up and remove the micro from
-the version number, for example: 0.97.1 -&gt; 0.98. Normally this is the
-same as the name of the Phabricator milestone you just archived.</li>
+If doing a bugfix release, make sure the micro (Z) from the version number has
+been increased. If doing a regular release, update the version number with the
+current year and month and remove the micro, if any. Normally this is the
+same as the name of the GitLab milestone you just archived.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/data/org.pitivi.Pitivi.appdata.xml.in">data/org.pitivi.Pitivi.appdata.xml.in</a>:
-Add a new release tag with the exec summary of changes.</li>
+Add a new release entry with the exec summary of changes.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/NEWS">NEWS</a>:
 Copy the exec summary of changes also here. This ends up in the <code>.news</code> file at <a href="https://download.gnome.org/sources/pitivi/">download.gnome.org/sources/pitivi</a>.</li>
@@ -151,19 +163,23 @@ If there are new maintainers.</li>
 </ul>
 </li>
 <li>
-<p>Commit the changes: <code>$ git commit -a -m "Release &lt;version-number&gt;"</code></p>
+<p>Commit the changes:</p>
+<pre><code>$ git commit -a -m "Release &lt;version-number&gt;"
+</code></pre>
 </li>
 <li>
 <p>Create the distribution archive:</p>
 <pre><code>$ ninja -C mesonbuild/ dist
 $ ls -l mesonbuild/meson-dist/*.tar.*
 </code></pre>
-<p>On an X system, <code>ninja dist</code> might not work because the unit tests fail because of X. In this case, stop X and use a fake X server: <code>xvfb-run ninja -C mesonbuild/ dist</code>.</p>
+<p>On an X system, <code>ninja dist</code> might not work because the unit tests fail
+because of X. In this case, stop X with <code>sudo systemctl stop gdm</code> and use a
+fake X server: <code>xvfb-run /.../pitivi/build/flatpak/pitivi-flatpak ninja -C mesonbuild/ dist</code>.</p>
 <p>Install it on a real system and give it a spin. For example on Archlinux:</p>
 <pre><code>$ cd /tmp
 $ asp checkout pitivi
 $ cd /tmp/pitivi/repos/community-x86_64/
-$ cp .../pitivi-X.YY.Z.tar.xz .
+$ cp .../pitivi-YYYY.MM.Z.tar.xz .
 $ vim PKGBUILD
 ... Update "pkgver",
 ... Make sure "source" ends in .tar.xz
@@ -174,18 +190,23 @@ $ pitivi
 </code></pre>
 </li>
 <li>
-<p>Create a tag and push it to the official repository. The TAG must always include the micro. This means when doing a regular release with version number X.YY, the TAG is X.YY.0. When doing a bug-fix release, the version number already includes a micro, so it's all fine.</p>
+<p>Create a tag and push it to the official repository. The TAG must always include the micro. This means when doing a regular release with version number YYYY.MM, the TAG is YYYY.MM.0. When doing a bug-fix release, the version number already includes a micro, so it's all fine.</p>
 <pre><code>$ git tag -a &lt;TAG&gt; -m "Release &lt;version-number&gt;"
 $ git push origin &lt;TAG&gt;
 </code></pre>
-<p>We use tag X.YY.0 instead of X.YY because we want to have the option of later creating the X.YY branch to the official repository, since it's not possible to have both a tag and a branch with the same name. This branch would gather backported fixes and be used for doing future X.YY.Z bug-fix releases.</p>
+<p>We use tag YYYY.MM.0 instead of YYYY.MM because we want to have the option of
+later creating the YYYY.MM branch to the official repository, since it's not
+possible to have both a tag and a branch with the same name. This branch
+would gather backported fixes and be used for doing future YYYY.MM.Z bug-fix
+releases.</p>
 </li>
 <li>
 <p>Publish the archive on Gnome:</p>
-<pre><code>$ scp mesonbuild/meson-dist/pitivi-X.YY.Z.tar.xz GNOME-USER@master.gnome.org:
-$ ssh GNOME-USER@master.gnome.org -t ftpadmin install pitivi-X.YY.Z.tar.xz
+<pre><code>$ scp mesonbuild/meson-dist/pitivi-YYYY.MM.tar.xz GNOME-USER@master.gnome.org:
+$ ssh GNOME-USER@master.gnome.org -t ftpadmin install pitivi-YYYY.MM.Z.tar.xz
 </code></pre>
-<p>The tarball will appear on https://download.gnome.org/sources/pitivi/X.YY/pitivi-X.YY.Z.tar.xz</p>
+<p>The tarball will appear on
+https://download.gnome.org/sources/pitivi/YYYY.MM/pitivi-YYYY.MM.Z.tar.xz</p>
 </li>
 <li>
 <p>Spread the word about the release</p>
@@ -204,7 +225,10 @@ $ ssh GNOME-USER@master.gnome.org -t ftpadmin install pitivi-X.YY.Z.tar.xz
 <p>Update http://www.pitivi.org/releases.txt for the app's update notification feature</p>
 </li>
 <li>
-<p>Bump the Z in the version number in <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/meson.build">meson.build</a>, for example if it was a regular release: 0.98 -&gt; 0.98.1 or if it was a bug-fix release: 0.97.1 -&gt; 0.97.2, and <code>$ commit -a -m "Back to development"</code></p>
+<p>Bump the Z in the version number in
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/meson.build">meson.build</a>,
+for example if it was a regular release: 2020.09 -&gt; 2020.09.1 or if it was a
+bug-fix release: 2020.09.1 -&gt; 2020.09.2, and <code>$ commit -a -m "Back to development"</code></p>
 </li>
 </ol>
 
