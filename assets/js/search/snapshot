@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"snapshot","urls":[{"url":"Install_with_flatpak.html#page-description","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"snapshot","urls":[{"url":"Install_with_flatpak.html#development-snapshot","node_type":"h3","context":{"gi-language":["default"]}},{"url":"Install_with_flatpak.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
