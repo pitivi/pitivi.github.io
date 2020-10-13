@@ -118,7 +118,16 @@ environment</a>:</p>
 <pre><code>$ source bin/pitivi-env
 (ptv-flatpak) $ _
 </code></pre>
-<ol>
+<ol start="0">
+<li>
+<p>Freeze the strings</p>
+<ul>
+<li>Send an email to <a href="https://mail.gnome.org/archives/gnome-i18n/">gnome-i18n</a>
+@gnome.org to inform the translators the strings have been frozen and that
+in <strong>one week</strong> the release will be cut.</li>
+<li>It would be good to start preparing a blogpost already.</li>
+</ul>
+</li>
 <li>
 <p>Check <a href="https://gitlab.gnome.org/GNOME/pitivi/milestones">GitLab</a></p>
 <ul>
@@ -152,11 +161,10 @@ been increased. If doing a regular release, update the version number with the
 current year and month and remove the micro, if any. Normally this is the
 same as the name of the GitLab milestone you just archived.</li>
 <li>
-<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/data/org.pitivi.Pitivi.appdata.xml.in">data/org.pitivi.Pitivi.appdata.xml.in</a>:
-Add a new release entry with the exec summary of changes.</li>
-<li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/NEWS">NEWS</a>:
 Copy the exec summary of changes also here. This ends up in the <code>.news</code> file at <a href="https://download.gnome.org/sources/pitivi/">download.gnome.org/sources/pitivi</a>.</li>
+<li>
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/data/org.pitivi.Pitivi.appdata.xml.in">data/org.pitivi.Pitivi.appdata.xml.in</a>: Run <code>appstream-util news-to-appdata NEWS</code> and copy the new content to the appdata.xml file.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/AUTHORS">AUTHORS</a>:
 If there are new maintainers.</li>
