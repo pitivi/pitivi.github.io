@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href=".">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>pre-commit hooks</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/trie.js"></script>
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+
+<link rel="shortcut icon" href="assets/images/favicon.png">
+
+</head>
+
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/pitivi.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p><b>The Pitivi Developer Documentation</b></p>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi" data-hotdoc-ref="Precommit_hooks.html" class="page_container" id="page-wrapper">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+	<script src="assets/js/sitemap.js"></script>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-role="main">
+        <h1 id="precommit-hooks">pre-commit hooks</h1>
+<p>When you enter the <a href="HACKING.html">development environment</a>, our <code>pre-commit.hook</code>
+<a href="https://gitlab.gnome.org/GNOME/pitivi/-/blob/master/pre-commit.hook">script</a> is
+symlinked in your local git repository as <code>.git/hooks/pre-commit</code>, serving as
+the <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">Git pre-commit
+hook</a>.</p>
+<p>When you make a git commit, the following happens:</p>
+<ul>
+<li>
+<p>The <code>pre-commit.hook</code> script runs the (confusingly named) <code>pre-commit</code> tool
+<strong>in the flatpak sandbox</strong>.</p>
+</li>
+<li>
+<p>The <code>pre-commit</code> tool runs the hooks configured in
+<a href="https://gitlab.gnome.org/GNOME/pitivi/-/blob/master/.pre-commit-config.yaml">.pre-commit-config.yaml</a></p>
+</li>
+</ul>
+<p>Sooner or later you'll want to update the <code>pre-commit</code> framework and its hooks.</p>
+<h2 id="how-to-update-the-precommit-tool">How to update the <code>pre-commit</code> tool</h2>
+<p>The <code>pre-commit</code> tool is installed in the flatpak sandbox through
+<a href="https://gitlab.gnome.org/GNOME/pitivi/-/blob/master/build/flatpak/python3-pre-commit.json">python3-pre-commit.json</a>.
+The <code>python3-pre-commit.json</code> file is generated with <code>flatpak-pip-generator</code>.
+See the instructions for <a href="Updating_Python_dependencies.html">updating the Python
+dependencies</a>.</p>
+<h2 id="how-to-update-the-hooks">How to update the hooks</h2>
+<p>The <code>.pre-commit-config.yaml</code> file contains a list of "repos" and which of their
+"hooks" to be run. The repos are downloaded and cached by the <code>pre-commit</code> tool
+when you create a git commit.</p>
+<p>These hooks are executed <strong>each in their own own virtualenv</strong>, with the
+exception of the ones in the <code>local</code> repo. Currently only the <code>pylint</code> hook is
+executed directly such that it runs in the sandbox. If <code>pylint</code> runs in a
+virtualenv it would not have access to the Python environment in our flatpak
+sandbox.</p>
+<p>To update <code>pylint</code>, follow the instructions for <a href="Updating_Python_dependencies.html">updating the Python
+dependencies</a>.</p>
+<p>To update the regular hooks, take the repos one by one, check what is the latest
+version and update the entry in the <code>.pre-commit-config.yaml</code> file. After
+updating the hooks, pay attention to validate the entire codebase and fix all
+the errors.</p>
+<p>Best would be to update the repos one by one and run the corresponding hooks.
+For example, I just updated the
+<code>https://github.com/pre-commit/pre-commit-hooks.git</code> repo to revision <code>v3.4.0</code>:</p>
+<pre><code>  - repo: https://github.com/pre-commit/pre-commit-hooks.git
+    rev: v3.4.0
+    hooks:
+      - id: check-yaml
+</code></pre>
+<p>To run the <code>check-yaml</code> hook, I run:</p>
+<pre><code>(ptv-flatpak) $ ptvenv pre-commit run -a check-yaml
+</code></pre>
+
+    </div>
+        
+
+
+
+
+		
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<hr>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/Precommit_hooks.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>
