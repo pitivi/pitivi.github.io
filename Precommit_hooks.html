@@ -127,30 +127,35 @@ The <code>python3-pre-commit.json</code> file is generated with <code>flatpak-pi
 See the instructions for <a href="Updating_Python_dependencies.html">updating the Python
 dependencies</a>.</p>
 <h2 id="how-to-update-the-hooks">How to update the hooks</h2>
-<p>The <code>.pre-commit-config.yaml</code> file contains a list of "repos" and which of their
-"hooks" to be run. The repos are downloaded and cached by the <code>pre-commit</code> tool
-when you create a git commit.</p>
-<p>These hooks are executed <strong>each in their own own virtualenv</strong>, with the
-exception of the ones in the <code>local</code> repo. Currently only the <code>pylint</code> hook is
-executed directly such that it runs in the sandbox. If <code>pylint</code> runs in a
-virtualenv it would not have access to the Python environment in our flatpak
-sandbox.</p>
+<p>The <code>.pre-commit-config.yaml</code> file contains the list of hooks we use, grouped by
+the git repo in which they can be found. The repos are downloaded and cached by
+the <code>pre-commit</code> tool on demand. These hooks are executed <strong>each in their own
+own virtualenv</strong>.</p>
+<p>A special case is the <code>local</code> repo which groups the hooks installed alongside
+the pre-commit framework, in the sandbox. We only need the <code>pylint</code> hook to be
+run <strong>in the sandbox</strong> instead of in its own virtualenv, such that it has access
+to the Python environment in the sandbox.</p>
 <p>To update <code>pylint</code>, follow the instructions for <a href="Updating_Python_dependencies.html">updating the Python
 dependencies</a>.</p>
 <p>To update the regular hooks, take the repos one by one, check what is the latest
 version and update the entry in the <code>.pre-commit-config.yaml</code> file. After
-updating the hooks, pay attention to validate the entire codebase and fix all
-the errors.</p>
-<p>Best would be to update the repos one by one and run the corresponding hooks.
-For example, I just updated the
+updating each repo, validate the entire codebase and fix all the newfound
+errors.</p>
+<p>For example, suppose we just updated the
 <code>https://github.com/pre-commit/pre-commit-hooks.git</code> repo to revision <code>v3.4.0</code>:</p>
 <pre><code>  - repo: https://github.com/pre-commit/pre-commit-hooks.git
     rev: v3.4.0
     hooks:
       - id: check-yaml
 </code></pre>
-<p>To run the <code>check-yaml</code> hook, I run:</p>
+<p>To run the <code>check-yaml</code> hook on the entire codebase:</p>
 <pre><code>(ptv-flatpak) $ ptvenv pre-commit run -a check-yaml
+</code></pre>
+<p>If you feel brave, you can use <code>pre-commit</code> itself to update the hooks:</p>
+<pre><code>(ptv-flatpak) $ ptvenv pre-commit autoupdate
+</code></pre>
+<p>At the end, do a final check by running all the hooks on the entire codebase:</p>
+<pre><code>(ptv-flatpak) $ ptvenv pre-commit run -a
 </code></pre>
 
     </div>
