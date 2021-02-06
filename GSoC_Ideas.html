@@ -103,11 +103,33 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="gsoc-project-ideas">GSoC Project Ideas</h1>
-<p>These ideas shall be used as a base for writing a detailed project proposal if
-you want to apply for a <a href="Google_Summer_of_Code.html">GSoC internship</a>. You are
-welcome to come up with your own ideas.</p>
-<p>To create a detailed proposal, use our <a href="GSoC_Application.html">GSoC application
-template</a>.</p>
+<p>To apply for a <a href="Google_Summer_of_Code.html">GSoC internship</a> you need to make a project proposal. The scope
+of your GSoC project will probably cover only Pitivi, but it could very well
+span multiple codebases:</p>
+<ul>
+<li>
+<a href="http://www.pitivi.org/manual/mainwindow.html">Pitivi</a>, which is the user interface. Written in Python. <em>For those
+who love design and graphical user interaction.</em>
+</li>
+<li>
+<a href="GES.html">GES</a>, the high-level video editing GStreamer library that powers
+Pitivi and other applications. Written in C. <em>For those who wish to
+improve an easy to use, powerful and flexible library for
+audio/video editing.</em>
+</li>
+<li>GStreamer, for low-level work, such as improving filters/effects,
+codecs, hardware decoding/encoding acceleration, analysis, etc.
+Written in C. <em>For those seeking a challenging audio and video
+experience where optimization is key.</em>
+</li>
+</ul>
+<p>We'd love to see GSoC proposals originating from an itch you need to scratch.
+You are welcome to ask around and <strong>bring your own ideas</strong>. If you're not sure
+where you can be most useful, have a look at our list of ideas below. These
+shall be used as a base for writing a detailed project proposal.</p>
+<p>See <a href="Past_GSoCs.html">Past GSoCs</a> for details on what the previous GSoC students did.</p>
+<p>To create a detailed proposal, use our <a href="GSoC_Application.html">GSoC application template</a>.
+Deadlines for applying are approaching fast, hurry up!</p>
 <h2 id="cut-perspective">Cut perspective</h2>
 <p>The most tedious process of video editing is the initial cutting and structuring
 of the global timeline. A new perspective similar to the
@@ -115,21 +137,21 @@ of the global timeline. A new perspective similar to the
 will offer a <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/2381">second timeline
 representation</a> above the
 timeline, that is always zoom-fitted.</p>
-<p>Requirements: Python. Minimal experience contributing to Pitivi including unit
-tests.</p>
+<p><strong>Requirements</strong>: Python. Minimal experience contributing to Pitivi including
+unit tests.</p>
 <h2 id="timeline-enhancements">Timeline enhancements</h2>
 <p>Fixing timeline issues and making small enhancements would improve a lot the
 timeline usability, making it a delight to use Pitivi. See
 <a href="https://gitlab.gnome.org/GNOME/pitivi/-/issues?label_name%5B%5D=6.+Component%3A+Timeline">GitLab</a>.</p>
-<p>Requirements: Python. Minimal experience contributing to Pitivi including unit
-tests.</p>
+<p><strong>Requirements</strong>: Python. Minimal experience contributing to Pitivi including
+unit tests.</p>
 <h2 id="focus-on-the-music">Focus on the music</h2>
 <p>Often people want to pick a nice tune and then sync their weekend clips on it.
-To make this easy, Pitivi can detect the beats using a 3rd party library, and
-allow aligning and cutting the clips to the beat. It might sound easy, but the
-entire experience should be super-polished so it works nice and everybody can do
-it.</p>
-<p>Requirements: Python, C. Minimal experience contributing to Pitivi including
+To make this easy, Pitivi can detect the beats using a 3rd party library such as
+<a href="https://librosa.org/">librosa</a> and allow aligning and cutting the clips to the
+beat. It might sound easy, but the entire experience should be super-polished so
+it works nice and everybody can do it.</p>
+<p><strong>Requirements</strong>: Python, C. Minimal experience contributing to Pitivi including
 unit tests.</p>
 <h2 id="closing-credits">Closing credits</h2>
 <p>For <a href="https://en.wikipedia.org/wiki/Closing_credits">end credits</a> and other
@@ -143,8 +165,8 @@ page. The resulting file can be used in the project timeline as any other video
 clip. You'd have to extend the UI with a new
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/perspective.py">perspective</a>
 for managing the closing credits HTML, and the corresponding video files.</p>
-<p>Requirements: Python. Minimal experience contributing to Pitivi including unit
-tests.</p>
+<p><strong>Requirements</strong>: Python. Minimal experience contributing to Pitivi including
+unit tests.</p>
 <h2 id="fix-gpu-support-in-pitivi">Fix GPU support in Pitivi</h2>
 <p>GStreamer has pretty good GPU support through the OpenGL set of plugins, but
 Pitivi/GES is not able to take full advantage of that infrastructure yet, mainly
@@ -152,8 +174,15 @@ because of lack of testing and bug fixing on our side. This project is about
 enabling GL plugins for compositing and rendering, and fixing any issue that
 shows up. The second part would be about making sure hardware accelerated
 decoders can be used in the pipelines.</p>
-<p>Requirements: C. Experience with GStreamer is mandatory. Minimal experience
+<p><strong>Requirements</strong>: C. Experience with GStreamer is mandatory. Minimal experience
 contributing to Pitivi including unit tests. Experience with OpenGL is a plus.</p>
+<h2 id="gtk-4">GTK 4</h2>
+<p>Initially the development environment should be migrated onto a GTK 4 runtime
+and then the app should be ported following the <a href="https://developer.gnome.org/gtk4/unstable/gtk-migrating-3-to-4.html">migration
+guide</a>.</p>
+<p><strong>Requirements</strong>: Python. Minimal experience contributing to Pitivi including
+unit tests. Experience developing GTK apps is a plus.</p>
+<h2></h2>
 
     </div>
         

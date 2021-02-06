@@ -199,7 +199,8 @@ $ pitivi
 </li>
 <li>
 <p>Create a tag and push it to the official repository. The TAG must always include the micro. This means when doing a regular release with version number YYYY.MM, the TAG is YYYY.MM.0. When doing a bug-fix release, the version number already includes a micro, so it's all fine.</p>
-<pre><code>$ git tag -a &lt;TAG&gt; -m "Release &lt;version-number&gt;"
+<pre><code>$ git push origin master
+$ git tag -a &lt;TAG&gt; -m "Release &lt;version-number&gt;"
 $ git push origin &lt;TAG&gt;
 </code></pre>
 <p>We use tag YYYY.MM.0 instead of YYYY.MM because we want to have the option of
@@ -235,8 +236,12 @@ https://download.gnome.org/sources/pitivi/YYYY.MM/pitivi-YYYY.MM.Z.tar.xz</p>
 <li>
 <p>Bump the Z in the version number in
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/meson.build">meson.build</a>,
-for example if it was a regular release: 2020.09 -&gt; 2020.09.1 or if it was a
-bug-fix release: 2020.09.1 -&gt; 2020.09.2, and <code>$ commit -a -m "Back to development"</code></p>
+for example if it was a regular release: <code>2020.09</code> -&gt; <code>2020.09.1</code> or if it was a
+bug-fix release: <code>2020.09.1</code> -&gt; <code>2020.09.2</code>.
+Push to the official repo:</p>
+<pre><code>$ commit -a -m "Back to development"
+$ git push origin master
+</code></pre>
 </li>
 </ol>
 

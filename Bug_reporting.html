@@ -177,8 +177,7 @@ and run <code>thread apply all bt</code> to get the backtraces for all the threa
 <h3 id="when-running-in-the-development-environment">When running in the development environment</h3>
 <ol>
 <li>
-<p>Make sure you have the GNOME Sdk and Debug symbols installed,
-see below.</p>
+<p>Install the GNOME SDK Debug symbols and update them, see below.</p>
 </li>
 <li>
 <p>Enter the sandbox:</p>
@@ -193,15 +192,12 @@ see below.</p>
 </code></pre>
 <h3 id="when-running-with-flatpak">When running with Flatpak</h3>
 <ol>
-<li>Make sure you have the GNOME Sdk and Debug symbols installed:</li>
+<li>Install the GNOME SDK and its Debug symbols and update them:</li>
 </ol>
-<pre><code>GNOME_REPO=$(flatpak info org.gnome.Platform//3.38 | grep Origin | awk '{ print $2 }')
-for i in $(flatpak list | grep org.pitivi.Pitivi/ | awk '{ print $1 }'); do
-  flatpak install --user $GNOME_REPO $(flatpak info $i |grep Runtime |awk '{ print $2 }' |sed s/Platform/Sdk/)
-  flatpak update --user $(flatpak info $i |grep Runtime |awk '{ print $2 }' |sed s/Platform/Sdk/)
-  flatpak install --user $GNOME_REPO $(flatpak info $i |grep Runtime |awk '{ print $2 }' |sed s/Platform/Sdk.Debug/)
-  flatpak update --user $(flatpak info $i |grep Runtime |awk '{ print $2 }' |sed s/Platform/Sdk.Debug/)
-done
+<pre><code>flatpak --user install flathub org.gnome.Sdk/x86_64/3.38
+flatpak --user install flathub org.gnome.Sdk.Debug/x86_64/3.38
+flatpak --user update          org.gnome.Sdk/x86_64/3.38
+flatpak --user update          org.gnome.Sdk.Debug/x86_64/3.38
 </code></pre>
 <ol start="2">
 <li>Start a shell in the Pitivi flatpak sandbox:</li>

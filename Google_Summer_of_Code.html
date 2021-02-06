@@ -103,45 +103,34 @@ $('body').removeClass('no-script');
 	<div id="main">
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="gsoc">GSoC</h1>
-<p>The <a href="https://summerofcode.withgoogle.com/">Google “Summer of Code” program</a> is available for students only. If
-we accept your project proposal, in June-July-August you work on your
-project while being paid by Google. Mid-term and end-term we evaluate
-your work.</p>
+<p>The <a href="https://summerofcode.withgoogle.com/">Google “Summer of Code” program</a> is available for students and recent
+graduates. Check section "7.1. Eligibility" in the <a href="https://summerofcode.withgoogle.com/rules/">Rules</a> to see if you are
+eligible.</p>
+<p>Interested students write and submit a detailed proposal. If the proposal is
+accepted, you work on your project while being paid by Google. Mid-term and
+end-term we both submit evaluations to Google.</p>
 <p>See the section at the top of the <a href="http://www.pitivi.org/?go=contributing">contributing page</a> for details why
-Pitivi is important.</p>
-<p>While a GSoC with us is one of the most fun and rewarding experiences
-you can get, you need to consider it as <em>professional work</em>:</p>
-<ul>
-<li>
-<strong>GSoC projects are on a “full-time” basis, not “part-time”</strong>. What
-this means is that you should not apply if you have some strange
-schedule where, for example, you have school exams for many weeks
-between early May and late August. If you have school
-exams/obligations during the summer, <em>you need to mention them</em> and
-account for them in your schedule.</li>
-<li>
-<strong>No excuses!</strong> We expect you to be a reliable, hard-working person.
-If things don't go well because for example your roommates are
-noisy, you don't have air conditioning, or your internet connection
-is unreliable, and you can't fix it, tell us so we can terminate
-your GSoC.</li>
-</ul>
+Pitivi is important, if you're still not convinced.</p>
+<p>While a GSoC with us is one of the most fun and rewarding experiences you can
+get, you need to consider it as <em>professional work</em>. We expect you to be a
+reliable, hard-working person. If things don't go well because for example your
+roommates are noisy, you don't have air conditioning, or your internet
+connection is unreliable, and you can't fix it, tell us so we can terminate your
+internship. <strong>No excuses!</strong></p>
 <p>Our policy is to ignore “theoretical” applications — to be eligible,
 you must show you're capable. Best is to get involved early-on and
 make one or more contributions prior to applying. Read more about our stance in
 this blog post: “<a href="http://jeff.ecchi.ca/blog/2014/02/15/applying-for-a-gsoc-project-is-all-about-early-involvement-and-commitment/">Applying for a GSoC project is all about early
 involvement and commitment</a>”. If you are interested, the best thing you
-can do is to come to our <a href="http://www.pitivi.org/?go=contact">IRC channel</a> now, to make sure we have enough
+can do is to come to our <a href="https://app.element.io/#/room/#pitivi:matrix.org">chat room</a> now, to make sure we have enough
 time to get to know you.</p>
 <h2 id="who-we-are-looking-for">Who we are looking for</h2>
 <p>We are looking for smart and talented developers interested in
 multimedia and video editing.</p>
-<p>You need to be highly <strong>communicative</strong>. Stuck on a problem? We need to
-know. Achieved a milestone or solved a really nasty problem? The <em>entire
-world</em> needs to know. We require to see you in our IRC channel, that's
-where you can meet the team, where you follow what's going on and that's
-where we'll communicate. Email is not sufficient. If you're new to IRC,
-check out <a href="https://www.irccloud.com">IRCCloud</a> and <a href="https://riot.im/app">riot.im</a>.</p>
+<p>The time is very short. To make the most out of it, you need to be highly
+<strong>communicative</strong>. Particularly when you are stuck on a problem or don't see any
+way out. We require to see you in our <a href="https://app.element.io/#/room/#pitivi:matrix.org">chat room</a>, that's where you can meet the
+team, where you follow what's going on and that's where we communicate.</p>
 <p>You must have experience with Python or C, depending on your project.
 Knowledge of <a href="Git.html">Git</a>, GStreamer and <a href="Architecture.html">related technologies</a> is a plus.
 Familiarity with <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a> is a plus.</p>
@@ -154,10 +143,10 @@ distribute our own builds to users. You have a fantastic learning
 opportunity to play with these <a href="Architecture.html">technologies</a>. We'll direct you to make
 great use of the tight-knit GStreamer and GTK communities so you have
 high-quality feedback throughout your project.</p>
-<p>Flatpak additionally allows us to have a <a href="HACKING.html">development environment</a> with
-all the dependencies in a sandbox, which is very easy to set up.
-This means you won't have to mess your system to be able to build
-the latest GStreamer. Since all of us will be using the same
+<p>The dependencies for a video editor are very complex. But thanks to Flatpak we
+have a <a href="HACKING.html">development environment</a> with all the dependencies in a sandbox, which
+is very easy to set up. This means you won't have to mess your system to be able
+to build the latest GStreamer. Since all of us will be using the same
 dependencies, there will be no friction due to the complex dependencies.</p>
 <h2 id="how-to-apply-and-get-started">How to apply and get started</h2>
 <p><img src="images/Challenge-Accepted.png" alt="" title="Challenge-Accepted.png"></p>
@@ -172,52 +161,21 @@ properly plan your project.</p>
 Dricot's blog post on “<a href="http://ploum.net/be-selected-student-for-soc/">Being selected as a Summer of Code student</a>”.</p>
 <p>Therefore, you should proceed like this:</p>
 <ol>
-<li>Come to our <a href="http://www.pitivi.org/?go=contact">IRC channel</a> and stick around.</li>
+<li>Come to our <a href="https://app.element.io/#/room/#pitivi:matrix.org">chat room</a> and stick around.</li>
 <li>Setup your <a href="HACKING.html">development environment</a> and run the <a href="Testing.html">Test suite</a>.
 Explore the development version of Pitivi, what works well and what
-doesn't, etc. See how you like it.</li>
+doesn't, etc.</li>
 <li>To get a better idea of how comfortable you are with the code and
 community, make some small contributions to the code. Pick some
-<a href="https://gitlab.gnome.org/GNOME/pitivi/issues?label_name%5B%5D=4.+Newcomers">small bug to fix</a> and have a go at it. Keep us in the loop. The
-earlier you start contributing, the more likely you know what you're
-getting into. Don't start contributing in March/April: we highly
-encourage you to start getting involved in January/February, or even
-earlier, to have time to try another team if we are not a good fit
-for you.</li>
+<a href="https://gitlab.gnome.org/GNOME/pitivi/issues?label_name%5B%5D=4.+Newcomers">small bug to fix</a> and have a go at it. Keep us in the loop.
+Ideally you start getting involved in January/February, or even
+earlier, to have time to try another team if we are not a good fit.</li>
 <li>Find a cool feature you need in Pitivi and tell us. Start making a
 design doc on how you plan to implement it. Feel free to pick
-a project from the list of <a href="GSoC_Ideas.html">GSoC project ideas</a> we thought about.</li>
+a project from the list of [GSoC project ideas] we thought about.</li>
 <li>Fill out the <a href="GSoC_Application.html">application template</a> and apply officially to the
 Google's Summer of Code <a href="https://summerofcode.withgoogle.com/">website</a>.</li>
 </ol>
-<h2 id="project-ideas">Project ideas</h2>
-<p>Pitivi is a very modular video editor, whose <a href="Architecture.html">architecture</a> heavily
-depends on technologies like <a href="GES.html">GES</a> and GStreamer. The scope of your GSoC
-project will probably cover only Pitivi, but it could very well span
-multiple codebases:</p>
-<ul>
-<li>
-<a href="http://www.pitivi.org/manual/mainwindow.html">Pitivi</a>, which is the user interface. Written in Python. <em>For those
-who love design and graphical user interaction.</em>
-</li>
-<li>
-<a href="GES.html">GES</a>, the high-level video editing GStreamer library that powers
-Pitivi and other applications. Written in C. <em>For those who wish to
-improve an easy to use, powerful and flexible library for
-audio/video editing.</em>
-</li>
-<li>GStreamer, for low-level work, such as improving filters/effects,
-codecs, hardware decoding/encoding acceleration, analysis, etc.
-Written in C. <em>For those seeking a challenging audio and video
-experience where optimization is key.</em>
-</li>
-</ul>
-<p>We'd love to see GSoC proposals originating from an itch you need to
-scratch. You are welcome to ask around and <strong>bring your own ideas</strong>. If
-you're not sure where you can be most useful, have a look at our list
-of <a href="GSoC_Ideas.html">GSoC project ideas</a>. Deadlines for applying are approaching fast,
-hurry up!</p>
-<p>See <a href="Past_GSoCs.html">Past GSoCs</a> for details on what the previous GSoC students did.</p>
 
     </div>
         
