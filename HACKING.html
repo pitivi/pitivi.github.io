@@ -185,30 +185,32 @@ with <code>binstall</code>. See "Switching locales" below.</p>
 </li>
 </ul>
 <h2 id="hacking-on-pitivi-dependencies-meson">Hacking on Pitivi dependencies (Meson)</h2>
-<p>If you have to work on say, <a href="https://gstreamer.freedesktop.org/modules/gst-editing-services.html">GStreamer Editing Services</a>
+<p>If you have to work on say, <a href="https://gstreamer.freedesktop.org/modules/gst-editing-services.html">GStreamer Editing
+Services</a>
 which is built using the Meson build system, first clone it into your
 <code>pitivi-dev</code> folder:</p>
-<pre><code>(ptv-flatpak) $ git clone git://anongit.freedesktop.org/gstreamer/gst-editing-services
+<pre><code>(ptv-flatpak) $ cd pitivi-dev
+(ptv-flatpak) $ git clone git@gitlab.freedesktop.org:gstreamer/gst-editing-services.git
 </code></pre>
-<p>Prepare its build directory (Once it has been set up, you won't have to
-run <code>meson</code> again for this build directory):</p>
-<pre><code>(ptv-flatpak) $ cd gst-editing-services &amp;&amp; setup
+<p>Prepare its build directory using the <code>setup</code> alias which runs <code>meson</code>. This has
+to be done only once:</p>
+<pre><code>(ptv-flatpak) $ cd pitivi-dev/gst-editing-services
+(ptv-flatpak) $ setup
 Using Pitivi prefix in /.../pitivi-dev/pitivi-prefix
 Running in sandbox: meson mesonbuild/ --prefix=/app --libdir=lib -Ddisable_gtkdoc=true -Ddisable_doc=true
 </code></pre>
 <p>Build and install it in the sandbox:</p>
-<pre><code>(ptv-flatpak) $ ninja -C mesonbuild/ install
+<pre><code>(ptv-flatpak) $ cd pitivi-dev/gst-editing-services
+(ptv-flatpak) $ ninja -C mesonbuild/ install
 Using Pitivi prefix in /.../pitivi-dev/pitivi-prefix
 Running in sandbox: ninja -C mesonbuild/ install
 </code></pre>
-<p>In the <code>(ptv-flatpak)</code> development environment <code>meson</code> and <code>ninja</code> are
-aliases which run meson and ninja in the flatpak sandbox.</p>
-<p>NOTE: When updating the environment with <code>ptvenv --update</code>,
-it will use your local dependencies repositories it finds in the
-<code>pitivi-dev</code> folder, instead of the default remote repositories.
-This means you have to update them yourself.
-Also beware that it will not take into account not committed
-changes.</p>
+<p>In the <code>(ptv-flatpak)</code> development environment <code>meson</code> and <code>ninja</code> are aliases
+which run meson and ninja in the flatpak sandbox.</p>
+<p>NOTE: When updating the environment with <code>ptvenv --update</code>, it will use your
+local dependencies repositories it finds in the <code>pitivi-dev</code> folder, instead of
+the default remote repositories. This means you have to update them yourself.
+Also beware that it only takes into account committed changes.</p>
 <h2 id="hacking-on-pitivi-dependencies-autotools-make-etc">Hacking on Pitivi dependencies (Autotools, Make, etc)</h2>
 <p>If the project you are working on is built with other tools, make sure
 they are run in the sandbox by using <code>ptvenv</code>. For example:</p>
