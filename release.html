@@ -162,9 +162,12 @@ current year and month and remove the micro, if any. Normally this is the
 same as the name of the GitLab milestone you just archived.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/NEWS">NEWS</a>:
-Copy the exec summary of changes also here. This ends up in the <code>.news</code> file at <a href="https://download.gnome.org/sources/pitivi/">download.gnome.org/sources/pitivi</a>.</li>
+Compose the exec summary of changes, at the top. This ends up in the <code>.news</code>
+file at <a href="https://download.gnome.org/sources/pitivi/">download.gnome.org/sources/pitivi</a>.</li>
 <li>
-<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/data/org.pitivi.Pitivi.appdata.xml.in">data/org.pitivi.Pitivi.appdata.xml.in</a>: Run <code>appstream-util news-to-appdata NEWS</code> and copy the new content to the appdata.xml file.</li>
+<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/data/org.pitivi.Pitivi.appdata.xml.in">data/org.pitivi.Pitivi.appdata.xml.in</a>:
+Run <code>appstream-util news-to-appdata NEWS</code> and copy the generated content into
+the appdata template.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/AUTHORS">AUTHORS</a>:
 If there are new maintainers.</li>
@@ -189,8 +192,8 @@ $ asp checkout pitivi
 $ cd /tmp/pitivi/repos/community-x86_64/
 $ cp .../pitivi-YYYY.MM.Z.tar.xz .
 $ vim PKGBUILD
-... Update "pkgver",
-... Make sure "source" ends in .tar.xz
+... Update "pkgver"
+... Make sure the filename at the end of "source" matches the copied file
 ... Update "sha256sums"
 $ makepkg
 $ makepkg -i
@@ -212,10 +215,10 @@ releases.</p>
 <li>
 <p>Publish the archive on Gnome:</p>
 <pre><code>$ scp mesonbuild/meson-dist/pitivi-YYYY.MM.tar.xz GNOME-USER@master.gnome.org:
-$ ssh GNOME-USER@master.gnome.org -t ftpadmin install pitivi-YYYY.MM.Z.tar.xz
+$ ssh GNOME-USER@master.gnome.org -t ftpadmin install pitivi-YYYY.MM.tar.xz
 </code></pre>
 <p>The tarball will appear on
-https://download.gnome.org/sources/pitivi/YYYY.MM/pitivi-YYYY.MM.Z.tar.xz</p>
+https://download.gnome.org/sources/pitivi/YYYY.MM/pitivi-YYYY.MM.tar.xz</p>
 </li>
 <li>
 <p>Spread the word about the release</p>
@@ -239,7 +242,7 @@ https://download.gnome.org/sources/pitivi/YYYY.MM/pitivi-YYYY.MM.Z.tar.xz</p>
 for example if it was a regular release: <code>2020.09</code> -&gt; <code>2020.09.1</code> or if it was a
 bug-fix release: <code>2020.09.1</code> -&gt; <code>2020.09.2</code>.
 Push to the official repo:</p>
-<pre><code>$ commit -a -m "Back to development"
+<pre><code>$ git commit -a -m "Back to development"
 $ git push origin master
 </code></pre>
 </li>
