@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
+<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
-<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -137,7 +137,11 @@ class HelloWorld(GObject.Object, Peas.Activatable):
 <p>Start Pitivi, activate the plugin in Preferences &gt; Plugins, and notice "Hello World!" in the console.</p>
 <p><img src="images/Plugins_Hello_World_preferences.png" alt=""></p>
 <h2 id="api">API</h2>
-<p>There is no API really. Plugins have full access to the entire app. Needless to say, they will break sooner or later, as we refactor parts of the app. Use them to have fun and try things out. If you think more people would be interested in them, <a href="http://www.pitivi.org/?go=contact">talk with us</a> to see what we can do to help them survive.</p>
+<p>There is no API really. Plugins have full access to the entire app. Needless to
+say, they will break sooner or later, as we refactor parts of the app. Use them
+to have fun and try things out. If you think more people would be interested in
+them, <a href="https://www.pitivi.org/contact/">talk with us</a> to see what we can do to
+help them survive.</p>
 <p>The entire Pitivi instance is provided through <code>self.object.app</code> in the <code>do_activate</code> method:</p>
 <pre><code class="language-python">    def do_activate(self):
         # Keep a reference to the app so you can access later
