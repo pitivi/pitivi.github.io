@@ -131,7 +131,7 @@ $ ptvtests -t Only_the_tests_affecting_the_clips_widgets_please
 environment</a>. If you are on <a href="crossplatform.html">macOS or Windows</a>,
 replace <code>ptvtests</code> with <code>gst-validate-launcher tests/ptv_testsuite.py</code>.</p>
 <pre><code>$ alias ptvtests
-ptvtests='ptvenv gst-validate-launcher /.../pitivi-dev/pitivi/tests/ptv_testsuite.py'
+ptvtests='ptvenv gst-validate-launcher /.../pitivi-dev/pitivi/tests/ptv_testsuite.py --dump-on-failure'
 </code></pre>
 <h3 id="writing-unit-tests">Writing unit tests</h3>
 <p>Start by reading the utility methods in <code>tests/common.py</code>.</p>
