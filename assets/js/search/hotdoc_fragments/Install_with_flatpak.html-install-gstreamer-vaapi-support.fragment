@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Install_with_flatpak.html#install-gstreamer-vaapi-support","fragment":"Install GStreamer vaapi support\n"});
+fragment_downloaded_cb({"url":"Install_with_flatpak.html#install-gstreamer-vaapi-support","fragment":"Install GStreamer vaapi support\nIn the sandbox gstreamer-vaapi is installed but it requires the\norg.freedesktop.Platform.VAAPI.Intel extension to be installed.\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_UI_Design.html#keyboard","fragment":"Keyboard\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_UI_Design.html#keyboard","fragment":"Keyboard\n\nshift, ctrl, alt, and ctrl+alt act as quasi-mode modifiers: they\nmust be held down to activate special modes.\nuse alphanumeric keys for more esoteric operations: users are used\nto shift, alt, ctrl acting as modifiers.\nprovide Ctr+ shortcuts for menu items\n\narrow keys used for seeking\n\n"});

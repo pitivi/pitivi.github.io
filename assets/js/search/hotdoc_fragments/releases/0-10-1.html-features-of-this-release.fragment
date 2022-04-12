@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-10-1.html#features-of-this-release","fragment":"Features of this release\n"});
+fragment_downloaded_cb({"url":"releases/0-10-1.html#features-of-this-release","fragment":"Features of this release\n\nMore UI improvements for usability\nWorks with X11/Imagesink\nHandles more formats\nMore startup checks\n\n"});

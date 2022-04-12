@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#losless-editing","fragment":"Losless editing\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#losless-editing","fragment":"Losless editing\n\nFor I-frame only codecs (DV, JPEG,...), we should be able to only\ndecode/process/encode parts that have be modified\n\nWould require gnonlin and core pitivi classes to support non-raw\nstreams\n\n\n\n\nWould require gnonlin and core pitivi classes to support non-raw\nstreams\n\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#selection-management-methods","fragment":"Selection Management Methods\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#selection-management-methods","fragment":"Selection Management Methods\n\ndeleteSelected()\ncopySelected()\nmoveSelected()\nclearSelection()\nselectBeforeCurrent()\nselectAfterCurrent()\n\n"});

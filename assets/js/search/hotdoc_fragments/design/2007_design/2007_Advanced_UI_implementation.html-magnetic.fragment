@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#magnetic","fragment":"Magnetic\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#magnetic","fragment":"Magnetic\nEncapsulates the concept of an important point on the timeline to which\ntimestamps should be snapped during mouse operations. The class keeps\ntrack of all its instances in a sorted list, and uses binary search to\nimplement the class method snapTime(), and snapObj, which actually\nimplement magnetic edge snapping.\n"});

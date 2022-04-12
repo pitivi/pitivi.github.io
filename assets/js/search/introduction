@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"introduction","urls":[{"url":"Git.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"design/UI_Implementation.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"introduction","urls":[{"url":"Git.html#using-git-in-pitivi","node_type":"p","context":{"gi-language":["default"]}},{"url":"design/UI_Implementation.html#ui-implementation","node_type":"p","context":{"gi-language":["default"]}}]});

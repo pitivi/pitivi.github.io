@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"PITIVI_VSCODE_DEBUG","urls":[{"url":"Debugging.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"PITIVI_VSCODE_DEBUG","urls":[{"url":"Debugging.html#debugging-unit-tests","node_type":"p","context":{"gi-language":["default"]}},{"url":"Debugging.html#visual-studio-code","node_type":"p","context":{"gi-language":["default"]}},{"url":"Testing.html#writing-unit-tests","node_type":"p","context":{"gi-language":["default"]}}]});

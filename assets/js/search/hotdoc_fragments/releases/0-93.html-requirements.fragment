@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-93.html#requirements","fragment":"Requirements\n"});
+fragment_downloaded_cb({"url":"releases/0-93.html#requirements","fragment":"Requirements\nDependencies/requirements have changed significantly since the 0.15\nseries, but have stayed mostly the same since 0.92.\nFor this release, we depend on GStreamer, GNonLin and GES 1.2.\nGenerally speaking, you can refer to Pitivi's check.py for the\ndependencies' versions specific to a given release. See also\ndependencies for additional tips.\n"});

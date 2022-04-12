@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-95.html#fits-small-screens-again","fragment":"Fits small screens again\n"});
+fragment_downloaded_cb({"url":"releases/0-95.html#fits-small-screens-again","fragment":"Fits small screens again\nWe heard 1024x768 is still a thing, so we added some tricks to adapt the\nUI when running on small screens.\n"});

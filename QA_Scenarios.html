@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -709,6 +709,42 @@ The keyframe curve should be duplicated exactly. Verify this by extending both h
 </ul>
 </li>
 </ul>
+<h2 id="test-peak-meter">Test Peak Meter</h2>
+<ol>
+<li>Create and open a new Pitivi project</li>
+<li>Import 'mp3_sample.mp3' from the 'tests/samples' directory into the media library</li>
+<li>Insert a 'mp3_sample.mp3' clip from the media library into the timeline
+<ul>
+<li>The timeline should only contain the 'mp3_sample.mp3' clip and nothing else</li>
+</ul>
+</li>
+<li>Position the seeker at the beginning of the clip on the timeline</li>
+<li>Press the 'play' button on the viewer controls
+<ul>
+<li>The height of the two peak meters should start changing during playback of the clip but should stop once the clip ends</li>
+</ul>
+</li>
+<li>Detach the viewer by pressing the 'detach viewer' button on the viewer controls
+<ul>
+<li>The peak meters should appear on the right side of the viewer in the external viewer window that pops up</li>
+</ul>
+</li>
+<li>Close the external viewer window
+<ul>
+<li>The peak meters should appear again in their original location on the right side of the viewer</li>
+</ul>
+</li>
+<li>Drag the corner on the viewer container to resize the viewer container to the minimum size
+<ul>
+<li>The peak meters should now be sized smaller in response to the smaller viewer container</li>
+</ul>
+</li>
+<li>Go to project settings and set the number of audio channels to '8 (7.1)'
+<ul>
+<li>There should now be eight peak bars in total displayed next to the viewer</li>
+</ul>
+</li>
+</ol>
 <h2 id="test-preferences">Test Preferences</h2>
 <h1 id="user-provided-scenarios">User provided Scenarios</h1>
 <p>If you want to propose a QA Scenario, Create a page (Called

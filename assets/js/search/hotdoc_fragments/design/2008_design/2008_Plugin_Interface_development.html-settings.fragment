@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Plugin_Interface_development.html#settings","fragment":"Settings\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Plugin_Interface_development.html#settings","fragment":"Settings\nThe current api simply requires that plugin.settings exists and\n(un)pickles that data to save/load settings, there is a problem there\nwith human readabity and maybe even security, also its not that kind to\nversion upgrades.\n"});

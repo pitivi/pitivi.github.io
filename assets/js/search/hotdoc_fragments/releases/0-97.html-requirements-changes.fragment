@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-97.html#requirements-changes","fragment":"Requirements changes\n"});
+fragment_downloaded_cb({"url":"releases/0-97.html#requirements-changes","fragment":"Requirements changes\nGenerally speaking, you can refer to the bottom of Pitivi's check.py for\nthe dependencies' versions specific to a given release. See also\ndependencies for additional tips.\n\nWe still depend on GStreamer 1.8.2\nWe still depend on Gtk 3.20\nWe now depend on gst-transcoder 1.8.2\n\n"});

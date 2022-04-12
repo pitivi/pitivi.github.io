@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#methods","fragment":"Methods\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#methods","fragment":"Methods\n\n\nmakeBin(streams=[]), returns a gst.Bin for the given Streams. If\nno Streams are specified, then a gst.Bin for all the available\nstreams is returned. If only one Stream is specified, then the\ngst.Bin returned will not contain any queue in it.\n\n"});

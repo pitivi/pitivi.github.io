@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-95.html#integration-with-gstvalidate","fragment":"Integration with GstValidate\n"});
+fragment_downloaded_cb({"url":"releases/0-95.html#integration-with-gstvalidate","fragment":"Integration with GstValidate\nWith this new release, we serialize all the operations done by the user\nas\nGstValidateScenarios\n(more details\nhere),\nallowing us to reproduce bugs much more easily. See the bug\nreporting page for details on how to create\nscenario files for testing.\n"});

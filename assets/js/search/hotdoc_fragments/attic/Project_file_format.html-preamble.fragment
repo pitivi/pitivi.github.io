@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Project_file_format.html#preamble","fragment":"Preamble\n"});
+fragment_downloaded_cb({"url":"attic/Project_file_format.html#preamble","fragment":"Preamble\nAlthough video editors are complex by nature, the information they need\nto create a timeline is rather lightweight compared to the data they\nprocess. There is therefore no need to create a memory-efficient and/or\nbinary file format. It is more important to have an format which is\neasy to parse and extensible, an XML-based format is therefore\nchosen.\n"});

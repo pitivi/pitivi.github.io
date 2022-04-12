@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-15.html#soft-requirements","fragment":"Soft requirements\n"});
+fragment_downloaded_cb({"url":"releases/0-15.html#soft-requirements","fragment":"Soft requirements\nThe PiTiVi team recommends satisfying those dependencies as much as\npossible for an optimal user experience.\n\nfrei0r for the transformation feature\nNumpy for the auto aligner feature\n\n"});

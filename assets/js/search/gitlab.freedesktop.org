@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"gitlab.freedesktop.org","urls":[{"url":"attic/Building_with_Windows.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"gitlab.freedesktop.org","urls":[{"url":"attic/Building_with_Windows.html#checkout-cerbero","node_type":"p","context":{"gi-language":["default"]}}]});

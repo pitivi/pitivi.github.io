@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Mac_OS_X.html#building","fragment":"Building\n"});
+fragment_downloaded_cb({"url":"Mac_OS_X.html#building","fragment":"Building\nClone our Cerbero repository which includes recipes/pitivi.recipe:\nAs described in the\nREADME\nCerbero needs XCode and Python 3.5 or\nlater to be able to bootstrap.\nStart the build. This takes ~1h30m on my laptop:\nTo start Pitivi, run in a terminal:\n"});

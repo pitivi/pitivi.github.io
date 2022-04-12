@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#timelinefileobjecttimelineobject","fragment":"TimelineFileObject(TimelineObject)\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#timelinefileobjecttimelineobject","fragment":"TimelineFileObject(TimelineObject)\nThis class derives from TimelineObject. It overrides the signal handlers\nwhich set the in/out edit points so that they also set the\nmedia-start/media-duration points.\n"});

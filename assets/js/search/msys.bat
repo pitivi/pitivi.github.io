@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"msys.bat","urls":[{"url":"attic/Building_with_Windows.html#page-description","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"msys.bat","urls":[{"url":"attic/Building_with_Windows.html#link-on-desktop","node_type":"ul","context":{"gi-language":["default"]}}]});

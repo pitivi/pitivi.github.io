@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"How_to_update_sandbox.html#sync-with-flathub","fragment":"Sync with flathub\nCheck if any changes to the flathub Pitivi\nmanifest need to be ported over.\nIn particular, pay attention to the shared-modules git submodule to copy\nlibcanberra into build/flatpak.\n"});

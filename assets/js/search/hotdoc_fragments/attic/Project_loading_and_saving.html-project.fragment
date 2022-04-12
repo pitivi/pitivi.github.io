@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#project","fragment":"Project\n"});
+fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#project","fragment":"Project\nThe project is the root of the “tree.” It is a dictionary, with three\nkeys:\n\n\ndatatype -- “project”\n\ntimeline -- maps to a tuple of “Composition” dictionaries (see\nbelow)\n\nsources -- maps to a “source-list”\n\nsettings --maps to a dictionary of project-specific settings (the\nExportSettings field of a Project object)\n\n"});

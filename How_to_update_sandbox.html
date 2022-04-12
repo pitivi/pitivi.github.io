@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<base href=".">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>Updating the sandbox</title>
+
+<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
+<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+
+<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<script src="assets/js/mustache.min.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/scrollspy.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/typeahead.jquery.min.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/compare-versions.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/bootstrap-toc.min.js"></script>
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script src="assets/js/tag_filtering.js"></script>
+<script src="assets/js/language_switching.js"></script>
+
+<script src="assets/js/lines_around_headings.js"></script>
+
+<script src="assets/js/prism-core.js"></script>
+<script src="assets/js/prism-autoloader.js"></script>
+<script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
+
+<link rel="shortcut icon" href="assets/images/favicon.png">
+
+</head>
+
+<body class="no-script
+" data-spy="scroll" data-target="#toc" data-offset="70">
+
+<script>
+$('body').removeClass('no-script');
+</script>
+
+<nav class="navbar navbar-fixed-top navbar-default" id="topnav">
+	<div class="container-fluid">
+		<div class="navbar-right">
+			<a id="toc-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+                               <div class="form-group has-feedback">
+                                       <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
+				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
+                               </div>
+                        </form>
+		</div>
+		<div class="navbar-header">
+			<a id="sidenav-toggle">
+				<span class="glyphicon glyphicon-menu-right"></span>
+				<span class="glyphicon glyphicon-menu-left"></span>
+			</a>
+			<a id="home-link" href="index.html" class="hotdoc-navbar-brand">
+				<img src="assets/images/pitivi.svg" alt="Home">
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+							</ul>
+			<div class="hidden-xs hidden-sm navbar-text navbar-center">
+				<p><b>The Pitivi Developer Documentation</b></p>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<main>
+<div data-extension="core" data-hotdoc-in-toplevel="True" data-hotdoc-project="Pitivi" data-hotdoc-ref="How_to_update_sandbox.html" class="page_container" id="page-wrapper">
+<script src="assets/js/utils.js"></script>
+
+<div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
+	<script src="assets/js/navigation.js"></script>
+	<script src="assets/js/sitemap.js"></script>
+</div>
+
+<div id="body">
+	<div id="main">
+				    <div id="page-description" data-hotdoc-role="main">
+        <h1 id="updating-the-sandbox">Updating the sandbox</h1>
+<p>We use the same <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/build/flatpak/org.pitivi.Pitivi.json">Flatpak
+manifest</a>
+for both the <a href="HACKING.html">development environment</a> sandbox and for the <a href="Install_with_flatpak.html">nightly
+build snapshot</a>.</p>
+<p>To have the CI run the tests as fast as possible, we use a Docker image with
+all the sandbox dependencies cached. This image needs to be updated whenever
+we want to update the manifest, otherwise the CI fails since it can't download
+the latest dependencies.</p>
+<h2 id="update-the-flatpak-runtime">Update the flatpak runtime</h2>
+<p>To update the flatpak runtime version, look in <code>org.pitivi.Pitivi.json</code> for the
+current version:</p>
+<pre><code>    "runtime-version": "42",
+</code></pre>
+<p>Check out what is the latest flatpak runtime version. For example:</p>
+<pre><code>$ flatpak remote-ls flathub --system | grep org.gnome.Platform
+GNOME Application Platform version 3.38	org.gnome.Platform		3.38
+GNOME Application Platform version 41	org.gnome.Platform		41
+GNOME Application Platform version 42	org.gnome.Platform		42
+</code></pre>
+<p>Check out in the git history how we updated the runtime version in the past and
+repeat with the latest SDK.</p>
+<h2 id="update-the-sandbox-dependencies">Update the sandbox dependencies</h2>
+<p>Some of them can be updated automatically with
+<a href="https://github.com/flathub/flatpak-external-data-checker">flatpak-external-data-checker</a>:</p>
+<pre><code>$ flatpak run --filesystem=$HOME/dev/pitivi/pitivi org.flathub.flatpak-external-data-checker build/flatpak/org.pitivi.Pitivi.json --update
+</code></pre>
+<p>Others have to be checked and updated manually.</p>
+<p>Most of the <a href="Updating_Python_dependencies.html">Python dependencies</a> can be
+updated with <code>flatpak-pip-generator</code>.</p>
+<h2 id="sync-with-flathub">Sync with flathub</h2>
+<p>Check if any changes to the <a href="https://github.com/flathub/org.pitivi.Pitivi">flathub Pitivi
+manifest</a> need to be ported over.</p>
+<p>In particular, pay attention to the <code>shared-modules</code> git submodule to copy
+<code>libcanberra</code> into <code>build/flatpak</code>.</p>
+<h2 id="check-the-python-version">Check the Python version</h2>
+<p>The "gst-python" module in the manifest specifies the "pygi-overrides-dir"
+parameter which contains a path which must target the correct Python version.</p>
+<p>Pay attention to update this path when the Python version changes.</p>
+<h2 id="rebuild-your-local-dev-env">Rebuild your local dev env</h2>
+<pre><code>$ . bin/pitivi-env
+(ptv-flatpak) $ ptvenv --update
+</code></pre>
+<p>Run the tests:</p>
+<pre><code>(ptv-flatpak) $ ptvtests
+</code></pre>
+<p>If all goes well, push the branch to origin to be able to initiate the
+generation of the CI image.</p>
+<pre><code>$ git checkout -b sdk
+$ git push origin sdk
+</code></pre>
+<h2 id="build-the-ci-image">Build the CI image</h2>
+<p>The "Build docker image for the CI" <a href="https://gitlab.gnome.org/GNOME/pitivi/-/pipeline_schedules">GitLab
+Schedule</a> rebuilds
+every 24h the image we use for running the unittests. This image caches
+the build of dependencies described in our Flatpak manifest.</p>
+<p>Since it's using the "master" branch, you have to create a new schedule and
+select the branch you just pushed ("sdk"). Leave Active unchecked.</p>
+<p>Go back to the Schedules page and click the Play button of the schedule you just
+created to start a pipeline. Notice in the Last Pipeline column a link to the
+pipeline you just started.</p>
+<p>After the pipeline succeeds, create a regular MR with your manifest changes and
+notice the CI is green. If you fail to merge the MR, the "Build docker image for
+the CI" will kick in later and recreate the image according to the manifest on
+branch "master".</p>
+
+    </div>
+        
+
+
+
+
+		
+	</div>
+	<div id="search_results">
+		<p>The results of the search are</p>
+	</div>
+	<hr>
+	<div id="footer">
+		    
+
+	</div>
+</div>
+
+<div id="toc-column">
+	
+		<div class="edit-button">
+		<a href="https://gitlab.gnome.org/GNOME/pitivi/edit/master/docs/How_to_update_sandbox.md" data-hotdoc-role="edit-button">Edit on GitLab</a>
+
+	</div>
+		<div id="toc-wrapper">
+		<nav id="toc"></nav>
+	</div>
+</div>
+</div>
+</main>
+
+</body>
+
+<script src="assets/js/navbar_offset_scroller.js"></script>
+</html>

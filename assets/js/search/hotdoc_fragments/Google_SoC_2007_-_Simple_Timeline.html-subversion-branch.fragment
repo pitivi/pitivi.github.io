@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Google_SoC_2007_-_Simple_Timeline.html#subversion-branch","fragment":"Subversion branch\n"});
+fragment_downloaded_cb({"url":"Google_SoC_2007_-_Simple_Timeline.html#subversion-branch","fragment":"Subversion branch\nAll work is first being done in the PITIVI_SOC_2007 branch before\nbeing merged in trunk.\nWebSVN : http://svn.gnome.org/viewcvs/pitivi/branches/PITIVI_SOC_2007/\nAnonymous checkout :\nsvn cosvn://svn.gnome.org/svn/pitivi/branches/PITIVI_SOC_2007/pitivi-soc\n"});

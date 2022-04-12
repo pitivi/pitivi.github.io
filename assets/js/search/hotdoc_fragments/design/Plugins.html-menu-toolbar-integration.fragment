@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/Plugins.html#menu-toolbar-integration","fragment":"Menu / Toolbar integration\n"});
+fragment_downloaded_cb({"url":"design/Plugins.html#menu-toolbar-integration","fragment":"Menu / Toolbar integration\nPlacing a menu item or a tool button is the simplest way a plugin can\ninteract with the user, the following interfaces provide convenient ways\nfor the plugin to integrate widgets in the main user interface:\nClass IMenuProvider(Interface):\n"});

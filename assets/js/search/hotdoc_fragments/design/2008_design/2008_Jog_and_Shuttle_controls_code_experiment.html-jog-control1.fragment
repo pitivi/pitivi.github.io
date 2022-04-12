@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#jog-control1","fragment":"Jog Control\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#jog-control1","fragment":"Jog Control\n\npystreamer/view/uiGtk/HScaleJog.py\njust a gtk.HScale\nmodified behaviour to make the hscale behave as a jog (eg remains\nsensitive outside its area)\nsee also jog control of wxpython\ntodo: write a custom control for this\n\n"});

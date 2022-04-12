@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Git.html#not-going-insane","fragment":"Not going insane\n"});
+fragment_downloaded_cb({"url":"Git.html#not-going-insane","fragment":"Not going insane\nIt's much easier to understand what's the status of a git branch by\nusing a graphical tool such as gitk or\ngitg (tailored for GNOME, with a\nreally nice interface).\nMeld can be very useful for reviewing a large\nchange to be committed. Simply run meld . in your local repository.\nSet up your prompt to show the current branch info, and make sure\ntab-completion works.\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-94.html#requirements","fragment":"Requirements\n"});
+fragment_downloaded_cb({"url":"releases/0-94.html#requirements","fragment":"Requirements\nIn this release:\nGenerally speaking, you can refer to Pitivi's check.py for the\ndependencies' versions specific to a given release. See also\ndependencies for additional tips.\n\nWe have dropped the dependency on ClutterGst\nWe now depend on GStreamer 1.4\nWe now depend on GTK+ 3.10\n\n"});

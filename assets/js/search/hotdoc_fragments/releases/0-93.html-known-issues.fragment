@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-93.html#known-issues","fragment":"Known issues\n"});
+fragment_downloaded_cb({"url":"releases/0-93.html#known-issues","fragment":"Known issues\nSee the list of currently known\nissues,\nthe 0.91, 0.92 and 0.93-specific\nissues\nand the list of bugs that need re-testing with\n0.91\n(you can help!)\nYou may also want to see the 0.91 release notes'\n“known issues” section.\n"});

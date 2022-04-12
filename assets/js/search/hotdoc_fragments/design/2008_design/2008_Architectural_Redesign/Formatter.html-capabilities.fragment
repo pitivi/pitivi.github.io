@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Formatter.html#capabilities","fragment":"Capabilities\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Formatter.html#capabilities","fragment":"Capabilities\n\n\nloadProject(location) : returns a new\nProject fully loaded.\n\nstoreProject(project,location) : stores the given\nProject at the given location.\n\ncanHandle(location) : Test whether the Formatter can\nhandle the given location.\n\n"});

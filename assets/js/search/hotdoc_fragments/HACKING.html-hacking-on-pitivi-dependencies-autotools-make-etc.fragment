@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"HACKING.html#hacking-on-pitivi-dependencies-autotools-make-etc","fragment":"Hacking on Pitivi dependencies (Autotools, Make, etc)\n"});
+fragment_downloaded_cb({"url":"HACKING.html#hacking-on-pitivi-dependencies-autotools-make-etc","fragment":"Hacking on Pitivi dependencies (Autotools, Make, etc)\nIf the project you are working on is built with other tools, make sure\nthey are run in the sandbox by using ptvenv. For example:\n"});

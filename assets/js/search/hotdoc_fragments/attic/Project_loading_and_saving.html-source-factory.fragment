@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#source-factory","fragment":"Source Factory\n"});
+fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#source-factory","fragment":"Source Factory\nRepresents a source factory in the project sources list. It is a\ndictionary containing the following keys:\n\n\ndatatype -- “file-source-factory”, “operation-factory”,\n“simple-operation-factory”, “transition-factory”, “SMPTE-factory”\n\nuid -- an id mapping to the object's unique id\n\n"});

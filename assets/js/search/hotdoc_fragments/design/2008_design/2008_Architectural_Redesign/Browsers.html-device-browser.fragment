@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Browsers.html#device-browser","fragment":"Device Browser\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Browsers.html#device-browser","fragment":"Device Browser\nOnly returns content of type DeviceFactoryInterface.\nIt MUST provide the following functionality:\n\n\ngetDefaultSinks() , which should return the default usable\nSinkDeviceFactory.\n\ngetDefaultSources(), which should return the default usable\nSourceDeviceFactory.\n\n"});

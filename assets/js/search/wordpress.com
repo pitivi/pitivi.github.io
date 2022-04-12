@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"wordpress.com","urls":[{"url":"GSoC_Application.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"wordpress.com","urls":[{"url":"GSoC_Application.html#what-is-your-blog-address","node_type":"p","context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Project.html#content-bin","fragment":"Content Bin\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Project.html#content-bin","fragment":"Content Bin\nIt can only contain discovered SourceFactory. That means they contain\nat least the description of all the contained Streams, its duration.\nRemark : A thumbnail representing the source might also be enforced.\n"});

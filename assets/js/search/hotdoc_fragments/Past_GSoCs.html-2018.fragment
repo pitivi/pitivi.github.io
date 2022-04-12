@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Past_GSoCs.html#2018","fragment":"2018\n"});
+fragment_downloaded_cb({"url":"Past_GSoCs.html#2018","fragment":"2018\n\n\nHarish Fulara implemented\na framework for showing different UI perspectives. The existing\nmain UI has been refactored into the EditorPerspective, and\nthe welcome dialog has been replaced by a new gorgeous and modern\nGreeterPerspective.\n\nSuhas Nayak worked on the slow motion\nsupport in GES, but had to interrupt.\n\nYatin Maan implemented support\nfor Scaled Proxies.\n\n"});

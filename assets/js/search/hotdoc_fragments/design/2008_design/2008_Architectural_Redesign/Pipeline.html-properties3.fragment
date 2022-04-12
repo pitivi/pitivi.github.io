@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#properties3","fragment":"Properties\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#properties3","fragment":"Properties\n\nPipeline, on which it is being used, or going to be used\nProducers, that this Action is controlling\nConsumers, that this Action is controlling\nState, whether it is activated or not\n\n"});

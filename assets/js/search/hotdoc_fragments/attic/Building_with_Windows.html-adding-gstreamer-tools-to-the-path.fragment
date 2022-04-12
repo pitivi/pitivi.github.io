@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#adding-gstreamer-tools-to-the-path","fragment":"Adding GStreamer tools to the PATH\n"});
+fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#adding-gstreamer-tools-to-the-path","fragment":"Adding GStreamer tools to the PATH\nYou probably want to use ges-launch-1.0.exe and friends in the shell. To\ndo this, add the dist folder to the PATH.\nIn your bash profle:\nexport PATH=$PATH:/home/bmonkey/cerbero/dist/windows_x86_64/bin/\n"});

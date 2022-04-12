@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-15-1.html#bugs-fixed","fragment":"Bugs Fixed\n"});
+fragment_downloaded_cb({"url":"releases/0-15-1.html#bugs-fixed","fragment":"Bugs Fixed\n\n662311 Upgrading to git master of plugins-good breaks pitivi and\njokosher\n656652 Bad strings for translation\n\n"});

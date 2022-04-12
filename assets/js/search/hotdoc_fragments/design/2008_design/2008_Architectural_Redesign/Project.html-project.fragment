@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Project.html#project","fragment":"Project\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Project.html#project","fragment":"Project\nA Project is the object containing everything specific to an\nediting project.\nProjects are loaded and saved using the Formatters.\n"});

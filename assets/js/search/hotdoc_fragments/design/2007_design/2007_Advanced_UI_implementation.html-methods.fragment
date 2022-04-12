@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#methods","fragment":"Methods\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#methods","fragment":"Methods\n\nmanage_selection(), activates internal selection management,\ndeprecates top-level function with same name\nmake_selectable(), activates selection management on a given\nobject, deprecates top-level function with same name.\nmake_selection_dragable(),\n\n"});

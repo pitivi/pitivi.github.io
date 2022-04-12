@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-11-1.html#bugs-fixed","fragment":"Bugs Fixed\n"});
+fragment_downloaded_cb({"url":"releases/0-11-1.html#bugs-fixed","fragment":"Bugs Fixed\nList of bugs fixed on\nBugzilla\n\n\n461913 : Error:\nIcon not present in theme\n\n486271 : crash\nin Pitivi Video Editor: I close the PiTiVI windo...\n\n487455 :\nDragging multichannel .mov file onto timeline produce err...\n\n"});

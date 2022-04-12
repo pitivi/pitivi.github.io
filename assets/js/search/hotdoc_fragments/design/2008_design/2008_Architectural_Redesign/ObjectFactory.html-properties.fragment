@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#properties","fragment":"Properties\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#properties","fragment":"Properties\n\n\nName, unique for that given ObjectFactory instance type.\n\nInputStreams, a list of Stream(s) the given factory can consume.\nEmpty for SourceFactory.\n\nOutputStreams, a list of Stream(s) the given factory can produce.\nEmpty for SinkFactory.\n\n"});

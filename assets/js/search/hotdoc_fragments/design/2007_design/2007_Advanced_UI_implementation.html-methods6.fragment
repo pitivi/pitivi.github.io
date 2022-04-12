@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#methods6","fragment":"Methods\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#methods6","fragment":"Methods\n\n__init__ -- sets up initial properties, and stores the\nmotion_callback\ndragBegin -- sets item's color to the active color\ndragEnd -- sets item to the the normal color, updates magnet\ntimestamp\ndragMotion -- calls the motion_callback, after performing some\ntransformations\n\n"});

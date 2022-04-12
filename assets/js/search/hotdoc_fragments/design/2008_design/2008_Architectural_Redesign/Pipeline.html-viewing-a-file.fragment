@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#viewing-a-file","fragment":"Viewing a File\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#viewing-a-file","fragment":"Viewing a File\n\nThis is the simplest use-case for a Pipeline, which is viewing a File.\nAs can be seen in the Schema, there is only one action (ViewAction)\nwhich connects a SourceProducer to a LocalSinksConsumer.\n"});

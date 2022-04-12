@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-10-3.html#requirements","fragment":"Requirements\n"});
+fragment_downloaded_cb({"url":"releases/0-10-3.html#requirements","fragment":"Requirements\n\ngstreamer >= 0.10.8\ngst-python >= 0.10.6\ngnonlin >= 0.10.7\npygtk >= 2.8.0\n\n"});

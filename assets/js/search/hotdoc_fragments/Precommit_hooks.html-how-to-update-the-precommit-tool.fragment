@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Precommit_hooks.html#how-to-update-the-precommit-tool","fragment":"How to update the pre-commit tool\n"});
+fragment_downloaded_cb({"url":"Precommit_hooks.html#how-to-update-the-precommit-tool","fragment":"How to update the pre-commit tool\nThe pre-commit tool is installed in the flatpak sandbox through\npython3-pre-commit.json.\nThe python3-pre-commit.json file is generated with flatpak-pip-generator.\nSee the instructions for updating the Python\ndependencies.\n"});

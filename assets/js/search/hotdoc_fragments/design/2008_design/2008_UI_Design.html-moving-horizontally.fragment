@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_UI_Design.html#moving-horizontally","fragment":"Moving Horizontally\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_UI_Design.html#moving-horizontally","fragment":"Moving Horizontally\n\nAll objects in the current selection move simultaneously.\nEdge snapping when moving multiple items needs to be carefully\ndesigned so that it is not destructive. A conservative approach\nwould be to snap only the beginning and end of the entire selection.\n\n"});

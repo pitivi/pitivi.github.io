@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#rendering-a-timeline","fragment":"Rendering a Timeline\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#rendering-a-timeline","fragment":"Rendering a Timeline\n\nIn this example, we are doing 2 actions at the same time:\n\n\nViewing the Timeline and,\n\nRendering the Timeline.\n\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#mingw","fragment":"MinGW\n"});
+fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#mingw","fragment":"MinGW\nInstall\nmingw-get\n\nTo C:\\MinGW\nSelect the following packages in “Basic Setup”:\n\nmingw32-base\nmingw32-gcc-g++\nmsys-base\n\n\nInstallation => Apply changes\nClose the dialoge when complete\n\n\nmingw32-base\nmingw32-gcc-g++\nmsys-base\n\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#methods4","fragment":"Methods\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#methods4","fragment":"Methods\n\nsetTime -- update this magnet's time value\n@classmethod snapTime(time, flags) -- snap the input time to the\nnearest magnet according to flags\n@classmethod snapObj(start, duration, flags) -- snap start or end\ntime to the nearest magnet, according to flags)\n\n"});

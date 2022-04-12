@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#properties","fragment":"Properties\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#properties","fragment":"Properties\n\nActions, the list of Actions currently being used in the pipeline\nProducers, the list of Producers being used\nConsumers, the list of Consumers being used\n\n"});

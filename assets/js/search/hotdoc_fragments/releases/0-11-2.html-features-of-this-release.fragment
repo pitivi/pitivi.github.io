@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-11-2.html#features-of-this-release","fragment":"Features of this release\n"});
+fragment_downloaded_cb({"url":"releases/0-11-2.html#features-of-this-release","fragment":"Features of this release\n\nNew advanced timeline interface by Brandon Lewis (SoC)\nCapture interface for webcams and network sources by Sarath Lakshman\n(SoC).\nSimple Timeline is gone.\nProject save/load now activated by default\nCutting/Trimming/Removing features added to advanced timeline.\nMisc fixes and improvements\n\n"});

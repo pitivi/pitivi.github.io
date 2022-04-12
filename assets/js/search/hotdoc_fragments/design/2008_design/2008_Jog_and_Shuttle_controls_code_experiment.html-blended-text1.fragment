@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#blended-text1","fragment":"Blended Text\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#blended-text1","fragment":"Blended Text\n\npystreamer/view/uiGtk/lib/BlendEntry.py\nthis is rather semi-custom as it is a native control which has been\nextendend\nit looks like a gtk.Label but with a mouse over it looks like a\ngtk.Entry, what it really is\nsee also blended text of wxpython\n\n"});

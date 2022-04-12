@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Debugging.html#debugging","fragment":"Debugging\n"});
+fragment_downloaded_cb({"url":"Debugging.html#debugging","fragment":"Debugging\nTo debug Pitivi, you need an IDE with the ability to attach its debugger to a\nremote process. Out of the box, Pitivi supports the debugger used in\nVS Code,\nbut it can be modified to work with the Professional version of\nPyCharm,\nfor example.\n"});

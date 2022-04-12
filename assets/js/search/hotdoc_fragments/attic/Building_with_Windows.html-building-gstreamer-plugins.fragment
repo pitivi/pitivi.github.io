@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#building-gstreamer-plugins","fragment":"Building GStreamer Plugins\n"});
+fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#building-gstreamer-plugins","fragment":"Building GStreamer Plugins\nSince GES does not depend on all plugins, you need to build them\nmanually.\n$ cerbero build gst-plugins-bad-1.0\n$ cerbero build gst-plugins-ugly-1.0\n$ cerbero build gst-libav-1.0\n"});

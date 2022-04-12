@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"QA_Scenarios.html#test-ruler","fragment":"Test Ruler\n"});
+fragment_downloaded_cb({"url":"QA_Scenarios.html#test-ruler","fragment":"Test Ruler\n\nThe timeline playhead marker should appear under the mouse pointer\nThe viewer should display the timeline at the timestamp represented by the playhead\n\n\nThe playhead should track the mouse position closely\nThe viewer should update continuously while the mouse is moving\n\n"});

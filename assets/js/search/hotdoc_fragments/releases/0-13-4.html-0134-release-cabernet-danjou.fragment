@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-13-4.html#0134-release-cabernet-danjou","fragment":"0.13.4 Release : Cabernet d'Anjou\n"});
+fragment_downloaded_cb({"url":"releases/0-13-4.html#0134-release-cabernet-danjou","fragment":"0.13.4 Release : Cabernet d'Anjou\nThe PiTiVi team is proud to announce the third release in the 0.13\nPiTiVi series.\nDue to its dependency on GStreamer, The PiTiVi team strongly recommends\nusers have all official latest gstreamer libraries and plugins installed\nfor the best user experience.\nSee also Performance problems in\n0.13.4.\n"});

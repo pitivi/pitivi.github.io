@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/High-level_Design.html#formatter","fragment":"Formatter\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/High-level_Design.html#formatter","fragment":"Formatter\n\nFormatter are responsible for loading/storing Projects from/to various\nfile formats.\nFormatters can also provide subclasses of existing core objects in order\nto store/provide format-specific information.\nSee Formatter\nfor more details.\n"});

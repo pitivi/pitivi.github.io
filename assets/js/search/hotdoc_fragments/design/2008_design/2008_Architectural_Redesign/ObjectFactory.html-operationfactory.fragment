@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#operationfactory","fragment":"OperationFactory\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/ObjectFactory.html#operationfactory","fragment":"OperationFactory\nDescribes any kind of operation, which can be an A/V Effect, an Encoding\ncontainer, or even a Hardware processing effect (like OpenGL powered),\nor even more complex effect.\n\nA list of streams it can process\nA list of resulting streams it can/will output\n\n"});

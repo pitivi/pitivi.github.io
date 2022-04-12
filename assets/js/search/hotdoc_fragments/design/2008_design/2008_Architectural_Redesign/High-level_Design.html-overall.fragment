@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/High-level_Design.html#overall","fragment":"Overall\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/High-level_Design.html#overall","fragment":"Overall\n\nPiTiVi is comprised of two main parts:\n\nThe Core, containing all the project- and timeline-related\ncomponents, a plugin-system and various tools.\nThe User Interface, optional, offering a graphical interface to\nuse Core\n\n"});

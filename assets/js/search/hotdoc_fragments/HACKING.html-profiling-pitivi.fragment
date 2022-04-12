@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"HACKING.html#profiling-pitivi","fragment":"Profiling Pitivi\n"});
+fragment_downloaded_cb({"url":"HACKING.html#profiling-pitivi","fragment":"Profiling Pitivi\nTo profile a Pitivi run, simply set the PITIVI_PROFILING environment\nvariable to 1, like so:\nA file named pitivi-runstats will be created in the current directory, a handy tool to examine it is gprof2dot.py, install it with:\nThen run:\nYou can then inspect the call tree profile with your preferred image viewer:\n"});

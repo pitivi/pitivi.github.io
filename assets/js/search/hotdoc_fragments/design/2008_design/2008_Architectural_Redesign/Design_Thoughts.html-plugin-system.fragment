@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#plugin-system","fragment":"Plugin system\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#plugin-system","fragment":"Plugin system\n\nFigure out how to cleanly solve the problem of plugins extending\nboth CORE and UI classes\n\nflumotion use some kind of bundles for this\n\n\n\n\nflumotion use some kind of bundles for this\n\n"});

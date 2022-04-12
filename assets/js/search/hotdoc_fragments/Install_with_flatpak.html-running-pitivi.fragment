@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Install_with_flatpak.html#running-pitivi","fragment":"Running Pitivi\n"});
+fragment_downloaded_cb({"url":"Install_with_flatpak.html#running-pitivi","fragment":"Running Pitivi\nYou can now launch Pitivi from your applications menu as any other\ninstalled application.\nYou can also re run the installer which launches Pitivi after updating\nto the latest version.\nTo see if warning or error messages are printed in the console, run:\nIf for some reason you need to use an older Pitivi version, run:\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#scalerulergtklayout-zoomable","fragment":"ScaleRuler(gtk.Layout, Zoomable)\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#scalerulergtklayout-zoomable","fragment":"ScaleRuler(gtk.Layout, Zoomable)\nThis file contains the ScaleRuler class, a zoomable timeline ruler. It\nshould share the same gtk.Adjustment objects for both zooming and\nhorizontal scrolling.\n"});

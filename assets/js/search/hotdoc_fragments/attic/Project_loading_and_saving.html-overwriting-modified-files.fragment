@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#overwriting-modified-files","fragment":"Overwriting Modified Files\n"});
+fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#overwriting-modified-files","fragment":"Overwriting Modified Files\nBefore saving, PiTiVi checks to see if the file has been modified since\nthe last save. When a file has changed on disk, the user will be\nprompted to ask if it is acceptable to overwrite the file. PiTiVi will\nnot check to see if the file has been altered except in these\ncircumstances.\n"});

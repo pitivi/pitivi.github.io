@@ -1,0 +1,1 @@
+fragment_downloaded_cb({"url":"How_to_update_sandbox.html#check-the-python-version","fragment":"Check the Python version\nThe \"gst-python\" module in the manifest specifies the \"pygi-overrides-dir\"\nparameter which contains a path which must target the correct Python version.\nPay attention to update this path when the Python version changes.\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Past_GSoCs.html#2011","fragment":"2011\n"});
+fragment_downloaded_cb({"url":"Past_GSoCs.html#2011","fragment":"2011\n\nFeroze Naina worked on adding profiles for rendering.\n\nLubosz Sarnecki implemented a nifty\nuser interface for resizing/cropping clips directly in the\nviewer.\n\nMathieu Duponchelle\nstarted to port PiTiVi to GES after having worked on the GES Python\nbindings and the GES Pitivi formatter.\n\n"});

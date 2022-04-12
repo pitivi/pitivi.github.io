@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-13-5.html#known-issues","fragment":"Known Issues\n"});
+fragment_downloaded_cb({"url":"releases/0-13-5.html#known-issues","fragment":"Known Issues\n\nIf using gst-plugins-good < 0.10.25 scaling will not add black\nborders. You will need to set the proper width and height in the\nproject settings\nSome files might not respond when seeking in them the first time\nKeyframe percentage labels are sometimes shown at the wrong position\nSee also Performance problems in\n0.13.4.\n\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#capture-support","fragment":"Capture support\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Design_Thoughts.html#capture-support","fragment":"Capture support\n\nHave base classes for capture support in core\nSee Hardware source and sinks\nWe absolutely need support for DV and HDV\n\n"});

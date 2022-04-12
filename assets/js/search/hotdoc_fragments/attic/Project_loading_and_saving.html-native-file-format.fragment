@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#native-file-format","fragment":"Native file format\n"});
+fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#native-file-format","fragment":"Native file format\nWhile PiTiVi should make every effort to support a wide range of file\nformats, most of these will be through external plugins. PiTiVi provides\na reference implementation that uses Python's cPickle module to\nserialize and deserialize data in the intermediate format.\n"});

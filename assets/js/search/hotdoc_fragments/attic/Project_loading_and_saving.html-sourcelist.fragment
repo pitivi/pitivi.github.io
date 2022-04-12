@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#sourcelist","fragment":"SourceList\n"});
+fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#sourcelist","fragment":"SourceList\nRepresents a list of source factories in a project. Source factories are\nobjects which can create timeline sources. The source-list is a\ndictionary containing:\n\n\ndatatype -- “source-list”\n\nsource-factories -- maps to a list containing “source-factory”\ndictionaries.\n\n"});

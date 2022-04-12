@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/Plugins.html#case-studies","fragment":"Case Studies\n"});
+fragment_downloaded_cb({"url":"design/Plugins.html#case-studies","fragment":"Case Studies\nHere we analyze some pluggable architecture implemented by other\nopensource projects in order to focus their strength/weak points in\nrelation to pitivi's needs. The list here does not pretend at all to be\nexaustive but is only meant to provide a cheap guided tour of the\nneighbourhood.\n"});

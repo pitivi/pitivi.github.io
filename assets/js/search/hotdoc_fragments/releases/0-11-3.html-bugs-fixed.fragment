@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-11-3.html#bugs-fixed","fragment":"Bugs Fixed\n"});
+fragment_downloaded_cb({"url":"releases/0-11-3.html#bugs-fixed","fragment":"Bugs Fixed\nList of bugs fixed on\nBugzilla\n\n\n535374 : missing\npitivi-sound.png\n\n557998 : Runtime\nchecks for goocanvas done too late\n\n560150 : Error\nwhen clicking on nothing\n\n560330 : Pitivi\ndon't import any video (python trouble)\n\n560844 :\ntimecode is incorrectly displayed\n\n560850 : font\nhomogeneity\n\n563444 : Render\ndialog's filename request dialog has buttons reversed\n\n"});

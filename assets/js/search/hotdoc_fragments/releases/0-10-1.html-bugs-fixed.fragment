@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-10-1.html#bugs-fixed","fragment":"Bugs Fixed\n"});
+fragment_downloaded_cb({"url":"releases/0-10-1.html#bugs-fixed","fragment":"Bugs Fixed\nList of bugs fixed on\nBugzilla\n\n\n335500 : Render\ndialog never goes away\n\n339993 :\n[i18n] use stock labels included with stock items\n\n339998 : Gnome\nbutton order\n\n340382 : current\nposition should be ui-independent\n\n342674 :\nSegmentation fault on load\n\n"});

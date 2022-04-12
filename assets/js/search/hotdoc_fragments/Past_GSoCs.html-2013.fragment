@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Past_GSoCs.html#2013","fragment":"2013\n"});
+fragment_downloaded_cb({"url":"Past_GSoCs.html#2013","fragment":"2013\n\nAnton Belka worked on the initial\nimplementation of proxies in GES (see proxy\nediting requirements).\nJoris Valette started work on slow/fast-motion in GStreamer.\n\nMathieu Duponchelle\nworked on heavy bugfixing all across the Pitivi, GES and\nGStreamer stack, allowing us to release 0.91 at\nthe end of the summer.\n\nSimon Corsin worked on various pieces\nalongside Mathieu, such as the new waveforms renderer.\n\n"});

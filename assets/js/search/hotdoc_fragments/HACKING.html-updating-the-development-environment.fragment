@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"HACKING.html#updating-the-development-environment","fragment":"Updating the development environment\n"});
+fragment_downloaded_cb({"url":"HACKING.html#updating-the-development-environment","fragment":"Updating the development environment\nTo update the dependencies installed in the sandbox, run:\nThat will actually recreate the sandbox prefix, updating all\ndependencies from their git repos and tarballs as defined in the\nflatpak\nmanifest.\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Advanced_plugin.html#adding-the-new-button","fragment":"Adding the new button\n"});
+fragment_downloaded_cb({"url":"Advanced_plugin.html#adding-the-new-button","fragment":"Adding the new button\nSince the button is related to the timeline, we add it in the timeline toolbar, at the right of the timeline.\nAt this point, you can re-start Pitivi, activate the plugin and notice the new button in the UI!\n"});

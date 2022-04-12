@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-13-4.html#requirements","fragment":"Requirements\n"});
+fragment_downloaded_cb({"url":"releases/0-13-4.html#requirements","fragment":"Requirements\n* gstreamer >= 0.10.28\n* gst-python >= 0.10.16\n* gnonlin >= 0.10.15\n* pygtk >= 2.14.0\n* Python >= 2.5\n* zope.interface (http://www.zope.org/Products/ZopeInterface)\n* setuptools (http://peak.telecommunity.com/DevCenter/setuptools)\n* pygoocanvas (http://live.gnome.org/GooCanvas)\n* (optional) dbus and HAL for capture support\n"});

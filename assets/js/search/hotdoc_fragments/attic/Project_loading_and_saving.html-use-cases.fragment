@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#use-cases","fragment":"Use Cases\n"});
+fragment_downloaded_cb({"url":"attic/Project_loading_and_saving.html#use-cases","fragment":"Use Cases\nThere are 4 states and 4 commands, giving the user a total of 14\npossible scenarios that users might encounter (the initial state does\nnot allow for two of the commands).\n"});

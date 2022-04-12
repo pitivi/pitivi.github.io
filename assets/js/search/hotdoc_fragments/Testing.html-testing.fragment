@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Testing.html#testing","fragment":"Testing\n"});
+fragment_downloaded_cb({"url":"Testing.html#testing","fragment":"Testing\nWe have three sets of tests:\nSince version 0.91 the test suite is set up similarly to\nthe GStreamer tests, using GstValidate. The GES backend also has its own test\nsuite, preventing things falling apart.\n\nthe normal unit tests\nintegration tests\nmanual tests\n\n"});

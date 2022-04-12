@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-13-4.html#features-of-this-release","fragment":"Features of this release\n"});
+fragment_downloaded_cb({"url":"releases/0-13-4.html#features-of-this-release","fragment":"Features of this release\n* video mixing/transparency support\n* icon view in source list\n* smoother scrolling\n* modeless splitting\n* seek on click\n* faster waveforms\n* zoom slider\n* UI beautifications\n* Speed optimisations\n* dbus/hal dependency now optional\n* translated in 30 languages\n"});

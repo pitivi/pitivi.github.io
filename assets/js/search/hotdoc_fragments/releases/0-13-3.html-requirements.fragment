@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-13-3.html#requirements","fragment":"Requirements\n"});
+fragment_downloaded_cb({"url":"releases/0-13-3.html#requirements","fragment":"Requirements\n\ngstreamer >= 0.10.24\ngst-python >= 0.10.16\ngnonlin >= 0.10.13\npygtk >= 2.14.0\nPython >= 2.5\nzope-interface\npython setuptools\npygoocanvas (http://live.gnome.org/GooCanvas)\ndbus and HAL for capture support\n\n"});

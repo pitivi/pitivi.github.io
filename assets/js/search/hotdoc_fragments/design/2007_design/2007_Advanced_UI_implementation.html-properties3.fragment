@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#properties3","fragment":"Properties\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#properties3","fragment":"Properties\n\nbackground -- background rectangle\ncoreobject -- the core PiTiVi object which this timelineobject\nrepresents\ncontent -- Content object\ninpoint -- Handle, representing the in point of the source\noutpoint -- Handle, representing the out point of the source\n\n"});

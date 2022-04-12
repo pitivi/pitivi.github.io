@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Google_SoC_2007_-_Simple_Timeline.html#july-06-2007","fragment":"July 06, 2007\n"});
+fragment_downloaded_cb({"url":"Google_SoC_2007_-_Simple_Timeline.html#july-06-2007","fragment":"July 06, 2007\nI've decided to start leaving messages on a weekly basis, so that\nthere's a visible history of progress. Finally fixed thumbnail aspect\nratio scaling issues, as well as tracking down a bug that was preventing\nthem from updating.\n"});

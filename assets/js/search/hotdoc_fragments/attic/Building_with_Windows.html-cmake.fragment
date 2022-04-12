@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#cmake","fragment":"CMake\n"});
+fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#cmake","fragment":"CMake\nDownload the CMake win32\ninstaller, since\nthere is no 64bit build.\nYou do not need to add CMake to the system path, since we are not using\nCMD anyway.\n"});

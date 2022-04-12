@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#link-on-desktop","fragment":"Link on Desktop\n"});
+fragment_downloaded_cb({"url":"attic/Building_with_Windows.html#link-on-desktop","fragment":"Link on Desktop\nSadly I do not know how to make a .bat available in the task bar / dock,\nso make a link on the Desktop.\n\nMake a link on your Desktop to C:\\MinGW\\msys\\1.0\\msys.bat\nRename it to msys Shell and give it a nice icon.\n\n"});

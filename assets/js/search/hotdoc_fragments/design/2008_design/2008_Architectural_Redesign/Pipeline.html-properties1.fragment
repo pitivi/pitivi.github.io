@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#properties1","fragment":"Properties\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#properties1","fragment":"Properties\n\nFactory, the ObjectFactory being controlled by this Producer\nPipeline, the Pipeline in which this Producer is being used\n\n"});

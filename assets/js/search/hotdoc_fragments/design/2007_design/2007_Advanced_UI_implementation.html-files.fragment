@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#files","fragment":"Files\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#files","fragment":"Files\nThe advanced UI is implemented in several files in the pitivi/ui\ndirectory in the source tree:\n\nutil.py\ncomplexinterface.py\ncomplextimeline.py\nruler.py\n\n"});

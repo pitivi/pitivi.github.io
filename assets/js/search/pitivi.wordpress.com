@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"pitivi.wordpress.com","urls":[{"url":"releases/0-96.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"pitivi.wordpress.com","urls":[{"url":"releases/0-96.html#096-release-cogito-ergo-proxy","node_type":"p","context":{"gi-language":["default"]}}]});

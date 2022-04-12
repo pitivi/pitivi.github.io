@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"releases/0-11-1.html#features-of-this-release","fragment":"Features of this release\n"});
+fragment_downloaded_cb({"url":"releases/0-11-1.html#features-of-this-release","fragment":"Features of this release\n\nMore work on project save/load, use PITIVI_FILE_SUPPORT=1 to try\nit.\nBe more flexible with encoding caps, should fix more issues when\nencoding.\nFixed issues for non icon-theme-spec compliant systems\nMisc fixes\n\n"});

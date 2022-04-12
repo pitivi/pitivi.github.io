@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#methods1","fragment":"Methods\n"});
+fragment_downloaded_cb({"url":"design/2007_design/2007_Advanced_UI_implementation.html#methods1","fragment":"Methods\n\ndragStart -- a hook which is called to notify the object that\ndragging is about to begin\ndragEnd -- a hook which is called to notify the object that dragging\nhas ended\ndragMotion -- a hook which is called to notify the object that its\nposition should be updated.\n\n"});

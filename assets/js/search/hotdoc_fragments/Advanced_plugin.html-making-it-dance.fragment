@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Advanced_plugin.html#making-it-dance","fragment":"Making it dance\n"});
+fragment_downloaded_cb({"url":"Advanced_plugin.html#making-it-dance","fragment":"Making it dance\nThe interesting part is the __clicked_cb callback method, which is connected to the button's \"clicked\" signal:\nFinally, we can add some cleanup logic when the plugin is deactivated, because we're nice:\n"});

@@ -35,10 +35,10 @@
 
 <script src="assets/js/lines_around_headings.js"></script>
 
-<script src="assets/js/trie.js"></script>
 <script src="assets/js/prism-core.js"></script>
 <script src="assets/js/prism-autoloader.js"></script>
 <script src="assets/js/prism_autoloader_path_override.js"></script>
+<script src="assets/js/trie.js"></script>
 
 <link rel="shortcut icon" href="assets/images/favicon.png">
 
@@ -105,48 +105,51 @@ $('body').removeClass('no-script');
         <h1 id="testing">Testing</h1>
 <p>We have three sets of tests:</p>
 <ul>
-<li>the normal unit tests (ninja test)</li>
-<li>integration tests using GstValidate.</li>
+<li>the normal unit tests</li>
+<li>integration tests</li>
 <li><a href="QA_Scenarios.html">manual tests</a></li>
 </ul>
-<p>Since version <a href="releases/0-91.html">0.91</a>, our backend test suite is much
-smaller and simpler; since most of the core functionality is now handled
-by <a href="GES.html">GES</a>, you need to run GES's test suite instead if
-you want to test more thoroughly.</p>
+<p>Since version <a href="releases/0-91.html">0.91</a> the test suite is set up similarly to
+the GStreamer tests, using GstValidate. The GES backend also has its own test
+suite, preventing things falling apart.</p>
 <h2 id="unit-tests">Unit tests</h2>
-<p>You can run the tests with the <code>ptvtests</code> alias created when you enter
-the <a href="HACKING.html">development environment</a>:</p>
-<pre><code>$ alias ptvtests
-ptvtests='ptvenv gst-validate-launcher /.../pitivi-dev/pitivi/tests/ptv_testsuite.py'
-</code></pre>
-<p>NOTE: If you are on <a href="crossplatform.html">macOS or Windows</a>, replace
-<code>ptvtests</code> with <code>gst-validate-launcher tests/ptv_testsuite.py</code>.</p>
 <p>Run the entire unit tests suite:</p>
 <pre><code>$ ptvtests
 </code></pre>
-<p>Run only the tests in a particular file:</p>
+<p>Run only a set of tests by specifying <code>-t</code>. For example:</p>
 <pre><code>$ ptvtests -t test_project
+$ ptvtests -t test_project.TestProjectManager
+$ ptvtests -t test_project.TestProjectManager.test_loading_missing_project_file
+$ ptvtests -t TestProjectManager
+$ ptvtests -t test_loading_missing_project_file
+$ ptvtests -t Only_the_tests_affecting_the_clips_widgets_please
 </code></pre>
-<p>Run only one particular unit test:</p>
-<pre><code>$ ptvtests -t tests.test_project.TestProjectManager.test_loading_missing_project_file
-</code></pre>
-<p>Normally it should work to use just the name of the test method:</p>
-<pre><code>$ ptvtests -t test_loading_missing_project_file
-</code></pre>
-<p>To lists all the available tests, run:</p>
+<p>To list the available tests, run:</p>
 <pre><code>$ ptvtests -L
 </code></pre>
+<p>NOTE: <code>ptvtests</code> is an alias created when you enter the <a href="HACKING.html">development
+environment</a>. If you are on <a href="crossplatform.html">macOS or Windows</a>,
+replace <code>ptvtests</code> with <code>gst-validate-launcher tests/ptv_testsuite.py</code>.</p>
+<pre><code>$ alias ptvtests
+ptvtests='ptvenv gst-validate-launcher /.../pitivi-dev/pitivi/tests/ptv_testsuite.py'
+</code></pre>
 <h3 id="writing-unit-tests">Writing unit tests</h3>
-<p>As mock library we use <a href="http://www.voidspace.org.uk/python/mock/">Mock</a>,
-as it's now integrated into
-<a href="http://docs.python.org/dev/library/unittest.mock">Python3</a> which we use
-as of <a href="releases/0-94.html">0.94</a>.</p>
-<p>We use the <code>unittest.mock</code> module extensively for writing unit tests for
-the UI.</p>
-<p>If you're curious about our unit tests, the best way to get to know them
-is to write a few Pitivi unit tests and have us review them. Check out
-<a href="HACKING.html">how to set up your dev env</a> and come in our <a href="https://www.pitivi.org/contact/">chat
-room</a>!</p>
+<p>Start by reading the utility methods in <code>tests/common.py</code>.</p>
+<p>The tests for the logic in a specific file have a corresponding tests file. For
+example the tests for <code>pitivi/clip_properties/color.py</code> can be found in
+<code>tests/test_clipproperties_color.py</code>. Note the undo/redo tests in
+<code>tests/test_undo_*</code> cover the same area as others such as the timeline.</p>
+<p>When writing a new test, look for similar ones to copy the initial part doing
+the setup. Most probably you find a good example and learn something in the
+process. We have a large number of tests covering most of the codebase.</p>
+<p>We use the <code>unittest.mock</code> standard <a href="https://docs.python.org/3/library/unittest.mock.html">Python
+module</a> extensively in the
+unit tests, especially for the UI.</p>
+<p>Unit tests can be <a href="Debugging.html#debugging-unit-tests">debugged</a> by setting the
+<code>PITIVI_VSCODE_DEBUG</code> environment variable.</p>
+<p>If you're curious about our unit tests, the best way to get to know them is to
+write a few and have us review them. Check out <a href="HACKING.html">how to set up your dev
+env</a> and come in our <a href="https://www.pitivi.org/contact/">chat room</a>!</p>
 <h2 id="integration-tests">Integration tests</h2>
 <p>The integration tests are run with GstValidate. They are located in the
 <a href="https://gitlab.gnome.org/GNOME/pitivi/tree/master/tests/validate-tests">tests/validate-tests</a>

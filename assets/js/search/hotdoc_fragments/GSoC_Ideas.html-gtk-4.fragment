@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"GSoC_Ideas.html#gtk-4","fragment":"GTK 4\n"});
+fragment_downloaded_cb({"url":"GSoC_Ideas.html#gtk-4","fragment":"GTK 4\nInitially the development environment should be migrated onto a GTK 4 runtime\nand then the app should be ported following the migration guide from GTK 3 to\nGTK 4.\nRequirements: Python. Minimal experience contributing to Pitivi including\nunit tests. Experience developing GTK apps is a plus.\n"});

@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"HACKING.html#switching-locales","fragment":"Switching locales\n"});
+fragment_downloaded_cb({"url":"HACKING.html#switching-locales","fragment":"Switching locales\nTo see how Pitivi looks in a different locale, use:\nPay attention the translations in the sandbox are not automatically\nupdated when you git pull. You can update them by updating your\nsandbox (ptvenv --update) or by reinstalling Pitivi in the sandbox:\n"});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"recreate","urls":[{"url":"HACKING.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"recreate","urls":[{"url":"HACKING.html#updating-the-development-environment","node_type":"p","context":{"gi-language":["default"]}},{"url":"How_to_update_sandbox.html#build-the-ci-image","node_type":"p","context":{"gi-language":["default"]}}]});

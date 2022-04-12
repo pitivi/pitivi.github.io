@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"org.freedesktop.Platform.VAAPI.Intel","urls":[{"url":"Install_with_flatpak.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"org.freedesktop.Platform.VAAPI.Intel","urls":[{"url":"Install_with_flatpak.html#install-gstreamer-vaapi-support","node_type":"p","context":{"gi-language":["default"]}}]});

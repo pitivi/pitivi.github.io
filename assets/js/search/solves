@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"solves","urls":[{"url":"GES.html#page-description","node_type":"ul","context":{"gi-language":["default"]}},{"url":"releases/0-94.html#page-description","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"solves","urls":[{"url":"GES.html#ges","node_type":"ul","context":{"gi-language":["default"]}},{"url":"releases/0-94.html#changes-and-fixed-bugs","node_type":"ul","context":{"gi-language":["default"]}}]});

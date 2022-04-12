@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Advanced_plugin.html#how-to-interact-with-the-timeline","fragment":"How to interact with the timeline\n"});
+fragment_downloaded_cb({"url":"Advanced_plugin.html#how-to-interact-with-the-timeline","fragment":"How to interact with the timeline\nLet's add a button for removing the gaps between clips!\n\nFollow the steps in the hello world example to create a plugin directory and a plugin info file. What's left is to create the Python module with the logic.\n"});

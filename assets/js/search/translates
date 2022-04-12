@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"translates","urls":[{"url":"Coding_style_guide.html#page-description","node_type":"p","context":{"gi-language":["default"]}},{"url":"design/UI_Implementation.html#page-description","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"translates","urls":[{"url":"Coding_style_guide.html#line-length","node_type":"p","context":{"gi-language":["default"]}},{"url":"design/UI_Implementation.html#ui-framework-design","node_type":"p","context":{"gi-language":["default"]}}]});

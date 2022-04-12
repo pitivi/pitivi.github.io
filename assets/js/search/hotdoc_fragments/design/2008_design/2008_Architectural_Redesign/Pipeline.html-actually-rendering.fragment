@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#actually-rendering","fragment":"Actually Rendering\n"});
+fragment_downloaded_cb({"url":"design/2008_design/2008_Architectural_Redesign/Pipeline.html#actually-rendering","fragment":"Actually Rendering\n\nWe activate the Action on the pipeline\n\nThe pipeline gets reconfigured with all activated actions\n\n\nWe set the pipeline to PLAYING\n\n\nThe pipeline gets reconfigured with all activated actions\n\n"});
