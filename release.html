@@ -129,7 +129,7 @@ in <strong>one week</strong> the release will be cut.</li>
 </ul>
 </li>
 <li>
-<p>Check <a href="https://gitlab.gnome.org/GNOME/pitivi/milestones">GitLab</a></p>
+<p>Check <a href="https://gitlab.gnome.org/GNOME/pitivi/-/milestones">GitLab</a></p>
 <ul>
 <li>Make sure there are no significant issues open against the current milestone.</li>
 <li>Move the remaining open issues somewhere else, for example to the next milestone.</li>
@@ -188,6 +188,7 @@ because of X. In this case, stop X with <code>sudo systemctl stop gdm</code> and
 fake X server: <code>xvfb-run /.../pitivi/build/flatpak/pitivi-flatpak ninja -C mesonbuild/ dist</code>.</p>
 <p>Install it on a real system and give it a spin. For example on Archlinux:</p>
 <pre><code>$ cd /tmp
+$ asp update pitivi
 $ asp checkout pitivi
 $ cd /tmp/pitivi/repos/community-x86_64/
 $ cp .../pitivi-YYYY.MM.Z.tar.xz .
@@ -230,7 +231,7 @@ https://download.gnome.org/sources/pitivi/YYYY.MM/pitivi-YYYY.MM.tar.xz</p>
 <li>
 <a href="https://packages.debian.org/pitivi">Debian</a>, click the "unstable" Debian version and look for "maintainer".</li>
 <li>
-<a href="https://apps.fedoraproject.org/packages/pitivi">Fedora</a>, look for Point of Contact.</li>
+<a href="https://packages.fedoraproject.org/pkgs/pitivi/pitivi/">Fedora</a>, look for "You can contact the maintainers of this package via email at".</li>
 </ul>
 </li>
 <li>
