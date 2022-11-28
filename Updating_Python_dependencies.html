@@ -120,20 +120,19 @@ easier to install the compiled packages instead of the source packages. When
 upstream makes it easier to use source packages we should switch.</p>
 <h2 id="updating-runtime-dependencies">Updating runtime dependencies</h2>
 <pre><code>$ cd build/flatpak
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/42 librosa
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/42 matplotlib
+$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 librosa
+$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 matplotlib
 </code></pre>
 <h2 id="updating-the-development-tools">Updating the development tools</h2>
 <pre><code>$ cd build/flatpak
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/42 nose setuptools_git setuptools_pep8 sphinx hotdoc
+$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 nose setuptools_git setuptools_pep8 sphinx hotdoc
 $ mv python3-modules.json python3-hotdoc.json
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/42 ipdb
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/42 nose2
+$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 ipdb
 </code></pre>
 <h2 id="updating-the-precommit-framework">Updating the pre-commit framework</h2>
 <pre><code>$ cd build/flatpak
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/42 pre-commit
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/42 pylint
+$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 pre-commit
+$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 setuptools-scm 'pylint&lt;=2.13.5'
 </code></pre>
 <h2 id="updating-your-local-sandbox">Updating your local sandbox</h2>
 <p>After you update the json files, try out the build by updating your local
@@ -143,9 +142,9 @@ development environment:</p>
 </code></pre>
 <p>If errors happen, you can inspect the SDK by launching <code>bash</code> in a sandbox, for
 example:</p>
-<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/42
-[📦 org.gnome.Sdk ~]$ python --version
-Python 3.8.6
+<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/43
+[📦 org.gnome.Sdk ~]$ which python3
+/usr/bin/python3
 </code></pre>
 
     </div>

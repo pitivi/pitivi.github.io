@@ -114,13 +114,13 @@ the latest dependencies.</p>
 <h2 id="update-the-flatpak-runtime">Update the flatpak runtime</h2>
 <p>To update the flatpak runtime version, look in <code>org.pitivi.Pitivi.json</code> for the
 current version:</p>
-<pre><code>    "runtime-version": "42",
+<pre><code>    "runtime-version": "43",
 </code></pre>
 <p>Check out what is the latest flatpak runtime version. For example:</p>
 <pre><code>$ flatpak remote-ls flathub --system | grep org.gnome.Platform
 GNOME Application Platform version 3.38	org.gnome.Platform		3.38
-GNOME Application Platform version 41	org.gnome.Platform		41
 GNOME Application Platform version 42	org.gnome.Platform		42
+GNOME Application Platform version 43	org.gnome.Platform		43
 </code></pre>
 <p>Check out in the git history how we updated the runtime version in the past and
 repeat with the latest SDK.</p>
@@ -130,17 +130,25 @@ repeat with the latest SDK.</p>
 <pre><code>$ flatpak run --filesystem=$HOME/dev/pitivi/pitivi org.flathub.flatpak-external-data-checker build/flatpak/org.pitivi.Pitivi.json --update
 </code></pre>
 <p>Others have to be checked and updated manually.</p>
-<p>Most of the <a href="Updating_Python_dependencies.html">Python dependencies</a> can be
-updated with <code>flatpak-pip-generator</code>.</p>
+<h2 id="check-the-python-version">Check the Python version</h2>
+<p>Check the Python version in the sandbox. Last time it was:</p>
+<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/43
+[📦 org.gnome.Sdk ~]$ python --version
+Python 3.10
+</code></pre>
+<p>When the Python version changes, update the <code>/app/lib/python3.10</code> occurrences
+in the <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/build/flatpak/org.pitivi.Pitivi.json">flatpak
+manifest</a>
+and also update the <a href="Updating_Python_dependencies.html">Python dependencies</a>.</p>
+<p>When updating pylint, make a separate commit to fix the issues it complains
+about:</p>
+<pre><code>(ptv-flatpak) $ ptvenv pre-commit run -a pylint
+</code></pre>
 <h2 id="sync-with-flathub">Sync with flathub</h2>
 <p>Check if any changes to the <a href="https://github.com/flathub/org.pitivi.Pitivi">flathub Pitivi
 manifest</a> need to be ported over.</p>
 <p>In particular, pay attention to the <code>shared-modules</code> git submodule to copy
 <code>libcanberra</code> into <code>build/flatpak</code>.</p>
-<h2 id="check-the-python-version">Check the Python version</h2>
-<p>The "gst-python" module in the manifest specifies the "pygi-overrides-dir"
-parameter which contains a path which must target the correct Python version.</p>
-<p>Pay attention to update this path when the Python version changes.</p>
 <h2 id="rebuild-your-local-dev-env">Rebuild your local dev env</h2>
 <pre><code>$ . bin/pitivi-env
 (ptv-flatpak) $ ptvenv --update
