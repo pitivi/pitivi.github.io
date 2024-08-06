@@ -11,20 +11,23 @@
 
 <title>Updating the sandbox</title>
 
-<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/dark-frontend.css" type="text/css" title="dark">
+<link rel="alternate stylesheet" href="assets/css/light-frontend.css" type="text/css" title="light">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
-<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
 <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="assets/js/search/enable_search.css" type="text/css">
 
-<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/prism-tomorrow.css" type="text/css" title="dark">
+
+<link rel="alternate stylesheet" href="assets/css/prism.css" type="text/css" title="light">
 
 <script src="assets/js/mustache.min.js"></script>
 <script src="assets/js/jquery.js"></script>
-<script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/typeahead.jquery.min.js"></script>
 <script src="assets/js/search.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
@@ -32,6 +35,7 @@
 <script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
+<script src="assets/js/styleswitcher.js"></script>
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -45,7 +49,7 @@
 </head>
 
 <body class="no-script
-" data-spy="scroll" data-target="#toc" data-offset="70">
+">
 
 <script>
 $('body').removeClass('no-script');
@@ -64,7 +68,8 @@ $('body').removeClass('no-script');
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+			<span title="light mode switch" class="glyphicon glyphicon-sunglasses pull-right" id="lightmode-icon"></span>
+			<form class="navbar-form pull-right" id="navbar-search-form">
                                <div class="form-group has-feedback">
                                        <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
 				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
@@ -95,8 +100,10 @@ $('body').removeClass('no-script');
 <script src="assets/js/utils.js"></script>
 
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-	<script src="assets/js/navigation.js"></script>
-	<script src="assets/js/sitemap.js"></script>
+	<script src="assets/js/full-width.js"></script>
+  <div id="sitenav-wrapper">
+    <iframe src="hotdoc-sitemap.html" id="sitenav-frame"></iframe>
+  </div>
 </div>
 
 <div id="body">
@@ -119,24 +126,30 @@ current version:</p>
 <p>Check out what is the latest flatpak runtime version. For example:</p>
 <pre><code>$ flatpak remote-ls flathub --system | grep org.gnome.Platform
 GNOME Application Platform version 3.38	org.gnome.Platform		3.38
-GNOME Application Platform version 42	org.gnome.Platform		42
-GNOME Application Platform version 43	org.gnome.Platform		43
+GNOME Application Platform version 45	org.gnome.Platform		45
+GNOME Application Platform version 46	org.gnome.Platform		46
+</code></pre>
+<p>Download the latest:</p>
+<pre><code>$ flatpak install org.gnome.Sdk/x86_64/46
 </code></pre>
 <p>Check out in the git history how we updated the runtime version in the past and
 repeat with the latest SDK.</p>
 <h2 id="update-the-sandbox-dependencies">Update the sandbox dependencies</h2>
 <p>Some of them can be updated automatically with
 <a href="https://github.com/flathub/flatpak-external-data-checker">flatpak-external-data-checker</a>:</p>
-<pre><code>$ flatpak run --filesystem=$HOME/dev/pitivi/pitivi org.flathub.flatpak-external-data-checker build/flatpak/org.pitivi.Pitivi.json --update
+<pre><code>$ flatpak run --filesystem=$HOME/dev/pitivi/pitivi org.flathub.flatpak-external-data-checker build/flatpak/org.pitivi.Pitivi.json --update --edit-only
 </code></pre>
-<p>Others have to be checked and updated manually.</p>
+<p>Create a commit with the automatically changed deps.</p>
+<pre><code>$ git commit -a -m "build: Update deps with flatpak-external-data-checker"
+</code></pre>
+<p>Other deps have to be checked and updated manually.</p>
 <h2 id="check-the-python-version">Check the Python version</h2>
-<p>Check the Python version in the sandbox. Last time it was:</p>
-<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/43
+<p>Check the Python version in the sandbox. For example, last time it was:</p>
+<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/46
 [📦 org.gnome.Sdk ~]$ python --version
-Python 3.10
+Python 3.11.9
 </code></pre>
-<p>When the Python version changes, update the <code>/app/lib/python3.10</code> occurrences
+<p>When the Python version changes, update the <code>/app/lib/python3.11</code> occurrences
 in the <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/build/flatpak/org.pitivi.Pitivi.json">flatpak
 manifest</a>
 and also update the <a href="Updating_Python_dependencies.html">Python dependencies</a>.</p>
@@ -187,7 +200,6 @@ branch "master".</p>
 	<div id="search_results">
 		<p>The results of the search are</p>
 	</div>
-	<hr>
 	<div id="footer">
 		    
 
@@ -207,7 +219,7 @@ branch "master".</p>
 </div>
 </main>
 
-</body>
 
 <script src="assets/js/navbar_offset_scroller.js"></script>
+</body>
 </html>

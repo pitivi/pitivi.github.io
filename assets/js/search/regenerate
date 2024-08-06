@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"regenerate","urls":[{"url":"HACKING.html#how-we-use-the-sandbox","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"regenerate","urls":[{"url":"HACKING.html#how-we-use-the-sandbox","node_type":"ul","page":"Hacking on Pitivi","sections":["Hacking on Pitivi","Updating the development environment","How we use the sandbox"],"context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"markdown","urls":[{"url":"attic.html#attic","node_type":"p","context":{"gi-language":["default"]}},{"url":"index.html#pitivi-development-website","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"markdown","urls":[{"url":"attic.html#attic","node_type":"p","page":"Attic","sections":["Attic"],"context":{"gi-language":["default"]}},{"url":"index.html#pitivi-development-website","node_type":"p","page":"Pitivi","sections":["Pitivi development website"],"context":{"gi-language":["default"]}}]});

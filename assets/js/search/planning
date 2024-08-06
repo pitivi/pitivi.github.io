@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"planning","urls":[{"url":"Roadmap.html#roadmap","node_type":"p","context":{"gi-language":["default"]}},{"url":"index.html#pitivi-development-website","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"planning","urls":[{"url":"Roadmap.html#roadmap","node_type":"p","page":"Roadmap","sections":["Roadmap"],"context":{"gi-language":["default"]}},{"url":"index.html#pitivi-development-website","node_type":"p","page":"Pitivi","sections":["Pitivi development website"],"context":{"gi-language":["default"]}}]});

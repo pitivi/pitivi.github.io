@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"blendedtextctrl.py","urls":[{"url":"design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#blended-text","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"blendedtextctrl.py","urls":[{"url":"design/2008_design/2008_Jog_and_Shuttle_controls_code_experiment.html#blended-text","node_type":"ul","page":"Code Experiment","sections":["View","wxPython","Blended Text"],"context":{"gi-language":["default"]}}]});

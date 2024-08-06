@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"clearselection","urls":[{"url":"design/2007_design/2007_Advanced_UI_implementation.html#selection-management-methods","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"clearselection","urls":[{"url":"design/2007_design/2007_Advanced_UI_implementation.html#selection-management-methods","node_type":"ul","page":"Implementation","sections":["Classes","ComplexTimelineCanvas(goocanvas.Canvas, Zoomable)","Selection Management Methods"],"context":{"gi-language":["default"]}}]});

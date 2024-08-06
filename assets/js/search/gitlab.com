@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"gitlab.com","urls":[{"url":"GSoC_Application.html#what-is-your-blog-address","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"gitlab.com","urls":[{"url":"GSoC_Application.html#what-is-your-blog-address","node_type":"p","page":"Fill out the Application","sections":["Fill out the Application","Mandatory questions to be answered","What is your blog address?"],"context":{"gi-language":["default"]}}]});

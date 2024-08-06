@@ -11,20 +11,23 @@
 
 <title>Python dependencies</title>
 
-<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/dark-frontend.css" type="text/css" title="dark">
+<link rel="alternate stylesheet" href="assets/css/light-frontend.css" type="text/css" title="light">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
-<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
 <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="assets/js/search/enable_search.css" type="text/css">
 
-<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/prism-tomorrow.css" type="text/css" title="dark">
+
+<link rel="alternate stylesheet" href="assets/css/prism.css" type="text/css" title="light">
 
 <script src="assets/js/mustache.min.js"></script>
 <script src="assets/js/jquery.js"></script>
-<script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/typeahead.jquery.min.js"></script>
 <script src="assets/js/search.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
@@ -32,6 +35,7 @@
 <script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
+<script src="assets/js/styleswitcher.js"></script>
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -45,7 +49,7 @@
 </head>
 
 <body class="no-script
-" data-spy="scroll" data-target="#toc" data-offset="70">
+">
 
 <script>
 $('body').removeClass('no-script');
@@ -64,7 +68,8 @@ $('body').removeClass('no-script');
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+			<span title="light mode switch" class="glyphicon glyphicon-sunglasses pull-right" id="lightmode-icon"></span>
+			<form class="navbar-form pull-right" id="navbar-search-form">
                                <div class="form-group has-feedback">
                                        <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
 				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
@@ -95,8 +100,10 @@ $('body').removeClass('no-script');
 <script src="assets/js/utils.js"></script>
 
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-	<script src="assets/js/navigation.js"></script>
-	<script src="assets/js/sitemap.js"></script>
+	<script src="assets/js/full-width.js"></script>
+  <div id="sitenav-wrapper">
+    <iframe src="hotdoc-sitemap.html" id="sitenav-frame"></iframe>
+  </div>
 </div>
 
 <div id="body">
@@ -109,30 +116,45 @@ in the development sandbox we install quite a few Python tools.</p>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/-/tree/master/build/flatpak">build/flatpak</a>,
 generated with
 <a href="https://github.com/aleb/flatpak-builder-tools/tree/master/pip">flatpak-pip-generator</a>:</p>
-<pre><code>$ git clone git@github.com:aleb/flatpak-builder-tools.git
-</code></pre>
-<p>Note, we use a custom <code>flatpak-pip-generator</code> which downloads the compiled
-Python packages. The upstream version downloads only the source packages, for
-security reasons.</p>
 <p>The <code>hotdoc</code> and <code>matplotlib</code> packages are quite complex, needing additional
 build dependencies which have to be installed beforehand. Jan 2021 it's much
 easier to install the compiled packages instead of the source packages. When
 upstream makes it easier to use source packages we should switch.</p>
-<h2 id="updating-runtime-dependencies">Updating runtime dependencies</h2>
+<p>Note, we use a custom <code>flatpak-pip-generator</code> which downloads the compiled
+Python packages. The upstream version downloads only the source packages, for
+security reasons.</p>
+<pre><code>$ git clone git@github.com:aleb/flatpak-builder-tools.git
+</code></pre>
+<p>Create a venv to be able to run flatpak-build-generator:</p>
+<pre><code>$ python3 -m venv /tmp/venv1
+$ /tmp/venv1/bin/pip3 install requirements-parser setuptools
+</code></pre>
+<p>Change the current dir:</p>
 <pre><code>$ cd build/flatpak
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 librosa
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 matplotlib
+$ P=/tmp/venv1/bin/python3
+$ G=/.../flatpak-builder-tools/pip/flatpak-pip-generator
+</code></pre>
+<h2 id="updating-runtime-dependencies">Updating runtime dependencies</h2>
+<pre><code>$ $P $G --runtime org.gnome.Sdk/x86_64/46 librosa
+$ $P $G --runtime org.gnome.Sdk/x86_64/46 matplotlib
 </code></pre>
 <h2 id="updating-the-development-tools">Updating the development tools</h2>
-<pre><code>$ cd build/flatpak
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 nose setuptools_git setuptools_pep8 sphinx hotdoc
+<pre><code>$ $P $G --runtime org.gnome.Sdk/x86_64/46 'wheezy.template&lt;=3.1.0' nose setuptools_git setuptools_pep8 sphinx hotdoc
 $ mv python3-modules.json python3-hotdoc.json
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 ipdb
+$ $P $G --runtime org.gnome.Sdk/x86_64/46 ipdb
+</code></pre>
+<p>Note: <code>wheezy.template 3.2.2</code> produces an error, that's why we avoid it:</p>
+<pre><code>(ptv-flatpak) $ hotdoc
+Traceback (most recent call last):
+[...]
+  File "src/wheezy/template/typing.py", line 6, in init wheezy.template.typing
+    All subscripted types like X[int], Union[int, str] are generic aliases.
+TypeError: 'type' object is not subscriptable
+
 </code></pre>
 <h2 id="updating-the-precommit-framework">Updating the pre-commit framework</h2>
-<pre><code>$ cd build/flatpak
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 pre-commit
-$ python3 flatpak-pip-generator --runtime org.gnome.Sdk/x86_64/43 setuptools-scm 'pylint&lt;=2.13.5'
+<pre><code>$ $P $G --runtime org.gnome.Sdk/x86_64/46 pre-commit
+$ $P $G --runtime org.gnome.Sdk/x86_64/46 setuptools-scm 'pylint&lt;=2.13.5'
 </code></pre>
 <h2 id="updating-your-local-sandbox">Updating your local sandbox</h2>
 <p>After you update the json files, try out the build by updating your local
@@ -142,7 +164,7 @@ development environment:</p>
 </code></pre>
 <p>If errors happen, you can inspect the SDK by launching <code>bash</code> in a sandbox, for
 example:</p>
-<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/43
+<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/46
 [📦 org.gnome.Sdk ~]$ which python3
 /usr/bin/python3
 </code></pre>
@@ -158,7 +180,6 @@ example:</p>
 	<div id="search_results">
 		<p>The results of the search are</p>
 	</div>
-	<hr>
 	<div id="footer">
 		    
 
@@ -178,7 +199,7 @@ example:</p>
 </div>
 </main>
 
-</body>
 
 <script src="assets/js/navbar_offset_scroller.js"></script>
+</body>
 </html>

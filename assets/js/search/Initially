@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"Initially","urls":[{"url":"GSoC_Ideas.html#gtk-4","node_type":"p","context":{"gi-language":["default"]}},{"url":"attic/GNonLin.html#gnonlin","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"Initially","urls":[{"url":"GSoC_Ideas.html#gtk-4","node_type":"p","page":"GSoC Project Ideas","sections":["GSoC Project Ideas","GTK 4"],"context":{"gi-language":["default"]}},{"url":"attic/GNonLin.html#gnonlin","node_type":"p","page":"GNonLin","sections":["GNonLin"],"context":{"gi-language":["default"]}}]});

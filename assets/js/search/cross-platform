@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"cross-platform","urls":[{"url":"GES.html#ges","node_type":"p","context":{"gi-language":["default"]}},{"url":"crossplatform.html#crossplatform","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"cross-platform","urls":[{"url":"GES.html#ges","node_type":"p","page":"GES","sections":["GES"],"context":{"gi-language":["default"]}},{"url":"crossplatform.html#crossplatform","node_type":"p","page":"Crossplatform","sections":["Crossplatform"],"context":{"gi-language":["default"]}}]});

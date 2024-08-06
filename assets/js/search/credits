@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"credits","urls":[{"url":"GSoC_Ideas.html#closing-credits","node_type":"h2","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"credits","urls":[{"url":"GSoC_Ideas.html#closing-credits","node_type":"h2","page":"GSoC Project Ideas","sections":["GSoC Project Ideas","Closing credits"],"context":{"gi-language":["default"]}},{"url":"Past_GSoCs.html#2023","node_type":"ul","page":"Past GSoCs","sections":["Past GSoCs","2023"],"context":{"gi-language":["default"]}}]});

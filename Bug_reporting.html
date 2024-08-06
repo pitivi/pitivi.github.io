@@ -11,20 +11,23 @@
 
 <title>Bug reporting</title>
 
-<link rel="stylesheet" href="assets/css/custom_bootstrap.css" type="text/css">
+<link rel="stylesheet" href="assets/css/dark-frontend.css" type="text/css" title="dark">
+<link rel="alternate stylesheet" href="assets/css/light-frontend.css" type="text/css" title="light">
 <link rel="stylesheet" href="assets/css/bootstrap-toc.min.css" type="text/css">
-<link rel="stylesheet" href="assets/css/frontend.css" type="text/css">
 <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="assets/js/search/enable_search.css" type="text/css">
 
-<link rel="stylesheet" href="assets/css/prism.css" type="text/css">
+
+<link rel="stylesheet" href="assets/css/prism-tomorrow.css" type="text/css" title="dark">
+
+<link rel="alternate stylesheet" href="assets/css/prism.css" type="text/css" title="light">
 
 <script src="assets/js/mustache.min.js"></script>
 <script src="assets/js/jquery.js"></script>
-<script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/scrollspy.js"></script>
 <script src="assets/js/typeahead.jquery.min.js"></script>
 <script src="assets/js/search.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
 <script src="assets/js/compare-versions.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="assets/js/bootstrap-toc.min.js"></script>
@@ -32,6 +35,7 @@
 <script src="assets/js/anchor.min.js"></script>
 <script src="assets/js/tag_filtering.js"></script>
 <script src="assets/js/language_switching.js"></script>
+<script src="assets/js/styleswitcher.js"></script>
 
 <script src="assets/js/lines_around_headings.js"></script>
 
@@ -45,7 +49,7 @@
 </head>
 
 <body class="no-script
-" data-spy="scroll" data-target="#toc" data-offset="70">
+">
 
 <script>
 $('body').removeClass('no-script');
@@ -64,7 +68,8 @@ $('body').removeClass('no-script');
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<form action="" class="navbar-form pull-right" id="navbar-search-form">
+			<span title="light mode switch" class="glyphicon glyphicon-sunglasses pull-right" id="lightmode-icon"></span>
+			<form class="navbar-form pull-right" id="navbar-search-form">
                                <div class="form-group has-feedback">
                                        <input type="text" class="form-control input-sm" name="search" id="sidenav-lookup-field" placeholder="search" disabled>
 				       <span class="glyphicon glyphicon-search form-control-feedback" id="search-mgn-glass"></span>
@@ -95,8 +100,10 @@ $('body').removeClass('no-script');
 <script src="assets/js/utils.js"></script>
 
 <div class="panel panel-collapse oc-collapsed" id="sidenav" data-hotdoc-role="navigation">
-	<script src="assets/js/navigation.js"></script>
-	<script src="assets/js/sitemap.js"></script>
+	<script src="assets/js/full-width.js"></script>
+  <div id="sitenav-wrapper">
+    <iframe src="hotdoc-sitemap.html" id="sitenav-frame"></iframe>
+  </div>
 </div>
 
 <div id="body">
@@ -110,7 +117,7 @@ an account to file issues and comment on them. Take a quick look at the
 <a href="https://gitlab.gnome.org/GNOME/pitivi/issues">existing list of bugs and feature
 requests</a> to see if
 your problem has already been reported.</p>
-<p>To report a bug/problem in the software, <a href="https://gitlab.gnome.org/GNOME/pitivi/issues/new?issue%5Bassignee_id%5D=&amp;issue%5Bmilestone_id%5D=">create an
+<p>To report a bug/problem in the software, <a href="https://gitlab.gnome.org/GNOME/pitivi/-/issues/">create an
 issue</a>.
 Ideally you can describe exactly the steps <em>anyone</em> can follow to
 reproduce the bug. The more details, the better.</p>
@@ -194,10 +201,10 @@ and run <code>thread apply all bt</code> to get the backtraces for all the threa
 <ol>
 <li>Install the GNOME SDK and its Debug symbols and update them:</li>
 </ol>
-<pre><code>flatpak --user install flathub org.gnome.Sdk/x86_64/43
-flatpak --user install flathub org.gnome.Sdk.Debug/x86_64/43
-flatpak --user update          org.gnome.Sdk/x86_64/43
-flatpak --user update          org.gnome.Sdk.Debug/x86_64/43
+<pre><code>flatpak --user install flathub org.gnome.Sdk/x86_64/46
+flatpak --user install flathub org.gnome.Sdk.Debug/x86_64/46
+flatpak --user update          org.gnome.Sdk/x86_64/46
+flatpak --user update          org.gnome.Sdk.Debug/x86_64/46
 </code></pre>
 <ol start="2">
 <li>Start a shell in the Pitivi flatpak sandbox:</li>
@@ -284,7 +291,6 @@ blog posts on profiling</a>.</p>
 	<div id="search_results">
 		<p>The results of the search are</p>
 	</div>
-	<hr>
 	<div id="footer">
 		    
 
@@ -304,7 +310,7 @@ blog posts on profiling</a>.</p>
 </div>
 </main>
 
-</body>
 
 <script src="assets/js/navbar_offset_scroller.js"></script>
+</body>
 </html>

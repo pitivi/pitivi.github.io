@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"gst-editing-services-1.0","urls":[{"url":"attic/Building_with_Windows.html#building-gstreamer-editing-services","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"gst-editing-services-1.0","urls":[{"url":"attic/Building_with_Windows.html#building-gstreamer-editing-services","node_type":"p","page":"Building with Windows","sections":["Compile","Building GStreamer Editing Services"],"context":{"gi-language":["default"]}}]});

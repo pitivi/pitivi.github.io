@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"maintenance","urls":[{"url":"Administrative.html#maintenance","node_type":"h1","context":{"gi-language":["default"]}},{"url":"index.html#subpages","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"maintenance","urls":[{"url":"Administrative.html#maintenance","node_type":"h1","page":"Maintenance","sections":["Maintenance"],"context":{"gi-language":["default"]}},{"url":"index.html#subpages","node_type":"p","page":"Pitivi","sections":[],"context":{"gi-language":["default"]}}]});

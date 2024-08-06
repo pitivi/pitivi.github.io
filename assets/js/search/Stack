@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"Stack","urls":[{"url":"Bug_reporting.html#when-running-from-the-packages-of-your-linux-distro","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"Stack","urls":[{"url":"Bug_reporting.html#when-running-from-the-packages-of-your-linux-distro","node_type":"p","page":"Bug reporting","sections":["Providing debugging information","Back traces for crashes and deadlocks","When running from the packages of your Linux distro"],"context":{"gi-language":["default"]}}]});

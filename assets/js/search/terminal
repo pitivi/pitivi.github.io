@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"terminal","urls":[{"url":"HACKING.html#hacking-on-pitivi","node_type":"p","context":{"gi-language":["default"]}},{"url":"Mac_OS_X.html#building","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"terminal","urls":[{"url":"HACKING.html#hacking-on-pitivi","node_type":"p","page":"Hacking on Pitivi","sections":["Hacking on Pitivi"],"context":{"gi-language":["default"]}},{"url":"Mac_OS_X.html#building","node_type":"p","page":"Mac OS X","sections":["Mac OS X","Building"],"context":{"gi-language":["default"]}}]});

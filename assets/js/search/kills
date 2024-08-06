@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"kills","urls":[{"url":"releases/0-14.html#014-release-no-longer-kills-kittens","node_type":"h1","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"kills","urls":[{"url":"releases/0-14.html#014-release-no-longer-kills-kittens","node_type":"h1","page":"0.14.0","sections":["0.14 Release : No longer kills kittens\n"],"context":{"gi-language":["default"]}}]});

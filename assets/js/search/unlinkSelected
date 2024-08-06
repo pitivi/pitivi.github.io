@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"unlinkSelected","urls":[{"url":"design/2007_design/2007_Advanced_UI_implementation.html#selection-manipulation-methods","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"unlinkSelected","urls":[{"url":"design/2007_design/2007_Advanced_UI_implementation.html#selection-manipulation-methods","node_type":"ul","page":"Implementation","sections":["Classes","ComplexTimelineCanvas(goocanvas.Canvas, Zoomable)","Selection Manipulation Methods"],"context":{"gi-language":["default"]}}]});

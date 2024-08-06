@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"news","urls":[{"url":"index.html#random-stuff","node_type":"ul","context":{"gi-language":["default"]}},{"url":"release.html#making-a-release","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"news","urls":[{"url":"index.html#random-stuff","node_type":"ul","page":"Pitivi","sections":["Random stuff"],"context":{"gi-language":["default"]}},{"url":"release.html#making-a-release","node_type":"ul","page":"Making a release","sections":["Making a release"],"context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"Fault","urls":[{"url":"design/Proxy_editing_requirements.html#fault-tolerance-and-sandboxing","node_type":"h2","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"Fault","urls":[{"url":"design/Proxy_editing_requirements.html#fault-tolerance-and-sandboxing","node_type":"h2","page":"Proxy editing requirements","sections":["GES API requirements","Fault tolerance and sandboxing"],"context":{"gi-language":["default"]}}]});

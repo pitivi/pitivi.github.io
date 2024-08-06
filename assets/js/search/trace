@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"trace","urls":[{"url":"Bug_reporting.html#back-traces-for-crashes-and-deadlocks","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"trace","urls":[{"url":"Bug_reporting.html#back-traces-for-crashes-and-deadlocks","node_type":"p","page":"Bug reporting","sections":["Providing debugging information","Back traces for crashes and deadlocks"],"context":{"gi-language":["default"]}}]});

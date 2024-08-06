@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"existent","urls":[{"url":"design/Plugins.html#upgrade-an-existent-plugin","node_type":"h2","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"existent","urls":[{"url":"design/Plugins.html#upgrade-an-existent-plugin","node_type":"h2","page":"Plugins","sections":["Use cases for plugin manager","Upgrade an existent plugin"],"context":{"gi-language":["default"]}}]});

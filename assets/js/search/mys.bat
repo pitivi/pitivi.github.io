@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"mys.bat","urls":[{"url":"attic/Building_with_Windows.html#install-mintty","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"mys.bat","urls":[{"url":"attic/Building_with_Windows.html#install-mintty","node_type":"p","page":"Building with Windows","sections":["Setup the shell","Install MinTTY"],"context":{"gi-language":["default"]}}]});

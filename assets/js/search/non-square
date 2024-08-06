@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"non-square","urls":[{"url":"releases/0-999.html#0999-release-test-me-please","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"non-square","urls":[{"url":"releases/0-999.html#0999-release-test-me-please","node_type":"p","page":"0.999 Release “Test me please”","sections":["0.999 Release “Test me please”"],"context":{"gi-language":["default"]}}]});

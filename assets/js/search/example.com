@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"example.com","urls":[{"url":"attic/Building_with_Windows.html#setting-up-git-config","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"example.com","urls":[{"url":"attic/Building_with_Windows.html#setting-up-git-config","node_type":"p","page":"Building with Windows","sections":["Setup the shell","Setting up git config"],"context":{"gi-language":["default"]}}]});

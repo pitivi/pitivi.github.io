@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"self.object.app","urls":[{"url":"Plugins.html#api","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"self.object.app","urls":[{"url":"Plugins.html#api","node_type":"p","page":"Plugins","sections":["Plugins","API"],"context":{"gi-language":["default"]}}]});

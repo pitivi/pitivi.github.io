@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"plans","urls":[{"url":"Current_events.html#releases","node_type":"p","context":{"gi-language":["default"]}},{"url":"index.html#we-need-your-help","node_type":"ul","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"plans","urls":[{"url":"Current_events.html#releases","node_type":"p","page":"Releases","sections":["Releases"],"context":{"gi-language":["default"]}},{"url":"index.html#we-need-your-help","node_type":"ul","page":"Pitivi","sections":["We need your help"],"context":{"gi-language":["default"]}}]});

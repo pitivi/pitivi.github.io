@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"gstreamer-based","urls":[{"url":"design/Grouping_and_nesting.html#recursion-via-gstreamer","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"gstreamer-based","urls":[{"url":"design/Grouping_and_nesting.html#recursion-via-gstreamer","node_type":"p","page":"Grouping and nesting","sections":["Proposal: Recursive Pitivi","Recursion via GStreamer"],"context":{"gi-language":["default"]}}]});

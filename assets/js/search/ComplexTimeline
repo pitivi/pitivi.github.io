@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"ComplexTimeline","urls":[{"url":"design/2007_design/2007_Advanced_UI_implementation.html#complextimelineobjectgroup-zoomable-selectabledragable","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"ComplexTimeline","urls":[{"url":"design/2007_design/2007_Advanced_UI_implementation.html#complextimelineobjectgroup-zoomable-selectabledragable","node_type":"p","page":"Implementation","sections":["Classes","ComplexTimelineObject(Group, Zoomable, SelectableDragable)"],"context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"bloated","urls":[{"url":"Goals.html#goals","node_type":"p","context":{"gi-language":["default"]}},{"url":"design/Why_python.html#why-python","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"bloated","urls":[{"url":"Goals.html#goals","node_type":"p","page":"Goals","sections":["Goals"],"context":{"gi-language":["default"]}},{"url":"design/Why_python.html#why-python","node_type":"p","page":"Why Python?","sections":["Why Python?"],"context":{"gi-language":["default"]}}]});

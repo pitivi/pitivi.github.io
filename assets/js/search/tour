@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"tour","urls":[{"url":"Goals.html#goals","node_type":"p","context":{"gi-language":["default"]}},{"url":"design/Plugins.html#case-studies","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"tour","urls":[{"url":"Goals.html#goals","node_type":"p","page":"Goals","sections":["Goals"],"context":{"gi-language":["default"]}},{"url":"design/Plugins.html#case-studies","node_type":"p","page":"Plugins","sections":["Case Studies"],"context":{"gi-language":["default"]}}]});

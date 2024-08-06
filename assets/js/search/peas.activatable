@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"peas.activatable","urls":[{"url":"Plugins.html#hello-world","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"peas.activatable","urls":[{"url":"Plugins.html#hello-world","node_type":"p","page":"Plugins","sections":["Plugins","Hello World"],"context":{"gi-language":["default"]}}]});

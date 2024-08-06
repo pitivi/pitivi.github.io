@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"GESTimeline","urls":[{"url":"design/Grouping_and_nesting.html#possible-implementation-in-ges","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"GESTimeline","urls":[{"url":"design/Grouping_and_nesting.html#possible-implementation-in-ges","node_type":"p","page":"Grouping and nesting","sections":["Proposal: Recursive Pitivi","Internal Recursion","Possible implementation in GES"],"context":{"gi-language":["default"]}}]});

@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"Inspector","urls":[{"url":"HACKING.html#subpages","node_type":"p","context":{"gi-language":["default"]}},{"url":"Inspecting_UI.html#hacking-the-ui","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"Inspector","urls":[{"url":"HACKING.html#subpages","node_type":"p","page":"Hacking on Pitivi","sections":[],"context":{"gi-language":["default"]}},{"url":"Inspecting_UI.html#hacking-the-ui","node_type":"p","page":"Hacking the UI","sections":["Hacking the UI"],"context":{"gi-language":["default"]}}]});

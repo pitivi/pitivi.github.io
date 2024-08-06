@@ -1,1 +1,1 @@
-urls_downloaded_cb({"token":"october","urls":[{"url":"Current_events.html#talks","node_type":"ul","context":{"gi-language":["default"]}},{"url":"Praise.html#in-the-media","node_type":"p","context":{"gi-language":["default"]}}]});
+urls_downloaded_cb({"token":"october","urls":[{"url":"Current_events.html#talks","node_type":"ul","page":"Releases","sections":["Talks"],"context":{"gi-language":["default"]}},{"url":"Praise.html#in-the-media","node_type":"p","page":"Praise","sections":["In the Media"],"context":{"gi-language":["default"]}}]});
