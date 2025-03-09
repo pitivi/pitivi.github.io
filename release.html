@@ -173,8 +173,7 @@ Compose the exec summary of changes, at the top. This ends up in the <code>.news
 file at <a href="https://download.gnome.org/sources/pitivi/">download.gnome.org/sources/pitivi</a>.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/data/org.pitivi.Pitivi.appdata.xml.in">data/org.pitivi.Pitivi.appdata.xml.in</a>:
-Run <code>appstream-util news-to-appdata NEWS</code> and copy the generated content into
-the appdata template.</li>
+Run <code>appstreamcli news-to-metainfo NEWS data/org.pitivi.Pitivi.appdata.xml.in</code>.</li>
 <li>
 <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/AUTHORS">AUTHORS</a>:
 If there are new maintainers.</li>

@@ -125,12 +125,12 @@ current version:</p>
 </code></pre>
 <p>Check out what is the latest flatpak runtime version. For example:</p>
 <pre><code>$ flatpak remote-ls flathub --system | grep org.gnome.Platform
-GNOME Application Platform version 3.38	org.gnome.Platform		3.38
-GNOME Application Platform version 45	org.gnome.Platform		45
-GNOME Application Platform version 46	org.gnome.Platform		46
+GNOME Application Platform version 3.38 org.gnome.Platform              3.38
+GNOME Application Platform version 46   org.gnome.Platform              46
+GNOME Application Platform version 47   org.gnome.Platform              47
 </code></pre>
 <p>Download the latest:</p>
-<pre><code>$ flatpak install org.gnome.Sdk/x86_64/46
+<pre><code>$ flatpak install org.gnome.Sdk/x86_64/47
 </code></pre>
 <p>Check out in the git history how we updated the runtime version in the past and
 repeat with the latest SDK.</p>
@@ -145,11 +145,11 @@ repeat with the latest SDK.</p>
 <p>Other deps have to be checked and updated manually.</p>
 <h2 id="check-the-python-version">Check the Python version</h2>
 <p>Check the Python version in the sandbox. For example, last time it was:</p>
-<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/46
+<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/47
 [📦 org.gnome.Sdk ~]$ python --version
-Python 3.11.9
+Python 3.12.9
 </code></pre>
-<p>When the Python version changes, update the <code>/app/lib/python3.11</code> occurrences
+<p>When the Python version changes, update the <code>/app/lib/python3.12</code> occurrences
 in the <a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/build/flatpak/org.pitivi.Pitivi.json">flatpak
 manifest</a>
 and also update the <a href="Updating_Python_dependencies.html">Python dependencies</a>.</p>
