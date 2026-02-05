@@ -137,51 +137,14 @@ shall be used as a base for writing a detailed project proposal.</p>
 <p>See <a href="Past_GSoCs.html">Past GSoCs</a> for details on what the previous GSoC students did.</p>
 <p>To create a detailed proposal, use our <a href="GSoC_Application.html">GSoC application template</a>.
 Deadlines for applying are approaching fast, hurry up!</p>
-<h2 id="timeline-enhancements">Timeline enhancements</h2>
-<p>Fixing timeline issues and making small enhancements would improve a lot the
-timeline usability, making it a delight to use Pitivi. See
-<a href="https://gitlab.gnome.org/GNOME/pitivi/-/issues?label_name%5B%5D=6.+Component%3A+Timeline">GitLab</a>.</p>
-<p><strong>Requirements</strong>: Python. Minimal experience contributing to Pitivi including
-unit tests.</p>
-<h2 id="closing-credits">Closing credits</h2>
-<p>For <a href="https://en.wikipedia.org/wiki/Closing_credits">end credits</a> and other
-advanced text display, we could use the new <a href="https://www.youtube.com/watch?v=no7rvUk8GqM">GStreamer
-WPE</a> element in
-<a href="https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad/tree/master/ext/wpe">gst-plugins-bad</a>,
-which can display an HTML page as a video element. As GstWPE is a live source it
-does not allow seeking (getting frames at random positions), we have to add
-logic in Pitivi for seamlessly creating a video file out of an animated HTML
-page. The resulting file can be used in the project timeline as any other video
-clip. You'd have to extend the UI with a new
-<a href="https://gitlab.gnome.org/GNOME/pitivi/blob/master/pitivi/perspective.py">perspective</a>
-for managing the closing credits HTML, and the corresponding video files.</p>
-<p><strong>Requirements</strong>: Python. Minimal experience contributing to Pitivi including
-unit tests.</p>
-<h2 id="fix-gpu-support-in-pitivi">Fix GPU support in Pitivi</h2>
-<p>GStreamer has pretty good GPU support through the OpenGL set of plugins, but
-Pitivi/GES is not able to take full advantage of that infrastructure yet, mainly
-because of lack of testing and bug fixing on our side. This project is about
-enabling GL plugins for compositing and rendering, and fixing any issue that
-shows up. The second part would be about making sure hardware accelerated
-decoders can be used in the pipelines.</p>
-<p><strong>Requirements</strong>: C. Experience with GStreamer is mandatory. Minimal experience
-contributing to Pitivi including unit tests. Experience with OpenGL is a plus.</p>
+<h2 id="gtk4-timeline-ruler-widget-in-rust">GTK4 Timeline Ruler Widget in Rust</h2>
+<p>The <a href="https://aleb.ro/post/2016-01-23-polishing-pitivis-ruler/">ruler above the timeline</a> provides the time context for the timeline. It displays time markers and at lower zoom levels the successive frames. Currently it's implemented in Python as a GTK3 widget, relying on the legacy cairo based drawing model. This project involves rewriting the ruler as a standalone, native Rust widget using GTK4's modern <a href="https://en.wikipedia.org/wiki/GTK_Scene_Graph_Kit">GSK</a> rendering model.</p>
+<p><strong>Requirements</strong>: Rust. Minimal experience contributing to <strong>any</strong> Rust based GTK application. Familiarity with Python, GES and contributions to Pitivi a plus.</p>
 <h2 id="gtk-4">GTK 4</h2>
-<p>Initially the development environment should be migrated onto a GTK 4 runtime
-and then the app should be ported following the <a href="https://developer.gnome.org/gtk4/unstable/gtk-migrating-3-to-4.html">migration guide from GTK 3 to
-GTK 4</a>.</p>
-<p><strong>Requirements</strong>: Python. Minimal experience contributing to Pitivi including
-unit tests. Experience developing GTK apps is a plus.</p>
-<h2 id="external-audio-editing-integration">External audio editing integration</h2>
-<p>The audio editing features in Pitivi are likely to stay at a basic level so we
-can focus on the video editing functionality. Once a video segment is finished,
-it would be great to be able to export the entire audio and work on it with an
-audio editor such as <a href="https://www.audacityteam.org">Audacity</a>. See for example
-how the experimental Blender-Audacity integration
-<a href="https://www.youtube.com/watch?v=f61Zvb8AipA">works</a> and its
-<a href="https://github.com/tin2tin/audacity_tools_for_blender">Python implementation</a>.</p>
-<p><strong>Requirements</strong>: Python. Minimal experience contributing to Pitivi including
-unit tests. Experience developing GTK apps is a plus.</p>
+<p>The migration from GTK 3 to GTK 4 is advanced and needs finishing.
+If interested, get in touch with us to put together some concrete tasks.</p>
+<p><strong>Requirements</strong>: Python. Minimal experience contributing to the GTK4 porting
+branch. Experience developing GTK apps is a plus.</p>
 
     </div>
         
