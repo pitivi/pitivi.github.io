@@ -111,6 +111,15 @@ $('body').removeClass('no-script');
 				    <div id="page-description" data-hotdoc-role="main">
         <h1 id="maintenance">Maintenance</h1>
 <p>Tasks a maintainer would be interested performing.</p>
+<h2 id="documentation">Documentation</h2>
+<p>Build the documentation with Hotdoc:</p>
+<pre><code>(ptv-flatpak) $ cd docs
+(ptv-flatpak) $ hotdoc run 2&gt;&amp;1 | grep -v 2007_design | grep -v 2008_design
+(ptv-flatpak) $ xdg-open output/html/index.html
+</code></pre>
+<p>Publish it with:</p>
+<pre><code>(ptv-flatpak) $ hotdoc run --git-upload
+</code></pre>
 
     </div>
         
