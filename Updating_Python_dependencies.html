@@ -126,7 +126,10 @@ need additional build dependencies which have to be installed beforehand.</p>
 of the source packages. When <a href="https://github.com/flatpak/flatpak-builder-tools/commits/master/pip">upstream</a>
 makes it easier to use source packages we should switch back.</p>
 <h2 id="updating-the-python-deps">Updating the Python deps</h2>
-<p>To update the Python deps, all you have to do is to run:</p>
+<p>Run the commands from the root of the checkout. <code>update_deps.py</code> updates only
+the architecture of the host on which it is run. Repeat the process on each
+supported architecture. Alternatively, ask somebody else to do it and create a
+separate commit.</p>
 <pre><code>$ . bin/pitivi-env
 (ptv-flatpak) $ build/flatpak/update_deps.py
 </code></pre>
@@ -139,9 +142,8 @@ updating your local development environment:</p>
 </code></pre>
 <p>If errors happen, you can inspect the SDK by launching <code>bash</code> in a sandbox, for
 example:</p>
-<pre><code>$ flatpak run --user --command=bash --devel org.gnome.Sdk/x86_64/46
-[📦 org.gnome.Sdk ~]$ which python3
-/usr/bin/python3
+<pre><code>$ flatpak run --user --command=python3 org.gnome.Sdk//50 --version
+Python 3.13.x
 </code></pre>
 
     </div>

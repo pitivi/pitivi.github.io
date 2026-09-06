@@ -128,9 +128,10 @@ hook</a>.</p>
 </ul>
 <p>Sooner or later you'll want to update the <code>pre-commit</code> framework and its hooks.</p>
 <h2 id="how-to-update-the-precommit-tool">How to update the <code>pre-commit</code> tool</h2>
-<p>The <code>pre-commit</code> tool is installed in the flatpak sandbox through
-<a href="https://gitlab.gnome.org/GNOME/pitivi/-/blob/master/build/flatpak/python3-pre-commit.json">python3-pre-commit.json</a>.
-The <code>python3-pre-commit.json</code> file is generated with <code>flatpak-pip-generator</code>.
+<p>The <code>pre-commit</code> tool is installed in the flatpak sandbox through the
+architecture-specific <code>python3-pre-commit.json</code> files in
+<a href="https://gitlab.gnome.org/GNOME/pitivi/-/tree/master/build/flatpak"><code>build/flatpak</code></a>.
+They are generated with <code>flatpak-pip-generator</code>.
 See the instructions for <a href="Updating_Python_dependencies.html">updating the Python
 dependencies</a>.</p>
 <h2 id="how-to-update-the-hooks">How to update the hooks</h2>
@@ -158,7 +159,9 @@ errors.</p>
 <p>To run the <code>check-yaml</code> hook on the entire codebase:</p>
 <pre><code>(ptv-flatpak) $ ptvenv pre-commit run -a check-yaml
 </code></pre>
-<p>If you feel brave, you can use <code>pre-commit</code> itself to update the hooks:</p>
+<p>If you feel brave, you can use <code>pre-commit</code> itself to update the hooks. Run it
+from the host shell after sourcing <code>bin/pitivi-env</code>; <code>ptvenv</code> is an alias and
+is not available inside a raw SDK shell.</p>
 <pre><code>(ptv-flatpak) $ ptvenv pre-commit autoupdate
 </code></pre>
 <p>At the end, do a final check by running all the hooks on the entire codebase:</p>

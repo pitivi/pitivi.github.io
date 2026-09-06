@@ -1,1 +1,1 @@
-fragment_downloaded_cb({"url":"Updating_Python_dependencies.html#updating-the-python-deps","fragment":"Updating the Python deps\nTo update the Python deps, all you have to do is to run:\n"});
+fragment_downloaded_cb({"url":"Updating_Python_dependencies.html#updating-the-python-deps","fragment":"Updating the Python deps\nRun the commands from the root of the checkout. update_deps.py updates only\nthe architecture of the host on which it is run. Repeat the process on each\nsupported architecture. Alternatively, ask somebody else to do it and create a\nseparate commit.\n"});
